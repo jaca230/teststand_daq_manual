@@ -1,0 +1,17 @@
+site_name: g-2 modified DAQ Manual
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Hardware Overview: hardware_overview.md
+  - Software Dependencies: software_dependencies.md
+  - Networking Tutorial: networking.md
+  - Miscellaneous: miscellaneous_info.md
+
+plugins:
+  - search
+  - pdf-export
+
+markdown_extensions:
+  - attr_list
