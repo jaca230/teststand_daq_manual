@@ -6,6 +6,9 @@ nav:
   - Home: index.md
   - Hardware Overview: hardware_overview.md
   - Software Dependencies: software_dependencies.md
+  - Install and Build the Midas Frontends: installing_and_building.md
+  - ODB Configurations: odb_config.md
+  - Additional Software Add-ons: software_add_ons.md
   - Networking Tutorial: networking.md
   - Miscellaneous: miscellaneous_info.md
 

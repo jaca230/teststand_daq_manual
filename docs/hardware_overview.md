@@ -14,7 +14,7 @@
 ### Labled Picture (One Crate System)
 ![DAQ_Diagram](images/DAQ_image_labled.png){: style="max-width:100%; height:auto;"}
 
-
+---
 
 ## WFD5 (Waveform Digitizer)
 
@@ -22,7 +22,7 @@
 
 ### Updating Firmware
 
-
+---
 
 ## FC7 (Flexible Controller)
 
@@ -30,7 +30,7 @@
 
 ### Updating Firmware
 
-
+---
 
 ## AMC13 (Advanced Mezzanine Card)
 
@@ -38,7 +38,7 @@
 
 ### Updating Firmware
 
-
+---
 
 ## MCH (MicroTCA Carrier Hub)
 

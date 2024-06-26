@@ -18,6 +18,8 @@
 | DDR        | Double Data Rate                      | DDR3, DDR4 (RAM)             |
 | PCIe       | Peripheral Component Interconnect Express | PCIe2, PCIe3, ...         |
 
+---
+
 ## Differential Signals
 
 ![Differential_signal](images/Differential_signal.png){: style="max-width:100%; height:auto;"}
