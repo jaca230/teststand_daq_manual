@@ -25,15 +25,32 @@ This is a C++ executable midas frontend whose job is to collect data sitting in 
 
 ## Installation Guide
 
-1 **Setup Environment**
+1 **Install Software Dependencies**
+[ROOT](software_dependencies.md#root), [Midas](software_dependencies.md#midas), [Boost](software_dependencies.md#boost), [ipmitool](software_dependencies.md), and [Cactus](software_dependencies.md#ipbus-cactus) are all required to build and run the DAQ frontends. Install them following the instructions on the [Software Dependencies Page](software_dependencies.md).
 
-2 **Make Frontends**
+2 **Clone the Appropriate Branch**
+Make sure you have access to the [PIONEER Experiment GitHub](https://github.com/PIONEER-Experiment). See these [contacts](software_dependencies.md#pioneer-experiment-repositories) for gaining access. Additionally, make sure your github account is linked to your system via SSH token; you can do this by following [these instructions](software_dependencies.md#setting-up-a-github-ssh-token-on-rhel79-systems). After installing the software dependencies, you should have a `packages` directory, where it's best to put the software. To clone, follow the commands below:
 
-3 **Configure Crate Contents File**
+```
+cd /path/to/packages
+mkdir experiment
+cd experiment
+git clone --branch multi-crate https://github.com/PIONEER-Experiment/gm2daq-modified.git
+cd gm2daq-modified
+git checkout multi-crate
+```
 
-4 **Start Midas Webpage**
+**Note**: To clone a different branch, simply change the `multi-crate` parameter. You can also checkout a different branch after this is done.
 
-5 **Generate the ODB**
+3 **Setup Environment**
+
+4 **Make Frontends**
+
+5 **Configure Crate Contents File**
+
+6 **Start Midas Webpage**
+
+7 **Generate the ODB**
 
 
 There are some keys in the ODB that need to be modified based on your system configuration. More details are in the [ODB configuration](odb_config.md) page.

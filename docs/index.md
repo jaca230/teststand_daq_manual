@@ -3,7 +3,7 @@
 ![DAQ_Image](images/DAQ_image.png){: style="max-width:100%; height:auto;"}
 
 
-The purpose of this is to aid users with setup and usage of this DAQ.
+The purpose of this is to aid users with setup, usage, and debugging of the g-2 modified DAQ. Most topics are simplified to only include information needed for operating this DAQ. Some external links are provided for additional, generalized information.
 
 ## Contact
 Created by Jack Carlton

@@ -134,6 +134,34 @@ sudo yum install python3
 
 ---
 
+## ipmitool
+
+### Overview
+`ipmitool` is a widely used command-line utility that facilitates interaction with IPMI-enabled devices. It allows administrators to perform various management tasks remotely and locally. Here's a more detailed look at `ipmitool`:
+
+- **Sensor Monitoring**: `ipmitool` can read and display sensor data, such as temperature, voltage, and fan speed, helping to monitor the health and status of the hardware.
+- **System Management**: It provides commands to control system power states (on, off, reset) and to manage system settings remotely.
+- **Firmware Management**: `ipmitool` supports updating and managing firmware of the IPMI-enabled devices.
+- **Event Log Management**: It can display and clear the system event log (SEL), which records critical system events.
+- **Chassis Management**: Commands to control and manage the chassis, including power control and identifying LEDs.
+- **User Management**: Supports adding, modifying, and deleting IPMI users.
+
+### Installation Guide
+
+1 **Install `ipmitool`**:
+
+```
+sudo yum install ipmitool
+```
+
+2 **Verify Installation**:
+
+```
+ipmitool -V
+```
+
+---
+
 ## ROOT
 
 ### Overview
