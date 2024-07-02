@@ -64,11 +64,13 @@ This command sends a raw IPMI command to a device over LAN with specified parame
 - `-t 0x86`: Specifies the target channel number. This is the device you're targeting, in this case it's FC7 in slot 11 of the microTCA crate.
 - `raw 0x06 0x1`: Command to send a raw IPMI command (`0x06 0x1` in this case) to the specified IPMI device. The raw command `0x06 0x1` varies based on the specific IPMI command you intend to send.
 
-You can read a bit more about these commands in the manuals linked in the [MCH section](hardware_overview.md#mch-microtca-carrier-hub).
+You can read a bit more about these commands in the manuals linked in the [MCH section](hardware_overview.md#mch-microtca-carrier-hub). You can read more about ipmitool's command arguments on [this webpage](https://linux.die.net/man/1/ipmitool).
 
 ---
 
 ## WFD5 (Waveform Digitizer)
+
+### Overview
 
 ### Configuration
 
@@ -78,6 +80,8 @@ You can read a bit more about these commands in the manuals linked in the [MCH s
 
 ## FC7 (Flexible Controller)
 
+### Overview
+
 ### Configuration
 
 ### Updating Firmware
@@ -86,6 +90,8 @@ You can read a bit more about these commands in the manuals linked in the [MCH s
 
 ## AMC13 (Advanced Mezzanine Card)
 
+### Overview
+
 ### Configuration
 
 ### Updating Firmware
@@ -93,5 +99,15 @@ You can read a bit more about these commands in the manuals linked in the [MCH s
 ---
 
 ## MCH (MicroTCA Carrier Hub)
+
+### Overview
+
+### Configuration
+
+---
+
+## Meinberg Card (TCR180PEX or similar)
+
+### Overview
 
 ### Configuration

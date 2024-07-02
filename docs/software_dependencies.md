@@ -406,3 +406,76 @@ sudo make install -j$(nproc)
 **Note**: You may not need to specify `EXTERN_BOOST_INCLUDE_PREFIX`, `EXTERN_BOOST_LIB_PREFIX`, `EXTERN_PUGIXML_INCLUDE_PREFIX`, `EXTERN_PUGIXML_LIB_PREFIX`. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.
 
 ---
+
+## Meinberg
+
+### Overview
+
+[Meinberg](https://www.meinbergglobal.com/) provides a range of synchronization solutions, including Network Time Protocol (NTP) servers, precision time protocol (PTP) solutions, and GPS radio clocks. These tools are essential for accurate time synchronization in various high-precision applications.
+
+In our case, we use it to apply a GPS timestamp to each event. In reality, this is an artifact from g-2 where seperate systems needed to be time correlated. Only the "GPS" master trigger mode needs the meinberg.
+
+### Installation Guide
+
+For more general information about Meinberg devices, see Meinberg's [Installing the Software](https://kb.meinbergglobal.com/) page.
+
+#### AlmaLinux 9 and CentOS 7
+
+1 **Clone the repository**:
+
+```
+git clone https://git.meinbergglobal.com/drivers/mbgtools-lx.git
+cd mbgtools-lx
+git pull
+```
+**Note**: Ensure that the URLs and repository paths are correct.
+
+2 **Compile the source code**:
+
+```
+make clean
+make
+```
+
+**Note**: You may need to use a development kernel. This command will install the development kernel for your current kernel version.
+
+```
+sudo yum install kernel-devel-$(uname -r) gcc make
+```
+
+3 **Install the software**:
+
+```
+sudo make install
+sudo /sbin/modprobe mbgclock
+make install_svc
+```
+
+4 **Verify installation**
+
+```
+mbgstatus
+```
+
+The output of this command should look similar to this:
+```
+mbgstatus v4.2.24 copyright Meinberg 2001-2023
+
+TCR180PEX 039212025430 (FW 1.21, ASIC 9.00) at port 0xE000, irq 47
+Date/time:  Tu, 2024-01-30  04:36:10.33 UTC
+Signal: 0%  (IRIG B122/B123, ** UTC offs not configured **)
+Status info: *** NO INPUT SIGNAL
+Status info: *** Ref. Time is Invalid
+Last sync:  We, 2023-10-04  11:36:55.00 UTC
+
+** Warning: The IRIG receiver has not yet been configured!
+
+Please make sure the correct IRIG Code Format has been
+selected, and enter the correct IRIG Time Offset from UTC
+according to the settings of the IRIG generator.
+The command "mbgirigcfg" can be used to change the settings.
+```
+
+**Note**: Check the README in `mbgtools-lx` which provides step by step debugging for this installation.
+
+---
