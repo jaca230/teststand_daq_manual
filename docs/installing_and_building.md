@@ -192,4 +192,4 @@ On the midas webpage view the ODB. Verify that `/Equipment/MasterGM2` and each `
 
 8 **Configure the ODB**
 
-There are some keys in the ODB that need to be modified based on your system configuration. More details are in the [ODB configuration](odb_config.md) page.
+Before the DAQ can run, the ODB needs to be properly configured. First, make sure the Logger [writes data](odb_config.md#toggle-logger-data-writing) and [makes ODB backup files for each run](odb_config.md#toggle-logger-to-generate-odb-backups-for-each-run). Then following the instructions on the [ODB configruation page](odb_config.md#g-2-modified-daq-specific-odb-configuration), read through each setting and ensure they are correct for your setup.

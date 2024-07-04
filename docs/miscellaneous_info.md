@@ -1,5 +1,8 @@
 # Miscellaneous Information
 
+## What is (was) g-2?
+[g-2](https://muon-g-2.fnal.gov/#:~:text=The%20Muon%20g%2D2%20experimenters,of%200.14%20parts%20per%20million.) was an experiment to that examined the precession of muons that are subjected to a magnetic field to test the standard model's prediction of muon g factor. Because many of the g-2 collaborators now work on PIONEER, it is convienent to repurpose the data acquisition system used for g-2 for PIONEER test stands.
+
 ## Initialism Cheatsheet
 | Initialism | Meaning                               | Example                      |
 |------------|---------------------------------------|------------------------------|
@@ -7,16 +10,19 @@
 | ADC        | Analog-to-Digital Converter           |                              |
 | 10GbE      | 10 Gigabit Ethernet                   |                              |
 | AFE        | Analog Front End                      |                              |
-| FPGA       | Field Programmable Gate Array          |                              |
+| FPGA       | Field Programmable Gate Array         |                              |
+| FMC        | FPGA Mezzanine Card                   | FC7 SFP Interface            |
 | CPU        | Central Processing Unit               | Intel Core i7-12700K         |
 | GPU        | Graphics Processing Unit              | NVIDIA A5000                 |
-| uTCA (µTCA)| Micro Telecommunications Computing Architecture |                        |
+| uTCA (µTCA)| Micro Telecommunications Computing Architecture |                    |
 | WFD        | Waveform Digitizer                    | WFD5                         |
 | FC         | Flexible Controller                   | FC7                          |
 | AMC        | Advanced Mezzanine Card               | AMC13 (also FC7 and WFD5)    |
 | MCH        | MicroTCA Carrier Hub                  |                              |
 | DDR        | Double Data Rate                      | DDR3, DDR4 (RAM)             |
-| PCIe       | Peripheral Component Interconnect Express | PCIe2, PCIe3, ...         |
+| PCIe       | Peripheral Component Interconnect Express | PCIe2, PCIe3, ...        |
+| SFP        | Small Form-factor Pluggable           | Finisar  SFP transceiver     |
+| SFP+       | Enhanced Small Form-factor Pluggable  | Avago SFP+ transceiver       |
 
 ---
 
@@ -51,50 +57,52 @@ In many cases, you will need to access a web server running on a remote machine 
 
 ### Instructions
 
-1. **Ensure SSH service is running on the remote machine:**
+1 **Ensure SSH service is running on the remote machine:**
 
-    ```
-    sudo systemctl start sshd
-    sudo systemctl enable sshd
-    ```
+```
+sudo systemctl start sshd
+sudo systemctl enable sshd
+```
 
-2. **Configure the firewall to allow SSH connections on the remote machine:**
+2 **Configure the firewall to allow SSH connections on the remote machine:**
 
-    ```
+```
     sudo firewall-cmd --permanent --add-service=ssh
     sudo firewall-cmd --reload
-    ```
+```
 
-3. **Open a terminal on your local machine.**
+3 **Open a terminal on your local machine.**
 
-4. **Establish an SSH connection with port forwarding:**
+4 **Establish an SSH connection with port forwarding:**
 
-    Use the following command to create an SSH tunnel. Replace `user` with your username on the remote machine and `remote_host` with the IP address or hostname of the remote machine.
+Use the following command to create an SSH tunnel. Replace `user` with your username on the remote machine and `remote_host` with the IP address or hostname of the remote machine.
 
-    ```
-    ssh -L 8080:localhost:8080 user@remote_host
-    ```
+```
+ssh -L 8080:localhost:8080 user@remote_host
+```
 
-    This command forwards your laptop's port `8080` to the remote machine's port `8080`. Here's a breakdown of the command:
+This command forwards your laptop's port `8080` to the remote machine's port `8080`. Here's a breakdown of the command:
 
-    - `-L 8080:localhost:8080`: Specifies the local port (`8080`) to be forwarded to the remote port (`8080` on `localhost` of the remote machine).
-    - `user@remote_host`: The SSH login to the remote machine.
+- `-L 8080:localhost:8080`: Specifies the local port (`8080`) to be forwarded to the remote port (`8080` on `localhost` of the remote machine).
+- `user@remote_host`: The SSH login to the remote machine.
 
-5. **Access the webpage:**
+5 **Access the webpage:**
 
-    Open a web browser on your laptop and navigate to:
+Open a web browser on your laptop and navigate to:
 
-    ```
-    http://localhost:8080
-    ```
+```
+http://localhost:8080
+```
 
-    You should see the webpage served by the remote machine on port `8080`.
+You should see the webpage served by the remote machine on port `8080`.
 
 ### Example
 
 If you want to access the root user on a machine with IP 192.168.50.10:
 
+```
 ssh -L 8080:localhost:8080 root@192.168.50.10
+```
 
 After running this command, open a browser on your laptop and go to `http://localhost:8080` to view the webpage hosted on the remote machine.
 
@@ -125,38 +133,39 @@ cd gm2daq-installer/subprocess_scripts
 ```
 you can install packages individually:
 
-| Script Name                   | Description                    |
-|-------------------------------|--------------------------------|
-| `install_epel-release.sh`     | EPEL Release                   |
-| `install_openssl-devel.sh`    | OpenSSL Development Libraries  |
-| `install_cmake.sh`            | CMake                          |
-| `install_cmake3.sh`           | CMake3                         |
-| `install_readline.sh`         | Readline                       |
-| `install_root.sh`             | ROOT (pre-compiled binary)     |
-| `install_erlang.sh`           | Erlang                         |
-| `install_zlib.sh`             | zlib                           |
-| `install_devtoolset-8.sh`     | Devtoolset-8                   |
-| `install_devtoolset-11.sh`    | Devtoolset-11                  |
-| `install_rh-python36.sh`      | Python 3.6                     |
-| `install_libXft.sh`           | libXft                         |
-| `install_libXpm.sh`           | libXpm                         |
-| `install_libXt.sh`            | libXt                          |
-| `install_libXext.sh`          | libXext                        |
-| `install_patch.sh`            | Patch                          |
-| `install_libtool.sh`          | Libtool                        |
-| `install_meinberg_driver.sh`  | Meinberg Driver                |
-| `install_midas.sh`            | MIDAS                          |
-| `install_pugixml.sh`          | pugixml                        |
-| `install_boost_1_53_0.sh`     | Boost 1.53.0                   |
-| `install_cactus.sh`           | Cactus                         |
-| `install_gm2daq.sh`           | gm2daq                         |
-| `install_root_from_source.sh` | ROOT (from source)             |
-| `install_boost_1_70_0.sh`     | Boost 1.70.0                   |
-| `install_zeroMQ.sh`           | ZeroMQ                         |
-| `install_cppzmq.sh`           | C++ ZeroMQ                     |
-| `install_eigen.sh`            | Eigen                          |
-| `install_unpacker.sh`         | Midas Data File Unpacker       |
-| `install_publisher.sh`        | Midas Data Publisher           |
+| Script Name                   | Description                                 |
+|-------------------------------|---------------------------------------------|
+| `install_epel-release.sh`     | Installs EPEL Release                       |
+| `install_openssl-devel.sh`    | Installs OpenSSL Development Libraries      |
+| `install_cmake.sh`            | Installs CMake                              |
+| `install_cmake3.sh`           | Installs CMake3                             |
+| `install_readline.sh`         | Installs Readline Development Tools         |
+| `install_root.sh`             | Installs ROOT (pre-compiled binary)         |
+| `install_erlang.sh`           | Installs Erlang                             |
+| `install_zlib.sh`             | Installs zlib Development Libraries         |
+| `install_devtoolset-8.sh`     | Installs Devtoolset-8                       |
+| `install_devtoolset-11.sh`    | Installs Devtoolset-11                      |
+| `install_rh-python36.sh`      | Installs Python 3.6                         |
+| `install_libXft.sh`           | Installs libXft Development Libraries       |
+| `install_libXpm.sh`           | Installs libXpm Development Libraries       |
+| `install_libXt.sh`            | Installs libXt Development Libraries        |
+| `install_libXext.sh`          | Installs libXext Development Libraries      |
+| `install_patch.sh`            | Installs Patch Development Tools            |
+| `install_libtool.sh`          | Installs Libtool Development Tools          |
+| `install_meinberg_driver.sh`  | Installs Meinberg Driver                    |
+| `install_midas.sh`            | Installs MIDAS                              |
+| `install_pugixml.sh`          | Installs pugixml Development Libraries      |
+| `install_boost_1_53_0.sh`     | Installs Boost 1.53.0                       |
+| `install_cactus.sh`           | Installs Cactus                             |
+| `install_gm2daq.sh`           | Installs gm2daq                             |
+| `install_root_from_source.sh` | Installs ROOT (from source)                 |
+| `install_boost_1_70_0.sh`     | Installs Boost 1.70.0                       |
+| `install_zeroMQ.sh`           | Installs ZeroMQ Development Libraries       |
+| `install_cppzmq.sh`           | Installs C++ ZeroMQ                         |
+| `install_eigen.sh`            | Installs Eigen Development Libraries        |
+| `install_unpacker.sh`         | Installs Midas Data File Unpacker           |
+| `install_publisher.sh`        | Installs Midas Data Publisher               |
+
 
 
 you can also run
@@ -164,5 +173,14 @@ you can also run
 ./install.sh --skip root_from_source,zeroMQ,...
 ```
 to skip certain packages, for example. From the list above, remove the `install_` and `.sh` parts and add it to the comma seperated list following the `--skip` flag to skip it. For instance, I would recommend trying:
+
+---
+
+## FC7 Labeling
+
+![FC7_SFP_Port_Labels](images/FC7_SFP_Port_Labels.png){: style="max-width:100%; height:auto;"}
+
+These labelings are particularly useful when configuring the [CCC ODB settings](odb_config.md#global-settings)
+
 
 ---
