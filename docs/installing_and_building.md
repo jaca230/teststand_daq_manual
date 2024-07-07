@@ -1,4 +1,4 @@
-# Installing and building g-2 modified DAQ
+# Installing and Running g-2 modified DAQ
 ## Overview
 
 The g-2 modified DAQ software repurposes the DAQ software used for g-2 to be slightly more flexible. It allows for readout and communication with hardware described in the [Hardware Overview](hardware_overview.md) page.
@@ -24,8 +24,12 @@ This is a C++ executable midas frontend whose job is to recieve digitized data f
 #### Event Builder
 This is a C++ executable midas frontend whose job is to collect data sitting in the midas buffers of all the frontends (MasterGM2, CaloReadoutAMC13 #1, CaloReadoutAMC13 #2, ...) and combine them into one midas event before being logged to a data file.
 
+---
+
 ## Installer
 There is an [installer for the g-2 modified DAQ](miscellaneous_info.md#2023-psi-lyso-testbeam-daq-installer). Though, it is currently out of date and I would not recommend using it.
+
+---
 
 ## Manual Installation Guide
 
@@ -192,4 +196,100 @@ On the midas webpage view the ODB. Verify that `/Equipment/MasterGM2` and each `
 
 8 **Configure the ODB**
 
-Before the DAQ can run, the ODB needs to be properly configured. First, make sure the Logger [writes data](odb_config.md#toggle-logger-data-writing) and [makes ODB backup files for each run](odb_config.md#toggle-logger-to-generate-odb-backups-for-each-run). Then following the instructions on the [ODB configruation page](odb_config.md#g-2-modified-daq-specific-odb-configuration), read through each setting and ensure they are correct for your setup.
+Before the DAQ can run, the ODB needs to be properly configured. First, make sure the Logger [writes data](odb_config.md#toggle-logger-data-writing) and [makes ODB backup files for each run](odb_config.md#toggle-logger-to-generate-odb-backups-for-each-run). Then following the instructions on the [ODB configuration page](odb_config.md#g-2-modified-daq-specific-odb-configuration), read through each setting and ensure they are correct for your setup.
+
+---
+
+## Running the Frontends
+
+
+### Starting Frontends "by Hand"
+The first time you run the frontends, I suggest dedicating one terminal window to each so you can inspect for errors. Each frontend will occupy a terminal window.
+
+#### Master Frontend
+
+**The Master frontend must be started first** because it does some general AMC13 and FC7 initilization. Run
+```
+cd $GM2DAQ_DIR/frontends/MasterGM2
+./frontend -e DAQ
+```
+The `-e` flag specifies the experiment name. This is found in the file located at `$MIDAS_EXPTAB`.
+
+Wait until this frontend prints `OK` (or until it turns and stays green on the midas status webpage).
+
+
+#### AMC13 Readout Frontends
+
+This frontend(s) must be started **after the Master frontend has initialized**. You can start multiple instances at the same time, but in my experience this causes midas to complain about ODB space (you may be able to get around this by [increasing the ODB size](midas.md#changing-the-odb-size), I've never tried).
+
+```
+cd $GM2DAQ_DIR/frontends/CaloReadoutAMC13
+./frontend -e DAQ -i {frontend id}
+```
+
+The `-e` flag specifies the experiment name. This is found in the file located at `$MIDAS_EXPTAB`. <br>
+The `-i` flag specifies frontend index. `{frontend id}` is replaced with the frontend ids specified in the crate configuration file above. <br>
+This command needs to be run once for each AMC13 frontend (each crate). 
+
+Wait until this frontend prints `OK` (or until it turns and stays green on the midas status webpage).
+
+
+#### Event Builder Frontend
+
+Once all of the other frontends have finished initializing, you can start the event builder.
+
+```
+./mevb -e DAQ -b BUF
+```
+
+The `-e` flag specifies the experiment name. This is found in the file located at `$MIDAS_EXPTAB`. <br>
+The `-b` flag specifies the buffer it will look for to create events. Any frontend writing to a buffer starting with `BUF` will added to an event by the event builder. You can check each frontend's buffer in it's `Common` page in the ODB, see [changing buffer for a frontend](odb_config.md#change-the-data-buffer-for-a-frontend).
+
+Wait until this frontend turns green on the status page.
+
+### Screening the Frontends
+
+Screening the frontends is slightly convoluted because you have to stuff all the appropriate environment variables into the screen session. If you are unfamiliar with screens, you may want [view some learning material for using screens](miscellaneous_info.md#using-screens-in-linux). You made need to make [an edit to your .screenrc](miscellaneous_info.md#getting-ld_library_path-into-a-screen-session) for this to work properly. Other than this, there are scripts provided to launch the frontends in a screen.
+
+#### Master Frontend
+
+**The Master frontend must be started first** because it does some general AMC13 and FC7 initilization. Run
+```
+$GM2DAQ_DIR/frontends/MasterGM2/start-fe-uky.sh DAQ master
+```
+The first argument is the experiment name which should be the value of `$MIDAS_EXPT_NAME`. <br>
+The second argument is the name for the screen session.
+
+Wait until this frontend prints `OK` (or until it turns and stays green on the midas status webpage).
+
+
+#### AMC13 Readout Frontends
+
+This frontend(s) must be started **after the Master frontend has initialized**. You can start multiple instances at the same time, but in my experience this causes midas to complain about ODB space (you may be able to get around this by [increasing the ODB size](midas.md#changing-the-odb-size), I've never tried).
+
+```
+$GM2DAQ_DIR/frontends/CaloReadoutAMC13/start-fe-uw.sh 1 DAQ amc13001
+```
+
+The 1st argument is the frontend index, it should match the `-i` argument when starting this [frontend by hand](installing_and_building.md#amc13-readout-frontends). <br>
+The 2nd argument is the experiment name. This is found in the file located at `$MIDAS_EXPTAB`. <br>
+The 3rd is the name for the screen session.
+
+This command needs to be run once for each AMC13 frontend (each crate). 
+
+Wait until this frontend prints `OK` (or until it turns and stays green on the midas status webpage).
+
+
+#### Event Builder Frontend
+
+Once all of the other frontends have finished initializing, you can start the event builder. There is no script for this screen, just a simple screen command. The flags are the same as when [starting this frontend by hand](installing_and_building.md#event-builder-frontend).
+
+```
+screen -dmS event_builder $GM2DAQ_DIR/eventbuilder/mevb -e DAQ -b BUF
+```
+
+### Startup Scripts on Midas Programs Page
+
+See the [adding program startup scripts](midas.md#adding-program-startup-scripts) page to see how to add startup programs. Make `Programs/{Frontend Name}/Required` is set to `yes`. Then copy the screen command for each respective frontend into `Programs/{Frontend Name}/Start Command`.
+ 
+---

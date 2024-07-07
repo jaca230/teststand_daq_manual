@@ -182,5 +182,58 @@ to skip certain packages, for example. From the list above, remove the `install_
 
 These labelings are particularly useful when configuring the [CCC ODB settings](odb_config.md#global-settings)
 
+---
+
+## Using Screens in Linux
+
+Screens are useful for running the DAQ because it allows you start and view multiple frontends on one terminal. You can read more on [this webpage](https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/) for example. Below are a few useful screen commands:
+
+### Starting a Screen
+
+```
+screen -S <session_name>
+```
+
+### Listing Screens
+
+```
+screen -ls
+```
+
+### Stopping a Screen
+
+To stop a screen session, first list all sessions to find the session ID:
+```
+screen -ls
+```
+
+Then, stop the desired screen session:
+```
+screen -X -S <session_id> quit
+```
+
+### Attaching to a Screen
+
+```
+screen -r <session_name>
+```
+
+### Detaching from a Screen
+To detach from a screen session you have attached to, press `Ctrl + a` and `d`. This will return you to your previous shell session.
+
+### Scrolling up in a Screen
+To scroll up in a screen session, press `Ctrl + a` and then `[`. Use the arrow keys to navigate. To exit scroll mode, press `q`.
+
+---
+
+## Getting `LD_LIBRARY_PATH` Into a Screen Session
+For some reason, stuffing `LD_LIBRARY_PATH` into a screen session is convoluted. To copy your current shell sessions `LD_LIBRARY_PATH` environment variable into a screen session, you need to edit your `.screenrc` file for the profile you launch the screen from. Simply run these two commands:
+
+```
+touch ~/.screenrc
+echo 'shell -/bin/bash -c "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH && exec /bin/bash"' >> ~/.screenrc
+```
+
+Now for every new screen session, your `LD_LIBRARY_PATH` environment variable will be copied over from your current shell session to the new screen session. This is useful when you have custom libraries added to your `LD_LIBRARY_PATH`; the environment setup script used in the [DAQ installation guide](installing_and_building.md#manual-installation-guide) adds some custom libraries `LD_LIBRARY_PATH`.
 
 ---

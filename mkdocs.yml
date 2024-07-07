@@ -6,7 +6,7 @@ nav:
   - Home: index.md
   - Hardware Overview: hardware_overview.md
   - Software Dependencies: software_dependencies.md
-  - Install and Build the Midas Frontends: installing_and_building.md
+  - Install and Run the Midas Frontends: installing_and_building.md
   - ODB Configuration: odb_config.md
   - Midas Information: midas.md
   - Additional Software Add-ons: software_add_ons.md
@@ -16,6 +16,11 @@ nav:
 plugins:
   - search
   - pdf-export
+  - git-revision-date-localized:
+      enable_creation_date: false
 
 markdown_extensions:
   - attr_list
+
+extra_css:
+- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css

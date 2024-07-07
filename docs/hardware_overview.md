@@ -68,6 +68,14 @@ You can read a bit more about these commands in the manuals linked in the [MCH s
 
 ---
 
+## MCH (MicroTCA Carrier Hub)
+
+### Overview
+
+### Configuration
+
+---
+
 ## WFD5 (Waveform Digitizer)
 
 ### Overview
@@ -82,6 +90,8 @@ You can read a bit more about these commands in the manuals linked in the [MCH s
 
 ### Overview
 
+For our use case, the FC7 can be viewed as a hub that sends out Timing, Trigger, and Control (TTC) Signals to the AMC13s. It is a much more general tool developed by CERN, you can read more about it at a surface level in [this presentation](https://indico.cern.ch/event/299180/contributions/1659595/attachments/563055/775699/FC7.pdf).
+
 ### Configuration
 
 ### Updating Firmware
@@ -94,20 +104,20 @@ You can read a bit more about these commands in the manuals linked in the [MCH s
 
 ### Configuration
 
+The AMC13 is largely configured with [AMC13Tool2.exe](https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2).
+
+#### Building AMC13Tool2.exe
+
+#### Configuring the AMC13 with AMC13Tool2.exe 
+
 ### Updating Firmware
-
----
-
-## MCH (MicroTCA Carrier Hub)
-
-### Overview
-
-### Configuration
 
 ---
 
 ## Meinberg Card (TCR180PEX or similar)
 
 ### Overview
+
+The Meinberg card provides GPS timestamps for data triggers. It is an artifact from g-2 that doesn't serve much purpose for the g-2 modified DAQ. However, it is still a supported trigger system for the [Master Frontend](installing_and_building.md#mastergm2).
 
 ### Configuration

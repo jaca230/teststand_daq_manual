@@ -43,6 +43,9 @@ Then, change `WebServer/localhost port` from `8080` to whatever port is desired.
 #### Disable a Frontend
 Every Midas frontend generates a `Common` section it's ODB. For example, `Equipment/AMC13001/Common` will be generated. To disable a frontend, set `/Equipment/Frontend Name/Common/Enabled` to `no`. This is useful for toggling off crates in multicrate setups.
 
+#### Change the Data Buffer for a Frontend
+Change `/Equipment/Frontend Name/Common/Buffer` to the desired buffer name.
+
 ---
 
 ## g-2 Modified DAQ Specific ODB Configuration
@@ -405,7 +408,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 "Async Mode" refers to a mode where each midas event contains 20 traces from each digitizer channel, which may increase the effective data collection rate. **However, this mode is currently not working.**
 
-To turn on async mode set [WFD5 Async Mode Enabled (in a second place)](odb_config.md#wfd5-async-mode-enabled-in-a-second-place) and [TTC Async Mode Enabled](odb_config.md#ttc-async-mode-enabled) to `yes`. For each digitizer, set [WFD5 Async Mode Enabled](odb_config.md#wfd5-async-mode-enabled) to `yes`. Furthermore [WFD5 Circular Buffer Mode](odb_config.md#wfd5-circular-buffer-mode-enabled) should be set to `no`. Otherwise the behavior will be unpredictable. I understand this is a bit convoluted, but this was hastily put together during the 2023 PSI LYSO test beam.
+To turn on async mode set [WFD5 Async Mode Enabled (in a second place)](odb_config.md#wfd5-async-mode-enabled-in-a-second-place) and [TTC Async Mode Enabled](odb_config.md#ttc-async-mode-enabled) to `yes`. For each digitizer, set [WFD5 Async Mode Enabled](odb_config.md#wfd5-async-mode-enabled) to `yes`. Furthermore [WFD5 Circular Buffer Mode](odb_config.md#wfd5-circular-buffer-mode-enabled) should be set to `no`. Otherwise the behavior will be unpredictable. I understand this is a bit convoluted, but this was hastily put together during the 2023 PSI LYSO test beam. There is slightly more documentation on [this elog entry](https://maxwell.npl.washington.edu/elog/pienuxe/R23/139).
 
 
 ##### WFD5 Async Mode Enabled
