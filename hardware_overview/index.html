@@ -1,278 +1,1832 @@
-<!DOCTYPE html>
 
-<html class="writer-html5" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Hardware Overview - g-2 modified DAQ Manual</title>
-<link href="../css/theme.css" rel="stylesheet"/>
-<link href="../css/theme_extra.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
-<link href="../css/print-site.css" rel="stylesheet"/>
-<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-<link href="../css/extra.css" rel="stylesheet"/>
-<script>
-        // Current page data
-        var mkdocs_page_name = "Hardware Overview";
-        var mkdocs_page_input_path = "hardware_overview.md";
-        var mkdocs_page_url = null;
-      </script>
-<!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
-<body class="wy-body-for-nav" role="document">
-<div class="wy-grid-for-nav">
-<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
-<div class="wy-side-scroll">
-<div class="wy-side-nav-search">
-<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
-        </a><div role="search">
-<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
-<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
-</form>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../software_dependencies/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Hardware Overview - g-2 modified DAQ Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hardware-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="g-2 modified DAQ Manual" class="md-header__button md-logo" aria-label="g-2 modified DAQ Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            g-2 modified DAQ Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-</li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal current" href="#">Hardware Overview</a>
-<ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#general-hardware-overview">General Hardware Overview</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#conceptual-diagram-one-crate-system">Conceptual Diagram (One Crate System)</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#labled-picture-one-crate-system">Labled Picture (One Crate System)</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#ipmi">IPMI</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#features-of-ipmi">Features of IPMI</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#common-ipmi-tools">Common IPMI Tools</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#example-commands-using-ipmitool">Example Commands Using ipmitool</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#1gbe-nic-gigabit-ethernet-network-interface-card">1GbE NIC (Gigabit Ethernet Network Interface Card)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_1">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC (10 Gigabit Ethernet Network Interface Card)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_2">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration_1">Configuration</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#tca-crate-micro-telecommunications-computing-architecture-crate">µTCA Crate (Micro Telecommunications Computing Architecture Crate)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_3">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration_2">Configuration</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#mch-microtca-carrier-hub">MCH (MicroTCA Carrier Hub)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_4">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#wired-connections">Wired Connections</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#1gbe-ethernet-connection">1GbE Ethernet Connection</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration_3">Configuration</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#changing-mch-network-settings">Changing MCH Network Settings</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#wfd5-waveform-digitizer">WFD5 (Waveform Digitizer)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_5">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#wired-connections_1">Wired Connections</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#pentabus-cable-input-signal">Pentabus Cable Input Signal</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration_4">Configuration</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#reading-ip-address">Reading IP Address</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#changing-ip-address">Changing IP Address</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#reading-status">Reading Status</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#updating-firmware">Updating Firmware</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#fc7-flexible-controller">FC7 (Flexible Controller)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_6">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#fmcs">FMCs</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#sfp-interface">SFP Interface</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#trigger-and-clock-input-interface">Trigger and Clock Input Interface</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#wired-connections_2">Wired Connections</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#optical-link-to-amc13">Optical Link to AMC13</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#samtech-ribbon-cable-to-bank-board">Samtech Ribbon cable to Bank Board</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration_5">Configuration</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#reading-ip-address_1">Reading IP Address</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#changing-ip-address_1">Changing IP Address</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#reading-status_1">Reading Status</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#updating-firmware_1">Updating Firmware</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#amc13-advanced-mezzanine-card">AMC13 (Advanced Mezzanine Card)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_7">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#wired-connections_3">Wired Connections</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#optical-link-to-fc7">Optical Link to FC7</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#10gbe-link-to-daq-computer">10GbE Link to DAQ computer</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration_6">Configuration</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#reading-ip-address_2">Reading IP Address</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#changing-ip-address_2">Changing IP Address</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#building-amc13tool2exe">Building AMC13Tool2.exe</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#configuring-the-amc13-with-amc13tool2exe">Configuring the AMC13 with AMC13Tool2.exe</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#updating-firmware_2">Updating Firmware</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#meinberg-card-tcr180pex-or-similar">Meinberg Card (TCR180PEX or similar)</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview_8">Overview</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#wired-connections_4">Wired Connections</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#sma-to-d9-connector">SMA to D9 Connector</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration_7">Configuration</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
-</li>
-</ul>
-</div>
-</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="g-2 modified DAQ Manual" class="md-nav__button md-logo" aria-label="g-2 modified DAQ Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    g-2 modified DAQ Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-hardware-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Hardware Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Hardware Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptual-diagram-one-crate-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptual Diagram (One Crate System)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labled-picture-one-crate-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labled Picture (One Crate System)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPMI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPMI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-of-ipmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features of IPMI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-ipmi-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common IPMI Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-commands-using-ipmitool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Commands Using ipmitool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1gbe-nic-gigabit-ethernet-network-interface-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      1GbE NIC (Gigabit Ethernet Network Interface Card)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1GbE NIC (Gigabit Ethernet Network Interface Card)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10gbe-nic-10-gigabit-ethernet-network-interface-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      10GbE NIC (10 Gigabit Ethernet Network Interface Card)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10GbE NIC (10 Gigabit Ethernet Network Interface Card)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tca-crate-micro-telecommunications-computing-architecture-crate" class="md-nav__link">
+    <span class="md-ellipsis">
+      µTCA Crate (Micro Telecommunications Computing Architecture Crate)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="µTCA Crate (Micro Telecommunications Computing Architecture Crate)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mch-microtca-carrier-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCH (MicroTCA Carrier Hub)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MCH (MicroTCA Carrier Hub)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1gbe-ethernet-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      1GbE Ethernet Connection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-mch-network-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing MCH Network Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wfd5-waveform-digitizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 (Waveform Digitizer)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WFD5 (Waveform Digitizer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pentabus-cable-input-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pentabus Cable Input Signal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Firmware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fc7-flexible-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 (Flexible Controller)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FC7 (Flexible Controller)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fmcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      FMCs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FMCs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sfp-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFP Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-and-clock-input-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger and Clock Input Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optical-link-to-amc13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optical Link to AMC13
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samtech-ribbon-cable-to-bank-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      Samtech Ribbon cable to Bank Board
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-ip-address_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-ip-address_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-status_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-firmware_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Firmware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amc13-advanced-mezzanine-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 (Advanced Mezzanine Card)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMC13 (Advanced Mezzanine Card)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optical-link-to-fc7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optical Link to FC7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gbe-link-to-daq-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      10GbE Link to DAQ computer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-ip-address_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-ip-address_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-amc13tool2exe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building AMC13Tool2.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-amc13-with-amc13tool2exe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring the AMC13 with AMC13Tool2.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-firmware_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Firmware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meinberg-card-tcr180pex-or-similar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meinberg Card (TCR180PEX or similar)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meinberg Card (TCR180PEX or similar)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sma-to-d9-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMA to D9 Connector
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
-<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
-<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
-<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
-<a href="..">g-2 modified DAQ Manual</a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_dependencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_and_building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install and Run the Midas Frontends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odb_config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ODB Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Midas Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_add_ons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Additional Software Add-ons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Common Errors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous_info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-<div class="wy-nav-content">
-<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
-<ul class="wy-breadcrumbs">
-<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
-<li class="breadcrumb-item active">Hardware Overview</li>
-<li class="wy-breadcrumbs-aside">
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-hardware-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Hardware Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Hardware Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptual-diagram-one-crate-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptual Diagram (One Crate System)
+    </span>
+  </a>
+  
 </li>
-</ul>
-<hr/>
-</div>
-<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
-<div class="section" itemprop="articleBody">
+        
+          <li class="md-nav__item">
+  <a href="#labled-picture-one-crate-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labled Picture (One Crate System)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPMI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPMI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-of-ipmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features of IPMI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-ipmi-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common IPMI Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-commands-using-ipmitool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Commands Using ipmitool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1gbe-nic-gigabit-ethernet-network-interface-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      1GbE NIC (Gigabit Ethernet Network Interface Card)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1GbE NIC (Gigabit Ethernet Network Interface Card)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10gbe-nic-10-gigabit-ethernet-network-interface-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      10GbE NIC (10 Gigabit Ethernet Network Interface Card)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10GbE NIC (10 Gigabit Ethernet Network Interface Card)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tca-crate-micro-telecommunications-computing-architecture-crate" class="md-nav__link">
+    <span class="md-ellipsis">
+      µTCA Crate (Micro Telecommunications Computing Architecture Crate)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="µTCA Crate (Micro Telecommunications Computing Architecture Crate)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mch-microtca-carrier-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCH (MicroTCA Carrier Hub)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MCH (MicroTCA Carrier Hub)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1gbe-ethernet-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      1GbE Ethernet Connection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-mch-network-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing MCH Network Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wfd5-waveform-digitizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 (Waveform Digitizer)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WFD5 (Waveform Digitizer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pentabus-cable-input-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pentabus Cable Input Signal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Firmware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fc7-flexible-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 (Flexible Controller)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FC7 (Flexible Controller)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fmcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      FMCs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FMCs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sfp-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFP Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-and-clock-input-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger and Clock Input Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optical-link-to-amc13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optical Link to AMC13
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samtech-ribbon-cable-to-bank-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      Samtech Ribbon cable to Bank Board
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-ip-address_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-ip-address_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-status_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-firmware_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Firmware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amc13-advanced-mezzanine-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 (Advanced Mezzanine Card)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMC13 (Advanced Mezzanine Card)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optical-link-to-fc7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optical Link to FC7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gbe-link-to-daq-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      10GbE Link to DAQ computer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-ip-address_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-ip-address_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-amc13tool2exe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building AMC13Tool2.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-amc13-with-amc13tool2exe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring the AMC13 with AMC13Tool2.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-firmware_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Firmware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meinberg-card-tcr180pex-or-similar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meinberg Card (TCR180PEX or similar)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meinberg Card (TCR180PEX or similar)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-connections_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wired Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wired Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sma-to-d9-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMA to D9 Connector
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
 <h1 id="hardware-documentation">Hardware Documentation</h1>
 <h2 id="general-hardware-overview">General Hardware Overview</h2>
 <h3 id="conceptual-diagram-one-crate-system">Conceptual Diagram (One Crate System)</h3>
-<p><img alt="DAQ_Diagram" src="../images/DAQ_Diagram.png" style="max-width:100%; height:auto;"/></p>
+<p><img alt="DAQ_Diagram" src="../images/DAQ_Diagram.png" style="max-width:100%; height:auto;" /></p>
 <ul>
 <li><strong>Differential signal into WFD5 (Waveform Digitizer)</strong>: Differential signaling are input into Cornell's WFD5s. Data is aggregated by AMC13 on triggers.</li>
 <li><strong>Trigger signal into FC7 (Flexible Controller)</strong>: Provides flexible triggering, FC7 sends trigger signals over optical links to the AMC13.</li>
@@ -282,8 +1836,8 @@
 <li><strong>Meinberg</strong>: Provides precise trigger timestamps using GPS timing. This is an artifact of g-2 more than anything, were multiple disconnected systems needed to be correlated. </li>
 </ul>
 <h3 id="labled-picture-one-crate-system">Labled Picture (One Crate System)</h3>
-<p><img alt="DAQ_Diagram" src="../images/DAQ_image_labled.png" style="max-width:100%; height:auto;"/></p>
-<hr/>
+<p><img alt="DAQ_Diagram" src="../images/DAQ_image_labled.png" style="max-width:100%; height:auto;" /></p>
+<hr />
 <h2 id="ipmi">IPMI</h2>
 <h3 id="overview">Overview</h3>
 <p>Intelligent Platform Management Interface (IPMI) is a standardized interface used for managing and monitoring computer systems. It allows for the remote management of systems independently of the operating system state or the system's power state. IPMI provides a way to manage a server using a set of standardized commands and messages that can be sent over a network or via a direct serial connection.</p>
@@ -323,7 +1877,7 @@
 <li><code>raw 0x06 0x1</code>: Command to send a raw IPMI command (<code>0x06 0x1</code> in this case) to the specified IPMI device. The raw command <code>0x06 0x1</code> varies based on the specific IPMI command you intend to send.</li>
 </ul>
 <p>You can read a bit more about these commands in the manuals linked in the <a href="./#mch-microtca-carrier-hub">MCH section</a>. You can read more about ipmitool's command arguments on <a href="https://linux.die.net/man/1/ipmitool">this webpage</a>.</p>
-<hr/>
+<hr />
 <h2 id="1gbe-nic-gigabit-ethernet-network-interface-card">1GbE NIC (Gigabit Ethernet Network Interface Card)</h2>
 <h3 id="overview_1">Overview</h3>
 <p>These NICs are generally PCIe Cards that are "plug and play". They provide a 1 gigabit per second ethernet connection for the host computer.</p>
@@ -351,7 +1905,7 @@ DEVICE=enp5s0
 ONBOOT=yes
 </code></pre>
 <p>In particular, the <code>IP_ADDR</code> and <code>NETMASK</code> sections are important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the <a href="../networking/#networking-basics">networking page</a> for more details.</p>
-<hr/>
+<hr />
 <h2 id="10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC (10 Gigabit Ethernet Network Interface Card)</h2>
 <h3 id="overview_2">Overview</h3>
 <p>These NICs are generally PCIe Cards that are "plug and play". They provide a 10 gigabit per second ethernet connection for the host computer. In our case, we use optical cables that plug into SFPs. <strong>The MTU (Maximum Transmission Unit) of the card should be 9000 or greater</strong>.</p>
@@ -381,14 +1935,14 @@ AUTOCONNECT_PRIORITY=-999
 MTU=9000
 </code></pre>
 <p>In particular, the <code>IP_ADDR</code>, <code>NETMASK</code>, and <code>MTU</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="../networking/#networking-basics">networking page</a> for more details.</p>
-<hr/>
+<hr />
 <h2 id="tca-crate-micro-telecommunications-computing-architecture-crate">µTCA Crate (Micro Telecommunications Computing Architecture Crate)</h2>
 <h3 id="overview_3">Overview</h3>
 <p>Micro Telecommunications Computing Architecture (µTCA or MicroTCA) is a modular, high-performance architecture designed for telecommunications and other industries requiring reliable, scalable, and high-bandwidth systems. CERN employs µTCA systems for the acquisition and processing of vast amounts of data generated by particle detectors. These systems are capable of handling high-speed data streams and ensuring data integrity and accuracy.</p>
 <p>For our purposes, you can just view it as an electronics crate to host the <a href="./#mch-microtca-carrier-hub">MCH</a>, <a href="./#fc7-flexible-controller">FC7</a>, and <a href="./#wfd5-waveform-digitizer">WFD5</a>.</p>
 <h3 id="configuration_2">Configuration</h3>
 <p>The µTCA Crate should be "plug and play" in our case; no configuration is needed.</p>
-<hr/>
+<hr />
 <h2 id="mch-microtca-carrier-hub">MCH (MicroTCA Carrier Hub)</h2>
 <h3 id="overview_4">Overview</h3>
 <p>For our purposes, the MCH acts as a point of communication between the crate and the computer hosting the frontends. Here, we will cover specifically setting up VadaTech MCHs, however the system can also be run using <a href="../miscellaneous_info/#the-nat-mch">N.A.T. MCH</a>.</p>
@@ -424,22 +1978,22 @@ MTU=9000
 <p>Change the following to reflect your network settings</p>
 <pre><code># net interface 1
 export SYSCFG_IFACE1=y
-export INTERFACE1="eth1"
-export IPADDR1="192.168.[crate].15"
-export NETMASK1="255.255.224.0"
-export BROADCAST1="192.168.31.255"
+export INTERFACE1=&quot;eth1&quot;
+export IPADDR1=&quot;192.168.[crate].15&quot;
+export NETMASK1=&quot;255.255.224.0&quot;
+export BROADCAST1=&quot;192.168.31.255&quot;
 export GATEWAY1={IP of server (i.e. the IP of the ethernet port on the frontend host computer)}
-export NAMESERVER1="0.0.0.0"
+export NAMESERVER1=&quot;0.0.0.0&quot;
 </code></pre>
 <p>For example</p>
 <pre><code># net interface 1
 export SYSCFG_IFACE1=y
-export INTERFACE1="eth1"
-export IPADDR1="192.168.2.15"
-export NETMASK1="255.255.224.0"
-export BROADCAST1="192.168.31.255"
-export GATEWAY1="192.168.1.100"
-export NAMESERVER1="0.0.0.0"
+export INTERFACE1=&quot;eth1&quot;
+export IPADDR1=&quot;192.168.2.15&quot;
+export NETMASK1=&quot;255.255.224.0&quot;
+export BROADCAST1=&quot;192.168.31.255&quot;
+export GATEWAY1=&quot;192.168.1.100&quot;
+export NAMESERVER1=&quot;0.0.0.0&quot;
 </code></pre>
 <p><strong>Note</strong>: For a one crate system, you can change <code>NETMASK1</code> to <code>255.255.255.0</code> if your really want. This just means the MCH can only see IPs that start with <code>192.168.[crate]</code>.</p>
 <p>Then run</p>
@@ -501,7 +2055,7 @@ lights have turned off.</p>
 <p>and verify you can ping the MCH on the new assigned address</p>
 <pre><code>ping 192.168.[crate].15
 </code></pre>
-<hr/>
+<hr />
 <h2 id="wfd5-waveform-digitizer">WFD5 (Waveform Digitizer)</h2>
 <h3 id="overview_5">Overview</h3>
 <p>The WFD5 is a AMC developed by Cornell for g-2 data digitization. Our use case it the same: to digitize the data before being processed further by the frontend host computer.</p>
@@ -551,7 +2105,7 @@ cd /path/to/wfdConfig/software/flash
 </code></pre>
 <p>where you replace <code>/path/to</code> with the appropriate paths.</p>
 <pre><code>export LD_LIBRARY_PATH=$(pwd)/lib:$LD_LIBRARY_PATH
-export CPLUS_INCLUDE_PATH="$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH"
+export CPLUS_INCLUDE_PATH=&quot;$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH&quot;
 </code></pre>
 <p>2 <strong>Edit makefile</strong></p>
 <p>Using your favorite text editor, open the makefile</p>
@@ -584,7 +2138,7 @@ See</p>
 <pre><code>./programFirmware 1 1 /path/to/wfdConfig/releases/wfd_master_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_async_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_cbuf_0x030101.mcs
 </code></pre>
 <p>where you replace <code>/path/to</code> with the appropriate paths. This will apply firmware version 3.1.1 to the WFD5 in crate 1 slot 1. Supposedly you can use this command to program multiple WFD5s at once, though I've never tried.</p>
-<hr/>
+<hr />
 <h2 id="fc7-flexible-controller">FC7 (Flexible Controller)</h2>
 <h3 id="overview_6">Overview</h3>
 <p>For our use case, the FC7 can be viewed as a hub that sends out Timing, Trigger, and Control (TTC) Signals to the AMC13s. It is a much more general tool developed by CERN, you can read more about it at a surface level in <a href="https://indico.cern.ch/event/299180/contributions/1659595/attachments/563055/775699/FC7.pdf">this presentation</a>. Additionally, there are some <a href="../pdfs/FC7_Schematics.pdf">detailed schematics</a>.</p>
@@ -643,7 +2197,7 @@ cd /path/to/unifiedCCC/software/flash
 </code></pre>
 <p>where you replace <code>/path/to</code> with the appropriate paths.</p>
 <pre><code>export LD_LIBRARY_PATH=$(pwd)/lib:$LD_LIBRARY_PATH
-export CPLUS_INCLUDE_PATH="$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH"
+export CPLUS_INCLUDE_PATH=&quot;$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH&quot;
 </code></pre>
 <p>2 <strong>Edit makefile</strong></p>
 <p>Using your favorite text editor, open the makefile</p>
@@ -676,7 +2230,7 @@ See</p>
 <pre><code>./programFC7 1 11 /path/to/unifiedCCC/releases/fc7_unified_0x080107.mcs /path/to/gm2daq-modified/address_tables/FC7_CCC.xml
 </code></pre>
 <p>where you replace <code>/path/to</code> with the appropriate paths. This will apply firmware version 8.1.7 to the FC7 in crate 1 slot 11.</p>
-<hr/>
+<hr />
 <h2 id="amc13-advanced-mezzanine-card">AMC13 (Advanced Mezzanine Card)</h2>
 <h3 id="overview_7">Overview</h3>
 <p>The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC">Boston Unviversity's TWiki page</a>.</p>
@@ -700,19 +2254,19 @@ vi systemVars.py
 
 #Default IP address for commercial MCH module
 # our NAT MCH address
-#DEFAULT_HOST_IP="192.168.1.41"
+#DEFAULT_HOST_IP=&quot;192.168.1.41&quot;
 # our Vadatech MCH address
-DEFAULT_HOST_IP="192.168.2.15"
+DEFAULT_HOST_IP=&quot;192.168.2.15&quot;
 
 #Default AMC13 slot number
 DEFAULT_AMC13_SLOT=13
 
 #Location of 'config_tools'. This should never need to be changed
-DEFAULT_CONFIG_DIR="./config_tools"
+DEFAULT_CONFIG_DIR=&quot;./config_tools&quot;
 
 #Network base for your uTCA crate's AMC modules
-#NETWORK_BASE="192.168.1"
-NETWORK_BASE="192.168.2"
+#NETWORK_BASE=&quot;192.168.1&quot;
+NETWORK_BASE=&quot;192.168.2&quot;
 </code></pre>
 <p>Then you can run</p>
 <pre><code>python read_addresses.py
@@ -727,19 +2281,19 @@ vi systemVars.py
 
 #Default IP address for commercial MCH module
 # our NAT MCH address
-#DEFAULT_HOST_IP="192.168.1.41"
+#DEFAULT_HOST_IP=&quot;192.168.1.41&quot;
 # our Vadatech MCH address
-DEFAULT_HOST_IP="192.168.2.15"
+DEFAULT_HOST_IP=&quot;192.168.2.15&quot;
 
 #Default AMC13 slot number
 DEFAULT_AMC13_SLOT=13
 
 #Location of 'config_tools'. This should never need to be changed
-DEFAULT_CONFIG_DIR="./config_tools"
+DEFAULT_CONFIG_DIR=&quot;./config_tools&quot;
 
 #Network base for your uTCA crate's AMC modules
-#NETWORK_BASE="192.168.1"
-NETWORK_BASE="192.168.2"
+#NETWORK_BASE=&quot;192.168.1&quot;
+NETWORK_BASE=&quot;192.168.2&quot;
 </code></pre>
 <p>Then you can run</p>
 <pre><code>python applyConfig.py -i 192.168.[crate].13
@@ -836,7 +2390,7 @@ wget http://ohm.bu.edu/~amc13/CMS/AMC13-Firmware/AMC13T1v0x813f_7k325t.mcs
 <pre><code>Connected AMC13s
 *0: SN: 268 T1v: 813f T2v: 002e cf: 192.168.1.13
 </code></pre>
-<hr/>
+<hr />
 <h2 id="meinberg-card-tcr180pex-or-similar">Meinberg Card (TCR180PEX or similar)</h2>
 <h3 id="overview_8">Overview</h3>
 <p>The Meinberg card provides GPS timestamps for data triggers. It is an artifact from g-2 that doesn't serve much purpose for the g-2 modified DAQ. However, it is still a supported trigger system for the <a href="../installing_and_building/#mastergm2">Master Frontend</a>.</p>
@@ -845,40 +2399,81 @@ wget http://ohm.bu.edu/~amc13/CMS/AMC13-Firmware/AMC13T1v0x813f_7k325t.mcs
 <p>A custom cable must be created to connect the meinberg to the signal bank. One end needs to end up as SMA (for the bank) while the other needs to be a 9pin D-SUB connector (for the meinberg). There is pinout in section 10 (page 27) of the <a href="../pdfs/tcr180pex.pdf">meinberg manual</a>.</p>
 <h3 id="configuration_7">Configuration</h3>
 <p>See the <a href="../pdfs/tcr180pex.pdf">Meinberg manual</a> for detailed configuration. Furthermore, there are <a href="https://kb.meinbergglobal.com/kb/driver_software/command_line_tools_mbgtools">meinberg command line tools detailed on their website</a>. After the <a href="../software_dependencies/#meinberg">meinberg drivers are installed and loaded</a>, there should be no additional configuration to be done.</p>
-<hr/>
-</div>
-</div><footer>
-<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href=".." title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../software_dependencies/" title="Software Dependencies">Next <span class="icon icon-circle-arrow-right"></span></a>
-</div>
-<hr/>
-<div role="contentinfo">
-<!-- Copyright etc -->
-</div>
+<hr />
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-</div>
-</section>
-</div>
-<div aria-label="Versions" class="rst-versions" role="note">
-<span class="rst-current-version" data-toggle="rst-current-version">
-<span><a href=".." style="color: #fcfcfc">« Previous</a></span>
-<span><a href="../software_dependencies/" style="color: #fcfcfc">Next »</a></span>
-</span>
-</div>
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script>var base_url = "..";</script>
-<script src="../js/theme_extra.js"></script>
-<script src="../js/theme.js"></script>
-<script src="../js/print-site.js"></script>
-<script src="../search/main.js"></script>
-<script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+    
+  </body>
 </html>

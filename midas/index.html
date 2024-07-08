@@ -1,141 +1,657 @@
-<!DOCTYPE html>
 
-<html class="writer-html5" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Midas Information - g-2 modified DAQ Manual</title>
-<link href="../css/theme.css" rel="stylesheet"/>
-<link href="../css/theme_extra.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
-<link href="../css/print-site.css" rel="stylesheet"/>
-<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-<link href="../css/extra.css" rel="stylesheet"/>
-<script>
-        // Current page data
-        var mkdocs_page_name = "Midas Information";
-        var mkdocs_page_input_path = "midas.md";
-        var mkdocs_page_url = null;
-      </script>
-<!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
-<body class="wy-body-for-nav" role="document">
-<div class="wy-grid-for-nav">
-<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
-<div class="wy-side-scroll">
-<div class="wy-side-nav-search">
-<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
-        </a><div role="search">
-<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
-<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
-</form>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../odb_config/">
+      
+      
+        <link rel="next" href="../software_add_ons/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Midas Information - g-2 modified DAQ Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#some-midas-information-and-tips" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="g-2 modified DAQ Manual" class="md-header__button md-logo" aria-label="g-2 modified DAQ Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            g-2 modified DAQ Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Midas Information
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="g-2 modified DAQ Manual" class="md-nav__button md-logo" aria-label="g-2 modified DAQ Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    g-2 modified DAQ Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_dependencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_and_building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install and Run the Midas Frontends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odb_config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ODB Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Midas Information
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Midas Information
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-storage-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Storage location
+    </span>
+  </a>
+  
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+      
+        <li class="md-nav__item">
+  <a href="#midas-files-to-root-files-unpacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Midas Files to ROOT Files (unpacker)
+    </span>
+  </a>
+  
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+      
+        <li class="md-nav__item">
+  <a href="#recovering-from-a-corrupted-odb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recovering from a Corrupted ODB
+    </span>
+  </a>
+  
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+      
+        <li class="md-nav__item">
+  <a href="#fixing-a-corrupted-odb-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixing a corrupted ODB by hand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixing a corrupted ODB by hand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixing-a-persistently-corrupted-odb-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixing a persistently corrupted ODB by hand
+    </span>
+  </a>
+  
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal current" href="#">Midas Information</a>
-<ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#data-storage-location">Data Storage location</a>
+      
+        <li class="md-nav__item">
+  <a href="#loading-an-odb-save" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading an ODB save
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#midas-files-to-root-files-unpacker">Midas Files to ROOT Files (unpacker)</a>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-odb-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the ODB size
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#recovering-from-a-corrupted-odb">Recovering from a Corrupted ODB</a>
+      
+        <li class="md-nav__item">
+  <a href="#adding-program-startup-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Program Startup Scripts
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#fixing-a-corrupted-odb-by-hand">Fixing a corrupted ODB by hand</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#fixing-a-persistently-corrupted-odb-by-hand">Fixing a persistently corrupted ODB by hand</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#loading-an-odb-save">Loading an ODB save</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#changing-the-odb-size">Changing the ODB size</a>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-program-startup-scripts">Adding Program Startup Scripts</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
-</li>
-</ul>
-</div>
-</div>
+      
+    </ul>
+  
 </nav>
-<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
-<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
-<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
-<a href="..">g-2 modified DAQ Manual</a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_add_ons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Additional Software Add-ons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Common Errors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous_info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-<div class="wy-nav-content">
-<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
-<ul class="wy-breadcrumbs">
-<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
-<li class="breadcrumb-item active">Midas Information</li>
-<li class="wy-breadcrumbs-aside">
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-storage-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Storage location
+    </span>
+  </a>
+  
 </li>
-</ul>
-<hr/>
-</div>
-<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
-<div class="section" itemprop="articleBody">
+      
+        <li class="md-nav__item">
+  <a href="#midas-files-to-root-files-unpacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Midas Files to ROOT Files (unpacker)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovering-from-a-corrupted-odb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recovering from a Corrupted ODB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixing-a-corrupted-odb-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixing a corrupted ODB by hand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixing a corrupted ODB by hand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixing-a-persistently-corrupted-odb-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixing a persistently corrupted ODB by hand
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-an-odb-save" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading an ODB save
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-odb-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the ODB size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-program-startup-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Program Startup Scripts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
 <h1 id="some-midas-information-and-tips">Some Midas Information and Tips</h1>
 <p>TRIUMF has a great <a href="https://daq00.triumf.ca/MidasWiki/index.php/Main_Page">Midas Wiki</a> page. For general midas information, this is a good place to start. Below, there are some specific tips about midas that are helpful when using the g-2 modified DAQ.</p>
 <h2 id="data-storage-location">Data Storage location</h2>
 <p>By default midas files (.mid) and compressed midas files (.mid.lz4) will be stored in the same directory that the file <code>$MIDAS_EXPTAB</code> is located (usually the "online" directory). This can be can be <a href="../odb_config/#change-logger-data-writing-directory">changed to a different directory in the Logger's ODB settings</a>.</p>
-<hr/>
+<hr />
 <h2 id="midas-files-to-root-files-unpacker">Midas Files to ROOT Files (unpacker)</h2>
 <p>See the <a href="../software_add_ons/#midas-event-unpacker">unpacker software page</a>.</p>
 <p>Once that is installed, you can convert midas files to root files using the command:</p>
 <pre><code>./pioneer_unpacker MIDAS_FILE.mid.lz4 0 detector_mapping.json
 </code></pre>
-<hr/>
+<hr />
 <h2 id="recovering-from-a-corrupted-odb">Recovering from a Corrupted ODB</h2>
 <p>There should be a folder in <code>$GM2DAQ_DIR/restore_corrupted_ODB</code> or <code>$GM2DAQ_DIR/scripts/restore_corrupted_ODB</code> (if not, you may need to look in the default branch). Navigate to this directory and run one of the following two scripts:</p>
 <p>Fun version:</p>
@@ -145,7 +661,7 @@
 <pre><code>./delete_and_restore_odb.sh
 </code></pre>
 <p>Both scripts have the exact same functionality; they effectively stop all running screens (midas related or not), delete all ODB data, and load a backup file. However the first script has some fun surprises for the user's pleasure. If this script doesn't work, you can follow the steps in <a href="./#fixing-a-persistently-corrupted-odb-by-hand">"Fixing a persistently corrupted ODB by hand"</a>.</p>
-<hr/>
+<hr />
 <h2 id="fixing-a-corrupted-odb-by-hand">Fixing a corrupted ODB by hand</h2>
 <p>These instructions are adapted from the <a href="https://daq00.triumf.ca/MidasWiki/index.php/FAQ#How_to_recover_from_a_corrupted_ODB">midas wiki's page on recovering from a corrupted ODB</a>. For most cases, you can just "nuke" the ODB and then load an ODB save file from a previous run. <strong>Make sure you have an ODB backup file</strong> to load (ex. run001234.json).</p>
 <p>1 <strong>Stop midas screens by hand</strong></p>
@@ -168,7 +684,7 @@ screen -X -S mserver quit
 <pre><code>$MIDASSYS/bin/odbinit -s 1024MB --cleanup
 </code></pre>
 <p>3 <strong>Load old ODB</strong> </p>
-<pre><code>$MIDASSYS/bin/odbedit -c "load online/run001234.json"'
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;load online/run001234.json&quot;'
 </code></pre>
 <p>Replace the path <code>online/run001234.json</code> with the location of an actual ODB backup that you know was working.</p>
 <h3 id="fixing-a-persistently-corrupted-odb-by-hand">Fixing a persistently corrupted ODB by hand</h3>
@@ -183,7 +699,7 @@ screen -wipe &gt; /dev/null 2&gt;&amp;1
 </code></pre>
 <p>2 <strong>Delete Shared Memory Files</strong></p>
 <pre><code>export EXP=$MIDAS_EXPT_NAME
-export EXP_PATH=$(dirname "$MIDAS_EXPTAB")
+export EXP_PATH=$(dirname &quot;$MIDAS_EXPTAB&quot;)
 rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
 rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
 rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
@@ -193,16 +709,16 @@ rm -rf $EXP_PATH/.*.TXT &gt; /dev/null 2&gt;&amp;1
 <p>3 <strong>Create new ODB and load old ODB file</strong></p>
 <pre><code>export JsonPath=online/run001234.json
 export run_number=1000
-$MIDASSYS/bin/odbedit -e $EXP -s 40000000 -c "ls" &gt; /dev/null 2&gt;&amp;1
-$MIDASSYS/bin/odbedit -e $EXP -c "load $JsonPath" &gt; /dev/null 2&gt;&amp;1
-$MIDASSYS/bin/odbedit -e $EXP -c "set \"/Runinfo/Run number\" $run_number" &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/bin/odbedit -e $EXP -s 40000000 -c &quot;ls&quot; &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/bin/odbedit -e $EXP -c &quot;load $JsonPath&quot; &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/bin/odbedit -e $EXP -c &quot;set \&quot;/Runinfo/Run number\&quot; $run_number&quot; &gt; /dev/null 2&gt;&amp;1
 </code></pre>
 <p>where <code>JsonPath</code> and <code>run_number</code> are replaced with the paths to an ODB backup and the desired starting run number respectively. <strong>You should set the run number to a value higher than your last run number as to not overwrite and data</strong>.</p>
 <p>4 <strong>Reload midas webpage</strong></p>
 <pre><code>$MIDASSYS/bin/mhttpd
 </code></pre>
 <p>Verify everything looks as expected on the webpage. Then you can reload frontends and any other screens that were running beforehand.</p>
-<hr/>
+<hr />
 <h2 id="loading-an-odb-save">Loading an ODB save</h2>
 <p>You can use the ODB to load an old ODB save file. </p>
 <pre><code>$MIDASSYS/bin/odbedit
@@ -211,7 +727,7 @@ $MIDASSYS/bin/odbedit -e $EXP -c "set \"/Runinfo/Run number\" $run_number" &gt; 
 <pre><code>load online/run001234.json
 </code></pre>
 <p>Alternatively, you can "stuff" commands into odbedit from command line:</p>
-<pre><code>$MIDASSYS/bin/odbedit -c "load online/run001234.json"'
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;load online/run001234.json&quot;'
 </code></pre>
 <p>where <code>online/run001234.json</code> should be replaced with a path to a valid ODB save file.</p>
 <p>In my experience, this only adds settings (or changes settings back). It will not remove settings. For example if path <code>/Equipment/Test</code> exists in the current ODB but not the save, it will still exist after the save is loaded.</p>
@@ -223,11 +739,11 @@ $MIDASSYS/bin/odbedit -e $EXP -c "set \"/Runinfo/Run number\" $run_number" &gt; 
 load online/run001234.json
 </code></pre>
 <p>Now only the settings under <code>/Equipment</code> will be altered in your ODB by loading the save.</p>
-<hr/>
+<hr />
 <h2 id="changing-the-odb-size">Changing the ODB size</h2>
 <p>See the <a href="https://daq00.triumf.ca/MidasWiki/index.php/FAQ#Increasing_Number_of_Hot-links">midas wiki page for changing ODB size</a>.</p>
 <p>1 <strong>Save Current ODB if needed</strong></p>
-<pre><code>$MIDASSYS/bin/odbedit -c "save current_odb.odb"
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;save current_odb.odb&quot;
 </code></pre>
 <p>2 <strong>Stop midas screens by hand</strong></p>
 <pre><code>screen -ls
@@ -275,49 +791,90 @@ make install
 </code></pre>
 <p><strong>Note:</strong> I had trouble unless the number specified by -s was the different than the previous ODB. From there it will prompt you to delete a file. I think this file contains information about the maximum number of hotlinks and must be deleted every time you want to increase the number of hotlinks</p>
 <p>7 <strong>Load old settings (if saved)</strong></p>
-<pre><code>$MIDASSYS/bin/odbedit -c "load current_odb.odb"
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;load current_odb.odb&quot;
 </code></pre>
-<hr/>
+<hr />
 <h2 id="adding-program-startup-scripts">Adding Program Startup Scripts</h2>
 <p>After any frontend is run, it will appear in the ODB under <code>/Programs/{Frontend Name}</code>. Here there are some settings for the program. The I use for starting frontends are</p>
 <p><strong>Required</strong>:</p>
 <p>Set <code>/Programs/{Frontend Name}/Required</code> to <code>yes</code> to pin the program onto the <code>Programs</code> page accessible from the left sidebar. In other words, when the frontend is not running, it will not dissapear from the programs page.</p>
 <p><strong>Start Command</strong>:</p>
 <p>Change <code>/Programs/{Frontend Name}/Start Command</code> to a command that you when to be run when hitting the <code>Start {Frontend Name}</code> button on the Programs page. This is allows the user to start a frontend in the background from the midas webpage; i.e. you can avoid starting frontends from command line.</p>
-<hr/>
-</div>
-</div><footer>
-<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../odb_config/" title="ODB Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../software_add_ons/" title="Additional Software Add-ons">Next <span class="icon icon-circle-arrow-right"></span></a>
-</div>
-<hr/>
-<div role="contentinfo">
-<!-- Copyright etc -->
-</div>
+<hr />
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-</div>
-</section>
-</div>
-<div aria-label="Versions" class="rst-versions" role="note">
-<span class="rst-current-version" data-toggle="rst-current-version">
-<span><a href="../odb_config/" style="color: #fcfcfc">« Previous</a></span>
-<span><a href="../software_add_ons/" style="color: #fcfcfc">Next »</a></span>
-</span>
-</div>
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script>var base_url = "..";</script>
-<script src="../js/theme_extra.js"></script>
-<script src="../js/theme.js"></script>
-<script src="../js/print-site.js"></script>
-<script src="../search/main.js"></script>
-<script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+    
+  </body>
 </html>
