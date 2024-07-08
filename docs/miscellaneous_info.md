@@ -24,6 +24,9 @@
 | SFP        | Small Form-factor Pluggable           | Finisar  SFP transceiver     |
 | SFP+       | Enhanced Small Form-factor Pluggable  | Avago SFP+ transceiver       |
 | CLI        | Command Line Interface                |                              |
+| TTC        | Timing, Trigger, and Control          |                              |
+| MTU	     | Maximum Transmission Unit             |                              |	
+| IP	     | Internet Protocol                     |                              |
 
 ---
 
@@ -257,8 +260,19 @@ telnet 192.68.1.41
 ```
 
 From there you can follow the prompts to configure the NAT MCH. If you are having trouble finding the NAT MCH IP try pinging or [scanning the network](networking.md#scanning-a-network).
-```
-```
 
 ---
 
+## Finisar SFP vs. Avago SFP+
+
+SFP+s (such as Avago SFP+s) do not work with the FC7 to AMC13 link; an SFP (such as a finisar SFP) is needed. Similarly, the 10GbE links from AMC13 to the DAQ computer must use SFP+s.
+
+---
+
+## Bank Signals
+
+![D_Bank_labeled](images/D_Bank_labeled.png){: style="max-width:100%; height:auto;"}
+
+Copies of D0-D3 triggers are sent out of D0-D3, while D4-D7 should be configured to be input signals. The trigger input should go to D6 (It does not have to be 1kHz). A 40MHz clock should go in D7.
+
+---

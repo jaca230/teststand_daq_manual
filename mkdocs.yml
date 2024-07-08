@@ -2,6 +2,9 @@ site_name: g-2 modified DAQ Manual
 theme:
   name: readthedocs
 
+extra_css:
+  - 'css/extra.css'
+
 nav:
   - Home: index.md
   - Hardware Overview: hardware_overview.md

@@ -39,24 +39,24 @@ Intelligent Platform Management Interface (IPMI) is a standardized interface use
 1 **Print Field Replaceable Unit (FRU) Information**:
 
 ```
-ipmitool -H 192.168.1.41 fru print
+ipmitool -H 192.168.1.15 fru print
 ```
 
-This command retrieves and prints the Field Replaceable Unit (FRU) information from the IPMI device located at IP address `192.168.1.41`.
+This command retrieves and prints the Field Replaceable Unit (FRU) information from the IPMI device located at IP address `192.168.1.15`.
 
-- `-H 192.168.1.41`: Specifies the IP address of the IPMI device. Replace `192.168.1.41` with the actual IP address of your IPMI device.
+- `-H 192.168.1.15`: Specifies the IP address of the IPMI device. Replace `192.168.1.15` with the actual IP address of your IPMI device.
 - `fru print`: Command to retrieve and display the FRU information. FRU information includes details about hardware components that can be replaced in the system, such as part numbers and descriptions.
 
 2 **Send Raw Command to IPMI Device**:
 
 ```
-ipmitool -I lan -H 192.168.1.41 -m 0x20 -B 0 -T 0x82 -b 7 -t 0x86 raw 0x06 0x1
+ipmitool -I lan -H 192.168.1.15 -m 0x20 -B 0 -T 0x82 -b 7 -t 0x86 raw 0x06 0x1
 ```
 
 This command sends a raw IPMI command to a device over LAN with specified parameters.
 
 - `-I lan`: Specifies the interface type (`lan` in this case), which indicates that the IPMI command will be sent over the LAN interface.
-- `-H 192.168.1.41`: Specifies the IP address of the IPMI device.
+- `-H 192.168.1.15`: Specifies the IP address of the IPMI device.
 - `-m 0x20`: Specifies the channel number to communicate with the BMC (Baseboard Management Controller). The default is usually `0x20`, but for some reason we need to specify this on some systems.
 - `-B 0`: Specifies the BMC instance number.
 - `-T 0x82`: Specifies the target address in the IPMI device. This is the MCH.
@@ -65,6 +65,83 @@ This command sends a raw IPMI command to a device over LAN with specified parame
 - `raw 0x06 0x1`: Command to send a raw IPMI command (`0x06 0x1` in this case) to the specified IPMI device. The raw command `0x06 0x1` varies based on the specific IPMI command you intend to send.
 
 You can read a bit more about these commands in the manuals linked in the [MCH section](hardware_overview.md#mch-microtca-carrier-hub). You can read more about ipmitool's command arguments on [this webpage](https://linux.die.net/man/1/ipmitool).
+
+---
+
+## 1GbE NIC (Gigabit Ethernet Network Interface Card)
+
+### Overview
+
+These NICs are generally PCIe Cards that are "plug and play". They provide a 1 gigabit per second ethernet connection for the host computer.
+
+### Configuration
+
+If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:
+```
+vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+```
+For example, this is how the UKY teststand 1GbE NIC is configured to communicate with multiple crate using an ethernet splitter.
+```
+#
+# Connect to MCH
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.1.100
+NETMASK=255.255.0.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp5s0
+DEVICE=enp5s0
+ONBOOT=yes
+```
+
+In particular, the `IP_ADDR` and `NETMASK` sections are important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
+
+
+---
+
+## 10GbE NIC (10 Gigabit Ethernet Network Interface Card)
+
+### Overview
+
+These NICs are generally PCIe Cards that are "plug and play". They provide a 10 gigabit per second ethernet connection for the host computer. In our case, we use optical cables that plug into SFPs. **The MTU (Maximum Transmission Unit) of the card should be 9000 or greater**.
+
+### Configuration
+
+If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:
+```
+vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+```
+For example, this is how one of the UKY teststand 10GbE NIC is configured to communicate with the AMC13.
+```
+#
+# Connect to AMC13
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.51.100
+NETMASK=255.255.255.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp1s0f0
+DEVICE=enp1s0f0
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-999
+MTU=9000
+```
+
+In particular, the `IP_ADDR`, `NETMASK`, and `MTU` sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
 
 ---
 
@@ -88,7 +165,17 @@ The µTCA Crate should be "plug and play" in our case; no configuration is neede
 
 For our purposes, the MCH acts as a point of communication between the crate and the computer hosting the frontends. Here, we will cover specifically setting up VadaTech MCHs, however the system can also be run using [N.A.T. MCH](miscellaneous_info.md#the-nat-mch).
 
+### Wired Connections
+
+#### 1GbE Ethernet Connection
+
+The MCH should have an ethernet port labeled `GbE0` or `1GbE` (or something along those lines). Use an ethernet cable to connect this to your system's [1GbE NIC](hardware_overview.md#1gbe-nic-gigabit-ethernet-network-interface-card). 
+
+See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-system) 1GbE MCH in/out.
+
 ### Configuration
+First you should [configure the 1GbE NIC](hardware_overview.md#1gbe-nic-gigabit-ethernet-network-interface-card) if you haven't already.
+
 Here are some pdfs that may be be helpful:
 
 - [MCH Manual PDF](pdfs/MCH_manual.pdf)
@@ -237,7 +324,11 @@ and verify you can ping the MCH on the new assigned address
 ping 192.168.[crate].15
 ```
 
+
+
 ---
+
+
 
 ## WFD5 (Waveform Digitizer)
 
@@ -245,7 +336,17 @@ ping 192.168.[crate].15
 
 The WFD5 is a AMC developed by Cornell for g-2 data digitization. Our use case it the same: to digitize the data before being processed further by the frontend host computer.
 
+### Wired Connections
+
+#### Pentabus Cable Input Signal
+
+The WFD5 has a 5 channel [differential signal](miscellaneous_info.md#differential-signals) input. Connect the differential signal to be digitized using a pentabus cable. 
+
+See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-system) WFD5 5-channel differential signal in.
+
 ### Configuration
+
+First you should [configure the MCH](hardware_overview.md#mch-microtca-carrier-hub) if you haven't already.
 
 For most of the configuration below to work, you must have [cactus](software_dependencies.md#ipbus-cactus) installed and linked with python. There are [WFD5 python configuration scripts located on the PIONEER github](https://github.com/PIONEER-Experiment/wfdConfig). After [setting up your github account](software_dependencies.md#pioneer-experiment-repositories), You can clone the repository with:
 ```
@@ -360,9 +461,39 @@ where you replace `/path/to` with the appropriate paths. This will apply firmwar
 
 ### Overview
 
-For our use case, the FC7 can be viewed as a hub that sends out Timing, Trigger, and Control (TTC) Signals to the AMC13s. It is a much more general tool developed by CERN, you can read more about it at a surface level in [this presentation](https://indico.cern.ch/event/299180/contributions/1659595/attachments/563055/775699/FC7.pdf).
+For our use case, the FC7 can be viewed as a hub that sends out Timing, Trigger, and Control (TTC) Signals to the AMC13s. It is a much more general tool developed by CERN, you can read more about it at a surface level in [this presentation](https://indico.cern.ch/event/299180/contributions/1659595/attachments/563055/775699/FC7.pdf). Additionally, there are some [detailed schematics](pdfs/FC7_Schematics.pdf).
+
+The FC7 has two slots for FMC modules. Usually, the top slot is for an [SFP interface](hardware_overview.md#sfp-interface). The bottom slot is for the FMC that handles [trigger and clock input](hardware_overview.md#trigger-and-clock-input-interface).
+
+### FMCs
+
+#### SFP Interface
+
+The SFP interface is more or less "plug and play". You should familiarize yourself with the [FC7 labeling](miscellaneous_info.md#fc7-labeling). Also which slot this is in needs to be [specified in the ODB](odb_config.md#ccc-fmc-location-topbottom).
+
+#### Trigger and Clock Input Interface
+
+The trigger and clock input interface uses a [digital I/O board](pdfs/FC7_FMC.pdf). The FC7 firmware is configured to use channels 4-7 for input, and 0-3 for output; on the board there are microswitches you must toggle on the [digital I/O board](pdfs/FC7_FMC.pdf). For incoming signals that will expect 50 Ohm termination, you should apply a jumper shown in page 4 of the [digital I/O board quick reference](pdfs/FC7_FMC.pdf).
+
+In some setups, there is also a 2nd mezzanine card that then mounts on that FMC card to route the I/O through coax ribbon cables. This [connects to the bank board](hardware_overview.md#samtech-ribbon-cable-to-bank-board).
+
+### Wired Connections
+
+#### Optical Link to AMC13
+
+The FC7 sends trigger information to the AMC13s over an optical cable. This allows one FC7 to send triggers to up to 8 crates. Fill in the [FC7 SFP ports](miscellaneous_info.md#fc7-labeling) with Finisar (or similar) SFP transceiver(s), one for each AMC13. Connect it to the [appropriate SFP port in the AMC13](hardware_overview.md#optical-link-to-fc7).
+
+See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-system) trigger out FC7.
+
+#### Samtech Ribbon cable to Bank Board
+
+A ribbon cable is used to carry TTC signals from the FC7 to a signal bank board. The ribbon cable used is a Samtec HHSC-108-40.00-SU-SU (the 40.00 specifies the length, which need not be 40 cm). This cable runs between the [trigger and clock input interface FMC](hardware_overview.md#trigger-and-clock-input-interface) and the bank board; this [diagram bank board](miscellaneous_info.md#bank-signals) may be helpful.
+
+See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-system) FC7 trigger in.
 
 ### Configuration
+
+First you should [configure the MCH](hardware_overview.md#mch-microtca-carrier-hub) if you haven't already.
 
 For most of the configuration below to work, you must have [cactus](software_dependencies.md#ipbus-cactus) installed and linked with python. There are [FC7 python configuration scripts located on the PIONEER github](https://github.com/PIONEER-Experiment/wfdConfig). After [setting up your github account](software_dependencies.md#pioneer-experiment-repositories), You can clone the repository with:
 ```
@@ -476,11 +607,26 @@ where you replace `/path/to` with the appropriate paths. This will apply firmwar
 
 The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on [Boston Unviversity's TWiki page](https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC).
 
+### Wired Connections
+
+#### Optical Link to FC7
+
+The FC7 sends trigger information to the AMC13s over an optical cable. Put a Finisar (or similar) SFP transceiver in the bottom SFP port in the AMC13. Connect it to the [appropriate SFP port in the FC7](hardware_overview.md#optical-link-to-amc13).
+
+See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-system) Trigger in AMC13.
+
+#### 10GbE Link to DAQ computer
+
+The AMC13 sends data to DAQ computer over an optical cable. Put an Avago (or similar) SFP transceiver in the top SFP+ port in the AMC13. Connect it to the [10GbE NIC in the DAQ computer](hardware_overview.md#10gbe-nic-10-gigabit-ethernet-network-interface-card).
+
+See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-system) 10GbE out.
+
+
 ### Configuration
 
-The AMC13 is largely configured with [AMC13Tool2.exe](https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2).
+First you should [configure the MCH](hardware_overview.md#mch-microtca-carrier-hub) and [configure the 10GbE NIC](hardware_overview.md#10gbe-nic-10-gigabit-ethernet-network-interface-card) if you haven't already.
 
-The tools to configure the AMC13 are located in the g-2 modified DAQ repository, so you'll want to [install the DAQ software](installing_and_building.md#manual-installation-guide) before doing this.
+The AMC13 is largely configured with [AMC13Tool2.exe](https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2).The tools to configure the AMC13 are located in the g-2 modified DAQ repository, so you'll want to [install the DAQ software](installing_and_building.md#manual-installation-guide) before doing this. For some AMC13s, you need to set the IP addresses and reconfigure using AMC13Tool2.exe every time the module is power cycled.
 
 #### Reading IP Address
 In your favorite text editor, edit `systemVars.py`
@@ -692,9 +838,15 @@ Connected AMC13s
 
 The Meinberg card provides GPS timestamps for data triggers. It is an artifact from g-2 that doesn't serve much purpose for the g-2 modified DAQ. However, it is still a supported trigger system for the [Master Frontend](installing_and_building.md#mastergm2).
 
+### Wired Connections
+
+#### SMA to D9 Connector
+
+A custom cable must be created to connect the meinberg to the signal bank. One end needs to end up as SMA (for the bank) while the other needs to be a 9pin D-SUB connector (for the meinberg). There is pinout in section 10 (page 27) of the [meinberg manual](pdfs/tcr180pex.pdf).
+
 ### Configuration
 
-See the [Meinberg manual](pdfs/tcr180pex.pdf) for detailed configuration. After the [meinberg drivers are installed and loaded](software_dependencies.md#meinberg), there should be no additional configuration to be done.
+See the [Meinberg manual](pdfs/tcr180pex.pdf) for detailed configuration. Furthermore, there are [meinberg command line tools detailed on their website](https://kb.meinbergglobal.com/kb/driver_software/command_line_tools_mbgtools). After the [meinberg drivers are installed and loaded](software_dependencies.md#meinberg), there should be no additional configuration to be done.
 
 ---
 

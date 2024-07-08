@@ -15,5 +15,6 @@ Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
 <i class="fab fa-github"></i> GitHub: [jaca230](https://github.com/jaca230)
 
 
+Feel free to reach out with any questions, to correct mistakes, point out missing information, or otherwise.
 
 **Last Updated**: {{ git_revision_date_localized }}
