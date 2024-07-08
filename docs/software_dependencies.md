@@ -6,8 +6,13 @@ Access the repositories here: [PIONEER Experiment GitHub](https://github.com/PIO
 
 ### Contact for Access
 
-- Patrick Schwendimann: [schwenpa@uw.edu](mailto:schwenpa@uw.edu)
-- Joshua Labounty: [jjlab@uw.edu](mailto:jjlab@uw.edu)
+Patrick Schwendimann: <br>
+<i class="fas fa-envelope"></i> Email: [schwenpa@uw.edu](mailto:schwenpa@uw.edu)<br>
+<i class="fab fa-github"></i> GitHub: [PatrickSchwendimann](https://github.com/PatrickSchwendimann)
+
+Joshua Labounty: <br>
+<i class="fas fa-envelope"></i> Email: [jjlab@uw.edu](mailto:jjlab@uw.edu)<br>
+<i class="fab fa-github"></i> GitHub: [jlabounty](https://github.com/jlabounty)
 
 ## Setting Up a GitHub SSH Token on RHEL7/9 Systems
 

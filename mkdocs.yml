@@ -11,6 +11,7 @@ nav:
   - Midas Information: midas.md
   - Additional Software Add-ons: software_add_ons.md
   - Networking Tutorial: networking.md
+  - Debugging Common Errors: debugging.md
   - Miscellaneous: miscellaneous_info.md
 
 plugins:

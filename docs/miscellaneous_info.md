@@ -23,6 +23,7 @@
 | PCIe       | Peripheral Component Interconnect Express | PCIe2, PCIe3, ...        |
 | SFP        | Small Form-factor Pluggable           | Finisar  SFP transceiver     |
 | SFP+       | Enhanced Small Form-factor Pluggable  | Avago SFP+ transceiver       |
+| CLI        | Command Line Interface                |                              |
 
 ---
 
@@ -237,3 +238,27 @@ echo 'shell -/bin/bash -c "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH && exec /bin/
 Now for every new screen session, your `LD_LIBRARY_PATH` environment variable will be copied over from your current shell session to the new screen session. This is useful when you have custom libraries added to your `LD_LIBRARY_PATH`; the environment setup script used in the [DAQ installation guide](installing_and_building.md#manual-installation-guide) adds some custom libraries `LD_LIBRARY_PATH`.
 
 ---
+
+## The N.A.T. MCH
+
+### Overview
+
+An alternative to the [VadaTech MCH](hardware_overview.md#mch-microtca-carrier-hub), it has the same functionality.
+
+### Configuration
+
+See [NAT MCH manual](https://nateurope.com/wp-content/uploads/2022/09/NAT-MCH_UsersManual.pdf) for more details. Depending on the NAT MCH version, you may be able to ssh into the NAT MCH.
+
+
+In any event, you can configure the NAT MCH with `telnet`
+```
+sudo yum install telnet
+telnet 192.68.1.41
+```
+
+From there you can follow the prompts to configure the NAT MCH. If you are having trouble finding the NAT MCH IP try pinging or [scanning the network](networking.md#scanning-a-network).
+```
+```
+
+---
+

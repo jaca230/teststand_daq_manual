@@ -147,3 +147,54 @@ Both of these do the same thing, but you'll see both used "in the wild."
 - **Usage**: 
     - This subnet mask divides the IP address `192.168.0.0` into a network portion (`192.168.0`) and a host portion (`xxx`). The third octet (`0.xxx`) ranges from `0.1` to `127.254`, with `0.0` reserved as the network address and `127.255` reserved as the broadcast address.
 
+---
+
+## Scanning a network
+
+To identify devices and their IP addresses on your network, you can use various tools available on Linux. One of the most common tools for network scanning is `nmap`.
+
+### Using `nmap`
+
+1 **Install `nmap`**:
+If `nmap` is not already installed on your system, you can install it using the package manager for Red Hat-based distributions.
+
+```
+sudo yum install nmap
+```
+
+2 **Scan the Network**:
+To scan your local network and list all active devices, use the following command. Replace `192.168.1.0/24` with your network range.
+```
+sudo nmap -sP 192.168.1.0/24
+```
+This example performs a "ping scan" on the network 192.168.1.1 - 192.168.1.254. This may take a while to complete as it has to can ~2^8 IP addresses.
+
+Another example:
+```
+sudo nmap -sP 192.168.0.0/16
+```
+This example performs a "ping scan" on the network 192.168.1.1 - 192.168.1.254. This will take even longer to complete as it has to scan ~2^16 IP addresses. As a result, it might be best to screen the scan in the background and write the results to a file:
+```
+screen -dmS nmap_scan bash -c 'sudo nmap -sP 192.168.0.0/24 > ~/nmap_scan_results.txt'
+```
+
+### Using `arp-scan`
+
+1 **Install `arp-scan`**:
+
+Another useful tool for network scanning is arp-scan. This tool can also help you discover devices on your network.
+
+```
+sudo yum install arp-scan
+```
+
+2 **Scan the Network**:
+
+```
+sudo arp-scan --interface=eth0 --localnet
+
+```
+Replace the interface with the appropriate device name for your network. You can check this using `ifconfig`.
+
+
+---

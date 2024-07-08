@@ -222,4 +222,81 @@ To stop the webpage,
 
 ---
 
+## Crate Monitor
+
+### Overview
+
+The crate monitor is a webpage to view the status of g-2 crate components such as the [WFD5](hardware_overview.md#wfd5-waveform-digitizer), [FC7](hardware_overview.md#fc7-flexible-controller), and [AMC13](hardware_overview.md#amc13-advanced-mezzanine-card). 
+
+### Installation Guide
+
+1 **Clone the repository**
+```
+git clone git@github.com:PIONEER-Experiment/utcaMonitor.git
+```
+
+2 **Edit run.py**
+
+In your favorite text editor, edit `run.py`. For example, with `vi`:
+```
+vi run.py
+```
+
+In particular, change these variables
+
+```
+# variable defaults
+verbose   = 0
+debug     = 0
+teststand = 0
+n_crates  = 1
+# amcs in a crate will have ip address 192.168.[crate].[slot]:  Create the default list of n_crate crate numbers
+crates = [100]
+# types of modules in given crate
+amc13100_types = ['FC7','WFD5']
+crate_types = [amc13100_types]
+encoder_crate = 100
+encoder_slot = 8
+
+host = 'gm26221.classe.cornell.edu'
+```
+
+For instance, for a one crate system I used:
+```
+# variable defaults
+verbose   = 0
+debug     = 0
+teststand = 0
+n_crates  = 1
+# amcs in a crate will have ip address 192.168.[crate].[slot]:  Create the default list of n_crate crate numbers
+crates = [1]
+# types of modules in given crate
+amc13100_types = ['FC7','WFD5']
+crate_types = [amc13100_types]
+encoder_crate = 1
+encoder_slot = 10
+
+host = 'localhost'
+```
+
+3 **Run the crate montior**
+```
+python run.py
+```
+Then open `localhost:7000` in your favorite web browser.
+
+**Note**: You may need to pdate `socket.io.min.js`. Here's how you do it manually:
+
+You may need to update `socket.io.min.js` (for reasons I'm not entirely sure of). You can get the file on [socket io's client installation webpage](https://socket.io/docs/v4/client-installation/). Here is a [cloudflare link to the version I used](https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js); you can copy this to your clipboard
+
+Replace the contents of socket.io.min.js in your favorite text editor. For instance in `vi`:
+```
+vi utcaMonitor/app/dist/js/socket.io.min.js
+```
+Hit `ggdG` to erase all lines. Hit `i` to enter insert mode. `Ctrl-V` to paste the contents. `Esc` and `:wq` to save and exit.
+
+After this, rety running the crate monitor.
+
+---
+
 
