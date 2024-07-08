@@ -1,5 +1,9 @@
 # Miscellaneous Information
 
+## Additional Notes
+
+If you're feeling desperate (or perhaps lucky), you can sift through [Jack Carlton's work notes](https://jaca230.github.io/joplin_notes_page/). **I warn you that these are not well organized and contain lots of information not about this DAQ**. However, they do contain some documentation of my assembly and troubleshooting of this DAQ.
+
 ## What is (was) g-2?
 [g-2](https://muon-g-2.fnal.gov/#:~:text=The%20Muon%20g%2D2%20experimenters,of%200.14%20parts%20per%20million.) was an experiment to that examined the precession of muons that are subjected to a magnetic field to test the standard model's prediction of muon g factor. Because many of the g-2 collaborators now work on PIONEER, it is convienent to repurpose the data acquisition system used for g-2 for PIONEER test stands.
 
