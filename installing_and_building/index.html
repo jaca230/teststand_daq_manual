@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Install and Run the Midas Frontends - g-2 modified DAQ Manual</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Install and Run the Midas Frontends";
+        var mkdocs_page_input_path = "installing_and_building.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Install and Run the Midas Frontends</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#software-diagram">Software Diagram</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#mastergm2">MasterGM2</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#caloreadoutamc13">CaloReadoutAMC13</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#event-builder">Event Builder</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installer">Installer</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-installation-guide">Manual Installation Guide</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-frontends">Running the Frontends</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#starting-frontends-by-hand">Starting Frontends "by Hand"</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#master-frontend">Master Frontend</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#amc13-readout-frontends">AMC13 Readout Frontends</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#event-builder-frontend">Event Builder Frontend</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#screening-the-frontends">Screening the Frontends</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#master-frontend_1">Master Frontend</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#amc13-readout-frontends_1">AMC13 Readout Frontends</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#event-builder-frontend_1">Event Builder Frontend</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#startup-scripts-on-midas-programs-page">Startup Scripts on Midas Programs Page</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">g-2 modified DAQ Manual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Install and Run the Midas Frontends</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="installing-and-running-g-2-modified-daq">Installing and Running g-2 modified DAQ</h1>
+<h2 id="overview">Overview</h2>
+<p>The g-2 modified DAQ software repurposes the DAQ software used for g-2 to be slightly more flexible. It allows for readout and communication with hardware described in the <a href="../hardware_overview/">Hardware Overview</a> page.</p>
+<h3 id="software-diagram">Software Diagram</h3>
+<p><img alt="software_diagram" src="../images/software_diagram.png" style="max-width:100%; height:auto;"/>
+<strong>Note</strong>: Not pictured are the hardware links, see <a href="../hardware_overview/#conceptual-diagram-one-crate-system">Hardware Diagram</a></p>
+<h4 id="mastergm2">MasterGM2</h4>
+<p>This is a C++ executable midas frontend whose job is to count triggers to check that crate hardware and CaloReadoutAMC13 frontends are not missing triggers.</p>
+<ul>
+<li><strong>Trigger Thread</strong>: Recieves processed triggers from a source (ex. Meinberg PCIe Card) and reports them to the Midas thread.</li>
+<li><strong>Midas Thread</strong>: Puts data recieved from trigger thread into a midas bank for each event</li>
+</ul>
+<h4 id="caloreadoutamc13">CaloReadoutAMC13</h4>
+<p>This is a C++ executable midas frontend whose job is to recieve digitized data from the AMC13 and process it before being placed in midas data banks.</p>
+<ul>
+<li><strong>TCP Thread</strong>: Recieves TCP packets over 10GbE from an AMC13. Unpacks the data into header, trailer, and payload information.</li>
+<li><strong>"GPU" Thread</strong>: Recieves processed data from TCP thread. In g-2, GPUs were used for additional data processing. They have been turned off and the "GPU" thread is a legacy buffer for the data to go through. No processing is done on the data here.</li>
+<li><strong>Midas Thread</strong>: Puts data recieved from gpu thread into midas banks for each event</li>
+</ul>
+<h4 id="event-builder">Event Builder</h4>
+<p>This is a C++ executable midas frontend whose job is to collect data sitting in the midas buffers of all the frontends (MasterGM2, CaloReadoutAMC13 #1, CaloReadoutAMC13 #2, ...) and combine them into one midas event before being logged to a data file.</p>
+<hr/>
+<h2 id="installer">Installer</h2>
+<p>There is an <a href="../miscellaneous_info/#2023-psi-lyso-testbeam-daq-installer">installer for the g-2 modified DAQ</a>. Though, it is currently out of date and I would not recommend using it.</p>
+<hr/>
+<h2 id="manual-installation-guide">Manual Installation Guide</h2>
+<p>1 <strong>Install Software Dependencies</strong></p>
+<p><a href="../software_dependencies/#root">ROOT</a>, <a href="../software_dependencies/#midas">Midas</a>, <a href="../software_dependencies/#boost">Boost</a>, <a href="../software_dependencies/#ipmitool">ipmitool</a>, and <a href="../software_dependencies/#ipbus-cactus">Cactus</a> are all required to build and run the DAQ frontends. <a href="../software_dependencies/#meinberg">Meinberg</a> is needed if using GPS mode for the master triggers. Install them following the instructions on the <a href="../software_dependencies/">Software Dependencies Page</a>.</p>
+<p>2 <strong>Clone the Appropriate Branch</strong></p>
+<p>Make sure you have access to the <a href="https://github.com/PIONEER-Experiment">PIONEER Experiment GitHub</a>. See these <a href="../software_dependencies/#pioneer-experiment-repositories">contacts</a> for gaining access. Additionally, make sure your github account is linked to your system via SSH token; you can do this by following <a href="../software_dependencies/#setting-up-a-github-ssh-token-on-rhel79-systems">these instructions</a>. After installing the software dependencies, you should have a <code>packages</code> directory, where it's best to put the software. To clone, follow the commands below:</p>
+<pre><code>cd /path/to/packages
+mkdir experiment
+cd experiment
+git clone --branch multi-crate https://github.com/PIONEER-Experiment/gm2daq-modified.git
+cd gm2daq-modified
+git checkout multi-crate
+</code></pre>
+<p><strong>Note</strong>: To clone a different branch, simply change the <code>--branch</code> parameter from <code>multi-crate</code> to the appropriate branch. You can also checkout a different branch after this is done.</p>
+<p>3 <strong>Setup Environment</strong></p>
+<pre><code>cd environment_setup
+./detect_environment.sh
+</code></pre>
+<p>This will populate a local file <code>environment_variables.txt</code>, check it with:</p>
+<pre><code>cat environment_variables.txt
+</code></pre>
+<p>Here's an example of what <code>environment_variables.txt</code> will look like</p>
+<pre><code>GM2DAQ_DIR=/home/installation_testing/packages/experiment/lxedaq
+CACTUS_ROOT=/home/installation_testing/packages/cactus
+BOOST_ROOT=/home/backup_installation_testing/packages/boost-1.53.0
+PUGIXML_ROOT=/home/installation_testing/packages/pugixml-1.8
+ROOT_ROOT=/usr/include/root
+MIDASSYS=/home/installation_testing/packages/midas
+MIDAS_EXPTAB=/home/installation_testing/online/exptab
+MIDAS_EXPT_NAME=DAQ
+</code></pre>
+<p>Verify that each environment variable above points to the correct path for each piece of software. If not, manually change it with your favorite text editor. Then, run</p>
+<pre><code>source ./setup_environment.sh
+</code></pre>
+<p><strong>Note</strong>: To set up the environment every time you log in automatically, source this script in your <code>.bashrc</code> file. Modify the path in the following command to add <code>setup_environment.sh</code> to the .bashrc file</p>
+<pre><code>echo "source /path/to/gm2daq-modified/environment_setup/setup_environment.sh" &gt;&gt; ~/.bashrc
+</code></pre>
+<p>4 <strong>Make Frontends</strong></p>
+<p>Make the master frontend:</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/MasterGM2
+make clean
+make -j$(nproc)
+</code></pre>
+<p>Make the AMC13 readout frontend:</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/CaloReadoutAMC13
+make clean
+make -j$(nproc)
+</code></pre>
+<p>Make the event builder frontend:</p>
+<pre><code>cd $GM2DAQ_DIR/eventbuilder
+make clean
+make
+</code></pre>
+<p>5 <strong>Configure Crate Contents File</strong></p>
+<p>Edit <code>AMC13xx_config.xml</code> file in your favorite text edit, for instance:</p>
+<pre><code>vi $GM2DAQ_DIR/frontends/AMC13xx_config.xml
+</code></pre>
+<p>An example file for a one crate system looks like this:</p>
+<pre><code>&lt;!-- The purpose of this file is to specify what devices are in each frontend crate --&gt;
+&lt;!-- To declare frontend AMC13xx create root node &lt;frontend id="xx"&gt;  --&gt;
+&lt;!-- (xx = "0" will automatically be written as "00" in ODB settings, i.e. single digits are okay) --&gt;
+&lt;!-- To declare device in slot 'y' of create, create node &lt;slot id="y" type="device_type" --&gt;
+&lt;!-- Select "device_type" from FC7, WFD, or Rider (WFD and Rider are the same device) --&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;frontend id="1"&gt;
+    &lt;slot id="1"  type="WFD" /&gt;
+    &lt;slot id="2"  type="WFD" /&gt;
+    &lt;slot id="3"  type="WFD" /&gt;
+    &lt;slot id="4"  type="WFD" /&gt;
+    &lt;slot id="5"  type="WFD" /&gt;
+    &lt;slot id="6"  type="WFD" /&gt;
+    &lt;slot id="7"  type="WFD" /&gt;
+    &lt;slot id="10" type="FC7" /&gt;
+    &lt;slot id="11"  type="WFD" /&gt;
+&lt;/frontend&gt;
+</code></pre>
+<p>An example file for a two crate system looks this like:</p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;frontend id="1"&gt;
+    &lt;slot id="1"  type="WFD" /&gt;
+    &lt;slot id="2"  type="WFD" /&gt;
+    &lt;slot id="3"  type="WFD" /&gt;
+    &lt;slot id="4"  type="WFD" /&gt;
+    &lt;slot id="5"  type="WFD" /&gt;
+    &lt;slot id="6"  type="WFD" /&gt;
+    &lt;slot id="7"  type="WFD" /&gt;
+    &lt;slot id="10" type="FC7" /&gt;
+    &lt;slot id="11"  type="WFD" /&gt;
+&lt;/frontend&gt;
+&lt;frontend id="2"&gt;
+    &lt;slot id="3" type="WFD" /&gt;
+    &lt;slot id="5" type="WFD" /&gt;
+&lt;/frontend&gt;
+</code></pre>
+<p><strong>Note</strong>: The frontend id should correspond to the subnet you placed (or will place) the crate components on when configuring the hardware.</p>
+<p>This file is used to build the ODB. <strong>Any hardware not specified in this file will be ignored.</strong> You can still disable any hardware listed in this file in the ODB after it has been generated. However if you want to move the FC7 to a different slot, this file and the ODB need to be editted accordingly.</p>
+<p>6 <strong>Start Midas Webpage</strong></p>
+<pre><code>cd $GM2DAQ_DIR/webpage_scripts
+./start_midas_webpage
+</code></pre>
+<p>Then open <code>localhost:8080</code> in your favorite web browser.</p>
+<p><strong>Note</strong>: If this doesn't work, verify that <code>mlogger</code>, <code>mhttpd</code> (or <code>mhttpd6</code>), and <code>mserver</code> and all running as screens, i.e. check:</p>
+<pre><code>screen -ls
+</code></pre>
+<p>You can also run <code>mhttpd</code> manually to look for error messages for debugging:</p>
+<pre><code>$MIDASSYS/bin/mhttpd
+</code></pre>
+<p>7 <strong>Generate the ODB</strong></p>
+<p>The first time the frontends are run, they will automatically populate the ODB with the default settings. Run the frontends for the first time (they will error out):</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/MasterGM2
+./frontend -e DAQ
+</code></pre>
+<pre><code>cd $GM2DAQ_DIR/frontends/CaloReadoutAMC13
+./frontend -e DAQ -i {frontend id}
+</code></pre>
+<p>where <code>{frontend id}</code> is replaced with the frontend ids specified in the crate configuration file above. This command needs to be run once for each frontend (each crate) to properly generate the ODB.</p>
+<p>On the midas webpage view the ODB. Verify that <code>/Equipment/MasterGM2</code> and each <code>/Equipment/AMC13xxx</code> now exist.</p>
+<p>8 <strong>Configure the ODB</strong></p>
+<p>Before the DAQ can run, the ODB needs to be properly configured. First, make sure the Logger <a href="../odb_config/#toggle-logger-data-writing">writes data</a> and <a href="../odb_config/#toggle-logger-to-generate-odb-backups-for-each-run">makes ODB backup files for each run</a>. Then following the instructions on the <a href="../odb_config/#g-2-modified-daq-specific-odb-configuration">ODB configuration page</a>, read through each setting and ensure they are correct for your setup.</p>
+<hr/>
+<h2 id="running-the-frontends">Running the Frontends</h2>
+<h3 id="starting-frontends-by-hand">Starting Frontends "by Hand"</h3>
+<p>The first time you run the frontends, I suggest dedicating one terminal window to each so you can inspect for errors. Each frontend will occupy a terminal window.</p>
+<h4 id="master-frontend">Master Frontend</h4>
+<p><strong>The Master frontend must be started first</strong> because it does some general AMC13 and FC7 initilization. Run</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/MasterGM2
+./frontend -e DAQ
+</code></pre>
+<p>The <code>-e</code> flag specifies the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>.</p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="amc13-readout-frontends">AMC13 Readout Frontends</h4>
+<p>This frontend(s) must be started <strong>after the Master frontend has initialized</strong>. You can start multiple instances at the same time, but in my experience this causes midas to complain about ODB space (you may be able to get around this by <a href="../midas/#changing-the-odb-size">increasing the ODB size</a>, I've never tried).</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/CaloReadoutAMC13
+./frontend -e DAQ -i {frontend id}
+</code></pre>
+<p>The <code>-e</code> flag specifies the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>. <br/>
+The <code>-i</code> flag specifies frontend index. <code>{frontend id}</code> is replaced with the frontend ids specified in the crate configuration file above. <br/>
+This command needs to be run once for each AMC13 frontend (each crate). </p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="event-builder-frontend">Event Builder Frontend</h4>
+<p>Once all of the other frontends have finished initializing, you can start the event builder.</p>
+<pre><code>./mevb -e DAQ -b BUF
+</code></pre>
+<p>The <code>-e</code> flag specifies the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>. <br/>
+The <code>-b</code> flag specifies the buffer it will look for to create events. Any frontend writing to a buffer starting with <code>BUF</code> will added to an event by the event builder. You can check each frontend's buffer in it's <code>Common</code> page in the ODB, see <a href="../odb_config/#change-the-data-buffer-for-a-frontend">changing buffer for a frontend</a>.</p>
+<p>Wait until this frontend turns green on the status page.</p>
+<h3 id="screening-the-frontends">Screening the Frontends</h3>
+<p>Screening the frontends is slightly convoluted because you have to stuff all the appropriate environment variables into the screen session. If you are unfamiliar with screens, you may want <a href="../miscellaneous_info/#using-screens-in-linux">view some learning material for using screens</a>. You made need to make <a href="../miscellaneous_info/#getting-ld_library_path-into-a-screen-session">an edit to your .screenrc</a> for this to work properly. Other than this, there are scripts provided to launch the frontends in a screen.</p>
+<h4 id="master-frontend_1">Master Frontend</h4>
+<p><strong>The Master frontend must be started first</strong> because it does some general AMC13 and FC7 initilization. Run</p>
+<pre><code>$GM2DAQ_DIR/frontends/MasterGM2/start-fe-uky.sh DAQ master
+</code></pre>
+<p>The first argument is the experiment name which should be the value of <code>$MIDAS_EXPT_NAME</code>. <br/>
+The second argument is the name for the screen session.</p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="amc13-readout-frontends_1">AMC13 Readout Frontends</h4>
+<p>This frontend(s) must be started <strong>after the Master frontend has initialized</strong>. You can start multiple instances at the same time, but in my experience this causes midas to complain about ODB space (you may be able to get around this by <a href="../midas/#changing-the-odb-size">increasing the ODB size</a>, I've never tried).</p>
+<pre><code>$GM2DAQ_DIR/frontends/CaloReadoutAMC13/start-fe-uw.sh 1 DAQ amc13001
+</code></pre>
+<p>The 1st argument is the frontend index, it should match the <code>-i</code> argument when starting this <a href="./#amc13-readout-frontends">frontend by hand</a>. <br/>
+The 2nd argument is the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>. <br/>
+The 3rd is the name for the screen session.</p>
+<p>This command needs to be run once for each AMC13 frontend (each crate). </p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="event-builder-frontend_1">Event Builder Frontend</h4>
+<p>Once all of the other frontends have finished initializing, you can start the event builder. There is no script for this screen, just a simple screen command. The flags are the same as when <a href="./#event-builder-frontend">starting this frontend by hand</a>.</p>
+<pre><code>screen -dmS event_builder $GM2DAQ_DIR/eventbuilder/mevb -e DAQ -b BUF
+</code></pre>
+<h3 id="startup-scripts-on-midas-programs-page">Startup Scripts on Midas Programs Page</h3>
+<p>See the <a href="../midas/#adding-program-startup-scripts">adding program startup scripts</a> page to see how to add startup programs. Make <code>Programs/{Frontend Name}/Required</code> is set to <code>yes</code>. Then copy the screen command for each respective frontend into <code>Programs/{Frontend Name}/Start Command</code>.</p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../software_dependencies/" title="Software Dependencies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../odb_config/" title="ODB Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../software_dependencies/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../odb_config/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

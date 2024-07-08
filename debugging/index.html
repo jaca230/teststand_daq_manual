@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Debugging Common Errors - g-2 modified DAQ Manual</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Debugging Common Errors";
+        var mkdocs_page_input_path = "debugging.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Debugging Common Errors</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#initialization-errors">Initialization Errors</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#mch-ipmi-communication-failed">MCH: IPMI Communication Failed</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#amc13-t1-ip-address-read-failure">AMC13: T1 IP Address Read Failure</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#enabled-top-sfp-ports-failure">Enabled Top SFP Ports Failure</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#amc13-ttc-signal-absent">AMC13: TTC Signal Absent</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#link01-invalid-amc13-sfp-ip-address">Link01: Invalid AMC13 SFP IP Address</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#amc13-initialization-failed">AMC13 Initialization Failed</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-initialization-failed">TCP initialization failed</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#alarms-and-run-ending-errors">Alarms and Run Ending Errors</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#alarm-ccc-run-aborted">Alarm: CCC Run Aborted</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tcp_thread-break-the-tcp-thread-loop-becuase-of-a-reading-error-1">tcp_thread: break the tcp thread loop becuase of a reading error -1</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">g-2 modified DAQ Manual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Debugging Common Errors</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="debugging-common-errors">Debugging Common Errors</h1>
+<p>Below are some common errors and their solutions. This is not a complete list of all errors.</p>
+<h2 id="initialization-errors">Initialization Errors</h2>
+<h3 id="mch-ipmi-communication-failed">MCH: IPMI Communication Failed</h3>
+<p>Verify the <a href="../hardware_overview/#mch-microtca-carrier-hub">MCH</a> is connected to the DAQ computer via 1GbE. Verify you can ping the MCH:</p>
+<pre><code>ping 192.168.[crate].15
+</code></pre>
+<p>Verify the <a href="../odb_config/#mch-ip-address">MCH IP ODB setting</a> is correct.</p>
+<h3 id="amc13-t1-ip-address-read-failure">AMC13: T1 IP Address Read Failure</h3>
+<p>Verify the <a href="../hardware_overview/#amc13-advanced-mezzanine-card">AMC13</a> is plugged into the appropriate slot (above the MCH, see the <a href="../hardware_overview/#labled-picture-one-crate-system">labeled crate picture</a>). Try pinging T1 and T2 on the AMC13</p>
+<pre><code>ping 192.168.[crate].13
+ping 192.168.[crate].14
+</code></pre>
+<p>If not, use <a href="../hardware_overview/#example-commands-using-ipmitool">ipmitool</a> to verify the AMC13 is recognized in the crate. Try to <a href="../hardware_overview/#amc13-advanced-mezzanine-card">reconfigure the AMC13</a>.</p>
+<p><strong>Note</strong>: I have seen cases where <code>ipmitool -H 192.168.[crate].15 fru print</code> will not show the AMC13, however the system still works as intended.</p>
+<h3 id="enabled-top-sfp-ports-failure">Enabled Top SFP Ports Failure</h3>
+<p>Verify the <a href="../odb_config/#ccc-fmc-sfp-number-1-8">SFP port location</a> and <a href="../odb_config/#ccc-fmc-location-topbottom">FMC location</a> ODB settings are correct. Make sure you are using SFPs (such as a Finisar SFP) and not an SFP+ (such as Avago SFP+) in the FC7 and AMC13 optical link. Verify unconnected frontends (crates) are <a href="../odb_config/#disable-a-frontend">disabled in the ODB</a>.</p>
+<h3 id="amc13-ttc-signal-absent">AMC13: TTC Signal Absent</h3>
+<p>Verify the <a href="../hardware_overview/#samtech-ribbon-cable-to-bank-board">SamTech Cable</a> is appropriately connected to the FC7 and bank board. You can put these in the bank backwards, see the <a href="../miscellaneous_info/#bank-signals">labeled bank image</a> for the correct orientation. Verify the signal integrity of the 40MHz clock fed into the signal bank.</p>
+<h3 id="link01-invalid-amc13-sfp-ip-address">Link01: Invalid AMC13 SFP IP Address</h3>
+<p>Verify the <a href="../odb_config/#amc13-sfp-ip-address">SFP IP in the ODB</a> matches the value read in <a href="../hardware_overview/#configuring-the-amc13-with-amc13tool2exe">AMC13Tool2.exe</a> using</p>
+<pre><code>rv 0x1c1c
+</code></pre>
+<p>Convert this hex value to an IP and verify it matches the ODB value.</p>
+<h3 id="amc13-initialization-failed">AMC13 Initialization Failed</h3>
+<p>This error seems to pop up in different cases. Sometimes, it's enough to simply wait 5 minute and try <a href="../installing_and_building/#running-the-frontends">running the frontends</a> again. Another solution is to power cycle the crate.</p>
+<p>If you don't want to power cycle the crate, you can issue a "cold reset" to the AMC13:</p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/dev_tools/amc13Config
+</code></pre>
+<p><a href="../hardware_overview/">Ensure <code>systemVars.py</code> looks correct</a>. Then issue a cold reset:</p>
+<pre><code>./coldReset.py
+</code></pre>
+<p>Then reconfigure the AMC13; you made need to set the T1 and T2 IPs again. At the minimum you should re-initialize using <a href="../hardware_overview/#configuring-the-amc13-with-amc13tool2exe">AMC13Tool2.exe</a>.</p>
+<h3 id="tcp-initialization-failed">TCP initialization failed</h3>
+<p>Verify the <a href="../hardware_overview/#10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC</a> is functioning and <a href="../hardware_overview/#10gbe-link-to-daq-computer">properly connected to the AMC13</a>. Verify the <a href="../hardware_overview/#configuring-the-amc13-with-amc13tool2exe">10GbE link is properly configured</a>. For instance, in AMC13Tool2.exe</p>
+<pre><code>rv 0x1c1c
+</code></pre>
+<p>Convert this hex value to an IP and try pinging it, for instance</p>
+<pre><code>ping 192.168.51.1
+</code></pre>
+<p>If you cannot ping this IP, check your <a href="../networking/#networking-basics">network settings</a> for the 10GbE NIC. Verify the IP read above matches the <a href="../odb_config/#amc13-sfp-ip-address">SFP IP ODB value</a>.</p>
+<hr/>
+<h2 id="alarms-and-run-ending-errors">Alarms and Run Ending Errors</h2>
+<h3 id="alarm-ccc-run-aborted">Alarm: CCC Run Aborted</h3>
+<p>This was a common error during g-2. At it's worst, it should occur on ~6 hour time scales. You must <a href="../installing_and_building/#running-the-frontends">restart the frontends</a> to re-initialize the crate hardware.</p>
+<h3 id="tcp_thread-break-the-tcp-thread-loop-becuase-of-a-reading-error-1">tcp_thread: break the tcp thread loop becuase of a reading error -1</h3>
+<p>This was a common error during the 2023 test beam at PSI. This error usually occurs because the data buffer between reading in data and processing data has filled up. I.e. midas events are being created slower than events are coming in. As a result, the tcp_thread has nowhere to store incoming data and errors out.</p>
+<p>This error is rate dependant. One way to fix it is to simply lower the rate. However, the DAQ has been tested and run for long periods at ~5kHz. A better solution would be to minimize the use other processes running on the DAQ computer, particularly those that interact with midas. For example, the <a href="../software_add_ons/#publisher">publisher</a> is a culprit for causing delays within midas.</p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../networking/" title="Networking Tutorial"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../miscellaneous_info/" title="Miscellaneous">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../networking/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../miscellaneous_info/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

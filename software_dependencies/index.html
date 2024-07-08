@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Software Dependencies - g-2 modified DAQ Manual</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Software Dependencies";
+        var mkdocs_page_input_path = "software_dependencies.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Software Dependencies</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#pioneer-experiment-repositories">PIONEER Experiment Repositories</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#contact-for-access">Contact for Access</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-github-ssh-token-on-rhel79-systems">Setting Up a GitHub SSH Token on RHEL7/9 Systems</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-generate-an-ssh-key-pair">1. Generate an SSH Key Pair</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-add-the-ssh-key-to-the-ssh-agent">2. Add the SSH Key to the SSH-Agent</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-add-the-ssh-key-to-your-github-account">3. Add the SSH Key to Your GitHub Account</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-test-your-ssh-connection">4. Test Your SSH Connection</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example-steps-in-terminal">Example Steps in Terminal</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#development-tools">Development Tools</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide">Installation Guide</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ipmitool">ipmitool</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_1">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_1">Installation Guide</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#root">ROOT</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_2">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_2">Installation Guide</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#almalinux-9">AlmaLinux 9</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#centos-7">CentOS 7</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#building-from-source-linux">Building from source (Linux)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#midas">Midas</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_3">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_3">Installation Guide</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#boost">Boost</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_4">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_4">Installation Guide</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#centos-7-and-almalinux-9">CentOS 7 and AlmaLinux 9</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#install-boost-176-from-source">Install Boost 1.76 from Source</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ipbus-cactus">IPBus (Cactus)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_5">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_5">Installation Guide</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#almalinux-9_1">AlmaLinux 9</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#centos-7_1">CentOS 7</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#example-building-from-source">Example building from source</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#meinberg">Meinberg</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_6">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_6">Installation Guide</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#almalinux-9-and-centos-7">AlmaLinux 9 and CentOS 7</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">g-2 modified DAQ Manual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Software Dependencies</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="software-dependencies">Software Dependencies</h1>
+<h2 id="pioneer-experiment-repositories">PIONEER Experiment Repositories</h2>
+<p>Access the repositories here: <a href="https://github.com/PIONEER-Experiment">PIONEER Experiment GitHub</a>.</p>
+<h3 id="contact-for-access">Contact for Access</h3>
+<p>Patrick Schwendimann: <br/>
+<i class="fas fa-envelope"></i> Email: <a href="mailto:schwenpa@uw.edu">schwenpa@uw.edu</a><br/>
+<i class="fab fa-github"></i> GitHub: <a href="https://github.com/PatrickSchwendimann">PatrickSchwendimann</a></p>
+<p>Joshua Labounty: <br/>
+<i class="fas fa-envelope"></i> Email: <a href="mailto:jjlab@uw.edu">jjlab@uw.edu</a><br/>
+<i class="fab fa-github"></i> GitHub: <a href="https://github.com/jlabounty">jlabounty</a></p>
+<h2 id="setting-up-a-github-ssh-token-on-rhel79-systems">Setting Up a GitHub SSH Token on RHEL7/9 Systems</h2>
+<h3 id="1-generate-an-ssh-key-pair">1. Generate an SSH Key Pair</h3>
+<ol>
+<li>Open your terminal.</li>
+<li>
+<p>Generate a new SSH key. Replace <code>your_email@example.com</code> with the email address associated with your GitHub account.</p>
+<p><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code></p>
+<p>If you are using an older system that doesn’t support the <code>ed25519</code> algorithm, you can use <code>rsa</code> instead:</p>
+<p><code>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code></p>
+</li>
+<li>
+<p>Follow the prompts to save the key in the default location (<code>~/.ssh/id_ed25519</code>) and set a passphrase.</p>
+</li>
+</ol>
+<h3 id="2-add-the-ssh-key-to-the-ssh-agent">2. Add the SSH Key to the SSH-Agent</h3>
+<ol>
+<li>
+<p>Start the SSH agent in the background:</p>
+<p><code>eval "$(ssh-agent -s)"</code></p>
+</li>
+<li>
+<p>Add your SSH private key to the ssh-agent. Replace <code>id_ed25519</code> with the name of your private key file if you used a different name.</p>
+<p><code>ssh-add ~/.ssh/id_ed25519</code></p>
+</li>
+</ol>
+<h3 id="3-add-the-ssh-key-to-your-github-account">3. Add the SSH Key to Your GitHub Account</h3>
+<ol>
+<li>
+<p>Copy the SSH key to your clipboard:</p>
+<p><code>cat ~/.ssh/id_ed25519.pub</code>
+This will display for the key. Copy all of it.</p>
+</li>
+<li>
+<p>Log in to your GitHub account and navigate to <strong>Settings</strong> &gt; <strong>SSH and GPG keys</strong> &gt; <strong>New SSH key</strong>.</p>
+</li>
+<li>Paste your SSH key into the "Key" field and add a descriptive title.</li>
+<li>Click "Add SSH key".</li>
+</ol>
+<h3 id="4-test-your-ssh-connection">4. Test Your SSH Connection</h3>
+<ol>
+<li>
+<p>Test the connection to make sure everything is set up correctly:</p>
+<p><code>ssh -T git@github.com</code></p>
+</li>
+<li>
+<p>You should see a message like:</p>
+<p><code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</code></p>
+<h3 id="example-steps-in-terminal">Example Steps in Terminal</h3>
+</li>
+</ol>
+<pre><code># Step 1: Generate an SSH Key Pair
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# Step 2: Start the SSH agent in the background
+eval "$(ssh-agent -s)"
+
+# Step 3: Add your SSH private key to the ssh-agent
+ssh-add ~/.ssh/id_ed25519
+
+# Step 4: Copy the SSH key to your clipboard
+cat ~/.ssh/id_ed25519.pub
+
+# Step 5: Add the SSH key to GitHub via the GitHub web interface
+
+# Step 6: Test your SSH connection
+ssh -T git@github.com
+</code></pre>
+<hr/>
+<h2 id="development-tools">Development Tools</h2>
+<h3 id="overview">Overview</h3>
+<p>These tools include compilers, libraries, and other utilities that facilitate software development and installation.</p>
+<h3 id="installation-guide">Installation Guide</h3>
+<p>This guide should work for RHEL systems (CentOS7 and ALMA9 included), though you may need to install yum on ALMA9.</p>
+<p>1 <strong>Install yum package manager</strong></p>
+<pre><code>sudo dnf install yum
+</code></pre>
+<p>2 <strong>Update the package index</strong>:</p>
+<pre><code>sudo yum update
+</code></pre>
+<p>3 <strong>Enable the EPEL repository</strong>:</p>
+<pre><code>sudo yum install epel-release
+</code></pre>
+<p>4 <strong>Install Development Tools and Dependencies</strong>:</p>
+<pre><code>sudo yum groupinstall "Development Tools"
+sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel
+</code></pre>
+<p>5 <strong>Install Python</strong></p>
+<pre><code>sudo yum install python3
+</code></pre>
+<p><strong>Note</strong>: CentOS7 may not have python3 available in base repositories, you can install via <code>yum install -y rh-python36</code>.</p>
+<hr/>
+<h2 id="ipmitool">ipmitool</h2>
+<h3 id="overview_1">Overview</h3>
+<p><code>ipmitool</code> is a widely used command-line utility that facilitates interaction with IPMI-enabled devices. It allows administrators to perform various management tasks remotely and locally. Here's a more detailed look at <code>ipmitool</code>:</p>
+<ul>
+<li><strong>Sensor Monitoring</strong>: <code>ipmitool</code> can read and display sensor data, such as temperature, voltage, and fan speed, helping to monitor the health and status of the hardware.</li>
+<li><strong>System Management</strong>: It provides commands to control system power states (on, off, reset) and to manage system settings remotely.</li>
+<li><strong>Firmware Management</strong>: <code>ipmitool</code> supports updating and managing firmware of the IPMI-enabled devices.</li>
+<li><strong>Event Log Management</strong>: It can display and clear the system event log (SEL), which records critical system events.</li>
+<li><strong>Chassis Management</strong>: Commands to control and manage the chassis, including power control and identifying LEDs.</li>
+<li><strong>User Management</strong>: Supports adding, modifying, and deleting IPMI users.</li>
+</ul>
+<h3 id="installation-guide_1">Installation Guide</h3>
+<p>1 <strong>Install <code>ipmitool</code></strong>:</p>
+<pre><code>sudo yum install ipmitool
+</code></pre>
+<p>2 <strong>Verify Installation</strong>:</p>
+<pre><code>ipmitool -V
+</code></pre>
+<hr/>
+<h2 id="root">ROOT</h2>
+<h3 id="overview_2">Overview</h3>
+<p><a href="https://root.cern.ch/">ROOT</a> is an open-source data analysis framework developed by CERN. It is widely used in high-energy physics for data processing, statistical analysis, visualization, and storage. It is needed for some features of Midas.</p>
+<h3 id="installation-guide_2">Installation Guide</h3>
+<p>General installaiton guides are provided by ROOT at their <a href="https://root.cern/install/">Installing ROOT</a> and <a href="https://root.cern/install/build_from_source/">Building ROOT from source</a> pages.</p>
+<h4 id="almalinux-9">AlmaLinux 9</h4>
+<p>1 <strong>Enable the EPEL repository</strong>:</p>
+<pre><code>sudo yum install epel-release
+</code></pre>
+<p>2 <strong>Download and Install ROOT</strong>:</p>
+<pre><code>wget https://root.cern/download/root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
+tar -xzvf root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
+cd root
+source bin/thisroot.sh
+</code></pre>
+<h4 id="centos-7">CentOS 7</h4>
+<p>1 <strong>Enable the EPEL repository</strong>:</p>
+<pre><code>sudo yum install epel-release
+</code></pre>
+<p>2 <strong>Download and Install ROOT</strong>:</p>
+<pre><code>yum install root
+</code></pre>
+<h4 id="building-from-source-linux">Building from source (Linux)</h4>
+<p>1 <strong>Example building latest stable branch from source</strong></p>
+<pre><code>git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
+mkdir root_build root_install &amp;&amp; cd root_build
+cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # &amp;&amp; check cmake configuration output for warnings or errors
+cmake --build . -- install -j4 # if you have 4 cores available for compilation
+source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}
+</code></pre>
+<p><strong>Note</strong>: Adjust the ROOT version and the download URL as needed. Always check for the latest version on the <a href="https://root.cern.ch/">official ROOT website</a>. Furthermore, if you are not building from source you are installing precompiled binaries, which may not be up to date versions of ROOT. For specific versions, you may need to build root from source.</p>
+<hr/>
+<h2 id="midas">Midas</h2>
+<h3 id="overview_3">Overview</h3>
+<p><a href="https://daq00.triumf.ca/MidasWiki/index.php/Main_Page">Midas</a> is a data acquisition system used in high-energy physics experiments.
+Midas provides the following functionalities:</p>
+<ul>
+<li>Run control</li>
+<li>Experiment configuration</li>
+<li>Data readout</li>
+<li>Event building</li>
+<li>Data storage</li>
+<li>Slow control</li>
+<li>Alarm systems</li>
+<li>... much more ...</li>
+</ul>
+<h3 id="installation-guide_3">Installation Guide</h3>
+<p>For a general Midas installation, you can follow this <a href="https://daq00.triumf.ca/MidasWiki/index.php/Quickstart_Linux">Linux Quick Start Guide</a>. For the g-2 modified DAQ, we use a custom version of midas, which can be cloned and installed as follows:</p>
+<p>1 <strong>Set experiment name environment variable</strong></p>
+<pre><code>export MIDAS_EXPT_NAME=DAQ
+</code></pre>
+<p>2 <strong>Create exptab file</strong></p>
+<pre><code>mkdir online
+cd online
+touch exptab
+echo "$MIDAS_EXPT_NAME $(pwd) system" &gt;&gt; exptab
+export MIDAS_EXPTAB=$(pwd)/exptab   
+</code></pre>
+<p>3 <strong>Install Midas</strong></p>
+<pre><code>cd ..
+mkdir packages
+git clone --recursive git@github.com:PIONEER-Experiment/midas-modified.git midas
+cd midas
+make -j$(nproc) install
+</code></pre>
+<p><strong>Note</strong>: On CentOS7 you may need to use <code>cmake3</code> as opposed to <code>cmake</code>; install with <code>sudo yum install cmake3</code>. Alternatively, you can install <code>cmake</code> from source to ensure it is up to date.</p>
+<p>4 <strong>Set <code>MIDASSYS</code> environment variable and add to path</strong></p>
+<pre><code>export MIDASSYS=$(pwd)
+export PATH=$PATH:$MIDASSYS/bin
+</code></pre>
+<p><strong>Note</strong>: you can hardcode the environment variables <code>MIDASSYS</code> (and add to path), <code>MIDAS_EXPTAB</code>, and <code>MIDAS_EXPT_NAME</code> by adding the appropriate commands to your .bashrc file. This way, the environment variables are set with each new terminal session for that user.</p>
+<hr/>
+<h2 id="boost">Boost</h2>
+<h3 id="overview_4">Overview</h3>
+<p><a href="https://www.boost.org/">Boost</a> is a comprehensive collection of C++ libraries that provide support for various tasks and structures including linear algebra, multithreading, image processing, regex (regular expressions), and more.</p>
+<h3 id="installation-guide_4">Installation Guide</h3>
+<p>Boost can be installed on CentOS 7 and AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:</p>
+<h4 id="centos-7-and-almalinux-9">CentOS 7 and AlmaLinux 9</h4>
+<p>1 <strong>Install Development Tools and Dependencies</strong>:</p>
+<pre><code>sudo yum groupinstall "Development Tools"
+sudo yum install cmake
+</code></pre>
+<p>2 <strong>Install Boost Libraries</strong>:</p>
+<pre><code>sudo yum install epel-release
+sudo yum install boost-devel
+</code></pre>
+<h4 id="install-boost-176-from-source">Install Boost 1.76 from Source</h4>
+<p>1 <strong>Download and Extract Boost</strong>:</p>
+<pre><code>wget https://sourceforge.net/projects/boost/files/boost/1.76.0/boost_1_76_0.tar.gz
+tar -xzf boost_1_76_0.tar.gz
+cd boost_1_76_0
+</code></pre>
+<p>2 <strong>Configure and Build Boost</strong>:</p>
+<pre><code>./bootstrap.sh --prefix=/usr/local
+./b2
+</code></pre>
+<p>Replace <code>/usr/local</code> with your desired installation path.
+<strong>Note:</strong> You may need to manually link python to boost, to do this:</p>
+<pre><code>export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/rh/rh-python36/root/usr/include/python3.6m
+./bootstrap.sh --prefix=/usr/local --with-python="/opt/rh/rh-python36/root/usr/bin/python3" --with-python-root="/opt/rh/rh-python36/root" --with-python-version="3.6"
+</code></pre>
+<p>where <code>/opt/rh/rh-python36/root/usr/include/python3.6m</code>, <code>/opt/rh/rh-python36/root/usr/bin/python3</code>, <code>/opt/rh/rh-python36/root</code>, and <code>3.6</code> are replaced with the appropriate values for your system.</p>
+<p>3 <strong>Install Boost</strong>:</p>
+<pre><code>./b2 -j$(nproc) install --prefix=/usr/local
+</code></pre>
+<p>Replace <code>/usr/local</code> with your desired installation path.</p>
+<p>4 <strong>Verify Boost Installation</strong>:</p>
+<pre><code>sudo ldconfig
+</code></pre>
+<hr/>
+<h2 id="ipbus-cactus">IPBus (Cactus)</h2>
+<h3 id="overview_5">Overview</h3>
+<p><a href="https://ipbus.web.cern.ch/">IPBus</a>, part of the Cactus framework, is a protocol for remote control and monitoring of hardware devices over Ethernet. It's commonly used in high-energy DAQ systems.</p>
+<h3 id="installation-guide_5">Installation Guide</h3>
+<p>For a general installation guide, see ipbus' <a href="https://ipbus.web.cern.ch/doc/user/html/software/installation.html">Installing the Software</a> page.</p>
+<h4 id="almalinux-9_1">AlmaLinux 9</h4>
+<p>1 <strong>Remove previous version (if applicable)</strong>:</p>
+<pre><code>sudo yum groupremove uhal
+</code></pre>
+<p>2 <strong>Download yum repo file</strong>:</p>
+<pre><code>sudo curl https://ipbus.web.cern.ch/doc/user/html/_downloads/ipbus-sw.el9.repo -o /etc/yum.repos.d/ipbus-sw.repo
+</code></pre>
+<p>3 <strong>Install uHAL</strong>:</p>
+<pre><code>sudo yum clean all
+sudo yum groupinstall uhal
+</code></pre>
+<h4 id="centos-7_1">CentOS 7</h4>
+<p>1 <strong>Remove previous version (if applicable)</strong>:</p>
+<pre><code>sudo yum groupremove uhal
+</code></pre>
+<p>2 <strong>Download yum repo file</strong>:</p>
+<pre><code>sudo curl https://ipbus.web.cern.ch/doc/user/html/_downloads/ipbus-sw.centos7.repo -o /etc/yum.repos.d/ipbus-sw.repo
+</code></pre>
+<p>3 <strong>Install uHAL</strong>:</p>
+<pre><code>sudo yum clean all
+sudo yum groupinstall uhal
+</code></pre>
+<p><strong>Note</strong>: I personally had trouble getting this to work on CentOS7 and had to resort to building from source (see below).</p>
+<h4 id="example-building-from-source">Example building from source</h4>
+<p>See <a href="https://ipbus.web.cern.ch/doc/user/html/software/install/compile.html">Compiling and installing from source</a>, an example is below:</p>
+<pre><code>sudo yum install pugixml-devel
+git clone --depth=1 -b v2.7.3 --recurse-submodules https://github.com/ipbus/ipbus-software.git
+cd ipbus-software
+make -j$(nproc) EXTERN_BOOST_INCLUDE_PREFIX="/opt/boost/include" EXTERN_BOOST_LIB_PREFIX="/opt/boost/lib" EXTERN_PUGIXML_INCLUDE_PREFIX="/usr/local/include" EXTERN_PUGIXML_LIB_PREFIX="/usr/local/lib64/"
+sudo make install -j$(nproc)
+</code></pre>
+<p><strong>Note</strong>: You may not need to specify <code>EXTERN_BOOST_INCLUDE_PREFIX</code>, <code>EXTERN_BOOST_LIB_PREFIX</code>, <code>EXTERN_PUGIXML_INCLUDE_PREFIX</code>, <code>EXTERN_PUGIXML_LIB_PREFIX</code>. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.</p>
+<hr/>
+<h2 id="meinberg">Meinberg</h2>
+<h3 id="overview_6">Overview</h3>
+<p><a href="https://www.meinbergglobal.com/">Meinberg</a> provides a range of synchronization solutions, including Network Time Protocol (NTP) servers, precision time protocol (PTP) solutions, and GPS radio clocks. These tools are essential for accurate time synchronization in various high-precision applications.</p>
+<p>In our case, we use it to apply a GPS timestamp to each event. In reality, this is an artifact from g-2 where seperate systems needed to be time correlated. Only the "GPS" master trigger mode needs the meinberg.</p>
+<h3 id="installation-guide_6">Installation Guide</h3>
+<p>For more general information about Meinberg devices, see Meinberg's <a href="https://kb.meinbergglobal.com/">Installing the Software</a> page.</p>
+<h4 id="almalinux-9-and-centos-7">AlmaLinux 9 and CentOS 7</h4>
+<p>1 <strong>Clone the repository</strong>:</p>
+<pre><code>git clone https://git.meinbergglobal.com/drivers/mbgtools-lx.git
+cd mbgtools-lx
+git pull
+</code></pre>
+<p><strong>Note</strong>: Ensure that the URLs and repository paths are correct.</p>
+<p>2 <strong>Compile the source code</strong>:</p>
+<pre><code>make clean
+make
+</code></pre>
+<p><strong>Note</strong>: You may need to use a development kernel. This command will install the development kernel for your current kernel version.</p>
+<pre><code>sudo yum install kernel-devel-$(uname -r) gcc make
+</code></pre>
+<p>3 <strong>Install the software</strong>:</p>
+<pre><code>sudo make install
+sudo /sbin/modprobe mbgclock
+make install_svc
+</code></pre>
+<p>4 <strong>Verify installation</strong></p>
+<pre><code>mbgstatus
+</code></pre>
+<p>The output of this command should look similar to this:</p>
+<pre><code>mbgstatus v4.2.24 copyright Meinberg 2001-2023
+
+TCR180PEX 039212025430 (FW 1.21, ASIC 9.00) at port 0xE000, irq 47
+Date/time:  Tu, 2024-01-30  04:36:10.33 UTC
+Signal: 0%  (IRIG B122/B123, ** UTC offs not configured **)
+Status info: *** NO INPUT SIGNAL
+Status info: *** Ref. Time is Invalid
+Last sync:  We, 2023-10-04  11:36:55.00 UTC
+
+** Warning: The IRIG receiver has not yet been configured!
+
+Please make sure the correct IRIG Code Format has been
+selected, and enter the correct IRIG Time Offset from UTC
+according to the settings of the IRIG generator.
+The command "mbgirigcfg" can be used to change the settings.
+</code></pre>
+<p><strong>Note</strong>: Check the README in <code>mbgtools-lx</code> which provides step by step debugging for this installation.</p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../hardware_overview/" title="Hardware Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../installing_and_building/" title="Install and Run the Midas Frontends">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../hardware_overview/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../installing_and_building/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

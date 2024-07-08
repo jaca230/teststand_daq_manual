@@ -1,0 +1,3300 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Print Site - g-2 modified DAQ Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print-site-enum-headings1.css" rel="stylesheet" />
+        <link href="../css/print-site-enum-headings2.css" rel="stylesheet" />
+        <link href="../css/print-site-enum-headings3.css" rel="stylesheet" />
+        <link href="../css/print-site-enum-headings4.css" rel="stylesheet" />
+        <link href="../css/print-site-enum-headings5.css" rel="stylesheet" />
+        <link href="../css/print-site-enum-headings6.css" rel="stylesheet" />
+        <link href="../css/print-site.css" rel="stylesheet" />
+        <link href="../css/print-site-readthedocs.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Print Site";
+        var mkdocs_page_input_path = "print_page.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
+        })
+        </script>
+        </head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> g-2 modified DAQ Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="//search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">g-2 modified DAQ Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Print Site</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div id="print-site-page" class="print-site-enumerate-headings print-site-enumerate-figures">
+        <section class="print-page">
+            <div id="print-page-toc" data-toc-depth="3">
+                <nav role='navigation' class='print-page-toc-nav'>
+                <h1 class='print-page-toc-title'>Table of Contents</h1>
+                </nav>
+            </div>
+        </section>
+        <section class="print-page" id="index"><h1 id="index-welcome-to-the-g-2-modified-daq-manual">Welcome to the g-2 Modified DAQ Manual</h1>
+<p><img alt="DAQ_Image" src="../images/DAQ_image.png" style="max-width:100%; height:auto;" /></p>
+<p>The purpose of this manual is to aid users with setup, usage, and debugging of the g-2 modified DAQ. This DAQ's purpose is to aid with various test stands across the PIONEER collaboration. Most topics are simplified to only include information needed for operating this DAQ. Some external links are provided for additional, generalized information.</p>
+<p>Many of the guides on this webpage are thorough, as they are aimed to give solutions to problems I've encountered. However, every system is different; there may be some additional debugging to be done on the user's end.</p>
+<h2 id="index-contact">Contact</h2>
+<p>Manual Written by Jack Carlton. <br>
+Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
+<br>
+<i class="fas fa-envelope"></i> Email: <a href="mailto:j.carlton@uky.edu">j.carlton@uky.edu</a>
+<br>
+<i class="fab fa-github"></i> GitHub: <a href="https://github.com/jaca230">jaca230</a></p>
+<p>Feel free to reach out with any questions, to correct mistakes, point out missing information, or otherwise. If you're familiar with mkdocs and have repository access, feel free to push your edits and credit yourself.</p>
+<p><strong>Last Updated</strong>: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span></p></section><section class="print-page" id="hardware_overview"><h1 id="hardware_overview-hardware-documentation">Hardware Documentation</h1>
+<h2 id="hardware_overview-general-hardware-overview">General Hardware Overview</h2>
+<h3 id="hardware_overview-conceptual-diagram-one-crate-system">Conceptual Diagram (One Crate System)</h3>
+<p><img alt="DAQ_Diagram" src="../images/DAQ_Diagram.png" style="max-width:100%; height:auto;" /></p>
+<ul>
+<li><strong>Differential signal into WFD5 (Waveform Digitizer)</strong>: Differential signaling are input into Cornell's WFD5s. Data is aggregated by AMC13 on triggers.</li>
+<li><strong>Trigger signal into FC7 (Flexible Controller)</strong>: Provides flexible triggering, FC7 sends trigger signals over optical links to the AMC13.</li>
+<li><strong>AMC13 (Advanced Mezzanine Card)</strong>: Aggregates data from digitizers on a trigger and packages for sending over 10GbE (10 Gigabit Ethernet). Transfers this to the desktop for further processing.</li>
+<li><strong>MCH (MicroTCA Carrier Hub)</strong>: Facilitates communication between the desktop and the crate system via 1GbE Ethernet, managing system-level (crate) operations in a way.</li>
+<li><strong>Desktop CPU</strong>: Processes events received from the AMC13. Data is unpacked and formed into midas events for storage.</li>
+<li><strong>Meinberg</strong>: Provides precise trigger timestamps using GPS timing. This is an artifact of g-2 more than anything, were multiple disconnected systems needed to be correlated. </li>
+</ul>
+<h3 id="hardware_overview-labled-picture-one-crate-system">Labled Picture (One Crate System)</h3>
+<p><img alt="DAQ_Diagram" src="../images/DAQ_image_labled.png" style="max-width:100%; height:auto;" /></p>
+<hr />
+<h2 id="hardware_overview-ipmi">IPMI</h2>
+<h3 id="hardware_overview-overview">Overview</h3>
+<p>Intelligent Platform Management Interface (IPMI) is a standardized interface used for managing and monitoring computer systems. It allows for the remote management of systems independently of the operating system state or the system's power state. IPMI provides a way to manage a server using a set of standardized commands and messages that can be sent over a network or via a direct serial connection.</p>
+<h3 id="hardware_overview-features-of-ipmi">Features of IPMI</h3>
+<ul>
+<li><strong>Remote Management</strong>: Allows administrators to remotely manage systems, including power on/off, rebooting, and accessing system logs.</li>
+<li><strong>Hardware Monitoring</strong>: Monitors hardware components like temperature, voltage, fans, and power supply status.</li>
+<li><strong>Serial Over LAN (SOL)</strong>: Provides serial console access over a network, allowing remote troubleshooting and management.</li>
+<li><strong>Event Logging</strong>: Logs critical system events such as hardware failures or temperature thresholds being exceeded.</li>
+<li><strong>Security</strong>: Supports user authentication, encrypted communication, and access control.</li>
+</ul>
+<h3 id="hardware_overview-common-ipmi-tools">Common IPMI Tools</h3>
+<ul>
+<li><strong>ipmitool</strong>: A command-line utility for managing IPMI-enabled devices. It supports a wide range of commands for sensor reading, system status checking, power control, and firmware updates. ipmitool commands are the building blocks used in many of the configuration scripts for the hardware. See <a href="#software_dependencies-ipmitool">ipmitool</a> for more information.</li>
+</ul>
+<h3 id="hardware_overview-example-commands-using-ipmitool">Example Commands Using <code>ipmitool</code></h3>
+<p>1 <strong>Print Field Replaceable Unit (FRU) Information</strong>:</p>
+<pre><code>ipmitool -H 192.168.1.15 fru print
+</code></pre>
+<p>This command retrieves and prints the Field Replaceable Unit (FRU) information from the IPMI device located at IP address <code>192.168.1.15</code>.</p>
+<ul>
+<li><code>-H 192.168.1.15</code>: Specifies the IP address of the IPMI device. Replace <code>192.168.1.15</code> with the actual IP address of your IPMI device.</li>
+<li><code>fru print</code>: Command to retrieve and display the FRU information. FRU information includes details about hardware components that can be replaced in the system, such as part numbers and descriptions.</li>
+</ul>
+<p>2 <strong>Send Raw Command to IPMI Device</strong>:</p>
+<pre><code>ipmitool -I lan -H 192.168.1.15 -m 0x20 -B 0 -T 0x82 -b 7 -t 0x86 raw 0x06 0x1
+</code></pre>
+<p>This command sends a raw IPMI command to a device over LAN with specified parameters.</p>
+<ul>
+<li><code>-I lan</code>: Specifies the interface type (<code>lan</code> in this case), which indicates that the IPMI command will be sent over the LAN interface.</li>
+<li><code>-H 192.168.1.15</code>: Specifies the IP address of the IPMI device.</li>
+<li><code>-m 0x20</code>: Specifies the channel number to communicate with the BMC (Baseboard Management Controller). The default is usually <code>0x20</code>, but for some reason we need to specify this on some systems.</li>
+<li><code>-B 0</code>: Specifies the BMC instance number.</li>
+<li><code>-T 0x82</code>: Specifies the target address in the IPMI device. This is the MCH.</li>
+<li><code>-b 7</code>: Specifies the bus number.</li>
+<li><code>-t 0x86</code>: Specifies the target channel number. This is the device you're targeting, in this case it's FC7 in slot 11 of the microTCA crate.</li>
+<li><code>raw 0x06 0x1</code>: Command to send a raw IPMI command (<code>0x06 0x1</code> in this case) to the specified IPMI device. The raw command <code>0x06 0x1</code> varies based on the specific IPMI command you intend to send.</li>
+</ul>
+<p>You can read a bit more about these commands in the manuals linked in the <a href="#hardware_overview-mch-microtca-carrier-hub">MCH section</a>. You can read more about ipmitool's command arguments on <a href="https://linux.die.net/man/1/ipmitool">this webpage</a>.</p>
+<hr />
+<h2 id="hardware_overview-1gbe-nic-gigabit-ethernet-network-interface-card">1GbE NIC (Gigabit Ethernet Network Interface Card)</h2>
+<h3 id="hardware_overview-overview_1">Overview</h3>
+<p>These NICs are generally PCIe Cards that are "plug and play". They provide a 1 gigabit per second ethernet connection for the host computer.</p>
+<h3 id="hardware_overview-configuration">Configuration</h3>
+<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:</p>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+</code></pre>
+<p>For example, this is how the UKY teststand 1GbE NIC is configured to communicate with multiple crate using an ethernet splitter.</p>
+<pre><code>#
+# Connect to MCH
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.1.100
+NETMASK=255.255.0.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp5s0
+DEVICE=enp5s0
+ONBOOT=yes
+</code></pre>
+<p>In particular, the <code>IP_ADDR</code> and <code>NETMASK</code> sections are important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
+<hr />
+<h2 id="hardware_overview-10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC (10 Gigabit Ethernet Network Interface Card)</h2>
+<h3 id="hardware_overview-overview_2">Overview</h3>
+<p>These NICs are generally PCIe Cards that are "plug and play". They provide a 10 gigabit per second ethernet connection for the host computer. In our case, we use optical cables that plug into SFPs. <strong>The MTU (Maximum Transmission Unit) of the card should be 9000 or greater</strong>.</p>
+<h3 id="hardware_overview-configuration_1">Configuration</h3>
+<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:</p>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+</code></pre>
+<p>For example, this is how one of the UKY teststand 10GbE NIC is configured to communicate with the AMC13.</p>
+<pre><code>#
+# Connect to AMC13
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.51.100
+NETMASK=255.255.255.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp1s0f0
+DEVICE=enp1s0f0
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-999
+MTU=9000
+</code></pre>
+<p>In particular, the <code>IP_ADDR</code>, <code>NETMASK</code>, and <code>MTU</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
+<hr />
+<h2 id="hardware_overview-tca-crate-micro-telecommunications-computing-architecture-crate">µTCA Crate (Micro Telecommunications Computing Architecture Crate)</h2>
+<h3 id="hardware_overview-overview_3">Overview</h3>
+<p>Micro Telecommunications Computing Architecture (µTCA or MicroTCA) is a modular, high-performance architecture designed for telecommunications and other industries requiring reliable, scalable, and high-bandwidth systems. CERN employs µTCA systems for the acquisition and processing of vast amounts of data generated by particle detectors. These systems are capable of handling high-speed data streams and ensuring data integrity and accuracy.</p>
+<p>For our purposes, you can just view it as an electronics crate to host the <a href="#hardware_overview-mch-microtca-carrier-hub">MCH</a>, <a href="#hardware_overview-fc7-flexible-controller">FC7</a>, and <a href="#hardware_overview-wfd5-waveform-digitizer">WFD5</a>.</p>
+<h3 id="hardware_overview-configuration_2">Configuration</h3>
+<p>The µTCA Crate should be "plug and play" in our case; no configuration is needed.</p>
+<hr />
+<h2 id="hardware_overview-mch-microtca-carrier-hub">MCH (MicroTCA Carrier Hub)</h2>
+<h3 id="hardware_overview-overview_4">Overview</h3>
+<p>For our purposes, the MCH acts as a point of communication between the crate and the computer hosting the frontends. Here, we will cover specifically setting up VadaTech MCHs, however the system can also be run using <a href="#miscellaneous_info-the-nat-mch">N.A.T. MCH</a>.</p>
+<h3 id="hardware_overview-wired-connections">Wired Connections</h3>
+<h4 id="hardware_overview-1gbe-ethernet-connection">1GbE Ethernet Connection</h4>
+<p>The MCH should have an ethernet port labeled <code>GbE0</code> or <code>1GbE</code> (or something along those lines). Use an ethernet cable to connect this to your system's <a href="#hardware_overview-1gbe-nic-gigabit-ethernet-network-interface-card">1GbE NIC</a>. </p>
+<p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> 1GbE MCH in/out.</p>
+<h3 id="hardware_overview-configuration_3">Configuration</h3>
+<p>First you should <a href="#hardware_overview-1gbe-nic-gigabit-ethernet-network-interface-card">configure the 1GbE NIC</a> if you haven't already.</p>
+<p>Here are some pdfs that may be be helpful:</p>
+<ul>
+<li><a href="../pdfs/MCH_manual.pdf">MCH Manual PDF</a></li>
+<li><a href="../pdfs/mch_network_configuration.pdf">MCH Network Configuration PDF</a></li>
+</ul>
+<h4 id="hardware_overview-changing-mch-network-settings">Changing MCH Network Settings</h4>
+<p>Below is a stripped down version of <a href="../pdfs/mch_network_configuration.pdf">MCH Network Configuration PDF</a>; you can read the pdf for more details.</p>
+<p>1 <strong>Connect to the MCH's Linux environment</strong></p>
+<p>Plug an Ethernet cable into the GbE0 port and the frontend host computer. From a terminal, run</p>
+<pre><code>ssh root@192.168.[crate].15
+</code></pre>
+<p><strong>Note</strong>: If you don't know what IP the MCH has, you can try pinging a crate numbers up to 32</p>
+<pre><code>ping 192.168.[crate].15
+</code></pre>
+<p>The password should be <code>root</code>.</p>
+<p>If you still can't find the crate, you should verify your frontend host computer's ethernet port is properly configured. See the <a href="#networking-networking-basics">networking page</a> for some general networking information. If that still fails, you may need to do a <a href="#networking-scanning-a-network">network scan</a> to look for the MCH.</p>
+<p>2 <strong>Remount root directory with read/write permission</strong></p>
+<pre><code>mount -o remount,rw /
+</code></pre>
+<p>3 <strong>Edit Network Settings</strong></p>
+<pre><code>vi /etc/rc.d/rc.conf
+</code></pre>
+<p><strong>Note</strong>: In order to insert text properly, I had to type this command into vi first <code>:set nocompatible</code></p>
+<p>Change the following to reflect your network settings</p>
+<pre><code># net interface 1
+export SYSCFG_IFACE1=y
+export INTERFACE1=&quot;eth1&quot;
+export IPADDR1=&quot;192.168.[crate].15&quot;
+export NETMASK1=&quot;255.255.224.0&quot;
+export BROADCAST1=&quot;192.168.31.255&quot;
+export GATEWAY1={IP of server (i.e. the IP of the ethernet port on the frontend host computer)}
+export NAMESERVER1=&quot;0.0.0.0&quot;
+</code></pre>
+<p>For example</p>
+<pre><code># net interface 1
+export SYSCFG_IFACE1=y
+export INTERFACE1=&quot;eth1&quot;
+export IPADDR1=&quot;192.168.2.15&quot;
+export NETMASK1=&quot;255.255.224.0&quot;
+export BROADCAST1=&quot;192.168.31.255&quot;
+export GATEWAY1=&quot;192.168.1.100&quot;
+export NAMESERVER1=&quot;0.0.0.0&quot;
+</code></pre>
+<p><strong>Note</strong>: For a one crate system, you can change <code>NETMASK1</code> to <code>255.255.255.0</code> if your really want. This just means the MCH can only see IPs that start with <code>192.168.[crate]</code>.</p>
+<p>Then run</p>
+<pre><code>carrier set_ip_connection -s 192.168.[crate].17 -c 192.168.[crate].18
+carrier set_ip_connection -m 192.168.[crate].19 -M 192.168.[crate].20
+</code></pre>
+<p>4 <strong>Edit .xml settings</strong></p>
+<p>Edit the .xml config</p>
+<pre><code>vi /opt/vadatech/IPMI/UTCShelf/etc/fruUTCSH.xml
+</code></pre>
+<p>In <code>vi</code> you can use the command <code>:/192</code> to skip to the relevant section.</p>
+<pre><code>&lt;IP_Connection&gt;
+    &lt;in_band&gt;eth0,eth1&lt;/in_band&gt;
+    &lt;failover&gt;eth1,eth0&lt;/failover&gt;
+    &lt;IP&gt;
+        &lt;ip_address&gt;192.168.[crate].17&lt;/ip_address&gt;
+        &lt;gw_address&gt;192.168.1.1&lt;/gw_address&gt;
+        &lt;net_mask&gt;255.255.255.0&lt;/net_mask&gt;
+    &lt;/IP&gt;
+&lt;/IP_Connection&gt;
+</code></pre>
+<p>Change the <code>&lt;ip_address&gt;</code>, <code>&lt;gw_address&gt;</code>, and <code>&lt;net_mask&gt;</code> to correspond with what you changed above. For example:</p>
+<pre><code>&lt;IP_Connection&gt;
+    &lt;in_band&gt;eth0,eth1&lt;/in_band&gt;
+    &lt;failover&gt;eth1,eth0&lt;/failover&gt;
+    &lt;IP&gt;
+        &lt;ip_address&gt;192.168.2.17&lt;/ip_address&gt;
+        &lt;gw_address&gt;192.168.1.100&lt;/gw_address&gt;
+        &lt;net_mask&gt;255.255.224.0&lt;/net_mask&gt;
+    &lt;/IP&gt;
+&lt;/IP_Connection&gt;
+</code></pre>
+<p>Then run</p>
+<pre><code>vtipmi stop
+createFruRepositories
+</code></pre>
+<p>5 <strong>Power cycle the uTCA crate</strong></p>
+<p>The MicroTCA crate must then be power-cycled, and you must wait until all of the blue hot-swap
+lights have turned off.</p>
+<p>6 <strong>Set Shelf Address</strong></p>
+<p>Repeat steps 1 and 2. Then run the command</p>
+<pre><code>set_shelf_address_info -a 192.168.[crate].17
+</code></pre>
+<p>7 <strong>Verify Settings Changes</strong></p>
+<p>Verify the output of all the following commands looks right.</p>
+<pre><code>carrier get_ip_connection
+</code></pre>
+<pre><code>get_ip_connection
+</code></pre>
+<pre><code>get_shelf_address_info
+</code></pre>
+<pre><code>list_carriers_present
+</code></pre>
+<pre><code>ifconfig
+</code></pre>
+<p>Finally, exit the ssh connection with</p>
+<pre><code>exit
+</code></pre>
+<p>and verify you can ping the MCH on the new assigned address</p>
+<pre><code>ping 192.168.[crate].15
+</code></pre>
+<hr />
+<h2 id="hardware_overview-wfd5-waveform-digitizer">WFD5 (Waveform Digitizer)</h2>
+<h3 id="hardware_overview-overview_5">Overview</h3>
+<p>The WFD5 is a AMC developed by Cornell for g-2 data digitization. Our use case it the same: to digitize the data before being processed further by the frontend host computer.</p>
+<h3 id="hardware_overview-wired-connections_1">Wired Connections</h3>
+<h4 id="hardware_overview-pentabus-cable-input-signal">Pentabus Cable Input Signal</h4>
+<p>The WFD5 has a 5 channel <a href="#miscellaneous_info-differential-signals">differential signal</a> input. Connect the differential signal to be digitized using a pentabus cable. </p>
+<p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> WFD5 5-channel differential signal in.</p>
+<h3 id="hardware_overview-configuration_4">Configuration</h3>
+<p>First you should <a href="#hardware_overview-mch-microtca-carrier-hub">configure the MCH</a> if you haven't already.</p>
+<p>For most of the configuration below to work, you must have <a href="#software_dependencies-ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/wfdConfig">WFD5 python configuration scripts located on the PIONEER github</a>. After <a href="#software_dependencies-pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
+<pre><code>git clone git@github.com:PIONEER-Experiment/wfdConfig.git
+</code></pre>
+<p>Below are a few examples of using the configuration scripts.</p>
+<h4 id="hardware_overview-reading-ip-address">Reading IP Address</h4>
+<pre><code>cd wfdConfig/software
+python read_addresses.py
+</code></pre>
+<p>This will print usage help.</p>
+<h4 id="hardware_overview-changing-ip-address">Changing IP Address</h4>
+<pre><code>cd wfdConfig/software
+python store_ip.py
+</code></pre>
+<p>This will print usage help.</p>
+<p>You should set the IP to be in the format <code>192.168.[crate number].[slot number]</code> for the DAQ to work properly.</p>
+<p>You will need to power cycle (pull the black handle out and push it back in) the WFD5 to get it to take the new address.</p>
+<p>Then verify you can ping the address</p>
+<pre><code>ping 192.168.[crate].[slot]
+</code></pre>
+<h4 id="hardware_overview-reading-status">Reading Status</h4>
+<pre><code>cd wfdConfig/software
+python read_status.py
+</code></pre>
+<p>This will print usage help.</p>
+<h4 id="hardware_overview-updating-firmware">Updating Firmware</h4>
+<p>There are some instructions in the read me, you can see them on the <a href="https://github.com/PIONEER-Experiment/wfdConfig/tree/master/software/flash">wfdConfig github page</a>.</p>
+<p>You need to <a href="#hardware_overview-changing-ip-address">set the IP</a> before doing this.</p>
+<p>It will be easier if you <a href="#installing_and_building-manual-installation-guide">install the DAQ software</a> before doing this. In particular, you want the environment variable <code>BOOST_ROOT</code> declared in your shell session. Additionally, you'll want the address table located in the g-2 modified DAQ repository.</p>
+<p>You may be able to simply make the FC7 firmware updating tool with</p>
+<pre><code>cd wfdConfig/software/flash
+make
+</code></pre>
+<p>If so, skip to step 4 below.</p>
+<p>1 <strong>Setup environment (if not already)</strong></p>
+<pre><code>cd /path/to/gm2daq-modified/environment_setup/
+source ./setup_environment.sh
+cd /path/to/wfdConfig/software/flash
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths.</p>
+<pre><code>export LD_LIBRARY_PATH=$(pwd)/lib:$LD_LIBRARY_PATH
+export CPLUS_INCLUDE_PATH=&quot;$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH&quot;
+</code></pre>
+<p>2 <strong>Edit makefile</strong></p>
+<p>Using your favorite text editor, open the makefile</p>
+<pre><code>vi Makefile
+</code></pre>
+<p>Add the line</p>
+<pre><code>-L$(BOOST_ROOT)/lib
+</code></pre>
+<p>to the makefile, the relevant section should look like this</p>
+<pre><code>LIBRARY_PATH = -Llib \
+               -L/opt/cactus/lib \
+               -L$(CACTUS_ROOT)/lib \
+               -L$(CACTUS_ROOT)/uhal/uhal/lib \
+               -L$(CACTUS_ROOT)/uhal/grammars/lib \
+               -L$(CACTUS_ROOT)/uhal/log/lib \
+               -L$(CACTUS_ROOT)/extern/pugixml/RPMBUILD/SOURCES/lib \
+               -L$(CACTUS_ROOT)/extern/boost/RPMBUILD/SOURCES/lib \
+               -L$(BOOST_ROOT)/lib
+</code></pre>
+<p>3 <strong>Make <code>programFirmware</code> executable</strong></p>
+<pre><code>make
+cd bin
+</code></pre>
+<p>verify <code>programFirmware</code> has been made.</p>
+<p>4 <strong>Program the WFD5</strong>
+See</p>
+<pre><code>./programFirmware 
+</code></pre>
+<p>for usage. For example:</p>
+<pre><code>./programFirmware 1 1 /path/to/wfdConfig/releases/wfd_master_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_async_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_cbuf_0x030101.mcs
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths. This will apply firmware version 3.1.1 to the WFD5 in crate 1 slot 1. Supposedly you can use this command to program multiple WFD5s at once, though I've never tried.</p>
+<hr />
+<h2 id="hardware_overview-fc7-flexible-controller">FC7 (Flexible Controller)</h2>
+<h3 id="hardware_overview-overview_6">Overview</h3>
+<p>For our use case, the FC7 can be viewed as a hub that sends out Timing, Trigger, and Control (TTC) Signals to the AMC13s. It is a much more general tool developed by CERN, you can read more about it at a surface level in <a href="https://indico.cern.ch/event/299180/contributions/1659595/attachments/563055/775699/FC7.pdf">this presentation</a>. Additionally, there are some <a href="../pdfs/FC7_Schematics.pdf">detailed schematics</a>.</p>
+<p>The FC7 has two slots for FMC modules. Usually, the top slot is for an <a href="#hardware_overview-sfp-interface">SFP interface</a>. The bottom slot is for the FMC that handles <a href="#hardware_overview-trigger-and-clock-input-interface">trigger and clock input</a>.</p>
+<h3 id="hardware_overview-fmcs">FMCs</h3>
+<h4 id="hardware_overview-sfp-interface">SFP Interface</h4>
+<p>The SFP interface is more or less "plug and play". You should familiarize yourself with the <a href="#miscellaneous_info-fc7-labeling">FC7 labeling</a>. Also which slot this is in needs to be <a href="#odb_config-ccc-fmc-location-topbottom">specified in the ODB</a>.</p>
+<h4 id="hardware_overview-trigger-and-clock-input-interface">Trigger and Clock Input Interface</h4>
+<p>The trigger and clock input interface uses a <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. The FC7 firmware is configured to use channels 4-7 for input, and 0-3 for output; on the board there are microswitches you must toggle on the <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. For incoming signals that will expect 50 Ohm termination, you should apply a jumper shown in page 4 of the <a href="../pdfs/FC7_FMC.pdf">digital I/O board quick reference</a>.</p>
+<p>In some setups, there is also a 2nd mezzanine card that then mounts on that FMC card to route the I/O through coax ribbon cables. This <a href="#hardware_overview-samtech-ribbon-cable-to-bank-board">connects to the bank board</a>.</p>
+<h3 id="hardware_overview-wired-connections_2">Wired Connections</h3>
+<h4 id="hardware_overview-optical-link-to-amc13">Optical Link to AMC13</h4>
+<p>The FC7 sends trigger information to the AMC13s over an optical cable. This allows one FC7 to send triggers to up to 8 crates. Fill in the <a href="#miscellaneous_info-fc7-labeling">FC7 SFP ports</a> with Finisar (or similar) SFP transceiver(s), one for each AMC13. Connect it to the <a href="#hardware_overview-optical-link-to-fc7">appropriate SFP port in the AMC13</a>.</p>
+<p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> trigger out FC7.</p>
+<h4 id="hardware_overview-samtech-ribbon-cable-to-bank-board">Samtech Ribbon cable to Bank Board</h4>
+<p>A ribbon cable is used to carry TTC signals from the FC7 to a signal bank board. The ribbon cable used is a Samtec HHSC-108-40.00-SU-SU (the 40.00 specifies the length, which need not be 40 cm). This cable runs between the <a href="#hardware_overview-trigger-and-clock-input-interface">trigger and clock input interface FMC</a> and the bank board; this <a href="#miscellaneous_info-bank-signals">diagram bank board</a> may be helpful.</p>
+<p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> FC7 trigger in.</p>
+<h3 id="hardware_overview-configuration_5">Configuration</h3>
+<p>First you should <a href="#hardware_overview-mch-microtca-carrier-hub">configure the MCH</a> if you haven't already.</p>
+<p>For most of the configuration below to work, you must have <a href="#software_dependencies-ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/wfdConfig">FC7 python configuration scripts located on the PIONEER github</a>. After <a href="#software_dependencies-pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
+<pre><code>git clone git@github.com:PIONEER-Experiment/unifiedCCC.git
+</code></pre>
+<p>Below are a few examples of using the configuration scripts.</p>
+<h4 id="hardware_overview-reading-ip-address_1">Reading IP Address</h4>
+<pre><code>cd unifiedCCC/software
+python read_addresses.py
+</code></pre>
+<p>This will print usage help.</p>
+<h4 id="hardware_overview-changing-ip-address_1">Changing IP Address</h4>
+<pre><code>cd unifiedCCC/software
+python3 store_ip.py
+</code></pre>
+<p>This will print usage help.</p>
+<p>You should set the IP to be in the format <code>192.168.[crate number].[slot number]</code> for the DAQ to work properly.</p>
+<p>You may need to power cycle (pull the black handle out and push it back in) after this, I don't remember. </p>
+<p>Then verify you can ping the address</p>
+<pre><code>ping 192.168.[crate].[slot]
+</code></pre>
+<h4 id="hardware_overview-reading-status_1">Reading Status</h4>
+<pre><code>cd unifiedCCC/software
+python read_status.py [crate] [slot] [options]
+</code></pre>
+<p><strong>Note</strong>: You should use the <code>expert</code> option for this, otherwise </p>
+<h4 id="hardware_overview-updating-firmware_1">Updating Firmware</h4>
+<p>You need to <a href="#hardware_overview-changing-ip-address_1">set the IP</a> before doing this.</p>
+<p>It will be easier if you <a href="#installing_and_building-manual-installation-guide">install the DAQ software</a> before doing this. In particular, you want the environment variable <code>BOOST_ROOT</code> declared in your shell session. Additionally, you'll want the address table located in the g-2 modified DAQ repository.</p>
+<p>You may be able to simply make the FC7 firmware updating tool with</p>
+<pre><code>cd unifiedCCC/software/flash
+make
+</code></pre>
+<p>If so, skip to step 4 below.</p>
+<p>1 <strong>Setup environment (if not already)</strong></p>
+<pre><code>cd /path/to/gm2daq-modified/environment_setup/
+source ./setup_environment.sh
+cd /path/to/unifiedCCC/software/flash
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths.</p>
+<pre><code>export LD_LIBRARY_PATH=$(pwd)/lib:$LD_LIBRARY_PATH
+export CPLUS_INCLUDE_PATH=&quot;$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH&quot;
+</code></pre>
+<p>2 <strong>Edit makefile</strong></p>
+<p>Using your favorite text editor, open the makefile</p>
+<pre><code>vi Makefile
+</code></pre>
+<p>Add the line</p>
+<pre><code>-L$(BOOST_ROOT)/lib
+</code></pre>
+<p>to the makefile, the relevant section should look like this</p>
+<pre><code>LIBRARY_PATH = -Llib \
+               -L/opt/cactus/lib \
+               -L$(CACTUS_ROOT)/lib \
+               -L$(CACTUS_ROOT)/uhal/uhal/lib \
+               -L$(CACTUS_ROOT)/uhal/grammars/lib \
+               -L$(CACTUS_ROOT)/uhal/log/lib \
+               -L$(CACTUS_ROOT)/extern/pugixml/RPMBUILD/SOURCES/lib \
+               -L$(CACTUS_ROOT)/extern/boost/RPMBUILD/SOURCES/lib \
+               -L$(BOOST_ROOT)/lib
+</code></pre>
+<p>3 <strong>Make <code>programFC7</code> executable</strong></p>
+<pre><code>make
+cd bin
+</code></pre>
+<p>verify <code>programFC7</code> has been made.</p>
+<p>4 <strong>Program the FC7</strong>
+See</p>
+<pre><code>./programFC7
+</code></pre>
+<p>for usage. For example:</p>
+<pre><code>./programFC7 1 11 /path/to/unifiedCCC/releases/fc7_unified_0x080107.mcs /path/to/gm2daq-modified/address_tables/FC7_CCC.xml
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths. This will apply firmware version 8.1.7 to the FC7 in crate 1 slot 11.</p>
+<hr />
+<h2 id="hardware_overview-amc13-advanced-mezzanine-card">AMC13 (Advanced Mezzanine Card)</h2>
+<h3 id="hardware_overview-overview_7">Overview</h3>
+<p>The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC">Boston Unviversity's TWiki page</a>.</p>
+<h3 id="hardware_overview-wired-connections_3">Wired Connections</h3>
+<h4 id="hardware_overview-optical-link-to-fc7">Optical Link to FC7</h4>
+<p>The FC7 sends trigger information to the AMC13s over an optical cable. Put a Finisar (or similar) SFP transceiver in the bottom SFP port in the AMC13. Connect it to the <a href="#hardware_overview-optical-link-to-amc13">appropriate SFP port in the FC7</a>.</p>
+<p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> Trigger in AMC13.</p>
+<h4 id="hardware_overview-10gbe-link-to-daq-computer">10GbE Link to DAQ computer</h4>
+<p>The AMC13 sends data to DAQ computer over an optical cable. Put an Avago (or similar) SFP transceiver in the top SFP+ port in the AMC13. Connect it to the <a href="#hardware_overview-10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC in the DAQ computer</a>.</p>
+<p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> 10GbE out.</p>
+<h3 id="hardware_overview-configuration_6">Configuration</h3>
+<p>First you should <a href="#hardware_overview-mch-microtca-carrier-hub">configure the MCH</a> and <a href="#hardware_overview-10gbe-nic-10-gigabit-ethernet-network-interface-card">configure the 10GbE NIC</a> if you haven't already.</p>
+<p>The AMC13 is largely configured with <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2">AMC13Tool2.exe</a>.The tools to configure the AMC13 are located in the g-2 modified DAQ repository, so you'll want to <a href="#installing_and_building-manual-installation-guide">install the DAQ software</a> before doing this. For some AMC13s, you need to set the IP addresses and reconfigure using AMC13Tool2.exe every time the module is power cycled.</p>
+<h4 id="hardware_overview-reading-ip-address_2">Reading IP Address</h4>
+<p>In your favorite text editor, edit <code>systemVars.py</code></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/dev_tools/amc13Config
+vi systemVars.py
+</code></pre>
+<p>Ensure <code>DEFAULT_HOST_IP</code> corresponds to the MCH IP for this AMC13's crate. Additionally, ensure the <code>NETWORK_BASE</code> is correct. This example file is provided:</p>
+<pre><code>#File to specify what the default varaibles addresses are used in your system
+
+#Default IP address for commercial MCH module
+# our NAT MCH address
+#DEFAULT_HOST_IP=&quot;192.168.1.41&quot;
+# our Vadatech MCH address
+DEFAULT_HOST_IP=&quot;192.168.2.15&quot;
+
+#Default AMC13 slot number
+DEFAULT_AMC13_SLOT=13
+
+#Location of 'config_tools'. This should never need to be changed
+DEFAULT_CONFIG_DIR=&quot;./config_tools&quot;
+
+#Network base for your uTCA crate's AMC modules
+#NETWORK_BASE=&quot;192.168.1&quot;
+NETWORK_BASE=&quot;192.168.2&quot;
+</code></pre>
+<p>Then you can run</p>
+<pre><code>python read_addresses.py
+</code></pre>
+<h4 id="hardware_overview-changing-ip-address_2">Changing IP Address</h4>
+<p>In your favorite text editor, edit <code>systemVars.py</code></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/dev_tools/amc13Config
+vi systemVars.py
+</code></pre>
+<p>Ensure <code>DEFAULT_HOST_IP</code> corresponds to the MCH IP for this AMC13's crate. Additionally, ensure the <code>NETWORK_BASE</code> is correct. This example file is provided:</p>
+<pre><code>#File to specify what the default varaibles addresses are used in your system
+
+#Default IP address for commercial MCH module
+# our NAT MCH address
+#DEFAULT_HOST_IP=&quot;192.168.1.41&quot;
+# our Vadatech MCH address
+DEFAULT_HOST_IP=&quot;192.168.2.15&quot;
+
+#Default AMC13 slot number
+DEFAULT_AMC13_SLOT=13
+
+#Location of 'config_tools'. This should never need to be changed
+DEFAULT_CONFIG_DIR=&quot;./config_tools&quot;
+
+#Network base for your uTCA crate's AMC modules
+#NETWORK_BASE=&quot;192.168.1&quot;
+NETWORK_BASE=&quot;192.168.2&quot;
+</code></pre>
+<p>Then you can run</p>
+<pre><code>python applyConfig.py -i 192.168.[crate].13
+</code></pre>
+<p>This will set the T1 (virtex FPGA) IP to <code>192.168.[crate].13</code> and the T2 (spartan FPGA) IP to <code>192.168.[crate].14</code>.</p>
+<p>Then verify you can ping the addresses</p>
+<pre><code>ping 192.168.[crate].13
+ping 192.168.[crate].14
+</code></pre>
+<h4 id="hardware_overview-building-amc13tool2exe">Building AMC13Tool2.exe</h4>
+<p>You need to <a href="#hardware_overview-changing-ip-address_2">set the IP</a> before doing this.</p>
+<p>1 <strong>Set up environment</strong></p>
+<p>You may need to find where you python includes are</p>
+<pre><code>python-config --includes
+</code></pre>
+<p>make note of the directory (without the <code>-I</code>). And add it to your C++ include path, for example:</p>
+<pre><code>export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/rh/rh-python36/root/usr/include/python3.6m
+</code></pre>
+<p>Then add library paths</p>
+<pre><code>export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/tools/lib:$LD_LIBRARY_PATH
+</code></pre>
+<p>2 <strong>Make AMC13Tool2.exe</strong></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
+make
+</code></pre>
+<p><strong>Note</strong>: I had trouble building AMC13Tool2.exe at first. I had to make some edits to the C++ code to get it to compile; those edits should be included in the multi-crate branch of the DAQ repository.</p>
+<p>3 <strong>Run AMC13Tool2.exe</strong></p>
+<p>Try running AMC13Tool2.exe</p>
+<pre><code>bin/AMC13Tool2.exe -c 192.168.[crate #].13 -p $GM2DAQ_DIR/address_tables/
+</code></pre>
+<p>Enter <code>h</code> for available commands.</p>
+<h4 id="hardware_overview-configuring-the-amc13-with-amc13tool2exe">Configuring the AMC13 with AMC13Tool2.exe</h4>
+<p><a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2">AMC13Tool2.exe</a> has a command guide provided by Boston Unversity. For our case we just want to run the following:</p>
+<p>1 <strong>Run AMC13Tool2.exe</strong></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
+bin/AMC13Tool2.exe -c 192.168.[crate #].13 -p $GM2DAQ_DIR/address_tables/
+</code></pre>
+<p>2 <strong>Initialize AMC13 for data taking</strong></p>
+<pre><code>en 1-12
+</code></pre>
+<p>3 <strong>Enable SFPs</strong></p>
+<pre><code>daq 1
+</code></pre>
+<p>4 <strong>Change IP of 10GbE Port</strong>
+First read the value and make note:</p>
+<pre><code>rv 0x1c1c 
+</code></pre>
+<p>Then write the value to an IP on your 10GbE port network, for example:</p>
+<pre><code>wv 0x1c1c 0xc0a83301
+</code></pre>
+<p>where the hex converts to IP as such:</p>
+<pre><code>c0 = 192
+a8 = 168
+33 = 51
+01 = 1
+</code></pre>
+<p>So This sets the IP to 192.168.51.1. You want to <a href="#odb_config-amc13-sfp-ip-address">set this value in the ODB</a> to correspond to this IP.</p>
+<p>5 <strong>Issue DAQ reset</strong></p>
+<pre><code>rd
+</code></pre>
+<p>6 <strong>Verify you can ping the 10GbE link</strong>
+For example:</p>
+<pre><code>ping 192.168.51.1
+</code></pre>
+<p><strong>Note:</strong> Sometimes this doesn't work for me. You can also try running the commands inside the AMC13Tool2.exe CLI this order instead:</p>
+<pre><code>en 1-12
+daq 1
+rd
+wv 0x1c1c 0xc0a83301
+</code></pre>
+<h4 id="hardware_overview-updating-firmware_2">Updating Firmware</h4>
+<p>See <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2#Flash_Programming_Commands_for_f">Boston University's firmware guide</a> for more details.+</p>
+<p>1 <strong>Download Firmware</strong>
+See the <a href="http://ohm.bu.edu/~amc13/firmware.cgi">download page for various firmware versions</a>. We want T1 (virtex) version 33087 (0x813f) and T2 (spartan) version 46 (0x2e). You can download them using wget:</p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
+wget http://ohm.bu.edu/~amc13/CMS/AMC13-Firmware/AMC13T2v0x002e_6slx45t.mcs
+wget http://ohm.bu.edu/~amc13/CMS/AMC13-Firmware/AMC13T1v0x813f_7k325t.mcs
+</code></pre>
+<p>2 <strong>Update Firmware</strong></p>
+<pre><code>bin/AMC13Tool2.exe -c 192.168.[crate #].13 -p $GM2DAQ_DIR/address_tables/
+</code></pre>
+<p>In the CLI:</p>
+<pre><code>pv 
+</code></pre>
+<p>Select the correct firmware from the options listed. Then repeat for the spartan</p>
+<pre><code>ps
+</code></pre>
+<p>3 <strong>Verify Firmware Version is Correct</strong></p>
+<p>You can verify the firmware updated correctly with</p>
+<pre><code>list
+</code></pre>
+<p>example output:</p>
+<pre><code>Connected AMC13s
+*0: SN: 268 T1v: 813f T2v: 002e cf: 192.168.1.13
+</code></pre>
+<hr />
+<h2 id="hardware_overview-meinberg-card-tcr180pex-or-similar">Meinberg Card (TCR180PEX or similar)</h2>
+<h3 id="hardware_overview-overview_8">Overview</h3>
+<p>The Meinberg card provides GPS timestamps for data triggers. It is an artifact from g-2 that doesn't serve much purpose for the g-2 modified DAQ. However, it is still a supported trigger system for the <a href="#installing_and_building-mastergm2">Master Frontend</a>.</p>
+<h3 id="hardware_overview-wired-connections_4">Wired Connections</h3>
+<h4 id="hardware_overview-sma-to-d9-connector">SMA to D9 Connector</h4>
+<p>A custom cable must be created to connect the meinberg to the signal bank. One end needs to end up as SMA (for the bank) while the other needs to be a 9pin D-SUB connector (for the meinberg). There is pinout in section 10 (page 27) of the <a href="../pdfs/tcr180pex.pdf">meinberg manual</a>.</p>
+<h3 id="hardware_overview-configuration_7">Configuration</h3>
+<p>See the <a href="../pdfs/tcr180pex.pdf">Meinberg manual</a> for detailed configuration. Furthermore, there are <a href="https://kb.meinbergglobal.com/kb/driver_software/command_line_tools_mbgtools">meinberg command line tools detailed on their website</a>. After the <a href="#software_dependencies-meinberg">meinberg drivers are installed and loaded</a>, there should be no additional configuration to be done.</p>
+<hr /></section><section class="print-page" id="software_dependencies"><h1 id="software_dependencies-software-dependencies">Software Dependencies</h1>
+<h2 id="software_dependencies-pioneer-experiment-repositories">PIONEER Experiment Repositories</h2>
+<p>Access the repositories here: <a href="https://github.com/PIONEER-Experiment">PIONEER Experiment GitHub</a>.</p>
+<h3 id="software_dependencies-contact-for-access">Contact for Access</h3>
+<p>Patrick Schwendimann: <br>
+<i class="fas fa-envelope"></i> Email: <a href="mailto:schwenpa@uw.edu">schwenpa@uw.edu</a><br>
+<i class="fab fa-github"></i> GitHub: <a href="https://github.com/PatrickSchwendimann">PatrickSchwendimann</a></p>
+<p>Joshua Labounty: <br>
+<i class="fas fa-envelope"></i> Email: <a href="mailto:jjlab@uw.edu">jjlab@uw.edu</a><br>
+<i class="fab fa-github"></i> GitHub: <a href="https://github.com/jlabounty">jlabounty</a></p>
+<h2 id="software_dependencies-setting-up-a-github-ssh-token-on-rhel79-systems">Setting Up a GitHub SSH Token on RHEL7/9 Systems</h2>
+<h3 id="software_dependencies-1-generate-an-ssh-key-pair">1. Generate an SSH Key Pair</h3>
+<ol>
+<li>Open your terminal.</li>
+<li>
+<p>Generate a new SSH key. Replace <code>your_email@example.com</code> with the email address associated with your GitHub account.</p>
+<p><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code></p>
+<p>If you are using an older system that doesn’t support the <code>ed25519</code> algorithm, you can use <code>rsa</code> instead:</p>
+<p><code>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code></p>
+</li>
+<li>
+<p>Follow the prompts to save the key in the default location (<code>~/.ssh/id_ed25519</code>) and set a passphrase.</p>
+</li>
+</ol>
+<h3 id="software_dependencies-2-add-the-ssh-key-to-the-ssh-agent">2. Add the SSH Key to the SSH-Agent</h3>
+<ol>
+<li>
+<p>Start the SSH agent in the background:</p>
+<p><code>eval "$(ssh-agent -s)"</code></p>
+</li>
+<li>
+<p>Add your SSH private key to the ssh-agent. Replace <code>id_ed25519</code> with the name of your private key file if you used a different name.</p>
+<p><code>ssh-add ~/.ssh/id_ed25519</code></p>
+</li>
+</ol>
+<h3 id="software_dependencies-3-add-the-ssh-key-to-your-github-account">3. Add the SSH Key to Your GitHub Account</h3>
+<ol>
+<li>
+<p>Copy the SSH key to your clipboard:</p>
+<p><code>cat ~/.ssh/id_ed25519.pub</code>
+This will display for the key. Copy all of it.</p>
+</li>
+<li>
+<p>Log in to your GitHub account and navigate to <strong>Settings</strong> &gt; <strong>SSH and GPG keys</strong> &gt; <strong>New SSH key</strong>.</p>
+</li>
+<li>Paste your SSH key into the "Key" field and add a descriptive title.</li>
+<li>Click "Add SSH key".</li>
+</ol>
+<h3 id="software_dependencies-4-test-your-ssh-connection">4. Test Your SSH Connection</h3>
+<ol>
+<li>
+<p>Test the connection to make sure everything is set up correctly:</p>
+<p><code>ssh -T git@github.com</code></p>
+</li>
+<li>
+<p>You should see a message like:</p>
+<p><code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</code></p>
+<h3 id="software_dependencies-example-steps-in-terminal">Example Steps in Terminal</h3>
+</li>
+</ol>
+<pre><code># Step 1: Generate an SSH Key Pair
+ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+
+# Step 2: Start the SSH agent in the background
+eval &quot;$(ssh-agent -s)&quot;
+
+# Step 3: Add your SSH private key to the ssh-agent
+ssh-add ~/.ssh/id_ed25519
+
+# Step 4: Copy the SSH key to your clipboard
+cat ~/.ssh/id_ed25519.pub
+
+# Step 5: Add the SSH key to GitHub via the GitHub web interface
+
+# Step 6: Test your SSH connection
+ssh -T git@github.com
+</code></pre>
+<hr />
+<h2 id="software_dependencies-development-tools">Development Tools</h2>
+<h3 id="software_dependencies-overview">Overview</h3>
+<p>These tools include compilers, libraries, and other utilities that facilitate software development and installation.</p>
+<h3 id="software_dependencies-installation-guide">Installation Guide</h3>
+<p>This guide should work for RHEL systems (CentOS7 and ALMA9 included), though you may need to install yum on ALMA9.</p>
+<p>1 <strong>Install yum package manager</strong></p>
+<pre><code>sudo dnf install yum
+</code></pre>
+<p>2 <strong>Update the package index</strong>:</p>
+<pre><code>sudo yum update
+</code></pre>
+<p>3 <strong>Enable the EPEL repository</strong>:</p>
+<pre><code>sudo yum install epel-release
+</code></pre>
+<p>4 <strong>Install Development Tools and Dependencies</strong>:</p>
+<pre><code>sudo yum groupinstall &quot;Development Tools&quot;
+sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel
+</code></pre>
+<p>5 <strong>Install Python</strong></p>
+<pre><code>sudo yum install python3
+</code></pre>
+<p><strong>Note</strong>: CentOS7 may not have python3 available in base repositories, you can install via <code>yum install -y rh-python36</code>.</p>
+<hr />
+<h2 id="software_dependencies-ipmitool">ipmitool</h2>
+<h3 id="software_dependencies-overview_1">Overview</h3>
+<p><code>ipmitool</code> is a widely used command-line utility that facilitates interaction with IPMI-enabled devices. It allows administrators to perform various management tasks remotely and locally. Here's a more detailed look at <code>ipmitool</code>:</p>
+<ul>
+<li><strong>Sensor Monitoring</strong>: <code>ipmitool</code> can read and display sensor data, such as temperature, voltage, and fan speed, helping to monitor the health and status of the hardware.</li>
+<li><strong>System Management</strong>: It provides commands to control system power states (on, off, reset) and to manage system settings remotely.</li>
+<li><strong>Firmware Management</strong>: <code>ipmitool</code> supports updating and managing firmware of the IPMI-enabled devices.</li>
+<li><strong>Event Log Management</strong>: It can display and clear the system event log (SEL), which records critical system events.</li>
+<li><strong>Chassis Management</strong>: Commands to control and manage the chassis, including power control and identifying LEDs.</li>
+<li><strong>User Management</strong>: Supports adding, modifying, and deleting IPMI users.</li>
+</ul>
+<h3 id="software_dependencies-installation-guide_1">Installation Guide</h3>
+<p>1 <strong>Install <code>ipmitool</code></strong>:</p>
+<pre><code>sudo yum install ipmitool
+</code></pre>
+<p>2 <strong>Verify Installation</strong>:</p>
+<pre><code>ipmitool -V
+</code></pre>
+<hr />
+<h2 id="software_dependencies-root">ROOT</h2>
+<h3 id="software_dependencies-overview_2">Overview</h3>
+<p><a href="https://root.cern.ch/">ROOT</a> is an open-source data analysis framework developed by CERN. It is widely used in high-energy physics for data processing, statistical analysis, visualization, and storage. It is needed for some features of Midas.</p>
+<h3 id="software_dependencies-installation-guide_2">Installation Guide</h3>
+<p>General installaiton guides are provided by ROOT at their <a href="https://root.cern/install/">Installing ROOT</a> and <a href="https://root.cern/install/build_from_source/">Building ROOT from source</a> pages.</p>
+<h4 id="software_dependencies-almalinux-9">AlmaLinux 9</h4>
+<p>1 <strong>Enable the EPEL repository</strong>:</p>
+<pre><code>sudo yum install epel-release
+</code></pre>
+<p>2 <strong>Download and Install ROOT</strong>:</p>
+<pre><code>wget https://root.cern/download/root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
+tar -xzvf root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
+cd root
+source bin/thisroot.sh
+</code></pre>
+<h4 id="software_dependencies-centos-7">CentOS 7</h4>
+<p>1 <strong>Enable the EPEL repository</strong>:</p>
+<pre><code>sudo yum install epel-release
+</code></pre>
+<p>2 <strong>Download and Install ROOT</strong>:</p>
+<pre><code>yum install root
+</code></pre>
+<h4 id="software_dependencies-building-from-source-linux">Building from source (Linux)</h4>
+<p>1 <strong>Example building latest stable branch from source</strong></p>
+<pre><code>git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
+mkdir root_build root_install &amp;&amp; cd root_build
+cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # &amp;&amp; check cmake configuration output for warnings or errors
+cmake --build . -- install -j4 # if you have 4 cores available for compilation
+source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}
+</code></pre>
+<p><strong>Note</strong>: Adjust the ROOT version and the download URL as needed. Always check for the latest version on the <a href="https://root.cern.ch/">official ROOT website</a>. Furthermore, if you are not building from source you are installing precompiled binaries, which may not be up to date versions of ROOT. For specific versions, you may need to build root from source.</p>
+<hr />
+<h2 id="software_dependencies-midas">Midas</h2>
+<h3 id="software_dependencies-overview_3">Overview</h3>
+<p><a href="https://daq00.triumf.ca/MidasWiki/index.php/Main_Page">Midas</a> is a data acquisition system used in high-energy physics experiments.
+Midas provides the following functionalities:</p>
+<ul>
+<li>Run control</li>
+<li>Experiment configuration</li>
+<li>Data readout</li>
+<li>Event building</li>
+<li>Data storage</li>
+<li>Slow control</li>
+<li>Alarm systems</li>
+<li>... much more ...</li>
+</ul>
+<h3 id="software_dependencies-installation-guide_3">Installation Guide</h3>
+<p>For a general Midas installation, you can follow this <a href="https://daq00.triumf.ca/MidasWiki/index.php/Quickstart_Linux">Linux Quick Start Guide</a>. For the g-2 modified DAQ, we use a custom version of midas, which can be cloned and installed as follows:</p>
+<p>1 <strong>Set experiment name environment variable</strong></p>
+<pre><code>export MIDAS_EXPT_NAME=DAQ
+</code></pre>
+<p>2 <strong>Create exptab file</strong></p>
+<pre><code>mkdir online
+cd online
+touch exptab
+echo &quot;$MIDAS_EXPT_NAME $(pwd) system&quot; &gt;&gt; exptab
+export MIDAS_EXPTAB=$(pwd)/exptab   
+</code></pre>
+<p>3 <strong>Install Midas</strong></p>
+<pre><code>cd ..
+mkdir packages
+git clone --recursive git@github.com:PIONEER-Experiment/midas-modified.git midas
+cd midas
+make -j$(nproc) install
+</code></pre>
+<p><strong>Note</strong>: On CentOS7 you may need to use <code>cmake3</code> as opposed to <code>cmake</code>; install with <code>sudo yum install cmake3</code>. Alternatively, you can install <code>cmake</code> from source to ensure it is up to date.</p>
+<p>4 <strong>Set <code>MIDASSYS</code> environment variable and add to path</strong></p>
+<pre><code>export MIDASSYS=$(pwd)
+export PATH=$PATH:$MIDASSYS/bin
+</code></pre>
+<p><strong>Note</strong>: you can hardcode the environment variables <code>MIDASSYS</code> (and add to path), <code>MIDAS_EXPTAB</code>, and <code>MIDAS_EXPT_NAME</code> by adding the appropriate commands to your .bashrc file. This way, the environment variables are set with each new terminal session for that user.</p>
+<hr />
+<h2 id="software_dependencies-boost">Boost</h2>
+<h3 id="software_dependencies-overview_4">Overview</h3>
+<p><a href="https://www.boost.org/">Boost</a> is a comprehensive collection of C++ libraries that provide support for various tasks and structures including linear algebra, multithreading, image processing, regex (regular expressions), and more.</p>
+<h3 id="software_dependencies-installation-guide_4">Installation Guide</h3>
+<p>Boost can be installed on CentOS 7 and AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:</p>
+<h4 id="software_dependencies-centos-7-and-almalinux-9">CentOS 7 and AlmaLinux 9</h4>
+<p>1 <strong>Install Development Tools and Dependencies</strong>:</p>
+<pre><code>sudo yum groupinstall &quot;Development Tools&quot;
+sudo yum install cmake
+</code></pre>
+<p>2 <strong>Install Boost Libraries</strong>:</p>
+<pre><code>sudo yum install epel-release
+sudo yum install boost-devel
+</code></pre>
+<h4 id="software_dependencies-install-boost-176-from-source">Install Boost 1.76 from Source</h4>
+<p>1 <strong>Download and Extract Boost</strong>:</p>
+<pre><code>wget https://sourceforge.net/projects/boost/files/boost/1.76.0/boost_1_76_0.tar.gz
+tar -xzf boost_1_76_0.tar.gz
+cd boost_1_76_0
+</code></pre>
+<p>2 <strong>Configure and Build Boost</strong>:</p>
+<pre><code>./bootstrap.sh --prefix=/usr/local
+./b2
+</code></pre>
+<p>Replace <code>/usr/local</code> with your desired installation path.
+<strong>Note:</strong> You may need to manually link python to boost, to do this:</p>
+<pre><code>export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/rh/rh-python36/root/usr/include/python3.6m
+./bootstrap.sh --prefix=/usr/local --with-python=&quot;/opt/rh/rh-python36/root/usr/bin/python3&quot; --with-python-root=&quot;/opt/rh/rh-python36/root&quot; --with-python-version=&quot;3.6&quot;
+</code></pre>
+<p>where <code>/opt/rh/rh-python36/root/usr/include/python3.6m</code>, <code>/opt/rh/rh-python36/root/usr/bin/python3</code>, <code>/opt/rh/rh-python36/root</code>, and <code>3.6</code> are replaced with the appropriate values for your system.</p>
+<p>3 <strong>Install Boost</strong>:</p>
+<pre><code>./b2 -j$(nproc) install --prefix=/usr/local
+</code></pre>
+<p>Replace <code>/usr/local</code> with your desired installation path.</p>
+<p>4 <strong>Verify Boost Installation</strong>:</p>
+<pre><code>sudo ldconfig
+</code></pre>
+<hr />
+<h2 id="software_dependencies-ipbus-cactus">IPBus (Cactus)</h2>
+<h3 id="software_dependencies-overview_5">Overview</h3>
+<p><a href="https://ipbus.web.cern.ch/">IPBus</a>, part of the Cactus framework, is a protocol for remote control and monitoring of hardware devices over Ethernet. It's commonly used in high-energy DAQ systems.</p>
+<h3 id="software_dependencies-installation-guide_5">Installation Guide</h3>
+<p>For a general installation guide, see ipbus' <a href="https://ipbus.web.cern.ch/doc/user/html/software/installation.html">Installing the Software</a> page.</p>
+<h4 id="software_dependencies-almalinux-9_1">AlmaLinux 9</h4>
+<p>1 <strong>Remove previous version (if applicable)</strong>:</p>
+<pre><code>sudo yum groupremove uhal
+</code></pre>
+<p>2 <strong>Download yum repo file</strong>:</p>
+<pre><code>sudo curl https://ipbus.web.cern.ch/doc/user/html/_downloads/ipbus-sw.el9.repo -o /etc/yum.repos.d/ipbus-sw.repo
+</code></pre>
+<p>3 <strong>Install uHAL</strong>:</p>
+<pre><code>sudo yum clean all
+sudo yum groupinstall uhal
+</code></pre>
+<h4 id="software_dependencies-centos-7_1">CentOS 7</h4>
+<p>1 <strong>Remove previous version (if applicable)</strong>:</p>
+<pre><code>sudo yum groupremove uhal
+</code></pre>
+<p>2 <strong>Download yum repo file</strong>:</p>
+<pre><code>sudo curl https://ipbus.web.cern.ch/doc/user/html/_downloads/ipbus-sw.centos7.repo -o /etc/yum.repos.d/ipbus-sw.repo
+</code></pre>
+<p>3 <strong>Install uHAL</strong>:</p>
+<pre><code>sudo yum clean all
+sudo yum groupinstall uhal
+</code></pre>
+<p><strong>Note</strong>: I personally had trouble getting this to work on CentOS7 and had to resort to building from source (see below).</p>
+<h4 id="software_dependencies-example-building-from-source">Example building from source</h4>
+<p>See <a href="https://ipbus.web.cern.ch/doc/user/html/software/install/compile.html">Compiling and installing from source</a>, an example is below:</p>
+<pre><code>sudo yum install pugixml-devel
+git clone --depth=1 -b v2.7.3 --recurse-submodules https://github.com/ipbus/ipbus-software.git
+cd ipbus-software
+make -j$(nproc) EXTERN_BOOST_INCLUDE_PREFIX=&quot;/opt/boost/include&quot; EXTERN_BOOST_LIB_PREFIX=&quot;/opt/boost/lib&quot; EXTERN_PUGIXML_INCLUDE_PREFIX=&quot;/usr/local/include&quot; EXTERN_PUGIXML_LIB_PREFIX=&quot;/usr/local/lib64/&quot;
+sudo make install -j$(nproc)
+</code></pre>
+<p><strong>Note</strong>: You may not need to specify <code>EXTERN_BOOST_INCLUDE_PREFIX</code>, <code>EXTERN_BOOST_LIB_PREFIX</code>, <code>EXTERN_PUGIXML_INCLUDE_PREFIX</code>, <code>EXTERN_PUGIXML_LIB_PREFIX</code>. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.</p>
+<hr />
+<h2 id="software_dependencies-meinberg">Meinberg</h2>
+<h3 id="software_dependencies-overview_6">Overview</h3>
+<p><a href="https://www.meinbergglobal.com/">Meinberg</a> provides a range of synchronization solutions, including Network Time Protocol (NTP) servers, precision time protocol (PTP) solutions, and GPS radio clocks. These tools are essential for accurate time synchronization in various high-precision applications.</p>
+<p>In our case, we use it to apply a GPS timestamp to each event. In reality, this is an artifact from g-2 where seperate systems needed to be time correlated. Only the "GPS" master trigger mode needs the meinberg.</p>
+<h3 id="software_dependencies-installation-guide_6">Installation Guide</h3>
+<p>For more general information about Meinberg devices, see Meinberg's <a href="https://kb.meinbergglobal.com/">Installing the Software</a> page.</p>
+<h4 id="software_dependencies-almalinux-9-and-centos-7">AlmaLinux 9 and CentOS 7</h4>
+<p>1 <strong>Clone the repository</strong>:</p>
+<pre><code>git clone https://git.meinbergglobal.com/drivers/mbgtools-lx.git
+cd mbgtools-lx
+git pull
+</code></pre>
+<p><strong>Note</strong>: Ensure that the URLs and repository paths are correct.</p>
+<p>2 <strong>Compile the source code</strong>:</p>
+<pre><code>make clean
+make
+</code></pre>
+<p><strong>Note</strong>: You may need to use a development kernel. This command will install the development kernel for your current kernel version.</p>
+<pre><code>sudo yum install kernel-devel-$(uname -r) gcc make
+</code></pre>
+<p>3 <strong>Install the software</strong>:</p>
+<pre><code>sudo make install
+sudo /sbin/modprobe mbgclock
+make install_svc
+</code></pre>
+<p>4 <strong>Verify installation</strong></p>
+<pre><code>mbgstatus
+</code></pre>
+<p>The output of this command should look similar to this:</p>
+<pre><code>mbgstatus v4.2.24 copyright Meinberg 2001-2023
+
+TCR180PEX 039212025430 (FW 1.21, ASIC 9.00) at port 0xE000, irq 47
+Date/time:  Tu, 2024-01-30  04:36:10.33 UTC
+Signal: 0%  (IRIG B122/B123, ** UTC offs not configured **)
+Status info: *** NO INPUT SIGNAL
+Status info: *** Ref. Time is Invalid
+Last sync:  We, 2023-10-04  11:36:55.00 UTC
+
+** Warning: The IRIG receiver has not yet been configured!
+
+Please make sure the correct IRIG Code Format has been
+selected, and enter the correct IRIG Time Offset from UTC
+according to the settings of the IRIG generator.
+The command &quot;mbgirigcfg&quot; can be used to change the settings.
+</code></pre>
+<p><strong>Note</strong>: Check the README in <code>mbgtools-lx</code> which provides step by step debugging for this installation.</p>
+<hr /></section><section class="print-page" id="installing_and_building"><h1 id="installing_and_building-installing-and-running-g-2-modified-daq">Installing and Running g-2 modified DAQ</h1>
+<h2 id="installing_and_building-overview">Overview</h2>
+<p>The g-2 modified DAQ software repurposes the DAQ software used for g-2 to be slightly more flexible. It allows for readout and communication with hardware described in the <a href="#hardware_overview">Hardware Overview</a> page.</p>
+<h3 id="installing_and_building-software-diagram">Software Diagram</h3>
+<p><img alt="software_diagram" src="../images/software_diagram.png" style="max-width:100%; height:auto;" />
+<strong>Note</strong>: Not pictured are the hardware links, see <a href="#hardware_overview-conceptual-diagram-one-crate-system">Hardware Diagram</a></p>
+<h4 id="installing_and_building-mastergm2">MasterGM2</h4>
+<p>This is a C++ executable midas frontend whose job is to count triggers to check that crate hardware and CaloReadoutAMC13 frontends are not missing triggers.</p>
+<ul>
+<li><strong>Trigger Thread</strong>: Recieves processed triggers from a source (ex. Meinberg PCIe Card) and reports them to the Midas thread.</li>
+<li><strong>Midas Thread</strong>: Puts data recieved from trigger thread into a midas bank for each event</li>
+</ul>
+<h4 id="installing_and_building-caloreadoutamc13">CaloReadoutAMC13</h4>
+<p>This is a C++ executable midas frontend whose job is to recieve digitized data from the AMC13 and process it before being placed in midas data banks.</p>
+<ul>
+<li><strong>TCP Thread</strong>: Recieves TCP packets over 10GbE from an AMC13. Unpacks the data into header, trailer, and payload information.</li>
+<li><strong>"GPU" Thread</strong>: Recieves processed data from TCP thread. In g-2, GPUs were used for additional data processing. They have been turned off and the "GPU" thread is a legacy buffer for the data to go through. No processing is done on the data here.</li>
+<li><strong>Midas Thread</strong>: Puts data recieved from gpu thread into midas banks for each event</li>
+</ul>
+<h4 id="installing_and_building-event-builder">Event Builder</h4>
+<p>This is a C++ executable midas frontend whose job is to collect data sitting in the midas buffers of all the frontends (MasterGM2, CaloReadoutAMC13 #1, CaloReadoutAMC13 #2, ...) and combine them into one midas event before being logged to a data file.</p>
+<hr />
+<h2 id="installing_and_building-installer">Installer</h2>
+<p>There is an <a href="#miscellaneous_info-2023-psi-lyso-testbeam-daq-installer">installer for the g-2 modified DAQ</a>. Though, it is currently out of date and I would not recommend using it.</p>
+<hr />
+<h2 id="installing_and_building-manual-installation-guide">Manual Installation Guide</h2>
+<p>1 <strong>Install Software Dependencies</strong></p>
+<p><a href="#software_dependencies-root">ROOT</a>, <a href="#software_dependencies-midas">Midas</a>, <a href="#software_dependencies-boost">Boost</a>, <a href="#software_dependencies-ipmitool">ipmitool</a>, and <a href="#software_dependencies-ipbus-cactus">Cactus</a> are all required to build and run the DAQ frontends. <a href="#software_dependencies-meinberg">Meinberg</a> is needed if using GPS mode for the master triggers. Install them following the instructions on the <a href="#software_dependencies">Software Dependencies Page</a>.</p>
+<p>2 <strong>Clone the Appropriate Branch</strong></p>
+<p>Make sure you have access to the <a href="https://github.com/PIONEER-Experiment">PIONEER Experiment GitHub</a>. See these <a href="#software_dependencies-pioneer-experiment-repositories">contacts</a> for gaining access. Additionally, make sure your github account is linked to your system via SSH token; you can do this by following <a href="#software_dependencies-setting-up-a-github-ssh-token-on-rhel79-systems">these instructions</a>. After installing the software dependencies, you should have a <code>packages</code> directory, where it's best to put the software. To clone, follow the commands below:</p>
+<pre><code>cd /path/to/packages
+mkdir experiment
+cd experiment
+git clone --branch multi-crate https://github.com/PIONEER-Experiment/gm2daq-modified.git
+cd gm2daq-modified
+git checkout multi-crate
+</code></pre>
+<p><strong>Note</strong>: To clone a different branch, simply change the <code>--branch</code> parameter from <code>multi-crate</code> to the appropriate branch. You can also checkout a different branch after this is done.</p>
+<p>3 <strong>Setup Environment</strong></p>
+<pre><code>cd environment_setup
+./detect_environment.sh
+</code></pre>
+<p>This will populate a local file <code>environment_variables.txt</code>, check it with:</p>
+<pre><code>cat environment_variables.txt
+</code></pre>
+<p>Here's an example of what <code>environment_variables.txt</code> will look like</p>
+<pre><code>GM2DAQ_DIR=/home/installation_testing/packages/experiment/lxedaq
+CACTUS_ROOT=/home/installation_testing/packages/cactus
+BOOST_ROOT=/home/backup_installation_testing/packages/boost-1.53.0
+PUGIXML_ROOT=/home/installation_testing/packages/pugixml-1.8
+ROOT_ROOT=/usr/include/root
+MIDASSYS=/home/installation_testing/packages/midas
+MIDAS_EXPTAB=/home/installation_testing/online/exptab
+MIDAS_EXPT_NAME=DAQ
+</code></pre>
+<p>Verify that each environment variable above points to the correct path for each piece of software. If not, manually change it with your favorite text editor. Then, run</p>
+<pre><code>source ./setup_environment.sh
+</code></pre>
+<p><strong>Note</strong>: To set up the environment every time you log in automatically, source this script in your <code>.bashrc</code> file. Modify the path in the following command to add <code>setup_environment.sh</code> to the .bashrc file</p>
+<pre><code>echo &quot;source /path/to/gm2daq-modified/environment_setup/setup_environment.sh&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+<p>4 <strong>Make Frontends</strong></p>
+<p>Make the master frontend:</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/MasterGM2
+make clean
+make -j$(nproc)
+</code></pre>
+<p>Make the AMC13 readout frontend:</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/CaloReadoutAMC13
+make clean
+make -j$(nproc)
+</code></pre>
+<p>Make the event builder frontend:</p>
+<pre><code>cd $GM2DAQ_DIR/eventbuilder
+make clean
+make
+</code></pre>
+<p>5 <strong>Configure Crate Contents File</strong></p>
+<p>Edit <code>AMC13xx_config.xml</code> file in your favorite text edit, for instance:</p>
+<pre><code>vi $GM2DAQ_DIR/frontends/AMC13xx_config.xml
+</code></pre>
+<p>An example file for a one crate system looks like this:</p>
+<pre><code>&lt;!-- The purpose of this file is to specify what devices are in each frontend crate --&gt;
+&lt;!-- To declare frontend AMC13xx create root node &lt;frontend id=&quot;xx&quot;&gt;  --&gt;
+&lt;!-- (xx = &quot;0&quot; will automatically be written as &quot;00&quot; in ODB settings, i.e. single digits are okay) --&gt;
+&lt;!-- To declare device in slot 'y' of create, create node &lt;slot id=&quot;y&quot; type=&quot;device_type&quot; --&gt;
+&lt;!-- Select &quot;device_type&quot; from FC7, WFD, or Rider (WFD and Rider are the same device) --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;frontend id=&quot;1&quot;&gt;
+    &lt;slot id=&quot;1&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;2&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;3&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;4&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;5&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;6&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;7&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;10&quot; type=&quot;FC7&quot; /&gt;
+    &lt;slot id=&quot;11&quot;  type=&quot;WFD&quot; /&gt;
+&lt;/frontend&gt;
+</code></pre>
+<p>An example file for a two crate system looks this like:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;frontend id=&quot;1&quot;&gt;
+    &lt;slot id=&quot;1&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;2&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;3&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;4&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;5&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;6&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;7&quot;  type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;10&quot; type=&quot;FC7&quot; /&gt;
+    &lt;slot id=&quot;11&quot;  type=&quot;WFD&quot; /&gt;
+&lt;/frontend&gt;
+&lt;frontend id=&quot;2&quot;&gt;
+    &lt;slot id=&quot;3&quot; type=&quot;WFD&quot; /&gt;
+    &lt;slot id=&quot;5&quot; type=&quot;WFD&quot; /&gt;
+&lt;/frontend&gt;
+</code></pre>
+<p><strong>Note</strong>: The frontend id should correspond to the subnet you placed (or will place) the crate components on when configuring the hardware.</p>
+<p>This file is used to build the ODB. <strong>Any hardware not specified in this file will be ignored.</strong> You can still disable any hardware listed in this file in the ODB after it has been generated. However if you want to move the FC7 to a different slot, this file and the ODB need to be editted accordingly.</p>
+<p>6 <strong>Start Midas Webpage</strong></p>
+<pre><code>cd $GM2DAQ_DIR/webpage_scripts
+./start_midas_webpage
+</code></pre>
+<p>Then open <code>localhost:8080</code> in your favorite web browser.</p>
+<p><strong>Note</strong>: If this doesn't work, verify that <code>mlogger</code>, <code>mhttpd</code> (or <code>mhttpd6</code>), and <code>mserver</code> and all running as screens, i.e. check:</p>
+<pre><code>screen -ls
+</code></pre>
+<p>You can also run <code>mhttpd</code> manually to look for error messages for debugging:</p>
+<pre><code>$MIDASSYS/bin/mhttpd
+</code></pre>
+<p>7 <strong>Generate the ODB</strong></p>
+<p>The first time the frontends are run, they will automatically populate the ODB with the default settings. Run the frontends for the first time (they will error out):</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/MasterGM2
+./frontend -e DAQ
+</code></pre>
+<pre><code>cd $GM2DAQ_DIR/frontends/CaloReadoutAMC13
+./frontend -e DAQ -i {frontend id}
+</code></pre>
+<p>where <code>{frontend id}</code> is replaced with the frontend ids specified in the crate configuration file above. This command needs to be run once for each frontend (each crate) to properly generate the ODB.</p>
+<p>On the midas webpage view the ODB. Verify that <code>/Equipment/MasterGM2</code> and each <code>/Equipment/AMC13xxx</code> now exist.</p>
+<p>8 <strong>Configure the ODB</strong></p>
+<p>Before the DAQ can run, the ODB needs to be properly configured. First, make sure the Logger <a href="#odb_config-toggle-logger-data-writing">writes data</a> and <a href="#odb_config-toggle-logger-to-generate-odb-backups-for-each-run">makes ODB backup files for each run</a>. Then following the instructions on the <a href="#odb_config-g-2-modified-daq-specific-odb-configuration">ODB configuration page</a>, read through each setting and ensure they are correct for your setup.</p>
+<hr />
+<h2 id="installing_and_building-running-the-frontends">Running the Frontends</h2>
+<h3 id="installing_and_building-starting-frontends-by-hand">Starting Frontends "by Hand"</h3>
+<p>The first time you run the frontends, I suggest dedicating one terminal window to each so you can inspect for errors. Each frontend will occupy a terminal window.</p>
+<h4 id="installing_and_building-master-frontend">Master Frontend</h4>
+<p><strong>The Master frontend must be started first</strong> because it does some general AMC13 and FC7 initilization. Run</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/MasterGM2
+./frontend -e DAQ
+</code></pre>
+<p>The <code>-e</code> flag specifies the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>.</p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="installing_and_building-amc13-readout-frontends">AMC13 Readout Frontends</h4>
+<p>This frontend(s) must be started <strong>after the Master frontend has initialized</strong>. You can start multiple instances at the same time, but in my experience this causes midas to complain about ODB space (you may be able to get around this by <a href="#midas-changing-the-odb-size">increasing the ODB size</a>, I've never tried).</p>
+<pre><code>cd $GM2DAQ_DIR/frontends/CaloReadoutAMC13
+./frontend -e DAQ -i {frontend id}
+</code></pre>
+<p>The <code>-e</code> flag specifies the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>. <br>
+The <code>-i</code> flag specifies frontend index. <code>{frontend id}</code> is replaced with the frontend ids specified in the crate configuration file above. <br>
+This command needs to be run once for each AMC13 frontend (each crate). </p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="installing_and_building-event-builder-frontend">Event Builder Frontend</h4>
+<p>Once all of the other frontends have finished initializing, you can start the event builder.</p>
+<pre><code>./mevb -e DAQ -b BUF
+</code></pre>
+<p>The <code>-e</code> flag specifies the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>. <br>
+The <code>-b</code> flag specifies the buffer it will look for to create events. Any frontend writing to a buffer starting with <code>BUF</code> will added to an event by the event builder. You can check each frontend's buffer in it's <code>Common</code> page in the ODB, see <a href="#odb_config-change-the-data-buffer-for-a-frontend">changing buffer for a frontend</a>.</p>
+<p>Wait until this frontend turns green on the status page.</p>
+<h3 id="installing_and_building-screening-the-frontends">Screening the Frontends</h3>
+<p>Screening the frontends is slightly convoluted because you have to stuff all the appropriate environment variables into the screen session. If you are unfamiliar with screens, you may want <a href="#miscellaneous_info-using-screens-in-linux">view some learning material for using screens</a>. You made need to make <a href="#miscellaneous_info-getting-ld_library_path-into-a-screen-session">an edit to your .screenrc</a> for this to work properly. Other than this, there are scripts provided to launch the frontends in a screen.</p>
+<h4 id="installing_and_building-master-frontend_1">Master Frontend</h4>
+<p><strong>The Master frontend must be started first</strong> because it does some general AMC13 and FC7 initilization. Run</p>
+<pre><code>$GM2DAQ_DIR/frontends/MasterGM2/start-fe-uky.sh DAQ master
+</code></pre>
+<p>The first argument is the experiment name which should be the value of <code>$MIDAS_EXPT_NAME</code>. <br>
+The second argument is the name for the screen session.</p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="installing_and_building-amc13-readout-frontends_1">AMC13 Readout Frontends</h4>
+<p>This frontend(s) must be started <strong>after the Master frontend has initialized</strong>. You can start multiple instances at the same time, but in my experience this causes midas to complain about ODB space (you may be able to get around this by <a href="#midas-changing-the-odb-size">increasing the ODB size</a>, I've never tried).</p>
+<pre><code>$GM2DAQ_DIR/frontends/CaloReadoutAMC13/start-fe-uw.sh 1 DAQ amc13001
+</code></pre>
+<p>The 1st argument is the frontend index, it should match the <code>-i</code> argument when starting this <a href="#installing_and_building-amc13-readout-frontends">frontend by hand</a>. <br>
+The 2nd argument is the experiment name. This is found in the file located at <code>$MIDAS_EXPTAB</code>. <br>
+The 3rd is the name for the screen session.</p>
+<p>This command needs to be run once for each AMC13 frontend (each crate). </p>
+<p>Wait until this frontend prints <code>OK</code> (or until it turns and stays green on the midas status webpage).</p>
+<h4 id="installing_and_building-event-builder-frontend_1">Event Builder Frontend</h4>
+<p>Once all of the other frontends have finished initializing, you can start the event builder. There is no script for this screen, just a simple screen command. The flags are the same as when <a href="#installing_and_building-event-builder-frontend">starting this frontend by hand</a>.</p>
+<pre><code>screen -dmS event_builder $GM2DAQ_DIR/eventbuilder/mevb -e DAQ -b BUF
+</code></pre>
+<h3 id="installing_and_building-startup-scripts-on-midas-programs-page">Startup Scripts on Midas Programs Page</h3>
+<p>See the <a href="#midas-adding-program-startup-scripts">adding program startup scripts</a> page to see how to add startup programs. Make <code>Programs/{Frontend Name}/Required</code> is set to <code>yes</code>. Then copy the screen command for each respective frontend into <code>Programs/{Frontend Name}/Start Command</code>.</p>
+<hr /></section><section class="print-page" id="odb_config"><h1 id="odb_config-midas-online-data-base-odb-configuration">Midas Online Data Base (ODB) Configuration</h1>
+<h2 id="odb_config-odb-basics">ODB basics</h2>
+<p>Below are some basic usage examples of midas' ODB</p>
+<h3 id="odb_config-accessing-the-odb">Accessing the ODB</h3>
+<h4 id="odb_config-command-line-interface">Command line interface</h4>
+<p>You can edit the ODB via command line without needing a midas webserver running.</p>
+<pre><code>$MIDASSYS/bin/odbedit
+</code></pre>
+<p>Then you can navigate through the ODB as you would with linux directory commands. From here, you can type "help" or view the <a href="https://daq00.triumf.ca/MidasWiki/index.php/Odbedit_command_list">odbedit command list</a> for a list of commands.</p>
+<h4 id="odb_config-via-midas-webpage">Via Midas Webpage</h4>
+<p>You can start a midas webpage by running <code>mhttpd</code> (or <code>mhttpd6</code>)</p>
+<pre><code>$MIDASSYS/bin/mhttpd
+</code></pre>
+<p>Then view the ODB by clicking the <strong>ODB</strong> button on the left sidebar</p>
+<h3 id="odb_config-general-odb-configuration-examples">General ODB Configuration Examples</h3>
+<p>For a general guide on how to use Midas' ODB, see the <a href="https://daq00.triumf.ca/MidasWiki/index.php/ODB_Access_and_Use">ODB Access and Use wiki page</a>. Below are a few of common ODB</p>
+<h4 id="odb_config-toggle-logger-data-writing">Toggle Logger Data Writing</h4>
+<p>Change <code>Logger/Write Data</code> to <code>yes</code> or <code>no</code>.</p>
+<h4 id="odb_config-change-logger-data-writing-directory">Change Logger Data Writing Directory</h4>
+<p>Change <code>Logger/Data dir</code> to the desire path.</p>
+<h4 id="odb_config-toggle-logger-to-generate-odb-backups-for-each-run">Toggle Logger to generate ODB backups for each run</h4>
+<p>Change <code>Logger/ODB Dump</code> to <code>yes</code> or <code>no</code>.</p>
+<h4 id="odb_config-change-webpage-port">Change Webpage Port</h4>
+<p>First, run <code>mhttpd</code> or <code>mhttpd6</code> at least once. It doesn't need to be successful, it just needs to generate the <code>WebServer</code> ODB directory.</p>
+<p>Then, change <code>WebServer/localhost port</code> from <code>8080</code> to whatever port is desired. The <code>WebServer</code> ODB directory provides much more webserver config as well.</p>
+<h4 id="odb_config-disable-a-frontend">Disable a Frontend</h4>
+<p>Every Midas frontend generates a <code>Common</code> section it's ODB. For example, <code>Equipment/AMC13001/Common</code> will be generated. To disable a frontend, set <code>/Equipment/Frontend Name/Common/Enabled</code> to <code>no</code>. This is useful for toggling off crates in multicrate setups.</p>
+<h4 id="odb_config-change-the-data-buffer-for-a-frontend">Change the Data Buffer for a Frontend</h4>
+<p>Change <code>/Equipment/Frontend Name/Common/Buffer</code> to the desired buffer name.</p>
+<hr />
+<h2 id="odb_config-g-2-modified-daq-specific-odb-configuration">g-2 Modified DAQ Specific ODB Configuration</h2>
+<p>Below are some important settings in the ODB for the g-2 modified DAQ. This is not a complete description of every setting in the ODB. Many settings are artifacts from g-2 that don't serve any purpose anymore.</p>
+<h3 id="odb_config-master-frontend-odb-settings">Master Frontend ODB settings</h3>
+<h4 id="odb_config-trigger-source">Trigger Source</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/MasterGM2/Settings/Globals/Trigger Source</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Determines what source the Master will use to trigger events</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>GPS</code>, <code>PP</code> (currently broken), <code>Fake</code>, <code>Socket</code> (untested), <code>None</code>, <code>ODB</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>GPS</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: The meaning of each value is specified below:
+    - <strong>GPS</strong>: Uses the Meinberg GPS timestamps for Master triggers.
+    - <strong>PP</strong>: Uses parallel port signals as the trigger source (currently broken).
+    - <strong>Fake</strong>: Uses a fake signal for testing purposes. Further configuration in ODB.
+    - <strong>Socket</strong>: Uses a socket connection as the trigger source (untested).
+    - <strong>None</strong>: No trigger source is used, no master triggers are made.
+    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.</p>
+<h4 id="odb_config-front-end-offset">Front End Offset</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/MasterGM2/Settings/Globals/Front End Offset</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Offset for index for the IPs of the first frontend. For example if your MCH IP is 192.168.3.15, then you'd want this offset to be 3.</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Positive integer &lt; 1000</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-encoder-front-end">Encoder Front End</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/MasterGM2/Settings/Globals/Encoder Front End</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Identifier for frontend that corresponds to the crate containing the encoder FC7</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>AMC13001</code>, <code>AMC13002</code>, ...</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>AMC13001</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="odb_config-amc13-readout-frontend-odb-settings">AMC13 Readout Frontend ODB settings</h3>
+<p>Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or shouldn't need to be modified from its default value. For example, most of the <code>TQ01</code>, <code>TQ02</code>, <code>TQ03</code>, and <code>TQ04</code> no longer function.</p>
+<h4 id="odb_config-send-to-event-builder">Send to Event Builder</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Globals/Send to Event Builder</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Defines whether or not data is sent to event builder frontend</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: It is best to have this set to <code>yes</code> as it won't affect data readout even if the event buidler isn't used.</p>
+<h4 id="odb_config-mch-ip-address">MCH IP Address</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Globals/MCH IP Address</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Set to MCH IP address for the MCH in this crate</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any valid IP address</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>192.168.1.15</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: This is the address in which the frontends sent IPMI commands to. If this is incorrect none of the crate components can be properly intialized for a data run. Each frontend (crate) should have it's own MCH IP address.</p>
+<h4 id="odb_config-ccc-fc7-slot-number-1-12">CCC: FC7 Slot Number (1-12)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Globals/CCC: FC7 Slot Number (1-12)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Slot number of the encoder FC7 in the uTCA crate</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>1</code>, <code>2</code>, ... <code>12</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>10</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: For crates without an FC7, this value does not matter. Just set it to the same value as the crate with the encoder FC7.</p>
+<h4 id="odb_config-ccc-fmc-location-topbottom">CCC: FMC Location (top,bottom)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Globals/CCC: FMC Location (top,bottom)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The location of the SFP interface FMC card on the FC7 board</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>top</code> or <code>bottom</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>top</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: See <a href="#miscellaneous_info-fc7-labeling">FC7 Labeling</a> to decide whether your FMC SFP interface is on the top or the bottom (usually it's on the top).</p>
+<h4 id="odb_config-ccc-fmc-sfp-number-1-8">CCC: FMC SFP Number (1-8)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Globals/CCC: FMC SFP Number (1-8)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The FC7 SFP slot number this AMC13 is connected to by optical cable</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>1</code>, <code>2</code>, ... <code>8</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>1</code> (for the first crate)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: See <a href="#miscellaneous_info-fc7-labeling">FC7 Labeling</a> to decide which port your optical connection is.</p>
+<h4 id="odb_config-amc13-10gbe-link-enable">AMC13 10GbE Link Enable</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Link01/Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Toggles the 10GbE link for this AMC13</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>0</code> or <code>1</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-amc13-sfp-ip-address">AMC13 SFP IP Address</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Link01/AMC13 SFP IP Address</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Specifies the 10GbE link IP</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any valid IP</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>192.168.50.1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: This is the AMC13 IP that data is sent over. If this is incorrect, not data will be transferred from the crate. Each frontend (crate) should have a different AMC13 SFP IP address.</p>
+<h4 id="odb_config-amc13-sfp-port-number">AMC13 SFP Port Number</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Link01/AMC13 SFP Port Number</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Specifies which SFP port on the AMC13 is used for the 10GbE link</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>0x00001234</code>, unsure about others</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>0x00001234</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: <code>0x00001234</code> corresponds to the top port on the AMC13. I would not change this value unless you know what you're doing.</p>
+<h4 id="odb_config-amc13-t1-firmware-version-required">AMC13 T1 Firmware Version Required</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Firmware Version Required</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The minimum required firmware version for the virtex (T1) FPGA in the AMC13</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any positive integer</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>33087</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-amc13-t2-firmware-version-required">AMC13 T2 Firmware Version Required</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Firmware Version Required</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The minimum required firmware version for the spartan (T2) FPGA in the AMC13</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any positive integer</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>46</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-amc13-t1-address-table-location">AMC13 T1 Address Table Location</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Address Table Location</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The path to the AMC13 virtex (T1) adress table xml file</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any valid path</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>$GM2DAQ_DIR/address_tables/AMC13XG_T1.xml</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-amc13-t2-address-table-location">AMC13 T2 Address Table Location</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T2 Address Table Location</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The path to the AMC13 spartan (T2) adress table xml file</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any valid path</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>$GM2DAQ_DIR/address_tables/AMC13XG_T2.xml</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-enable-fc7">Enable FC7</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Common/Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether or not this FC7 in the crate is enabled or not</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-fc7-address-table">FC7 Address Table</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Common/Address Table Location</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The path to the FC7 address table xml file</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any valid path</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>$GM2DAQ_DIR/address_tables/FC7_CCC.xml</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-fc7-board-type">FC7 Board Type</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Common/Board (encoder,fanout,trigger)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>What job the FC7 is set to do</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>encoder</code>,<code>fanout</code>, or <code>trigger</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>encoder</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: The FC7 firmware has been modified so now the <code>encoder</code> FC7 can do the job of the <code>trigger</code> and <code>encoder</code> FC7s.</p>
+<h4 id="odb_config-fc7-firmware-version-required">FC7 Firmware Version Required</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Common/FPGA Firmware Version Required</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The minimum required firmware version for the FC7</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any valid string (ex. <code>8.1.7</code>)</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>8.1.7</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-internal-trigger">Internal Trigger</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Encoder/Internal Trig Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether an external or internal trigger are used to trigger events</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>no</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: This is useful for debugging because it removes the need for having/building an external trigger signal. However, the triggers are periodic so the digitized data will be "random" windows of signal or noise.</p>
+<h4 id="odb_config-internal-trigger-period-us">Internal Trigger Period (us)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Encoder/Internal Trig Period (us)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The period of the internal trigger in micro seconds</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>any positive integer</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>500</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: After each trigger, there is some <a href="#odb_config-ttc-deadtime-ns">deadtime</a>. Therefore this value should be longer than the deadtime; otherwise there will be unintended results.</p>
+<h4 id="odb_config-internal-trigger-pulse-width-ns">Internal Trigger Pulse Width (ns)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Encoder/Internal Pulse Width (ns)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The width of the internal trigger pulse in nanoseconds</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>any positive integer</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>100</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-ttc-deadtime-ns">TTC deadtime (ns)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Encoder/TTC deadtime (ns)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The amount of deadtime (time with no new triggers) after each trigger</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>any positive integer</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>100000</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: The achievable rate is limited by this value. For example, if using the suggested value the DAQ cannot trigger at more than 10 kHz.</p>
+<h4 id="odb_config-enabled-wfd5">Enabled WFD5</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Address Table Location</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether or not this WFD5 is active for data taking</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-wfd5-address-table">WFD5 Address Table</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Address Table Location</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The path to the WFD5 address table xml file</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any valid path</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>$GM2DAQ_DIR/address_tables/WFD5.xml</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-wfd5-master-firmware-version">WFD5 Master Firmware Version</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Master Firmware Version</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Channel Firmware version for the WFD5</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>any valid version string</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>3.1.1</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-wfd5-channel-firmware-version">WFD5 Channel Firmware Version</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Chanel Firmware Version</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Channel Firmware version for the WFD5</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>any valid version string</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>3.1.1</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-wfd5-digitization-frequency">WFD5 Digitization Frequency</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Gitization Frequency (MHz)</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Frequency at which samples are digitized</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>800</code> divided by any power of 2 (for example, <code>200</code> is valid)</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>800</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-wfd5-circular-buffer-mode-enabled">WFD5 Circular Buffer Mode Enabled</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/CircBuf Mode: Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Puts a WFD5 into circular buffer mode for data taking</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-wfd5-waveform-length">WFD5 Waveform Length</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Async CBuf Waveform Length</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The total number of samples digitized for each waveform trigger</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any positive integer</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>800</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong> Each sample corresponds to a time window of 1/Digitization Frequency. So by default each sample corresponds to a 1.25 ns time window.</p>
+<h4 id="odb_config-wfd5-waveform-presamples">WFD5 Waveform Presamples</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Async CBuf Waveform Presamples</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>How many of the waveform samples are taken before the trigger</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>Any positive integer</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>600</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: This value must be less than the value of <a href="#odb_config-wfd5-waveform-length">WFD5 Waveform Length</a>.</p>
+<h4 id="odb_config-wfd5-channel-enabled">WFD5 Channel Enabled</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Channel{channel #}/Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether this channel of the WFD5 is enabled for data taking or not</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="odb_config-tq-methods-gpu-bank-processing">TQ methods GPU Bank Processing</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/TQ{#}/GPU T,Q,P bank processing</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether the GPU is used to process this midas bank or not</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>no</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/TQ{#}/GPU H bank processing</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether the GPU is used to process this midas bank or not</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>no</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: All of the TQ method settings are artifacts of g-2. We just want to make sure they are off.</p>
+<h4 id="odb_config-wfd5-async-mode">WFD5 Async Mode</h4>
+<p>"Async Mode" refers to a mode where each midas event contains 20 traces from each digitizer channel, which may increase the effective data collection rate. <strong>However, this mode is currently not working.</strong></p>
+<p>To turn on async mode set <a href="#odb_config-wfd5-async-mode-enabled-in-another-place">WFD5 Async Mode Enabled (in another place)</a> and <a href="#odb_config-ttc-async-mode-enabled">TTC Async Mode Enabled</a> to <code>yes</code>. For each digitizer, set <a href="#odb_config-wfd5-async-mode-enabled">WFD5 Async Mode Enabled</a> to <code>yes</code>. Furthermore <a href="#odb_config-wfd5-circular-buffer-mode-enabled">WFD5 Circular Buffer Mode</a> should be set to <code>no</code>. Otherwise the behavior will be unpredictable. I understand this is a bit convoluted, but this was hastily put together during the 2023 PSI LYSO test beam. There is slightly more documentation on <a href="https://maxwell.npl.washington.edu/elog/pienuxe/R23/139">this elog entry</a>.</p>
+<h5 id="odb_config-wfd5-async-mode-enabled">WFD5 Async Mode Enabled</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Rider{slot #}/Board/Async Mode: Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Puts a WFD5 into async mode for data taking</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>no</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="odb_config-wfd5-async-mode-enabled-in-another-place">WFD5 Async Mode Enabled (in another place)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Encoder/WFD5 Async Mode Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Lets FC7s know WFD5s are in async mode for data taking</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>no</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="odb_config-ttc-async-mode-enabled">TTC Async Mode Enabled</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/FC7-{slot #}/Encoder/TTC Async Mode Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Puts FC7 into async mode for data taking</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>no</code></td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="midas"><h1 id="midas-some-midas-information-and-tips">Some Midas Information and Tips</h1>
+<p>TRIUMF has a great <a href="https://daq00.triumf.ca/MidasWiki/index.php/Main_Page">Midas Wiki</a> page. For general midas information, this is a good place to start. Below, there are some specific tips about midas that are helpful when using the g-2 modified DAQ.</p>
+<h2 id="midas-data-storage-location">Data Storage location</h2>
+<p>By default midas files (.mid) and compressed midas files (.mid.lz4) will be stored in the same directory that the file <code>$MIDAS_EXPTAB</code> is located (usually the "online" directory). This can be can be <a href="#odb_config-change-logger-data-writing-directory">changed to a different directory in the Logger's ODB settings</a>.</p>
+<hr />
+<h2 id="midas-midas-files-to-root-files-unpacker">Midas Files to ROOT Files (unpacker)</h2>
+<p>See the <a href="#software_add_ons-midas-event-unpacker">unpacker software page</a>.</p>
+<p>Once that is installed, you can convert midas files to root files using the command:</p>
+<pre><code>./pioneer_unpacker MIDAS_FILE.mid.lz4 0 detector_mapping.json
+</code></pre>
+<hr />
+<h2 id="midas-recovering-from-a-corrupted-odb">Recovering from a Corrupted ODB</h2>
+<p>There should be a folder in <code>$GM2DAQ_DIR/restore_corrupted_ODB</code> or <code>$GM2DAQ_DIR/scripts/restore_corrupted_ODB</code> (if not, you may need to look in the default branch). Navigate to this directory and run one of the following two scripts:</p>
+<p>Fun version:</p>
+<pre><code>./midas_restore.sh
+</code></pre>
+<p>Less fun version:</p>
+<pre><code>./delete_and_restore_odb.sh
+</code></pre>
+<p>Both scripts have the exact same functionality; they effectively stop all running screens (midas related or not), delete all ODB data, and load a backup file. However the first script has some fun surprises for the user's pleasure. If this script doesn't work, you can follow the steps in <a href="#midas-fixing-a-persistently-corrupted-odb-by-hand">"Fixing a persistently corrupted ODB by hand"</a>.</p>
+<hr />
+<h2 id="midas-fixing-a-corrupted-odb-by-hand">Fixing a corrupted ODB by hand</h2>
+<p>These instructions are adapted from the <a href="https://daq00.triumf.ca/MidasWiki/index.php/FAQ#How_to_recover_from_a_corrupted_ODB">midas wiki's page on recovering from a corrupted ODB</a>. For most cases, you can just "nuke" the ODB and then load an ODB save file from a previous run. <strong>Make sure you have an ODB backup file</strong> to load (ex. run001234.json).</p>
+<p>1 <strong>Stop midas screens by hand</strong></p>
+<pre><code>screen -ls
+</code></pre>
+<p>Note all midas screens running and close them, for instance:</p>
+<pre><code>screen -X -S mhttpd quit
+screen -X -S mlogger quit
+screen -X -S mserver quit
+</code></pre>
+<p>Verify they are all close with</p>
+<pre><code>screen -ls
+</code></pre>
+<p>once again.</p>
+<p>2 <strong>Reset the ODB to midas default</strong></p>
+<pre><code>$MIDASSYS/bin/odbinit -s {ODB memory} --cleanup
+</code></pre>
+<p>Then follow the text prompts.</p>
+<p>For example:</p>
+<pre><code>$MIDASSYS/bin/odbinit -s 1024MB --cleanup
+</code></pre>
+<p>3 <strong>Load old ODB</strong> </p>
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;load online/run001234.json&quot;'
+</code></pre>
+<p>Replace the path <code>online/run001234.json</code> with the location of an actual ODB backup that you know was working.</p>
+<h3 id="midas-fixing-a-persistently-corrupted-odb-by-hand">Fixing a persistently corrupted ODB by hand</h3>
+<p>If nothing else works to fix a corrupted ODB, these steps act as a "brute force" reset. The steps below are actually the same steps done in the scripts mentioned in <a href="#midas-recovering-from-a-corrupted-odb">Recovering from a Corrupted ODB</a>. <strong>Make sure you have an ODB backup file</strong> to load (ex. run001234.json).</p>
+<p>1 <strong>Forcefully close out of all screens on the machine</strong></p>
+<pre><code>killall mserver mevb mlogger mhttpd mhttpd6 frontend mtransition &gt; /dev/null 2&gt;&amp;1
+killall -9 mserver mevb mlogger mhttpd mhttpd6 frontend mtransition &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/progs/mcleanup &gt; /dev/null 2&gt;&amp;1
+screen -wipe &gt; /dev/null 2&gt;&amp;1
+killall screen &gt; /dev/null 2&gt;&amp;1
+screen -wipe &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>2 <strong>Delete Shared Memory Files</strong></p>
+<pre><code>export EXP=$MIDAS_EXPT_NAME
+export EXP_PATH=$(dirname &quot;$MIDAS_EXPTAB&quot;)
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf $EXP_PATH/.*.SHM &gt; /dev/null 2&gt;&amp;1
+rm -rf $EXP_PATH/.*.TXT &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>3 <strong>Create new ODB and load old ODB file</strong></p>
+<pre><code>export JsonPath=online/run001234.json
+export run_number=1000
+$MIDASSYS/bin/odbedit -e $EXP -s 40000000 -c &quot;ls&quot; &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/bin/odbedit -e $EXP -c &quot;load $JsonPath&quot; &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/bin/odbedit -e $EXP -c &quot;set \&quot;/Runinfo/Run number\&quot; $run_number&quot; &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>where <code>JsonPath</code> and <code>run_number</code> are replaced with the paths to an ODB backup and the desired starting run number respectively. <strong>You should set the run number to a value higher than your last run number as to not overwrite and data</strong>.</p>
+<p>4 <strong>Reload midas webpage</strong></p>
+<pre><code>$MIDASSYS/bin/mhttpd
+</code></pre>
+<p>Verify everything looks as expected on the webpage. Then you can reload frontends and any other screens that were running beforehand.</p>
+<hr />
+<h2 id="midas-loading-an-odb-save">Loading an ODB save</h2>
+<p>You can use the ODB to load an old ODB save file. </p>
+<pre><code>$MIDASSYS/bin/odbedit
+</code></pre>
+<p>Then in the command line interface:</p>
+<pre><code>load online/run001234.json
+</code></pre>
+<p>Alternatively, you can "stuff" commands into odbedit from command line:</p>
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;load online/run001234.json&quot;'
+</code></pre>
+<p>where <code>online/run001234.json</code> should be replaced with a path to a valid ODB save file.</p>
+<p>In my experience, this only adds settings (or changes settings back). It will not remove settings. For example if path <code>/Equipment/Test</code> exists in the current ODB but not the save, it will still exist after the save is loaded.</p>
+<p>You can also load only specific parts of an ODB by navigating to the appropriate path. For example:</p>
+<pre><code>$MIDASSYS/bin/odbedit
+</code></pre>
+<p>then in the command line interface</p>
+<pre><code>cd Equipment
+load online/run001234.json
+</code></pre>
+<p>Now only the settings under <code>/Equipment</code> will be altered in your ODB by loading the save.</p>
+<hr />
+<h2 id="midas-changing-the-odb-size">Changing the ODB size</h2>
+<p>See the <a href="https://daq00.triumf.ca/MidasWiki/index.php/FAQ#Increasing_Number_of_Hot-links">midas wiki page for changing ODB size</a>.</p>
+<p>1 <strong>Save Current ODB if needed</strong></p>
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;save current_odb.odb&quot;
+</code></pre>
+<p>2 <strong>Stop midas screens by hand</strong></p>
+<pre><code>screen -ls
+</code></pre>
+<p>Note all midas screens running and close them, for instance:</p>
+<pre><code>screen -X -S mhttpd quit
+screen -X -S mlogger quit
+screen -X -S mserver quit
+</code></pre>
+<p>Verify they are all close with</p>
+<pre><code>screen -ls
+</code></pre>
+<p>once again.</p>
+<p>3 <strong>Edit file $MIDASSYS/include/midas.h</strong></p>
+<p>Find:</p>
+<pre><code>#define MAX_OPEN_RECORDS       256 
+</code></pre>
+<p>Change this to:</p>
+<pre><code>#define MAX_OPEN_RECORDS       1024
+</code></pre>
+<p><strong>Note:</strong> This can be changed to a larger number (up to some limit I don't know)</p>
+<p>4 <strong>Edit file $MIDASSYS/src/odb.cxx</strong></p>
+<p>Find:</p>
+<pre><code>assert(sizeof(DATABASE_CLIENT) == 2112);
+assert(sizeof(DATABASE_HEADER) == 135232);
+</code></pre>
+<p>Change to:</p>
+<pre><code>assert(sizeof(DATABASE_CLIENT) == 8256);
+assert(sizeof(DATABASE_HEADER) == 528448);
+</code></pre>
+<p><strong>Note:</strong> These numbers follow a formula on the wiki, they are related to the variable MAX_OPEN_RECORDS</p>
+<pre><code>DATABASE_CLIENT = 64 + 8*MAX_OPEN_RECORDS 
+DATABASE_HEADER = 64 + 64*DATABASE_CLIENT
+</code></pre>
+<p>5 <strong>Remake MIDAS</strong></p>
+<p>Follow the wiki's <a href="https://daq00.triumf.ca/MidasWiki/index.php/Quickstart_Linux#MIDAS_Package_Installation">quickstart linux guide</a>.</p>
+<pre><code>cd midas
+mkdir build
+cd build
+cmake ..
+make install
+</code></pre>
+<p>6 <strong>Create new ODB</strong></p>
+<pre><code>$MIDASSYS/bin/odbinit -s 1024MB --cleanup
+</code></pre>
+<p><strong>Note:</strong> I had trouble unless the number specified by -s was the different than the previous ODB. From there it will prompt you to delete a file. I think this file contains information about the maximum number of hotlinks and must be deleted every time you want to increase the number of hotlinks</p>
+<p>7 <strong>Load old settings (if saved)</strong></p>
+<pre><code>$MIDASSYS/bin/odbedit -c &quot;load current_odb.odb&quot;
+</code></pre>
+<hr />
+<h2 id="midas-adding-program-startup-scripts">Adding Program Startup Scripts</h2>
+<p>After any frontend is run, it will appear in the ODB under <code>/Programs/{Frontend Name}</code>. Here there are some settings for the program. The I use for starting frontends are</p>
+<p><strong>Required</strong>:</p>
+<p>Set <code>/Programs/{Frontend Name}/Required</code> to <code>yes</code> to pin the program onto the <code>Programs</code> page accessible from the left sidebar. In other words, when the frontend is not running, it will not dissapear from the programs page.</p>
+<p><strong>Start Command</strong>:</p>
+<p>Change <code>/Programs/{Frontend Name}/Start Command</code> to a command that you when to be run when hitting the <code>Start {Frontend Name}</code> button on the Programs page. This is allows the user to start a frontend in the background from the midas webpage; i.e. you can avoid starting frontends from command line.</p>
+<hr /></section><section class="print-page" id="software_add_ons"><h1 id="software_add_ons-additional-software">Additional Software</h1>
+<h2 id="software_add_ons-eigen">Eigen</h2>
+<h3 id="software_add_ons-overview">Overview</h3>
+<p>Eigen is a high-performance C++ library for linear algebra operations, including matrices, vectors, numerical solvers, and related algorithms. It is widely used in various fields such as scientific computing, machine learning, and computer graphics due to its efficiency and ease of use. Eigen provides a wide range of matrix sizes and storage formats, making it versatile for both small and large-scale computations.</p>
+<h3 id="software_add_ons-installation-guide">Installation Guide</h3>
+<h4 id="software_add_ons-via-yum-alma9">Via yum (ALMA9)</h4>
+<pre><code>sudo yum install -y eigen3-devel
+</code></pre>
+<h4 id="software_add_ons-from-source-centos7">From Source (CentOS7)</h4>
+<pre><code>git clone https://gitlab.com/libeigen/eigen.git
+cd eigen
+mkdir build &amp;&amp; cd build
+cmake ..
+make
+sudo make install
+</code></pre>
+<hr />
+<h2 id="software_add_ons-midas-event-unpacker">Midas Event Unpacker</h2>
+<h3 id="software_add_ons-overview_1">Overview</h3>
+<p>This is a midas event unpacker used for the g-2 modified DAQ system during the 2023 LYSO test beam, but has seen more development afterwards. The <a href="https://github.com/PIONEER-Experiment/test-beam-2023-unpacker/tree/develop">github page</a> has it's own list of instructions for download and use.</p>
+<h3 id="software_add_ons-installation-guide_1">Installation Guide</h3>
+<p>Follow the instructions on the <a href="https://github.com/PIONEER-Experiment/test-beam-2023-unpacker/tree/develop">github page</a>. In particular:</p>
+<pre><code>git clone --branch develop git@github.com:PIONEER-Experiment/test-beam-2023-unpacker.git unpacker
+cd unpacker
+mkdir build  
+cd build  
+cmake ..
+make install  
+</code></pre>
+<h3 id="software_add_ons-usage">Usage</h3>
+<p>Follow the instructions on the <a href="https://github.com/PIONEER-Experiment/test-beam-2023-unpacker/tree/develop">github page</a>. In particular run the following command over a generated midas file.</p>
+<pre><code>./pioneer_unpacker MIDAS_FILE.mid.lz4 0 detector_mapping.json
+</code></pre>
+<hr />
+<h2 id="software_add_ons-publisher">Publisher</h2>
+<h3 id="software_add_ons-overview_2">Overview</h3>
+<p>The publisher is C++ project aimed to publish data over a socket using ZeroMQ. There are two versions:</p>
+<ol>
+<li>The <a href="#software_add_ons-general-publisher">General Publisher</a> which is stable and well documented, but does not provide any midas interfacing.</li>
+<li>The <a href="#software_add_ons-midas-event-publisher">Midas Event Publisher</a> which is less stable and not well document, but does provide midas interfacing.</li>
+</ol>
+<h3 id="software_add_ons-general-publisher">General Publisher</h3>
+<p>The <a href="https://github.com/PIONEER-Experiment/midas_publisher/tree/main?tab=readme-ov-file">general publishing tool</a> is a framework used to publish data over ZeroMQ seemlessly. This tool generally only depends on ZeroMQ and cppZMQ. <strong>This branch does not interface with midas at all</strong>. However, there is still useful information on this branch about how to configure the publisher and how it works, see the <a href="https://github.com/PIONEER-Experiment/midas_publisher/wiki">wiki for the publisher</a>.</p>
+<h4 id="software_add_ons-installation-guide_2">Installation Guide</h4>
+<p>Follow the <a href="https://github.com/PIONEER-Experiment/midas_publisher/wiki/Compiling-the-Publisher">steps on the wiki</a>.</p>
+<h3 id="software_add_ons-midas-event-publisher">Midas Event Publisher</h3>
+<p><strong>Warning</strong>: This branch was hastefully put together. As a result it is not straightfoward to install and has many issues. Try following this guide first, but if you have issues you can <a href="#index-contact">contact the creator (Jack Carlton)</a>.</p>
+<p>This is a different branch of the publisher specialized to using <a href="https://daq00.triumf.ca/MidasWiki/index.php/Mdump">mdump</a> and the <a href="#software_add_ons-midas-event-unpacker">midas event unpacker</a> to publish unpacked midas data from a live data run over a socket using zeroMQ. <strong>In some cases, we have found that using mdump in this manner lowers the rate capabilites of the DAQ</strong>. However, this software is still useful for low rate <a href="#software_add_ons-basic-dqm">data quality monitoring</a>.</p>
+<p>These features are located on the <a href="https://github.com/PIONEER-Experiment/midas_publisher/tree/devel?tab=readme-ov-file">develop branch</a> of the publisher. Which can be installed with the following steps</p>
+<h4 id="software_add_ons-installation-guide_3">Installation Guide</h4>
+<p>1 <strong>Clone the branch</strong></p>
+<pre><code>git clone -b devel git@github.com:PIONEER-Experiment/midas_publisher.git publisher
+cd publisher
+</code></pre>
+<p>2 <strong>Set up environment</strong></p>
+<pre><code>./detect_environment.sh
+cat environment_variables.txt
+</code></pre>
+<p>Ensure each environment variable points to the correct directory. If not, fix it using your favorite text editor. See this example below:</p>
+<pre><code>MIDASSYS=/home/installation_testing/packages/midas
+MIDAS_EXPTAB=/home/installation_testing/online/exptab
+MIDAS_EXPT_NAME=DAQ
+UNPACKING_ROOT=/home/installation_testing/packages/unpacking
+ROOT_ROOT=/home/installation_testing/packages/ROOT
+BOOST_1_70_0_ROOT=/home/installation_testing/packages/boost-1.70.0
+ZEROMQ_ROOT=/home/installation_testing/packages/zeroMQ
+CPPZMQ_ROOT=/home/installation_testing/packages/cppzmq
+EIGEN_ROOT=/home/installation_testing/packages/eigen-3.4.0
+</code></pre>
+<p><strong>Note:</strong> <code>BOOST_1_70_0_ROOT</code> is poorly named. This can point to any version of boost past version 1.70.0.</p>
+<p><strong>Note:</strong> If this turns out to be too painful a process, you may find it easier to hardcode <a href="https://github.com/PIONEER-Experiment/midas_publisher/blob/devel/CMakeLists.txt">CMakeLists.txt</a>. For example, one would find where the CPPZMQ header files are and replace the line <code>$ENV{CPPZMQ_ROOT}/include</code> with a hardcoded path.</p>
+<pre><code>source ./setup_environment.sh
+</code></pre>
+<p>3 <strong>Build and install</strong></p>
+<pre><code>cd ..
+mkdir build
+cd build
+cmake ..
+make install -j$(nproc)
+</code></pre>
+<p>4 <strong>Edit config</strong></p>
+<p>Edit config.json in your favorite text editor, for instance:</p>
+<pre><code>cd ..
+vi config.json
+</code></pre>
+<p>In particular, </p>
+<pre><code>&quot;detector-mapping-file&quot;: &quot;/home/installation_testing/packages/unpacking/python/detector_mapping.json&quot; 
+</code></pre>
+<p>needs to be set to a valid detector mapping. The unpacking library has one in <code>unpacking/python/detector_mapping.json</code></p>
+<p>You also may need to change the buffer in</p>
+<pre><code>&quot;command&quot;: &quot;$(MIDASSYS)/bin/mdump -l 1 -z BUF001 -f d&quot;,
+</code></pre>
+<p>to <code>SYSTEM</code> or whatever buffer you want the publisher to listen to.</p>
+<h3 id="software_add_ons-usage_1">Usage</h3>
+<h4 id="software_add_ons-by-hand">"By Hand"</h4>
+<p>Once installed, you can simply run</p>
+<pre><code>./publisher
+</code></pre>
+<p>And the publisher will begin. You can increase the <code>verbose</code> setting in <code>config.json</code> to see what it's publishing in real time.</p>
+<h4 id="software_add_ons-cronjob-screen">"Cronjob" Screen</h4>
+<p>In the scripts directory you can start a "cronjob" screen that runs the publisher</p>
+<pre><code>cd scripts
+./screen_publisher_cronjob.sh
+</code></pre>
+<p>You can stop this screen with </p>
+<pre><code>./stop_publisher_cronjob_screen.sh
+</code></pre>
+<p><strong>Note</strong>: This isn't really a cronjob, but rather a shell script that periodically kills the publisher and restarts it. There is a memory leak in this branch that hasn't been tracked down, and this is band-aid solution.</p>
+<hr />
+<h2 id="software_add_ons-basic-dqm">Basic DQM</h2>
+<h3 id="software_add_ons-overview_3">Overview</h3>
+<p>This is a "generalized" DQM that samples a midas experiment running the g-2 modified DAQ and displays some traces from each active channel. It comes packaged with <a href="#software_add_ons-publisher">publisher</a> right now, but may migrate to it's own seperate project.</p>
+<h3 id="software_add_ons-installation-guide_4">Installation Guide</h3>
+<p>See installation guide for <a href="#software_add_ons-midas-event-publisher">midas event publisher</a>.</p>
+<p>You also need some python packages:</p>
+<pre><code>pip install Flask Flask-SocketIO pyzmq
+</code></pre>
+<p><strong>Note</strong>: You may need to use <code>pip3</code> on some systems.</p>
+<h3 id="software_add_ons-usage_2">Usage</h3>
+<p>First, navigate to the publisher root directory. Then</p>
+<h4 id="software_add_ons-by-hand_1">"By Hand"</h4>
+<pre><code>cd dashboard_webpage
+python main.py
+</code></pre>
+<p><strong>Note</strong>: You may need to use <code>python3</code> on some systems.</p>
+<p>Then open your favorite web browser to <code>localhost:8000</code> to view the webpage.</p>
+<h4 id="software_add_ons-screening-script">Screening Script</h4>
+<pre><code>cd scripts
+./screen_webpage.sh
+</code></pre>
+<p>Then open your favorite web browser to <code>localhost:8000</code> to view the webpage.</p>
+<p>To stop the webpage,</p>
+<pre><code>./stop_webpage_screen.sh
+</code></pre>
+<hr />
+<h2 id="software_add_ons-crate-monitor">Crate Monitor</h2>
+<h3 id="software_add_ons-overview_4">Overview</h3>
+<p>The crate monitor is a webpage to view the status of g-2 crate components such as the <a href="#hardware_overview-wfd5-waveform-digitizer">WFD5</a>, <a href="#hardware_overview-fc7-flexible-controller">FC7</a>, and <a href="#hardware_overview-amc13-advanced-mezzanine-card">AMC13</a>. </p>
+<h3 id="software_add_ons-installation-guide_5">Installation Guide</h3>
+<p>1 <strong>Clone the repository</strong></p>
+<pre><code>git clone git@github.com:PIONEER-Experiment/utcaMonitor.git
+</code></pre>
+<p>2 <strong>Edit run.py</strong></p>
+<p>In your favorite text editor, edit <code>run.py</code>. For example, with <code>vi</code>:</p>
+<pre><code>vi run.py
+</code></pre>
+<p>In particular, change these variables</p>
+<pre><code># variable defaults
+verbose   = 0
+debug     = 0
+teststand = 0
+n_crates  = 1
+# amcs in a crate will have ip address 192.168.[crate].[slot]:  Create the default list of n_crate crate numbers
+crates = [100]
+# types of modules in given crate
+amc13100_types = ['FC7','WFD5']
+crate_types = [amc13100_types]
+encoder_crate = 100
+encoder_slot = 8
+
+host = 'gm26221.classe.cornell.edu'
+</code></pre>
+<p>For instance, for a one crate system I used:</p>
+<pre><code># variable defaults
+verbose   = 0
+debug     = 0
+teststand = 0
+n_crates  = 1
+# amcs in a crate will have ip address 192.168.[crate].[slot]:  Create the default list of n_crate crate numbers
+crates = [1]
+# types of modules in given crate
+amc13100_types = ['FC7','WFD5']
+crate_types = [amc13100_types]
+encoder_crate = 1
+encoder_slot = 10
+
+host = 'localhost'
+</code></pre>
+<p>3 <strong>Run the crate montior</strong></p>
+<pre><code>python run.py
+</code></pre>
+<p>Then open <code>localhost:7000</code> in your favorite web browser.</p>
+<p><strong>Note</strong>: You may need to pdate <code>socket.io.min.js</code>. Here's how you do it manually:</p>
+<p>You may need to update <code>socket.io.min.js</code> (for reasons I'm not entirely sure of). You can get the file on <a href="https://socket.io/docs/v4/client-installation/">socket io's client installation webpage</a>. Here is a <a href="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js">cloudflare link to the version I used</a>; you can copy this to your clipboard</p>
+<p>Replace the contents of socket.io.min.js in your favorite text editor. For instance in <code>vi</code>:</p>
+<pre><code>vi utcaMonitor/app/dist/js/socket.io.min.js
+</code></pre>
+<p>Hit <code>ggdG</code> to erase all lines. Hit <code>i</code> to enter insert mode. <code>Ctrl-V</code> to paste the contents. <code>Esc</code> and <code>:wq</code> to save and exit.</p>
+<p>After this, rety running the crate monitor.</p>
+<hr /></section><section class="print-page" id="networking"><h1 id="networking-networking-basics">Networking Basics</h1>
+<p>To network the DAQ hardware together, understanding basic concepts such as IP addressing, subnetting, and network interfaces is crucial. This page will introduce you to fundamental networking terms in linux.</p>
+<h2 id="networking-reading-network-port-information">Reading Network Port Information</h2>
+<p>On linux systems, you can use the command <code>ifconfig</code> to list all active ports on the system and some information about them. Below is an example.</p>
+<h3 id="networking-example-ifconfig-output">Example <code>ifconfig</code> Output</h3>
+<pre><code>eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.100  netmask 255.255.240.0  broadcast 192.168.1.255
+        inet6 fe80::215:5dff:fe8f:7013  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:15:5d:8f:70:13  txqueuelen 1000  (Ethernet)
+        RX packets 38935  bytes 56933483 (56.9 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 5766  bytes 471459 (471.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre>
+<h4 id="networking-explanation">Explanation:</h4>
+<p><strong>Interface Name (<code>eth0</code>)</strong>:</p>
+<ul>
+<li>This is the name of the network interface.</li>
+</ul>
+<p><strong>Flags</strong>:</p>
+<ul>
+<li>
+<p><code>UP</code>: Indicates that the network interface is currently enabled and operational. When an interface is "up," it means the operating system has activated it and it is ready to send and receive data.</p>
+</li>
+<li>
+<p><code>BROADCAST</code>: This flag signifies that the network interface supports broadcasting. Broadcasting allows a single packet to be sent to all devices within the same subnet. Devices use broadcast addresses to receive these packets.</p>
+</li>
+<li>
+<p><code>RUNNING</code>: Indicates that the network interface is operational and actively sending or receiving data. It confirms that the interface is functioning correctly and is capable of transferring data packets.</p>
+</li>
+<li>
+<p><code>MULTICAST</code>: Indicates that the network interface supports multicasting. Multicasting allows a single packet to be sent to multiple specific recipients who have joined a multicast group. It is more efficient than broadcasting for sending data to multiple destinations simultaneously.</p>
+</li>
+</ul>
+<p><strong>MTU (<code>mtu 1500</code>)</strong>:</p>
+<ul>
+<li>Maximum Transmission Unit, the largest packet size in bytes.</li>
+<li>Default is usually 1500 bytes.</li>
+<li>For 10GbE links, this must be increased for efficiency. Typically to ~9000 bytes.</li>
+</ul>
+<p><strong>IPv4 Address (<code>inet 192.168.1.100</code>)</strong>:</p>
+<ul>
+<li>IP address assigned to the interface.</li>
+</ul>
+<p><strong>Netmask (<code>netmask 255.255.255.0</code>)</strong>:</p>
+<ul>
+<li>Defines the network portion of the IP address.</li>
+</ul>
+<p><strong>Broadcast Address (<code>broadcast 192.168.1.255</code>)</strong>:</p>
+<ul>
+<li>Address used for broadcasting messages.</li>
+</ul>
+<p><strong>RX (Receive) and TX (Transmit) Packets</strong>:</p>
+<ul>
+<li>Count of packets received and transmitted.</li>
+</ul>
+<p><strong>RX (Receive) and TX (Transmit) Bytes</strong>:</p>
+<ul>
+<li>Total bytes received and transmitted.</li>
+</ul>
+<h2 id="networking-using-network-scripts">Using Network Scripts</h2>
+<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using <code>ifcfg</code> files located in <code>/etc/sysconfig/network-scripts/</code>. These files contain key configuration parameters that define how network interfaces behave and interact with the network.</p>
+<h3 id="networking-example-ifcfg-file-etcsysconfignetwork-scriptsifcfg-eth0">Example <code>ifcfg</code> File: <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code></h3>
+<pre><code>DEVICE=eth0
+BOOTPROTO=static
+ONBOOT=yes
+IPADDR=192.168.1.100
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+MTU=1500
+</code></pre>
+<h4 id="networking-explanation_1">Explanation:</h4>
+<ul>
+<li>
+<p><strong><code>DEVICE=eth0</code></strong>: Specifies the network interface name (<code>eth0</code>). This parameter identifies which network interface the configuration applies to.</p>
+</li>
+<li>
+<p><strong><code>BOOTPROTO=static</code></strong>: Defines the method used to configure the IP address. <code>static</code> indicates that the IP address is manually configured rather than assigned dynamically (e.g., via <code>DHCP</code>).</p>
+</li>
+<li>
+<p><strong><code>ONBOOT=yes</code></strong>: Ensures that the network interface (<code>eth0</code>) is automatically activated during system boot. Setting this to <code>yes</code> ensures the interface is brought up when the system starts.</p>
+</li>
+<li>
+<p><strong><code>IPADDR=192.168.1.100</code></strong>: Sets the static IPv4 address (<code>192.168.1.100</code>) for the <code>eth0</code> interface. Replace this with the desired IP address for your network configuration.</p>
+</li>
+<li>
+<p><strong><code>NETMASK=255.255.255.0</code></strong>: Specifies the subnet mask (<code>255.255.255.0</code>) associated with the IP address. The subnet mask determines which part of the IP address is the network portion and which part is the host portion.</p>
+</li>
+<li>
+<p><strong><code>GATEWAY=192.168.1.1</code></strong>: Defines the default gateway (<code>192.168.1.1</code>) for the network interface. The gateway is used for routing traffic to destinations outside the local subnet.</p>
+</li>
+<li>
+<p><strong><code>MTU=1500</code></strong>: Sets the Maximum Transmission Unit (MTU) to <code>1500</code> bytes for the <code>eth0</code> interface. MTU defines the largest packet size that can be transmitted over the network interface without fragmentation.</p>
+</li>
+</ul>
+<h2 id="networking-subnet-masks-and-network-ranges">Subnet Masks and Network Ranges</h2>
+<p>Masks are very important for segmenting your network so traffic is routed appropriately. There are two notations to do this:</p>
+<ol>
+<li>Subnet masks like <code>255.255.255.0</code></li>
+<li>CIDR notation like <code>/24</code>
+Both of these do the same thing, but you'll see both used "in the wild."</li>
+</ol>
+<h4 id="networking-subnet-mask-2552552550-cidr-24">Subnet Mask <code>255.255.255.0</code> (CIDR <code>/24</code>):</h4>
+<ul>
+<li><strong>Explanation</strong>: This subnet mask (<code>255.255.255.0</code>) allows for up to 254 usable IP addresses within the same network.</li>
+</ul>
+<h5 id="networking-example-with-network-1921681xxx">Example with Network <code>192.168.1.xxx</code>:</h5>
+<ul>
+<li>
+<p><strong>Network Address</strong>: <code>192.168.1.0/24</code></p>
+<ul>
+<li><strong>Range of IP Addresses</strong>: <code>192.168.1.1</code> to <code>192.168.1.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.255.255.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.168.1.0</code> into a network portion (<code>192.168.1</code>) and a host portion (<code>xxx</code>). The last octet (<code>xxx</code>) ranges from <code>1</code> to <code>254</code>, with <code>0</code> reserved as the network address and <code>255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<h4 id="networking-subnet-mask-25525500-cidr-16">Subnet Mask <code>255.255.0.0</code> (CIDR <code>/16</code>):</h4>
+<ul>
+<li><strong>Explanation</strong>: This subnet mask (<code>255.255.0.0</code>) allows for up to 65,534 usable IP addresses within the same network.</li>
+</ul>
+<h5 id="networking-example-with-network-192168xxxxxx">Example with Network <code>192.168.xxx.xxx</code>:</h5>
+<ul>
+<li>
+<p><strong>Network Address</strong>: <code>192.168.0.0/16</code></p>
+<ul>
+<li><strong>Range of IP Addresses</strong>: <code>192.168.0.1</code> to <code>192.168.255.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.255.0.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.168.0.0</code> into a network portion (<code>192.168</code>) and two host portions (<code>xxx.xxx</code>). The third and fourth octets (<code>xxx.xxx</code>) range from <code>0.1</code> to <code>255.254</code>, with <code>0.0</code> reserved as the network address and <code>255.255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<h3 id="networking-additional-examples">Additional Examples:</h3>
+<h4 id="networking-subnet-mask-255000-cidr-8">Subnet Mask <code>255.0.0.0</code> (CIDR <code>/8</code>):</h4>
+<ul>
+<li>
+<p><strong>Example</strong>: </p>
+<ul>
+<li><strong>Network Address</strong>: <code>192.0.0.0/8</code></li>
+<li><strong>Range of IP Addresses</strong>: <code>192.0.0.1</code> to <code>192.255.255.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.0.0.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.0.0.0</code> into a network portion (<code>192</code>) and three host portions (<code>xxx.xxx.xxx</code>). The second, third, and fourth octets (<code>xxx.xxx.xxx</code>) range from <code>0.0.1</code> to <code>255.255.254</code>, with <code>0.0.0.0</code> reserved as the network address and <code>255.255.255.255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<h4 id="networking-subnet-mask-2552551280-cidr-17">Subnet Mask <code>255.255.128.0</code> (CIDR <code>/17</code>):</h4>
+<ul>
+<li>
+<p><strong>Example</strong>: </p>
+<ul>
+<li><strong>Network Address</strong>: <code>192.168.0.0/17</code></li>
+<li><strong>Range of IP Addresses</strong>: <code>192.168.0.1</code> to <code>192.168.127.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.255.128.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.168.0.0</code> into a network portion (<code>192.168.0</code>) and a host portion (<code>xxx</code>). The third octet (<code>0.xxx</code>) ranges from <code>0.1</code> to <code>127.254</code>, with <code>0.0</code> reserved as the network address and <code>127.255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="networking-scanning-a-network">Scanning a network</h2>
+<p>To identify devices and their IP addresses on your network, you can use various tools available on Linux. One of the most common tools for network scanning is <code>nmap</code>.</p>
+<h3 id="networking-using-nmap">Using <code>nmap</code></h3>
+<p>1 <strong>Install <code>nmap</code></strong>:
+If <code>nmap</code> is not already installed on your system, you can install it using the package manager for Red Hat-based distributions.</p>
+<pre><code>sudo yum install nmap
+</code></pre>
+<p>2 <strong>Scan the Network</strong>:
+To scan your local network and list all active devices, use the following command. Replace <code>192.168.1.0/24</code> with your network range.</p>
+<pre><code>sudo nmap -sP 192.168.1.0/24
+</code></pre>
+<p>This example performs a "ping scan" on the network 192.168.1.1 - 192.168.1.254. This may take a while to complete as it has to can ~2^8 IP addresses.</p>
+<p>Another example:</p>
+<pre><code>sudo nmap -sP 192.168.0.0/16
+</code></pre>
+<p>This example performs a "ping scan" on the network 192.168.1.1 - 192.168.1.254. This will take even longer to complete as it has to scan ~2^16 IP addresses. As a result, it might be best to screen the scan in the background and write the results to a file:</p>
+<pre><code>screen -dmS nmap_scan bash -c 'sudo nmap -sP 192.168.0.0/24 &gt; ~/nmap_scan_results.txt'
+</code></pre>
+<h3 id="networking-using-arp-scan">Using <code>arp-scan</code></h3>
+<p>1 <strong>Install <code>arp-scan</code></strong>:</p>
+<p>Another useful tool for network scanning is arp-scan. This tool can also help you discover devices on your network.</p>
+<pre><code>sudo yum install arp-scan
+</code></pre>
+<p>2 <strong>Scan the Network</strong>:</p>
+<pre><code>sudo arp-scan --interface=eth0 --localnet
+
+</code></pre>
+<p>Replace the interface with the appropriate device name for your network. You can check this using <code>ifconfig</code>.</p>
+<hr /></section><section class="print-page" id="debugging"><h1 id="debugging-debugging-common-errors">Debugging Common Errors</h1>
+<p>Below are some common errors and their solutions. This is not a complete list of all errors.</p>
+<h2 id="debugging-initialization-errors">Initialization Errors</h2>
+<h3 id="debugging-mch-ipmi-communication-failed">MCH: IPMI Communication Failed</h3>
+<p>Verify the <a href="#hardware_overview-mch-microtca-carrier-hub">MCH</a> is connected to the DAQ computer via 1GbE. Verify you can ping the MCH:</p>
+<pre><code>ping 192.168.[crate].15
+</code></pre>
+<p>Verify the <a href="#odb_config-mch-ip-address">MCH IP ODB setting</a> is correct.</p>
+<h3 id="debugging-amc13-t1-ip-address-read-failure">AMC13: T1 IP Address Read Failure</h3>
+<p>Verify the <a href="#hardware_overview-amc13-advanced-mezzanine-card">AMC13</a> is plugged into the appropriate slot (above the MCH, see the <a href="#hardware_overview-labled-picture-one-crate-system">labeled crate picture</a>). Try pinging T1 and T2 on the AMC13</p>
+<pre><code>ping 192.168.[crate].13
+ping 192.168.[crate].14
+</code></pre>
+<p>If not, use <a href="#hardware_overview-example-commands-using-ipmitool">ipmitool</a> to verify the AMC13 is recognized in the crate. Try to <a href="#hardware_overview-amc13-advanced-mezzanine-card">reconfigure the AMC13</a>.</p>
+<p><strong>Note</strong>: I have seen cases where <code>ipmitool -H 192.168.[crate].15 fru print</code> will not show the AMC13, however the system still works as intended.</p>
+<h3 id="debugging-enabled-top-sfp-ports-failure">Enabled Top SFP Ports Failure</h3>
+<p>Verify the <a href="#odb_config-ccc-fmc-sfp-number-1-8">SFP port location</a> and <a href="#odb_config-ccc-fmc-location-topbottom">FMC location</a> ODB settings are correct. Make sure you are using SFPs (such as a Finisar SFP) and not an SFP+ (such as Avago SFP+) in the FC7 and AMC13 optical link. Verify unconnected frontends (crates) are <a href="#odb_config-disable-a-frontend">disabled in the ODB</a>.</p>
+<h3 id="debugging-amc13-ttc-signal-absent">AMC13: TTC Signal Absent</h3>
+<p>Verify the <a href="#hardware_overview-samtech-ribbon-cable-to-bank-board">SamTech Cable</a> is appropriately connected to the FC7 and bank board. You can put these in the bank backwards, see the <a href="#miscellaneous_info-bank-signals">labeled bank image</a> for the correct orientation. Verify the signal integrity of the 40MHz clock fed into the signal bank.</p>
+<h3 id="debugging-link01-invalid-amc13-sfp-ip-address">Link01: Invalid AMC13 SFP IP Address</h3>
+<p>Verify the <a href="#odb_config-amc13-sfp-ip-address">SFP IP in the ODB</a> matches the value read in <a href="#hardware_overview-configuring-the-amc13-with-amc13tool2exe">AMC13Tool2.exe</a> using</p>
+<pre><code>rv 0x1c1c
+</code></pre>
+<p>Convert this hex value to an IP and verify it matches the ODB value.</p>
+<h3 id="debugging-amc13-initialization-failed">AMC13 Initialization Failed</h3>
+<p>This error seems to pop up in different cases. Sometimes, it's enough to simply wait 5 minute and try <a href="#installing_and_building-running-the-frontends">running the frontends</a> again. Another solution is to power cycle the crate.</p>
+<p>If you don't want to power cycle the crate, you can issue a "cold reset" to the AMC13:</p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/dev_tools/amc13Config
+</code></pre>
+<p><a href="#hardware_overview">Ensure <code>systemVars.py</code> looks correct</a>. Then issue a cold reset:</p>
+<pre><code>./coldReset.py
+</code></pre>
+<p>Then reconfigure the AMC13; you made need to set the T1 and T2 IPs again. At the minimum you should re-initialize using <a href="#hardware_overview-configuring-the-amc13-with-amc13tool2exe">AMC13Tool2.exe</a>.</p>
+<h3 id="debugging-tcp-initialization-failed">TCP initialization failed</h3>
+<p>Verify the <a href="#hardware_overview-10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC</a> is functioning and <a href="#hardware_overview-10gbe-link-to-daq-computer">properly connected to the AMC13</a>. Verify the <a href="#hardware_overview-configuring-the-amc13-with-amc13tool2exe">10GbE link is properly configured</a>. For instance, in AMC13Tool2.exe</p>
+<pre><code>rv 0x1c1c
+</code></pre>
+<p>Convert this hex value to an IP and try pinging it, for instance</p>
+<pre><code>ping 192.168.51.1
+</code></pre>
+<p>If you cannot ping this IP, check your <a href="#networking-networking-basics">network settings</a> for the 10GbE NIC. Verify the IP read above matches the <a href="#odb_config-amc13-sfp-ip-address">SFP IP ODB value</a>.</p>
+<hr />
+<h2 id="debugging-alarms-and-run-ending-errors">Alarms and Run Ending Errors</h2>
+<h3 id="debugging-alarm-ccc-run-aborted">Alarm: CCC Run Aborted</h3>
+<p>This was a common error during g-2. At it's worst, it should occur on ~6 hour time scales. You must <a href="#installing_and_building-running-the-frontends">restart the frontends</a> to re-initialize the crate hardware.</p>
+<h3 id="debugging-tcp_thread-break-the-tcp-thread-loop-becuase-of-a-reading-error-1">tcp_thread: break the tcp thread loop becuase of a reading error -1</h3>
+<p>This was a common error during the 2023 test beam at PSI. This error usually occurs because the data buffer between reading in data and processing data has filled up. I.e. midas events are being created slower than events are coming in. As a result, the tcp_thread has nowhere to store incoming data and errors out.</p>
+<p>This error is rate dependant. One way to fix it is to simply lower the rate. However, the DAQ has been tested and run for long periods at ~5kHz. A better solution would be to minimize the use other processes running on the DAQ computer, particularly those that interact with midas. For example, the <a href="#software_add_ons-publisher">publisher</a> is a culprit for causing delays within midas.</p>
+<hr /></section><section class="print-page" id="miscellaneous_info"><h1 id="miscellaneous_info-miscellaneous-information">Miscellaneous Information</h1>
+<h2 id="miscellaneous_info-what-is-was-g-2">What is (was) g-2?</h2>
+<p><a href="https://muon-g-2.fnal.gov/#:~:text=The%20Muon%20g%2D2%20experimenters,of%200.14%20parts%20per%20million.">g-2</a> was an experiment to that examined the precession of muons that are subjected to a magnetic field to test the standard model's prediction of muon g factor. Because many of the g-2 collaborators now work on PIONEER, it is convienent to repurpose the data acquisition system used for g-2 for PIONEER test stands.</p>
+<h2 id="miscellaneous_info-initialism-cheatsheet">Initialism Cheatsheet</h2>
+<table>
+<thead>
+<tr>
+<th>Initialism</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DAQ</td>
+<td>Data Acquisition</td>
+<td></td>
+</tr>
+<tr>
+<td>ADC</td>
+<td>Analog-to-Digital Converter</td>
+<td></td>
+</tr>
+<tr>
+<td>10GbE</td>
+<td>10 Gigabit Ethernet</td>
+<td></td>
+</tr>
+<tr>
+<td>AFE</td>
+<td>Analog Front End</td>
+<td></td>
+</tr>
+<tr>
+<td>FPGA</td>
+<td>Field Programmable Gate Array</td>
+<td></td>
+</tr>
+<tr>
+<td>FMC</td>
+<td>FPGA Mezzanine Card</td>
+<td>FC7 SFP Interface</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Central Processing Unit</td>
+<td>Intel Core i7-12700K</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>Graphics Processing Unit</td>
+<td>NVIDIA A5000</td>
+</tr>
+<tr>
+<td>uTCA (µTCA)</td>
+<td>Micro Telecommunications Computing Architecture</td>
+<td></td>
+</tr>
+<tr>
+<td>WFD</td>
+<td>Waveform Digitizer</td>
+<td>WFD5</td>
+</tr>
+<tr>
+<td>FC</td>
+<td>Flexible Controller</td>
+<td>FC7</td>
+</tr>
+<tr>
+<td>AMC</td>
+<td>Advanced Mezzanine Card</td>
+<td>AMC13 (also FC7 and WFD5)</td>
+</tr>
+<tr>
+<td>MCH</td>
+<td>MicroTCA Carrier Hub</td>
+<td></td>
+</tr>
+<tr>
+<td>DDR</td>
+<td>Double Data Rate</td>
+<td>DDR3, DDR4 (RAM)</td>
+</tr>
+<tr>
+<td>PCIe</td>
+<td>Peripheral Component Interconnect Express</td>
+<td>PCIe2, PCIe3, ...</td>
+</tr>
+<tr>
+<td>SFP</td>
+<td>Small Form-factor Pluggable</td>
+<td>Finisar  SFP transceiver</td>
+</tr>
+<tr>
+<td>SFP+</td>
+<td>Enhanced Small Form-factor Pluggable</td>
+<td>Avago SFP+ transceiver</td>
+</tr>
+<tr>
+<td>CLI</td>
+<td>Command Line Interface</td>
+<td></td>
+</tr>
+<tr>
+<td>TTC</td>
+<td>Timing, Trigger, and Control</td>
+<td></td>
+</tr>
+<tr>
+<td>MTU</td>
+<td>Maximum Transmission Unit</td>
+<td></td>
+</tr>
+<tr>
+<td>IP</td>
+<td>Internet Protocol</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="miscellaneous_info-differential-signals">Differential Signals</h2>
+<p><img alt="Differential_signal" src="../images/Differential_signal.png" style="max-width:100%; height:auto;" /></p>
+<p>Differential signals offer several advantages over single-ended signals:</p>
+<ul>
+<li><strong>More resistant to noise</strong>: Differential signaling reduces susceptibility to noise interference, resulting in cleaner signal transmission.</li>
+<li><strong>Lower supply voltages</strong>: Differential signaling allows for the use of lower supply voltages (like Low Voltage CMOS (LVCMOS) at 3.0–3.3V), which can lead to reduced power consumption.</li>
+<li><strong>Higher operating frequencies</strong>: Due to better noise immunity and lower voltage swings, differential signals enable higher operating frequencies in electronic circuits.</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Differential_signalling">Read more about differential signaling on Wikipedia</a>.</p>
+<hr />
+<h2 id="miscellaneous_info-limitations-of-meinberg-card">Limitations of Meinberg Card</h2>
+<p>The meinberg card seems to be limited to rates of ~2.5KHz. As a result for higher rate applications the card cannot be used.</p>
+<hr />
+<h2 id="miscellaneous_info-port-forwarding-an-ssh-connection">Port Forwarding an SSH Connection</h2>
+<p>In many cases, you will need to access a web server running on a remote machine that has no Graphical User Interface (GUI). This can be done securely using SSH port forwarding. Below are instructions for setting up port forwarding on a RHEL Linux machine so you can view a webpage served on <code>localhost:8080</code> from your local machine with a GUI (ex. laptop).</p>
+<h3 id="miscellaneous_info-prerequisites">Prerequisites</h3>
+<ul>
+<li>SSH access to the remote RHEL Linux machine.</li>
+<li>An SSH client on your local machine. e.g. <code>ssh</code> command in a terminal, (you can also use PuTTY on Windows though I would not recommend this; you can still use ssh on windows).</li>
+<li>Ensure the remote machine is configured to allow SSH connections. The SSH service should be running, and the firewall should permit SSH traffic (usually on port 22).</li>
+</ul>
+<h3 id="miscellaneous_info-instructions">Instructions</h3>
+<p>1 <strong>Ensure SSH service is running on the remote machine:</strong></p>
+<pre><code>sudo systemctl start sshd
+sudo systemctl enable sshd
+</code></pre>
+<p>2 <strong>Configure the firewall to allow SSH connections on the remote machine:</strong></p>
+<pre><code>    sudo firewall-cmd --permanent --add-service=ssh
+    sudo firewall-cmd --reload
+</code></pre>
+<p>3 <strong>Open a terminal on your local machine.</strong></p>
+<p>4 <strong>Establish an SSH connection with port forwarding:</strong></p>
+<p>Use the following command to create an SSH tunnel. Replace <code>user</code> with your username on the remote machine and <code>remote_host</code> with the IP address or hostname of the remote machine.</p>
+<pre><code>ssh -L 8080:localhost:8080 user@remote_host
+</code></pre>
+<p>This command forwards your laptop's port <code>8080</code> to the remote machine's port <code>8080</code>. Here's a breakdown of the command:</p>
+<ul>
+<li><code>-L 8080:localhost:8080</code>: Specifies the local port (<code>8080</code>) to be forwarded to the remote port (<code>8080</code> on <code>localhost</code> of the remote machine).</li>
+<li><code>user@remote_host</code>: The SSH login to the remote machine.</li>
+</ul>
+<p>5 <strong>Access the webpage:</strong></p>
+<p>Open a web browser on your laptop and navigate to:</p>
+<pre><code>http://localhost:8080
+</code></pre>
+<p>You should see the webpage served by the remote machine on port <code>8080</code>.</p>
+<h3 id="miscellaneous_info-example">Example</h3>
+<p>If you want to access the root user on a machine with IP 192.168.50.10:</p>
+<pre><code>ssh -L 8080:localhost:8080 root@192.168.50.10
+</code></pre>
+<p>After running this command, open a browser on your laptop and go to <code>http://localhost:8080</code> to view the webpage hosted on the remote machine.</p>
+<h3 id="miscellaneous_info-notes">Notes</h3>
+<ul>
+<li>Ensure that the web server on the remote machine is configured to listen on <code>localhost:8080</code> and is running.</li>
+<li>If port <code>8080</code> is already in use on your local machine, you can use a different local port (e.g., <code>9090</code>) by changing the command to <code>-L 9090:localhost:8080</code> and then accessing <code>http://localhost:9090</code> on your laptop.</li>
+</ul>
+<p>This setup allows you to securely access the web server running on your remote RHEL machine from your local laptop using SSH port forwarding.</p>
+<hr />
+<h2 id="miscellaneous_info-2023-psi-lyso-testbeam-daq-installer">2023 PSI LYSO Testbeam DAQ Installer</h2>
+<p>There is a <a href="https://github.com/PIONEER-Experiment/gm2daq-installer">gm2daq-installer</a> that has been tested on RHEL7 systems. This will attempt to install the listed packages below. This installer's purpose was to streamline installation of the 2023 PSI LYSO testbeam usage of the DAQ. <strong>WARNING: As some of these packages have been updated, the installer may fail. Use this at your own disgression.</strong> In particular, I don't expect the <a href="#miscellaneous_info">unpacker</a>, <a href="#miscellaneous_info">publisher</a>, <a href="#software_dependencies-meinberg">meinberg</a>, and <a href="#installing_and_building-manual-installation-guide">gm2daq software</a> to install correctly. If you use this tool, it would be best to install those by hand if needed by following the links. Furthermore on RHEL9 systems (such as ALMA9) , the distributed pre-compiled binaries are more up to date, which simplifies the installation process greatly. As a result, I would only suggest using the installer for RHEL7 systems (such as SL7 or CentOS7).</p>
+<p>To attempt to install everything with the installer:</p>
+<pre><code>git clone git@github.com:PIONEER-Experiment/gm2daq-installer.git
+cd gm2daq-installer
+./install.sh
+</code></pre>
+<h3 id="miscellaneous_info-list-of-installed-software">List of Installed Software</h3>
+<p>If you navigate to</p>
+<pre><code>cd gm2daq-installer/subprocess_scripts
+</code></pre>
+<p>you can install packages individually:</p>
+<table>
+<thead>
+<tr>
+<th>Script Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>install_epel-release.sh</code></td>
+<td>Installs EPEL Release</td>
+</tr>
+<tr>
+<td><code>install_openssl-devel.sh</code></td>
+<td>Installs OpenSSL Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_cmake.sh</code></td>
+<td>Installs CMake</td>
+</tr>
+<tr>
+<td><code>install_cmake3.sh</code></td>
+<td>Installs CMake3</td>
+</tr>
+<tr>
+<td><code>install_readline.sh</code></td>
+<td>Installs Readline Development Tools</td>
+</tr>
+<tr>
+<td><code>install_root.sh</code></td>
+<td>Installs ROOT (pre-compiled binary)</td>
+</tr>
+<tr>
+<td><code>install_erlang.sh</code></td>
+<td>Installs Erlang</td>
+</tr>
+<tr>
+<td><code>install_zlib.sh</code></td>
+<td>Installs zlib Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_devtoolset-8.sh</code></td>
+<td>Installs Devtoolset-8</td>
+</tr>
+<tr>
+<td><code>install_devtoolset-11.sh</code></td>
+<td>Installs Devtoolset-11</td>
+</tr>
+<tr>
+<td><code>install_rh-python36.sh</code></td>
+<td>Installs Python 3.6</td>
+</tr>
+<tr>
+<td><code>install_libXft.sh</code></td>
+<td>Installs libXft Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_libXpm.sh</code></td>
+<td>Installs libXpm Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_libXt.sh</code></td>
+<td>Installs libXt Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_libXext.sh</code></td>
+<td>Installs libXext Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_patch.sh</code></td>
+<td>Installs Patch Development Tools</td>
+</tr>
+<tr>
+<td><code>install_libtool.sh</code></td>
+<td>Installs Libtool Development Tools</td>
+</tr>
+<tr>
+<td><code>install_meinberg_driver.sh</code></td>
+<td>Installs Meinberg Driver</td>
+</tr>
+<tr>
+<td><code>install_midas.sh</code></td>
+<td>Installs MIDAS</td>
+</tr>
+<tr>
+<td><code>install_pugixml.sh</code></td>
+<td>Installs pugixml Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_boost_1_53_0.sh</code></td>
+<td>Installs Boost 1.53.0</td>
+</tr>
+<tr>
+<td><code>install_cactus.sh</code></td>
+<td>Installs Cactus</td>
+</tr>
+<tr>
+<td><code>install_gm2daq.sh</code></td>
+<td>Installs gm2daq</td>
+</tr>
+<tr>
+<td><code>install_root_from_source.sh</code></td>
+<td>Installs ROOT (from source)</td>
+</tr>
+<tr>
+<td><code>install_boost_1_70_0.sh</code></td>
+<td>Installs Boost 1.70.0</td>
+</tr>
+<tr>
+<td><code>install_zeroMQ.sh</code></td>
+<td>Installs ZeroMQ Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_cppzmq.sh</code></td>
+<td>Installs C++ ZeroMQ</td>
+</tr>
+<tr>
+<td><code>install_eigen.sh</code></td>
+<td>Installs Eigen Development Libraries</td>
+</tr>
+<tr>
+<td><code>install_unpacker.sh</code></td>
+<td>Installs Midas Data File Unpacker</td>
+</tr>
+<tr>
+<td><code>install_publisher.sh</code></td>
+<td>Installs Midas Data Publisher</td>
+</tr>
+</tbody>
+</table>
+<p>you can also run</p>
+<pre><code>./install.sh --skip root_from_source,zeroMQ,...
+</code></pre>
+<p>to skip certain packages, for example. From the list above, remove the <code>install_</code> and <code>.sh</code> parts and add it to the comma seperated list following the <code>--skip</code> flag to skip it. For instance, I would recommend trying:</p>
+<hr />
+<h2 id="miscellaneous_info-fc7-labeling">FC7 Labeling</h2>
+<p><img alt="FC7_SFP_Port_Labels" src="../images/FC7_SFP_Port_Labels.png" style="max-width:100%; height:auto;" /></p>
+<p>These labelings are particularly useful when configuring the <a href="#odb_config-ccc-fc7-slot-number-1-12">CCC ODB settings</a></p>
+<hr />
+<h2 id="miscellaneous_info-using-screens-in-linux">Using Screens in Linux</h2>
+<p>Screens are useful for running the DAQ because it allows you start and view multiple frontends on one terminal. You can read more on <a href="https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/">this webpage</a> for example. Below are a few useful screen commands:</p>
+<h3 id="miscellaneous_info-starting-a-screen">Starting a Screen</h3>
+<pre><code>screen -S &lt;session_name&gt;
+</code></pre>
+<h3 id="miscellaneous_info-listing-screens">Listing Screens</h3>
+<pre><code>screen -ls
+</code></pre>
+<h3 id="miscellaneous_info-stopping-a-screen">Stopping a Screen</h3>
+<p>To stop a screen session, first list all sessions to find the session ID:</p>
+<pre><code>screen -ls
+</code></pre>
+<p>Then, stop the desired screen session:</p>
+<pre><code>screen -X -S &lt;session_id&gt; quit
+</code></pre>
+<h3 id="miscellaneous_info-attaching-to-a-screen">Attaching to a Screen</h3>
+<pre><code>screen -r &lt;session_name&gt;
+</code></pre>
+<h3 id="miscellaneous_info-detaching-from-a-screen">Detaching from a Screen</h3>
+<p>To detach from a screen session you have attached to, press <code>Ctrl + a</code> and <code>d</code>. This will return you to your previous shell session.</p>
+<h3 id="miscellaneous_info-scrolling-up-in-a-screen">Scrolling up in a Screen</h3>
+<p>To scroll up in a screen session, press <code>Ctrl + a</code> and then <code>[</code>. Use the arrow keys to navigate. To exit scroll mode, press <code>q</code>.</p>
+<hr />
+<h2 id="miscellaneous_info-getting-ld_library_path-into-a-screen-session">Getting <code>LD_LIBRARY_PATH</code> Into a Screen Session</h2>
+<p>For some reason, stuffing <code>LD_LIBRARY_PATH</code> into a screen session is convoluted. To copy your current shell sessions <code>LD_LIBRARY_PATH</code> environment variable into a screen session, you need to edit your <code>.screenrc</code> file for the profile you launch the screen from. Simply run these two commands:</p>
+<pre><code>touch ~/.screenrc
+echo 'shell -/bin/bash -c &quot;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH &amp;&amp; exec /bin/bash&quot;' &gt;&gt; ~/.screenrc
+</code></pre>
+<p>Now for every new screen session, your <code>LD_LIBRARY_PATH</code> environment variable will be copied over from your current shell session to the new screen session. This is useful when you have custom libraries added to your <code>LD_LIBRARY_PATH</code>; the environment setup script used in the <a href="#installing_and_building-manual-installation-guide">DAQ installation guide</a> adds some custom libraries <code>LD_LIBRARY_PATH</code>.</p>
+<hr />
+<h2 id="miscellaneous_info-the-nat-mch">The N.A.T. MCH</h2>
+<h3 id="miscellaneous_info-overview">Overview</h3>
+<p>An alternative to the <a href="#hardware_overview-mch-microtca-carrier-hub">VadaTech MCH</a>, it has the same functionality.</p>
+<h3 id="miscellaneous_info-configuration">Configuration</h3>
+<p>See <a href="https://nateurope.com/wp-content/uploads/2022/09/NAT-MCH_UsersManual.pdf">NAT MCH manual</a> for more details. Depending on the NAT MCH version, you may be able to ssh into the NAT MCH.</p>
+<p>In any event, you can configure the NAT MCH with <code>telnet</code></p>
+<pre><code>sudo yum install telnet
+telnet 192.68.1.41
+</code></pre>
+<p>From there you can follow the prompts to configure the NAT MCH. If you are having trouble finding the NAT MCH IP try pinging or <a href="#networking-scanning-a-network">scanning the network</a>.</p>
+<hr />
+<h2 id="miscellaneous_info-finisar-sfp-vs-avago-sfp">Finisar SFP vs. Avago SFP+</h2>
+<p>SFP+s (such as Avago SFP+s) do not work with the FC7 to AMC13 link; an SFP (such as a finisar SFP) is needed. Similarly, the 10GbE links from AMC13 to the DAQ computer must use SFP+s.</p>
+<hr />
+<h2 id="miscellaneous_info-bank-signals">Bank Signals</h2>
+<p><img alt="D_Bank_labeled" src="../images/D_Bank_labeled.png" style="max-width:100%; height:auto;" /></p>
+<p>Copies of D0-D3 triggers are sent out of D0-D3, while D4-D7 should be configured to be input signals. The trigger input should go to D6 (It does not have to be 1kHz). A 40MHz clock should go in D7.</p>
+<hr /></section></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "/";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/print-site.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
