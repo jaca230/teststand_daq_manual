@@ -6,10 +6,20 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="None" name="description"/>
 <link href="img/favicon.ico" rel="shortcut icon"/>
-<title>Software Manual</title>
+<title>g-2 modified DAQ Manual</title>
 <link href="css/theme.css" rel="stylesheet"/>
 <link href="css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="css/print-site.css" rel="stylesheet"/>
+<link href="css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
 <script>
         // Current page data
         var mkdocs_page_name = "Home";
@@ -21,13 +31,13 @@
     <![endif]-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
-<link href="index.pdf" rel="alternate" title="PDF Export" type="application/pdf"/></head>
+<link href="pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body class="wy-body-for-nav" role="document">
 <div class="wy-grid-for-nav">
 <nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
 <div class="wy-side-scroll">
 <div class="wy-side-nav-search">
-<a class="icon icon-home" href="."> Software Manual
+<a class="icon icon-home" href="."> g-2 modified DAQ Manual
         </a><div role="search">
 <form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
 <input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
@@ -38,35 +48,45 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
 <ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#contact">Contact</a>
+</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction/">Introduction</a>
+<li class="toctree-l1"><a class="reference internal" href="hardware_overview/">Hardware Overview</a>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started/">Getting Started</a>
+<li class="toctree-l1"><a class="reference internal" href="software_dependencies/">Software Dependencies</a>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user-interface/">User Interface</a>
+<li class="toctree-l1"><a class="reference internal" href="installing_and_building/">Install and Run the Midas Frontends</a>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="features-and-functionalities/">Features and Functionalities</a>
+<li class="toctree-l1"><a class="reference internal" href="odb_config/">ODB Configuration</a>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="advanced-topics/">Advanced Topics</a>
+<li class="toctree-l1"><a class="reference internal" href="midas/">Midas Information</a>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting/">Troubleshooting</a>
+<li class="toctree-l1"><a class="reference internal" href="software_add_ons/">Additional Software Add-ons</a>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="appendices/">Appendices</a>
+<li class="toctree-l1"><a class="reference internal" href="networking/">Networking Tutorial</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="debugging/">Debugging Common Errors</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="miscellaneous_info/">Miscellaneous</a>
 </li>
 </ul>
 </div>
@@ -75,7 +95,7 @@
 <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
 <nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
 <i class="fa fa-bars" data-toggle="wy-nav-top"></i>
-<a href=".">Software Manual</a>
+<a href=".">g-2 modified DAQ Manual</a>
 </nav>
 <div class="wy-nav-content">
 <div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
@@ -89,13 +109,23 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="welcome-to-the-software-manual">Welcome to the Software Manual</h1>
-<p>Welcome to the comprehensive guide for using our software. This manual provides all the information you need to get started and become proficient with the software.</p>
-<p>For detailed information, use the navigation links to explore the different sections of this manual.</p>
+<h1 id="welcome-to-the-g-2-modified-daq-manual">Welcome to the g-2 Modified DAQ Manual</h1>
+<p><img alt="DAQ_Image" src="images/DAQ_image.png" style="max-width:100%; height:auto;"/></p>
+<p>The purpose of this manual is to aid users with setup, usage, and debugging of the g-2 modified DAQ. This DAQ's purpose is to aid with various test stands across the PIONEER collaboration. Most topics are simplified to only include information needed for operating this DAQ. Some external links are provided for additional, generalized information.</p>
+<p>Many of the guides on this webpage are thorough, as they are aimed to give solutions to problems I've encountered. However, every system is different; there may be some additional debugging to be done on the user's end.</p>
+<h2 id="contact">Contact</h2>
+<p>Manual Written by Jack Carlton. <br/>
+Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
+<br/>
+<i class="fas fa-envelope"></i> Email: <a href="mailto:j.carlton@uky.edu">j.carlton@uky.edu</a>
+<br/>
+<i class="fab fa-github"></i> GitHub: <a href="https://github.com/jaca230">jaca230</a></p>
+<p>Feel free to reach out with any questions, to correct mistakes, point out missing information, or otherwise. If you're familiar with mkdocs and have repository access, feel free to push your edits and credit yourself.</p>
+<p><strong>Last Updated</strong>: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-right" href="introduction/" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="hardware_overview/" title="Hardware Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -110,13 +140,14 @@
 </div>
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
-<span><a href="introduction/" style="color: #fcfcfc">Next »</a></span>
+<span><a href="hardware_overview/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>var base_url = ".";</script>
 <script src="js/theme_extra.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/print-site.js"></script>
 <script src="search/main.js"></script>
 <script>
         jQuery(function () {
@@ -127,5 +158,5 @@
 </html>
 <!--
 MkDocs version : 1.6.0
-Build Date UTC : 2024-06-22 18:19:31.922132+00:00
+Build Date UTC : 2024-07-08 09:28:45.441145+00:00
 -->

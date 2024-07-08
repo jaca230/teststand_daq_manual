@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Additional Software Add-ons - g-2 modified DAQ Manual</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Additional Software Add-ons";
+        var mkdocs_page_input_path = "software_add_ons.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Additional Software Add-ons</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#eigen">Eigen</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide">Installation Guide</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#via-yum-alma9">Via yum (ALMA9)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#from-source-centos7">From Source (CentOS7)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#midas-event-unpacker">Midas Event Unpacker</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_1">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_1">Installation Guide</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#publisher">Publisher</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_2">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#general-publisher">General Publisher</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-guide_2">Installation Guide</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#midas-event-publisher">Midas Event Publisher</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-guide_3">Installation Guide</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#usage_1">Usage</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#by-hand">"By Hand"</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#cronjob-screen">"Cronjob" Screen</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-dqm">Basic DQM</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_3">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_4">Installation Guide</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#usage_2">Usage</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#by-hand_1">"By Hand"</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#screening-script">Screening Script</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#crate-monitor">Crate Monitor</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_4">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-guide_5">Installation Guide</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">g-2 modified DAQ Manual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Additional Software Add-ons</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="additional-software">Additional Software</h1>
+<h2 id="eigen">Eigen</h2>
+<h3 id="overview">Overview</h3>
+<p>Eigen is a high-performance C++ library for linear algebra operations, including matrices, vectors, numerical solvers, and related algorithms. It is widely used in various fields such as scientific computing, machine learning, and computer graphics due to its efficiency and ease of use. Eigen provides a wide range of matrix sizes and storage formats, making it versatile for both small and large-scale computations.</p>
+<h3 id="installation-guide">Installation Guide</h3>
+<h4 id="via-yum-alma9">Via yum (ALMA9)</h4>
+<pre><code>sudo yum install -y eigen3-devel
+</code></pre>
+<h4 id="from-source-centos7">From Source (CentOS7)</h4>
+<pre><code>git clone https://gitlab.com/libeigen/eigen.git
+cd eigen
+mkdir build &amp;&amp; cd build
+cmake ..
+make
+sudo make install
+</code></pre>
+<hr/>
+<h2 id="midas-event-unpacker">Midas Event Unpacker</h2>
+<h3 id="overview_1">Overview</h3>
+<p>This is a midas event unpacker used for the g-2 modified DAQ system during the 2023 LYSO test beam, but has seen more development afterwards. The <a href="https://github.com/PIONEER-Experiment/test-beam-2023-unpacker/tree/develop">github page</a> has it's own list of instructions for download and use.</p>
+<h3 id="installation-guide_1">Installation Guide</h3>
+<p>Follow the instructions on the <a href="https://github.com/PIONEER-Experiment/test-beam-2023-unpacker/tree/develop">github page</a>. In particular:</p>
+<pre><code>git clone --branch develop git@github.com:PIONEER-Experiment/test-beam-2023-unpacker.git unpacker
+cd unpacker
+mkdir build  
+cd build  
+cmake ..
+make install  
+</code></pre>
+<h3 id="usage">Usage</h3>
+<p>Follow the instructions on the <a href="https://github.com/PIONEER-Experiment/test-beam-2023-unpacker/tree/develop">github page</a>. In particular run the following command over a generated midas file.</p>
+<pre><code>./pioneer_unpacker MIDAS_FILE.mid.lz4 0 detector_mapping.json
+</code></pre>
+<hr/>
+<h2 id="publisher">Publisher</h2>
+<h3 id="overview_2">Overview</h3>
+<p>The publisher is C++ project aimed to publish data over a socket using ZeroMQ. There are two versions:</p>
+<ol>
+<li>The <a href="./#general-publisher">General Publisher</a> which is stable and well documented, but does not provide any midas interfacing.</li>
+<li>The <a href="./#midas-event-publisher">Midas Event Publisher</a> which is less stable and not well document, but does provide midas interfacing.</li>
+</ol>
+<h3 id="general-publisher">General Publisher</h3>
+<p>The <a href="https://github.com/PIONEER-Experiment/midas_publisher/tree/main?tab=readme-ov-file">general publishing tool</a> is a framework used to publish data over ZeroMQ seemlessly. This tool generally only depends on ZeroMQ and cppZMQ. <strong>This branch does not interface with midas at all</strong>. However, there is still useful information on this branch about how to configure the publisher and how it works, see the <a href="https://github.com/PIONEER-Experiment/midas_publisher/wiki">wiki for the publisher</a>.</p>
+<h4 id="installation-guide_2">Installation Guide</h4>
+<p>Follow the <a href="https://github.com/PIONEER-Experiment/midas_publisher/wiki/Compiling-the-Publisher">steps on the wiki</a>.</p>
+<h3 id="midas-event-publisher">Midas Event Publisher</h3>
+<p><strong>Warning</strong>: This branch was hastefully put together. As a result it is not straightfoward to install and has many issues. Try following this guide first, but if you have issues you can <a href="../#contact">contact the creator (Jack Carlton)</a>.</p>
+<p>This is a different branch of the publisher specialized to using <a href="https://daq00.triumf.ca/MidasWiki/index.php/Mdump">mdump</a> and the <a href="./#midas-event-unpacker">midas event unpacker</a> to publish unpacked midas data from a live data run over a socket using zeroMQ. <strong>In some cases, we have found that using mdump in this manner lowers the rate capabilites of the DAQ</strong>. However, this software is still useful for low rate <a href="./#basic-dqm">data quality monitoring</a>.</p>
+<p>These features are located on the <a href="https://github.com/PIONEER-Experiment/midas_publisher/tree/devel?tab=readme-ov-file">develop branch</a> of the publisher. Which can be installed with the following steps</p>
+<h4 id="installation-guide_3">Installation Guide</h4>
+<p>1 <strong>Clone the branch</strong></p>
+<pre><code>git clone -b devel git@github.com:PIONEER-Experiment/midas_publisher.git publisher
+cd publisher
+</code></pre>
+<p>2 <strong>Set up environment</strong></p>
+<pre><code>./detect_environment.sh
+cat environment_variables.txt
+</code></pre>
+<p>Ensure each environment variable points to the correct directory. If not, fix it using your favorite text editor. See this example below:</p>
+<pre><code>MIDASSYS=/home/installation_testing/packages/midas
+MIDAS_EXPTAB=/home/installation_testing/online/exptab
+MIDAS_EXPT_NAME=DAQ
+UNPACKING_ROOT=/home/installation_testing/packages/unpacking
+ROOT_ROOT=/home/installation_testing/packages/ROOT
+BOOST_1_70_0_ROOT=/home/installation_testing/packages/boost-1.70.0
+ZEROMQ_ROOT=/home/installation_testing/packages/zeroMQ
+CPPZMQ_ROOT=/home/installation_testing/packages/cppzmq
+EIGEN_ROOT=/home/installation_testing/packages/eigen-3.4.0
+</code></pre>
+<p><strong>Note:</strong> <code>BOOST_1_70_0_ROOT</code> is poorly named. This can point to any version of boost past version 1.70.0.</p>
+<p><strong>Note:</strong> If this turns out to be too painful a process, you may find it easier to hardcode <a href="https://github.com/PIONEER-Experiment/midas_publisher/blob/devel/CMakeLists.txt">CMakeLists.txt</a>. For example, one would find where the CPPZMQ header files are and replace the line <code>$ENV{CPPZMQ_ROOT}/include</code> with a hardcoded path.</p>
+<pre><code>source ./setup_environment.sh
+</code></pre>
+<p>3 <strong>Build and install</strong></p>
+<pre><code>cd ..
+mkdir build
+cd build
+cmake ..
+make install -j$(nproc)
+</code></pre>
+<p>4 <strong>Edit config</strong></p>
+<p>Edit config.json in your favorite text editor, for instance:</p>
+<pre><code>cd ..
+vi config.json
+</code></pre>
+<p>In particular, </p>
+<pre><code>"detector-mapping-file": "/home/installation_testing/packages/unpacking/python/detector_mapping.json" 
+</code></pre>
+<p>needs to be set to a valid detector mapping. The unpacking library has one in <code>unpacking/python/detector_mapping.json</code></p>
+<p>You also may need to change the buffer in</p>
+<pre><code>"command": "$(MIDASSYS)/bin/mdump -l 1 -z BUF001 -f d",
+</code></pre>
+<p>to <code>SYSTEM</code> or whatever buffer you want the publisher to listen to.</p>
+<h3 id="usage_1">Usage</h3>
+<h4 id="by-hand">"By Hand"</h4>
+<p>Once installed, you can simply run</p>
+<pre><code>./publisher
+</code></pre>
+<p>And the publisher will begin. You can increase the <code>verbose</code> setting in <code>config.json</code> to see what it's publishing in real time.</p>
+<h4 id="cronjob-screen">"Cronjob" Screen</h4>
+<p>In the scripts directory you can start a "cronjob" screen that runs the publisher</p>
+<pre><code>cd scripts
+./screen_publisher_cronjob.sh
+</code></pre>
+<p>You can stop this screen with </p>
+<pre><code>./stop_publisher_cronjob_screen.sh
+</code></pre>
+<p><strong>Note</strong>: This isn't really a cronjob, but rather a shell script that periodically kills the publisher and restarts it. There is a memory leak in this branch that hasn't been tracked down, and this is band-aid solution.</p>
+<hr/>
+<h2 id="basic-dqm">Basic DQM</h2>
+<h3 id="overview_3">Overview</h3>
+<p>This is a "generalized" DQM that samples a midas experiment running the g-2 modified DAQ and displays some traces from each active channel. It comes packaged with <a href="./#publisher">publisher</a> right now, but may migrate to it's own seperate project.</p>
+<h3 id="installation-guide_4">Installation Guide</h3>
+<p>See installation guide for <a href="./#midas-event-publisher">midas event publisher</a>.</p>
+<p>You also need some python packages:</p>
+<pre><code>pip install Flask Flask-SocketIO pyzmq
+</code></pre>
+<p><strong>Note</strong>: You may need to use <code>pip3</code> on some systems.</p>
+<h3 id="usage_2">Usage</h3>
+<p>First, navigate to the publisher root directory. Then</p>
+<h4 id="by-hand_1">"By Hand"</h4>
+<pre><code>cd dashboard_webpage
+python main.py
+</code></pre>
+<p><strong>Note</strong>: You may need to use <code>python3</code> on some systems.</p>
+<p>Then open your favorite web browser to <code>localhost:8000</code> to view the webpage.</p>
+<h4 id="screening-script">Screening Script</h4>
+<pre><code>cd scripts
+./screen_webpage.sh
+</code></pre>
+<p>Then open your favorite web browser to <code>localhost:8000</code> to view the webpage.</p>
+<p>To stop the webpage,</p>
+<pre><code>./stop_webpage_screen.sh
+</code></pre>
+<hr/>
+<h2 id="crate-monitor">Crate Monitor</h2>
+<h3 id="overview_4">Overview</h3>
+<p>The crate monitor is a webpage to view the status of g-2 crate components such as the <a href="../hardware_overview/#wfd5-waveform-digitizer">WFD5</a>, <a href="../hardware_overview/#fc7-flexible-controller">FC7</a>, and <a href="../hardware_overview/#amc13-advanced-mezzanine-card">AMC13</a>. </p>
+<h3 id="installation-guide_5">Installation Guide</h3>
+<p>1 <strong>Clone the repository</strong></p>
+<pre><code>git clone git@github.com:PIONEER-Experiment/utcaMonitor.git
+</code></pre>
+<p>2 <strong>Edit run.py</strong></p>
+<p>In your favorite text editor, edit <code>run.py</code>. For example, with <code>vi</code>:</p>
+<pre><code>vi run.py
+</code></pre>
+<p>In particular, change these variables</p>
+<pre><code># variable defaults
+verbose   = 0
+debug     = 0
+teststand = 0
+n_crates  = 1
+# amcs in a crate will have ip address 192.168.[crate].[slot]:  Create the default list of n_crate crate numbers
+crates = [100]
+# types of modules in given crate
+amc13100_types = ['FC7','WFD5']
+crate_types = [amc13100_types]
+encoder_crate = 100
+encoder_slot = 8
+
+host = 'gm26221.classe.cornell.edu'
+</code></pre>
+<p>For instance, for a one crate system I used:</p>
+<pre><code># variable defaults
+verbose   = 0
+debug     = 0
+teststand = 0
+n_crates  = 1
+# amcs in a crate will have ip address 192.168.[crate].[slot]:  Create the default list of n_crate crate numbers
+crates = [1]
+# types of modules in given crate
+amc13100_types = ['FC7','WFD5']
+crate_types = [amc13100_types]
+encoder_crate = 1
+encoder_slot = 10
+
+host = 'localhost'
+</code></pre>
+<p>3 <strong>Run the crate montior</strong></p>
+<pre><code>python run.py
+</code></pre>
+<p>Then open <code>localhost:7000</code> in your favorite web browser.</p>
+<p><strong>Note</strong>: You may need to pdate <code>socket.io.min.js</code>. Here's how you do it manually:</p>
+<p>You may need to update <code>socket.io.min.js</code> (for reasons I'm not entirely sure of). You can get the file on <a href="https://socket.io/docs/v4/client-installation/">socket io's client installation webpage</a>. Here is a <a href="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js">cloudflare link to the version I used</a>; you can copy this to your clipboard</p>
+<p>Replace the contents of socket.io.min.js in your favorite text editor. For instance in <code>vi</code>:</p>
+<pre><code>vi utcaMonitor/app/dist/js/socket.io.min.js
+</code></pre>
+<p>Hit <code>ggdG</code> to erase all lines. Hit <code>i</code> to enter insert mode. <code>Ctrl-V</code> to paste the contents. <code>Esc</code> and <code>:wq</code> to save and exit.</p>
+<p>After this, rety running the crate monitor.</p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../midas/" title="Midas Information"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../networking/" title="Networking Tutorial">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../midas/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../networking/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

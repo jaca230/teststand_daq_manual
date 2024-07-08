@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Networking Tutorial - g-2 modified DAQ Manual</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Networking Tutorial";
+        var mkdocs_page_input_path = "networking.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Networking Tutorial</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#reading-network-port-information">Reading Network Port Information</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-ifconfig-output">Example ifconfig Output</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#explanation">Explanation:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-network-scripts">Using Network Scripts</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-ifcfg-file-etcsysconfignetwork-scriptsifcfg-eth0">Example ifcfg File: /etc/sysconfig/network-scripts/ifcfg-eth0</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#explanation_1">Explanation:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#subnet-masks-and-network-ranges">Subnet Masks and Network Ranges</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#subnet-mask-2552552550-cidr-24">Subnet Mask 255.255.255.0 (CIDR /24):</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-with-network-1921681xxx">Example with Network 192.168.1.xxx:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#subnet-mask-25525500-cidr-16">Subnet Mask 255.255.0.0 (CIDR /16):</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-with-network-192168xxxxxx">Example with Network 192.168.xxx.xxx:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-examples">Additional Examples:</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#subnet-mask-255000-cidr-8">Subnet Mask 255.0.0.0 (CIDR /8):</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#subnet-mask-2552551280-cidr-17">Subnet Mask 255.255.128.0 (CIDR /17):</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scanning-a-network">Scanning a network</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-nmap">Using nmap</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-arp-scan">Using arp-scan</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">g-2 modified DAQ Manual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Networking Tutorial</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="networking-basics">Networking Basics</h1>
+<p>To network the DAQ hardware together, understanding basic concepts such as IP addressing, subnetting, and network interfaces is crucial. This page will introduce you to fundamental networking terms in linux.</p>
+<h2 id="reading-network-port-information">Reading Network Port Information</h2>
+<p>On linux systems, you can use the command <code>ifconfig</code> to list all active ports on the system and some information about them. Below is an example.</p>
+<h3 id="example-ifconfig-output">Example <code>ifconfig</code> Output</h3>
+<pre><code>eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.100  netmask 255.255.240.0  broadcast 192.168.1.255
+        inet6 fe80::215:5dff:fe8f:7013  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:15:5d:8f:70:13  txqueuelen 1000  (Ethernet)
+        RX packets 38935  bytes 56933483 (56.9 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 5766  bytes 471459 (471.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre>
+<h4 id="explanation">Explanation:</h4>
+<p><strong>Interface Name (<code>eth0</code>)</strong>:</p>
+<ul>
+<li>This is the name of the network interface.</li>
+</ul>
+<p><strong>Flags</strong>:</p>
+<ul>
+<li>
+<p><code>UP</code>: Indicates that the network interface is currently enabled and operational. When an interface is "up," it means the operating system has activated it and it is ready to send and receive data.</p>
+</li>
+<li>
+<p><code>BROADCAST</code>: This flag signifies that the network interface supports broadcasting. Broadcasting allows a single packet to be sent to all devices within the same subnet. Devices use broadcast addresses to receive these packets.</p>
+</li>
+<li>
+<p><code>RUNNING</code>: Indicates that the network interface is operational and actively sending or receiving data. It confirms that the interface is functioning correctly and is capable of transferring data packets.</p>
+</li>
+<li>
+<p><code>MULTICAST</code>: Indicates that the network interface supports multicasting. Multicasting allows a single packet to be sent to multiple specific recipients who have joined a multicast group. It is more efficient than broadcasting for sending data to multiple destinations simultaneously.</p>
+</li>
+</ul>
+<p><strong>MTU (<code>mtu 1500</code>)</strong>:</p>
+<ul>
+<li>Maximum Transmission Unit, the largest packet size in bytes.</li>
+<li>Default is usually 1500 bytes.</li>
+<li>For 10GbE links, this must be increased for efficiency. Typically to ~9000 bytes.</li>
+</ul>
+<p><strong>IPv4 Address (<code>inet 192.168.1.100</code>)</strong>:</p>
+<ul>
+<li>IP address assigned to the interface.</li>
+</ul>
+<p><strong>Netmask (<code>netmask 255.255.255.0</code>)</strong>:</p>
+<ul>
+<li>Defines the network portion of the IP address.</li>
+</ul>
+<p><strong>Broadcast Address (<code>broadcast 192.168.1.255</code>)</strong>:</p>
+<ul>
+<li>Address used for broadcasting messages.</li>
+</ul>
+<p><strong>RX (Receive) and TX (Transmit) Packets</strong>:</p>
+<ul>
+<li>Count of packets received and transmitted.</li>
+</ul>
+<p><strong>RX (Receive) and TX (Transmit) Bytes</strong>:</p>
+<ul>
+<li>Total bytes received and transmitted.</li>
+</ul>
+<h2 id="using-network-scripts">Using Network Scripts</h2>
+<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using <code>ifcfg</code> files located in <code>/etc/sysconfig/network-scripts/</code>. These files contain key configuration parameters that define how network interfaces behave and interact with the network.</p>
+<h3 id="example-ifcfg-file-etcsysconfignetwork-scriptsifcfg-eth0">Example <code>ifcfg</code> File: <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code></h3>
+<pre><code>DEVICE=eth0
+BOOTPROTO=static
+ONBOOT=yes
+IPADDR=192.168.1.100
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+MTU=1500
+</code></pre>
+<h4 id="explanation_1">Explanation:</h4>
+<ul>
+<li>
+<p><strong><code>DEVICE=eth0</code></strong>: Specifies the network interface name (<code>eth0</code>). This parameter identifies which network interface the configuration applies to.</p>
+</li>
+<li>
+<p><strong><code>BOOTPROTO=static</code></strong>: Defines the method used to configure the IP address. <code>static</code> indicates that the IP address is manually configured rather than assigned dynamically (e.g., via <code>DHCP</code>).</p>
+</li>
+<li>
+<p><strong><code>ONBOOT=yes</code></strong>: Ensures that the network interface (<code>eth0</code>) is automatically activated during system boot. Setting this to <code>yes</code> ensures the interface is brought up when the system starts.</p>
+</li>
+<li>
+<p><strong><code>IPADDR=192.168.1.100</code></strong>: Sets the static IPv4 address (<code>192.168.1.100</code>) for the <code>eth0</code> interface. Replace this with the desired IP address for your network configuration.</p>
+</li>
+<li>
+<p><strong><code>NETMASK=255.255.255.0</code></strong>: Specifies the subnet mask (<code>255.255.255.0</code>) associated with the IP address. The subnet mask determines which part of the IP address is the network portion and which part is the host portion.</p>
+</li>
+<li>
+<p><strong><code>GATEWAY=192.168.1.1</code></strong>: Defines the default gateway (<code>192.168.1.1</code>) for the network interface. The gateway is used for routing traffic to destinations outside the local subnet.</p>
+</li>
+<li>
+<p><strong><code>MTU=1500</code></strong>: Sets the Maximum Transmission Unit (MTU) to <code>1500</code> bytes for the <code>eth0</code> interface. MTU defines the largest packet size that can be transmitted over the network interface without fragmentation.</p>
+</li>
+</ul>
+<h2 id="subnet-masks-and-network-ranges">Subnet Masks and Network Ranges</h2>
+<p>Masks are very important for segmenting your network so traffic is routed appropriately. There are two notations to do this:</p>
+<ol>
+<li>Subnet masks like <code>255.255.255.0</code></li>
+<li>CIDR notation like <code>/24</code>
+Both of these do the same thing, but you'll see both used "in the wild."</li>
+</ol>
+<h4 id="subnet-mask-2552552550-cidr-24">Subnet Mask <code>255.255.255.0</code> (CIDR <code>/24</code>):</h4>
+<ul>
+<li><strong>Explanation</strong>: This subnet mask (<code>255.255.255.0</code>) allows for up to 254 usable IP addresses within the same network.</li>
+</ul>
+<h5 id="example-with-network-1921681xxx">Example with Network <code>192.168.1.xxx</code>:</h5>
+<ul>
+<li>
+<p><strong>Network Address</strong>: <code>192.168.1.0/24</code></p>
+<ul>
+<li><strong>Range of IP Addresses</strong>: <code>192.168.1.1</code> to <code>192.168.1.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.255.255.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.168.1.0</code> into a network portion (<code>192.168.1</code>) and a host portion (<code>xxx</code>). The last octet (<code>xxx</code>) ranges from <code>1</code> to <code>254</code>, with <code>0</code> reserved as the network address and <code>255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<h4 id="subnet-mask-25525500-cidr-16">Subnet Mask <code>255.255.0.0</code> (CIDR <code>/16</code>):</h4>
+<ul>
+<li><strong>Explanation</strong>: This subnet mask (<code>255.255.0.0</code>) allows for up to 65,534 usable IP addresses within the same network.</li>
+</ul>
+<h5 id="example-with-network-192168xxxxxx">Example with Network <code>192.168.xxx.xxx</code>:</h5>
+<ul>
+<li>
+<p><strong>Network Address</strong>: <code>192.168.0.0/16</code></p>
+<ul>
+<li><strong>Range of IP Addresses</strong>: <code>192.168.0.1</code> to <code>192.168.255.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.255.0.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.168.0.0</code> into a network portion (<code>192.168</code>) and two host portions (<code>xxx.xxx</code>). The third and fourth octets (<code>xxx.xxx</code>) range from <code>0.1</code> to <code>255.254</code>, with <code>0.0</code> reserved as the network address and <code>255.255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<h3 id="additional-examples">Additional Examples:</h3>
+<h4 id="subnet-mask-255000-cidr-8">Subnet Mask <code>255.0.0.0</code> (CIDR <code>/8</code>):</h4>
+<ul>
+<li>
+<p><strong>Example</strong>: </p>
+<ul>
+<li><strong>Network Address</strong>: <code>192.0.0.0/8</code></li>
+<li><strong>Range of IP Addresses</strong>: <code>192.0.0.1</code> to <code>192.255.255.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.0.0.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.0.0.0</code> into a network portion (<code>192</code>) and three host portions (<code>xxx.xxx.xxx</code>). The second, third, and fourth octets (<code>xxx.xxx.xxx</code>) range from <code>0.0.1</code> to <code>255.255.254</code>, with <code>0.0.0.0</code> reserved as the network address and <code>255.255.255.255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<h4 id="subnet-mask-2552551280-cidr-17">Subnet Mask <code>255.255.128.0</code> (CIDR <code>/17</code>):</h4>
+<ul>
+<li>
+<p><strong>Example</strong>: </p>
+<ul>
+<li><strong>Network Address</strong>: <code>192.168.0.0/17</code></li>
+<li><strong>Range of IP Addresses</strong>: <code>192.168.0.1</code> to <code>192.168.127.254</code></li>
+<li><strong>Subnet Mask</strong>: <code>255.255.128.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>: </p>
+<ul>
+<li>This subnet mask divides the IP address <code>192.168.0.0</code> into a network portion (<code>192.168.0</code>) and a host portion (<code>xxx</code>). The third octet (<code>0.xxx</code>) ranges from <code>0.1</code> to <code>127.254</code>, with <code>0.0</code> reserved as the network address and <code>127.255</code> reserved as the broadcast address.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="scanning-a-network">Scanning a network</h2>
+<p>To identify devices and their IP addresses on your network, you can use various tools available on Linux. One of the most common tools for network scanning is <code>nmap</code>.</p>
+<h3 id="using-nmap">Using <code>nmap</code></h3>
+<p>1 <strong>Install <code>nmap</code></strong>:
+If <code>nmap</code> is not already installed on your system, you can install it using the package manager for Red Hat-based distributions.</p>
+<pre><code>sudo yum install nmap
+</code></pre>
+<p>2 <strong>Scan the Network</strong>:
+To scan your local network and list all active devices, use the following command. Replace <code>192.168.1.0/24</code> with your network range.</p>
+<pre><code>sudo nmap -sP 192.168.1.0/24
+</code></pre>
+<p>This example performs a "ping scan" on the network 192.168.1.1 - 192.168.1.254. This may take a while to complete as it has to can ~2^8 IP addresses.</p>
+<p>Another example:</p>
+<pre><code>sudo nmap -sP 192.168.0.0/16
+</code></pre>
+<p>This example performs a "ping scan" on the network 192.168.1.1 - 192.168.1.254. This will take even longer to complete as it has to scan ~2^16 IP addresses. As a result, it might be best to screen the scan in the background and write the results to a file:</p>
+<pre><code>screen -dmS nmap_scan bash -c 'sudo nmap -sP 192.168.0.0/24 &gt; ~/nmap_scan_results.txt'
+</code></pre>
+<h3 id="using-arp-scan">Using <code>arp-scan</code></h3>
+<p>1 <strong>Install <code>arp-scan</code></strong>:</p>
+<p>Another useful tool for network scanning is arp-scan. This tool can also help you discover devices on your network.</p>
+<pre><code>sudo yum install arp-scan
+</code></pre>
+<p>2 <strong>Scan the Network</strong>:</p>
+<pre><code>sudo arp-scan --interface=eth0 --localnet
+
+</code></pre>
+<p>Replace the interface with the appropriate device name for your network. You can check this using <code>ifconfig</code>.</p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../software_add_ons/" title="Additional Software Add-ons"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../debugging/" title="Debugging Common Errors">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../software_add_ons/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../debugging/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

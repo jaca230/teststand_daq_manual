@@ -408,7 +408,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 "Async Mode" refers to a mode where each midas event contains 20 traces from each digitizer channel, which may increase the effective data collection rate. **However, this mode is currently not working.**
 
-To turn on async mode set [WFD5 Async Mode Enabled (in a second place)](odb_config.md#wfd5-async-mode-enabled-in-a-second-place) and [TTC Async Mode Enabled](odb_config.md#ttc-async-mode-enabled) to `yes`. For each digitizer, set [WFD5 Async Mode Enabled](odb_config.md#wfd5-async-mode-enabled) to `yes`. Furthermore [WFD5 Circular Buffer Mode](odb_config.md#wfd5-circular-buffer-mode-enabled) should be set to `no`. Otherwise the behavior will be unpredictable. I understand this is a bit convoluted, but this was hastily put together during the 2023 PSI LYSO test beam. There is slightly more documentation on [this elog entry](https://maxwell.npl.washington.edu/elog/pienuxe/R23/139).
+To turn on async mode set [WFD5 Async Mode Enabled (in another place)](odb_config.md#wfd5-async-mode-enabled-in-another-place) and [TTC Async Mode Enabled](odb_config.md#ttc-async-mode-enabled) to `yes`. For each digitizer, set [WFD5 Async Mode Enabled](odb_config.md#wfd5-async-mode-enabled) to `yes`. Furthermore [WFD5 Circular Buffer Mode](odb_config.md#wfd5-circular-buffer-mode-enabled) should be set to `no`. Otherwise the behavior will be unpredictable. I understand this is a bit convoluted, but this was hastily put together during the 2023 PSI LYSO test beam. There is slightly more documentation on [this elog entry](https://maxwell.npl.washington.edu/elog/pienuxe/R23/139).
 
 
 ##### WFD5 Async Mode Enabled

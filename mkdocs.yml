@@ -2,9 +2,6 @@ site_name: g-2 modified DAQ Manual
 theme:
   name: readthedocs
 
-extra_css:
-  - 'css/extra.css'
-
 nav:
   - Home: index.md
   - Hardware Overview: hardware_overview.md
@@ -19,7 +16,8 @@ nav:
 
 plugins:
   - search
-  - pdf-export
+  - print-site
+  - with-pdf:
   - git-revision-date-localized:
       enable_creation_date: false
 
@@ -28,3 +26,4 @@ markdown_extensions:
 
 extra_css:
 - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
+- 'css/extra.css'

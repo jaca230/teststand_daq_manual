@@ -535,7 +535,7 @@ python read_status.py [crate] [slot] [options]
 
 #### Updating Firmware
 
-You need to [set the IP](hardware_overview.md#changing-ip-address-1) before doing this.
+You need to [set the IP](hardware_overview.md#changing-ip-address_1) before doing this.
 
 It will be easier if you [install the DAQ software](installing_and_building.md#manual-installation-guide) before doing this. In particular, you want the environment variable `BOOST_ROOT` declared in your shell session. Additionally, you'll want the address table located in the g-2 modified DAQ repository.
 
@@ -701,7 +701,7 @@ ping 192.168.[crate].14
 
 #### Building AMC13Tool2.exe
 
-You need to [set the IP](hardware_overview.md#changing-ip-address-2) before doing this.
+You need to [set the IP](hardware_overview.md#changing-ip-address_2) before doing this.
 
 1 **Set up environment**
 

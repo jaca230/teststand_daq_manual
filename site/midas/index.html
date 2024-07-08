@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Midas Information - g-2 modified DAQ Manual</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Midas Information";
+        var mkdocs_page_input_path = "midas.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Midas Information</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#data-storage-location">Data Storage location</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#midas-files-to-root-files-unpacker">Midas Files to ROOT Files (unpacker)</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#recovering-from-a-corrupted-odb">Recovering from a Corrupted ODB</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fixing-a-corrupted-odb-by-hand">Fixing a corrupted ODB by hand</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#fixing-a-persistently-corrupted-odb-by-hand">Fixing a persistently corrupted ODB by hand</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-an-odb-save">Loading an ODB save</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-the-odb-size">Changing the ODB size</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-program-startup-scripts">Adding Program Startup Scripts</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">g-2 modified DAQ Manual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Midas Information</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="some-midas-information-and-tips">Some Midas Information and Tips</h1>
+<p>TRIUMF has a great <a href="https://daq00.triumf.ca/MidasWiki/index.php/Main_Page">Midas Wiki</a> page. For general midas information, this is a good place to start. Below, there are some specific tips about midas that are helpful when using the g-2 modified DAQ.</p>
+<h2 id="data-storage-location">Data Storage location</h2>
+<p>By default midas files (.mid) and compressed midas files (.mid.lz4) will be stored in the same directory that the file <code>$MIDAS_EXPTAB</code> is located (usually the "online" directory). This can be can be <a href="../odb_config/#change-logger-data-writing-directory">changed to a different directory in the Logger's ODB settings</a>.</p>
+<hr/>
+<h2 id="midas-files-to-root-files-unpacker">Midas Files to ROOT Files (unpacker)</h2>
+<p>See the <a href="../software_add_ons/#midas-event-unpacker">unpacker software page</a>.</p>
+<p>Once that is installed, you can convert midas files to root files using the command:</p>
+<pre><code>./pioneer_unpacker MIDAS_FILE.mid.lz4 0 detector_mapping.json
+</code></pre>
+<hr/>
+<h2 id="recovering-from-a-corrupted-odb">Recovering from a Corrupted ODB</h2>
+<p>There should be a folder in <code>$GM2DAQ_DIR/restore_corrupted_ODB</code> or <code>$GM2DAQ_DIR/scripts/restore_corrupted_ODB</code> (if not, you may need to look in the default branch). Navigate to this directory and run one of the following two scripts:</p>
+<p>Fun version:</p>
+<pre><code>./midas_restore.sh
+</code></pre>
+<p>Less fun version:</p>
+<pre><code>./delete_and_restore_odb.sh
+</code></pre>
+<p>Both scripts have the exact same functionality; they effectively stop all running screens (midas related or not), delete all ODB data, and load a backup file. However the first script has some fun surprises for the user's pleasure. If this script doesn't work, you can follow the steps in <a href="./#fixing-a-persistently-corrupted-odb-by-hand">"Fixing a persistently corrupted ODB by hand"</a>.</p>
+<hr/>
+<h2 id="fixing-a-corrupted-odb-by-hand">Fixing a corrupted ODB by hand</h2>
+<p>These instructions are adapted from the <a href="https://daq00.triumf.ca/MidasWiki/index.php/FAQ#How_to_recover_from_a_corrupted_ODB">midas wiki's page on recovering from a corrupted ODB</a>. For most cases, you can just "nuke" the ODB and then load an ODB save file from a previous run. <strong>Make sure you have an ODB backup file</strong> to load (ex. run001234.json).</p>
+<p>1 <strong>Stop midas screens by hand</strong></p>
+<pre><code>screen -ls
+</code></pre>
+<p>Note all midas screens running and close them, for instance:</p>
+<pre><code>screen -X -S mhttpd quit
+screen -X -S mlogger quit
+screen -X -S mserver quit
+</code></pre>
+<p>Verify they are all close with</p>
+<pre><code>screen -ls
+</code></pre>
+<p>once again.</p>
+<p>2 <strong>Reset the ODB to midas default</strong></p>
+<pre><code>$MIDASSYS/bin/odbinit -s {ODB memory} --cleanup
+</code></pre>
+<p>Then follow the text prompts.</p>
+<p>For example:</p>
+<pre><code>$MIDASSYS/bin/odbinit -s 1024MB --cleanup
+</code></pre>
+<p>3 <strong>Load old ODB</strong> </p>
+<pre><code>$MIDASSYS/bin/odbedit -c "load online/run001234.json"'
+</code></pre>
+<p>Replace the path <code>online/run001234.json</code> with the location of an actual ODB backup that you know was working.</p>
+<h3 id="fixing-a-persistently-corrupted-odb-by-hand">Fixing a persistently corrupted ODB by hand</h3>
+<p>If nothing else works to fix a corrupted ODB, these steps act as a "brute force" reset. The steps below are actually the same steps done in the scripts mentioned in <a href="./#recovering-from-a-corrupted-odb">Recovering from a Corrupted ODB</a>. <strong>Make sure you have an ODB backup file</strong> to load (ex. run001234.json).</p>
+<p>1 <strong>Forcefully close out of all screens on the machine</strong></p>
+<pre><code>killall mserver mevb mlogger mhttpd mhttpd6 frontend mtransition &gt; /dev/null 2&gt;&amp;1
+killall -9 mserver mevb mlogger mhttpd mhttpd6 frontend mtransition &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/progs/mcleanup &gt; /dev/null 2&gt;&amp;1
+screen -wipe &gt; /dev/null 2&gt;&amp;1
+killall screen &gt; /dev/null 2&gt;&amp;1
+screen -wipe &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>2 <strong>Delete Shared Memory Files</strong></p>
+<pre><code>export EXP=$MIDAS_EXPT_NAME
+export EXP_PATH=$(dirname "$MIDAS_EXPTAB")
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf $EXP_PATH/.*.SHM &gt; /dev/null 2&gt;&amp;1
+rm -rf $EXP_PATH/.*.TXT &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>3 <strong>Create new ODB and load old ODB file</strong></p>
+<pre><code>export JsonPath=online/run001234.json
+export run_number=1000
+$MIDASSYS/bin/odbedit -e $EXP -s 40000000 -c "ls" &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/bin/odbedit -e $EXP -c "load $JsonPath" &gt; /dev/null 2&gt;&amp;1
+$MIDASSYS/bin/odbedit -e $EXP -c "set \"/Runinfo/Run number\" $run_number" &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>where <code>JsonPath</code> and <code>run_number</code> are replaced with the paths to an ODB backup and the desired starting run number respectively. <strong>You should set the run number to a value higher than your last run number as to not overwrite and data</strong>.</p>
+<p>4 <strong>Reload midas webpage</strong></p>
+<pre><code>$MIDASSYS/bin/mhttpd
+</code></pre>
+<p>Verify everything looks as expected on the webpage. Then you can reload frontends and any other screens that were running beforehand.</p>
+<hr/>
+<h2 id="loading-an-odb-save">Loading an ODB save</h2>
+<p>You can use the ODB to load an old ODB save file. </p>
+<pre><code>$MIDASSYS/bin/odbedit
+</code></pre>
+<p>Then in the command line interface:</p>
+<pre><code>load online/run001234.json
+</code></pre>
+<p>Alternatively, you can "stuff" commands into odbedit from command line:</p>
+<pre><code>$MIDASSYS/bin/odbedit -c "load online/run001234.json"'
+</code></pre>
+<p>where <code>online/run001234.json</code> should be replaced with a path to a valid ODB save file.</p>
+<p>In my experience, this only adds settings (or changes settings back). It will not remove settings. For example if path <code>/Equipment/Test</code> exists in the current ODB but not the save, it will still exist after the save is loaded.</p>
+<p>You can also load only specific parts of an ODB by navigating to the appropriate path. For example:</p>
+<pre><code>$MIDASSYS/bin/odbedit
+</code></pre>
+<p>then in the command line interface</p>
+<pre><code>cd Equipment
+load online/run001234.json
+</code></pre>
+<p>Now only the settings under <code>/Equipment</code> will be altered in your ODB by loading the save.</p>
+<hr/>
+<h2 id="changing-the-odb-size">Changing the ODB size</h2>
+<p>See the <a href="https://daq00.triumf.ca/MidasWiki/index.php/FAQ#Increasing_Number_of_Hot-links">midas wiki page for changing ODB size</a>.</p>
+<p>1 <strong>Save Current ODB if needed</strong></p>
+<pre><code>$MIDASSYS/bin/odbedit -c "save current_odb.odb"
+</code></pre>
+<p>2 <strong>Stop midas screens by hand</strong></p>
+<pre><code>screen -ls
+</code></pre>
+<p>Note all midas screens running and close them, for instance:</p>
+<pre><code>screen -X -S mhttpd quit
+screen -X -S mlogger quit
+screen -X -S mserver quit
+</code></pre>
+<p>Verify they are all close with</p>
+<pre><code>screen -ls
+</code></pre>
+<p>once again.</p>
+<p>3 <strong>Edit file $MIDASSYS/include/midas.h</strong></p>
+<p>Find:</p>
+<pre><code>#define MAX_OPEN_RECORDS       256 
+</code></pre>
+<p>Change this to:</p>
+<pre><code>#define MAX_OPEN_RECORDS       1024
+</code></pre>
+<p><strong>Note:</strong> This can be changed to a larger number (up to some limit I don't know)</p>
+<p>4 <strong>Edit file $MIDASSYS/src/odb.cxx</strong></p>
+<p>Find:</p>
+<pre><code>assert(sizeof(DATABASE_CLIENT) == 2112);
+assert(sizeof(DATABASE_HEADER) == 135232);
+</code></pre>
+<p>Change to:</p>
+<pre><code>assert(sizeof(DATABASE_CLIENT) == 8256);
+assert(sizeof(DATABASE_HEADER) == 528448);
+</code></pre>
+<p><strong>Note:</strong> These numbers follow a formula on the wiki, they are related to the variable MAX_OPEN_RECORDS</p>
+<pre><code>DATABASE_CLIENT = 64 + 8*MAX_OPEN_RECORDS 
+DATABASE_HEADER = 64 + 64*DATABASE_CLIENT
+</code></pre>
+<p>5 <strong>Remake MIDAS</strong></p>
+<p>Follow the wiki's <a href="https://daq00.triumf.ca/MidasWiki/index.php/Quickstart_Linux#MIDAS_Package_Installation">quickstart linux guide</a>.</p>
+<pre><code>cd midas
+mkdir build
+cd build
+cmake ..
+make install
+</code></pre>
+<p>6 <strong>Create new ODB</strong></p>
+<pre><code>$MIDASSYS/bin/odbinit -s 1024MB --cleanup
+</code></pre>
+<p><strong>Note:</strong> I had trouble unless the number specified by -s was the different than the previous ODB. From there it will prompt you to delete a file. I think this file contains information about the maximum number of hotlinks and must be deleted every time you want to increase the number of hotlinks</p>
+<p>7 <strong>Load old settings (if saved)</strong></p>
+<pre><code>$MIDASSYS/bin/odbedit -c "load current_odb.odb"
+</code></pre>
+<hr/>
+<h2 id="adding-program-startup-scripts">Adding Program Startup Scripts</h2>
+<p>After any frontend is run, it will appear in the ODB under <code>/Programs/{Frontend Name}</code>. Here there are some settings for the program. The I use for starting frontends are</p>
+<p><strong>Required</strong>:</p>
+<p>Set <code>/Programs/{Frontend Name}/Required</code> to <code>yes</code> to pin the program onto the <code>Programs</code> page accessible from the left sidebar. In other words, when the frontend is not running, it will not dissapear from the programs page.</p>
+<p><strong>Start Command</strong>:</p>
+<p>Change <code>/Programs/{Frontend Name}/Start Command</code> to a command that you when to be run when hitting the <code>Start {Frontend Name}</code> button on the Programs page. This is allows the user to start a frontend in the background from the midas webpage; i.e. you can avoid starting frontends from command line.</p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../odb_config/" title="ODB Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../software_add_ons/" title="Additional Software Add-ons">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../odb_config/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../software_add_ons/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

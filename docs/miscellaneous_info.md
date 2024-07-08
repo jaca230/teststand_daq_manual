@@ -184,7 +184,7 @@ to skip certain packages, for example. From the list above, remove the `install_
 
 ![FC7_SFP_Port_Labels](images/FC7_SFP_Port_Labels.png){: style="max-width:100%; height:auto;"}
 
-These labelings are particularly useful when configuring the [CCC ODB settings](odb_config.md#global-settings)
+These labelings are particularly useful when configuring the [CCC ODB settings](odb_config.md#ccc-fc7-slot-number-1-12)
 
 ---
 

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Hardware Overview - g-2 modified DAQ Manual</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="../css/print-site.css" rel="stylesheet"/>
+<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Hardware Overview";
+        var mkdocs_page_input_path = "hardware_overview.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Hardware Overview</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#general-hardware-overview">General Hardware Overview</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#conceptual-diagram-one-crate-system">Conceptual Diagram (One Crate System)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#labled-picture-one-crate-system">Labled Picture (One Crate System)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ipmi">IPMI</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#features-of-ipmi">Features of IPMI</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#common-ipmi-tools">Common IPMI Tools</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example-commands-using-ipmitool">Example Commands Using ipmitool</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#1gbe-nic-gigabit-ethernet-network-interface-card">1GbE NIC (Gigabit Ethernet Network Interface Card)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_1">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC (10 Gigabit Ethernet Network Interface Card)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_2">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration_1">Configuration</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tca-crate-micro-telecommunications-computing-architecture-crate">µTCA Crate (Micro Telecommunications Computing Architecture Crate)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_3">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration_2">Configuration</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mch-microtca-carrier-hub">MCH (MicroTCA Carrier Hub)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_4">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wired-connections">Wired Connections</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1gbe-ethernet-connection">1GbE Ethernet Connection</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration_3">Configuration</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#changing-mch-network-settings">Changing MCH Network Settings</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#wfd5-waveform-digitizer">WFD5 (Waveform Digitizer)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_5">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wired-connections_1">Wired Connections</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#pentabus-cable-input-signal">Pentabus Cable Input Signal</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration_4">Configuration</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#reading-ip-address">Reading IP Address</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-ip-address">Changing IP Address</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-status">Reading Status</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-firmware">Updating Firmware</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fc7-flexible-controller">FC7 (Flexible Controller)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_6">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fmcs">FMCs</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#sfp-interface">SFP Interface</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#trigger-and-clock-input-interface">Trigger and Clock Input Interface</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wired-connections_2">Wired Connections</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#optical-link-to-amc13">Optical Link to AMC13</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#samtech-ribbon-cable-to-bank-board">Samtech Ribbon cable to Bank Board</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration_5">Configuration</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#reading-ip-address_1">Reading IP Address</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-ip-address_1">Changing IP Address</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-status_1">Reading Status</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-firmware_1">Updating Firmware</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#amc13-advanced-mezzanine-card">AMC13 (Advanced Mezzanine Card)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_7">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wired-connections_3">Wired Connections</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#optical-link-to-fc7">Optical Link to FC7</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#10gbe-link-to-daq-computer">10GbE Link to DAQ computer</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration_6">Configuration</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#reading-ip-address_2">Reading IP Address</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-ip-address_2">Changing IP Address</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#building-amc13tool2exe">Building AMC13Tool2.exe</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-amc13-with-amc13tool2exe">Configuring the AMC13 with AMC13Tool2.exe</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-firmware_2">Updating Firmware</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#meinberg-card-tcr180pex-or-similar">Meinberg Card (TCR180PEX or similar)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview_8">Overview</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wired-connections_4">Wired Connections</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#sma-to-d9-connector">SMA to D9 Connector</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration_7">Configuration</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../odb_config/">ODB Configuration</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">g-2 modified DAQ Manual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Hardware Overview</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="hardware-documentation">Hardware Documentation</h1>
+<h2 id="general-hardware-overview">General Hardware Overview</h2>
+<h3 id="conceptual-diagram-one-crate-system">Conceptual Diagram (One Crate System)</h3>
+<p><img alt="DAQ_Diagram" src="../images/DAQ_Diagram.png" style="max-width:100%; height:auto;"/></p>
+<ul>
+<li><strong>Differential signal into WFD5 (Waveform Digitizer)</strong>: Differential signaling are input into Cornell's WFD5s. Data is aggregated by AMC13 on triggers.</li>
+<li><strong>Trigger signal into FC7 (Flexible Controller)</strong>: Provides flexible triggering, FC7 sends trigger signals over optical links to the AMC13.</li>
+<li><strong>AMC13 (Advanced Mezzanine Card)</strong>: Aggregates data from digitizers on a trigger and packages for sending over 10GbE (10 Gigabit Ethernet). Transfers this to the desktop for further processing.</li>
+<li><strong>MCH (MicroTCA Carrier Hub)</strong>: Facilitates communication between the desktop and the crate system via 1GbE Ethernet, managing system-level (crate) operations in a way.</li>
+<li><strong>Desktop CPU</strong>: Processes events received from the AMC13. Data is unpacked and formed into midas events for storage.</li>
+<li><strong>Meinberg</strong>: Provides precise trigger timestamps using GPS timing. This is an artifact of g-2 more than anything, were multiple disconnected systems needed to be correlated. </li>
+</ul>
+<h3 id="labled-picture-one-crate-system">Labled Picture (One Crate System)</h3>
+<p><img alt="DAQ_Diagram" src="../images/DAQ_image_labled.png" style="max-width:100%; height:auto;"/></p>
+<hr/>
+<h2 id="ipmi">IPMI</h2>
+<h3 id="overview">Overview</h3>
+<p>Intelligent Platform Management Interface (IPMI) is a standardized interface used for managing and monitoring computer systems. It allows for the remote management of systems independently of the operating system state or the system's power state. IPMI provides a way to manage a server using a set of standardized commands and messages that can be sent over a network or via a direct serial connection.</p>
+<h3 id="features-of-ipmi">Features of IPMI</h3>
+<ul>
+<li><strong>Remote Management</strong>: Allows administrators to remotely manage systems, including power on/off, rebooting, and accessing system logs.</li>
+<li><strong>Hardware Monitoring</strong>: Monitors hardware components like temperature, voltage, fans, and power supply status.</li>
+<li><strong>Serial Over LAN (SOL)</strong>: Provides serial console access over a network, allowing remote troubleshooting and management.</li>
+<li><strong>Event Logging</strong>: Logs critical system events such as hardware failures or temperature thresholds being exceeded.</li>
+<li><strong>Security</strong>: Supports user authentication, encrypted communication, and access control.</li>
+</ul>
+<h3 id="common-ipmi-tools">Common IPMI Tools</h3>
+<ul>
+<li><strong>ipmitool</strong>: A command-line utility for managing IPMI-enabled devices. It supports a wide range of commands for sensor reading, system status checking, power control, and firmware updates. ipmitool commands are the building blocks used in many of the configuration scripts for the hardware. See <a href="../software_dependencies/#ipmitool">ipmitool</a> for more information.</li>
+</ul>
+<h3 id="example-commands-using-ipmitool">Example Commands Using <code>ipmitool</code></h3>
+<p>1 <strong>Print Field Replaceable Unit (FRU) Information</strong>:</p>
+<pre><code>ipmitool -H 192.168.1.15 fru print
+</code></pre>
+<p>This command retrieves and prints the Field Replaceable Unit (FRU) information from the IPMI device located at IP address <code>192.168.1.15</code>.</p>
+<ul>
+<li><code>-H 192.168.1.15</code>: Specifies the IP address of the IPMI device. Replace <code>192.168.1.15</code> with the actual IP address of your IPMI device.</li>
+<li><code>fru print</code>: Command to retrieve and display the FRU information. FRU information includes details about hardware components that can be replaced in the system, such as part numbers and descriptions.</li>
+</ul>
+<p>2 <strong>Send Raw Command to IPMI Device</strong>:</p>
+<pre><code>ipmitool -I lan -H 192.168.1.15 -m 0x20 -B 0 -T 0x82 -b 7 -t 0x86 raw 0x06 0x1
+</code></pre>
+<p>This command sends a raw IPMI command to a device over LAN with specified parameters.</p>
+<ul>
+<li><code>-I lan</code>: Specifies the interface type (<code>lan</code> in this case), which indicates that the IPMI command will be sent over the LAN interface.</li>
+<li><code>-H 192.168.1.15</code>: Specifies the IP address of the IPMI device.</li>
+<li><code>-m 0x20</code>: Specifies the channel number to communicate with the BMC (Baseboard Management Controller). The default is usually <code>0x20</code>, but for some reason we need to specify this on some systems.</li>
+<li><code>-B 0</code>: Specifies the BMC instance number.</li>
+<li><code>-T 0x82</code>: Specifies the target address in the IPMI device. This is the MCH.</li>
+<li><code>-b 7</code>: Specifies the bus number.</li>
+<li><code>-t 0x86</code>: Specifies the target channel number. This is the device you're targeting, in this case it's FC7 in slot 11 of the microTCA crate.</li>
+<li><code>raw 0x06 0x1</code>: Command to send a raw IPMI command (<code>0x06 0x1</code> in this case) to the specified IPMI device. The raw command <code>0x06 0x1</code> varies based on the specific IPMI command you intend to send.</li>
+</ul>
+<p>You can read a bit more about these commands in the manuals linked in the <a href="./#mch-microtca-carrier-hub">MCH section</a>. You can read more about ipmitool's command arguments on <a href="https://linux.die.net/man/1/ipmitool">this webpage</a>.</p>
+<hr/>
+<h2 id="1gbe-nic-gigabit-ethernet-network-interface-card">1GbE NIC (Gigabit Ethernet Network Interface Card)</h2>
+<h3 id="overview_1">Overview</h3>
+<p>These NICs are generally PCIe Cards that are "plug and play". They provide a 1 gigabit per second ethernet connection for the host computer.</p>
+<h3 id="configuration">Configuration</h3>
+<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:</p>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+</code></pre>
+<p>For example, this is how the UKY teststand 1GbE NIC is configured to communicate with multiple crate using an ethernet splitter.</p>
+<pre><code>#
+# Connect to MCH
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.1.100
+NETMASK=255.255.0.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp5s0
+DEVICE=enp5s0
+ONBOOT=yes
+</code></pre>
+<p>In particular, the <code>IP_ADDR</code> and <code>NETMASK</code> sections are important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the <a href="../networking/#networking-basics">networking page</a> for more details.</p>
+<hr/>
+<h2 id="10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC (10 Gigabit Ethernet Network Interface Card)</h2>
+<h3 id="overview_2">Overview</h3>
+<p>These NICs are generally PCIe Cards that are "plug and play". They provide a 10 gigabit per second ethernet connection for the host computer. In our case, we use optical cables that plug into SFPs. <strong>The MTU (Maximum Transmission Unit) of the card should be 9000 or greater</strong>.</p>
+<h3 id="configuration_1">Configuration</h3>
+<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:</p>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+</code></pre>
+<p>For example, this is how one of the UKY teststand 10GbE NIC is configured to communicate with the AMC13.</p>
+<pre><code>#
+# Connect to AMC13
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.51.100
+NETMASK=255.255.255.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp1s0f0
+DEVICE=enp1s0f0
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-999
+MTU=9000
+</code></pre>
+<p>In particular, the <code>IP_ADDR</code>, <code>NETMASK</code>, and <code>MTU</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="../networking/#networking-basics">networking page</a> for more details.</p>
+<hr/>
+<h2 id="tca-crate-micro-telecommunications-computing-architecture-crate">µTCA Crate (Micro Telecommunications Computing Architecture Crate)</h2>
+<h3 id="overview_3">Overview</h3>
+<p>Micro Telecommunications Computing Architecture (µTCA or MicroTCA) is a modular, high-performance architecture designed for telecommunications and other industries requiring reliable, scalable, and high-bandwidth systems. CERN employs µTCA systems for the acquisition and processing of vast amounts of data generated by particle detectors. These systems are capable of handling high-speed data streams and ensuring data integrity and accuracy.</p>
+<p>For our purposes, you can just view it as an electronics crate to host the <a href="./#mch-microtca-carrier-hub">MCH</a>, <a href="./#fc7-flexible-controller">FC7</a>, and <a href="./#wfd5-waveform-digitizer">WFD5</a>.</p>
+<h3 id="configuration_2">Configuration</h3>
+<p>The µTCA Crate should be "plug and play" in our case; no configuration is needed.</p>
+<hr/>
+<h2 id="mch-microtca-carrier-hub">MCH (MicroTCA Carrier Hub)</h2>
+<h3 id="overview_4">Overview</h3>
+<p>For our purposes, the MCH acts as a point of communication between the crate and the computer hosting the frontends. Here, we will cover specifically setting up VadaTech MCHs, however the system can also be run using <a href="../miscellaneous_info/#the-nat-mch">N.A.T. MCH</a>.</p>
+<h3 id="wired-connections">Wired Connections</h3>
+<h4 id="1gbe-ethernet-connection">1GbE Ethernet Connection</h4>
+<p>The MCH should have an ethernet port labeled <code>GbE0</code> or <code>1GbE</code> (or something along those lines). Use an ethernet cable to connect this to your system's <a href="./#1gbe-nic-gigabit-ethernet-network-interface-card">1GbE NIC</a>. </p>
+<p>See the <a href="./#labled-picture-one-crate-system">labeled DAQ Picture</a> 1GbE MCH in/out.</p>
+<h3 id="configuration_3">Configuration</h3>
+<p>First you should <a href="./#1gbe-nic-gigabit-ethernet-network-interface-card">configure the 1GbE NIC</a> if you haven't already.</p>
+<p>Here are some pdfs that may be be helpful:</p>
+<ul>
+<li><a href="../pdfs/MCH_manual.pdf">MCH Manual PDF</a></li>
+<li><a href="../pdfs/mch_network_configuration.pdf">MCH Network Configuration PDF</a></li>
+</ul>
+<h4 id="changing-mch-network-settings">Changing MCH Network Settings</h4>
+<p>Below is a stripped down version of <a href="../pdfs/mch_network_configuration.pdf">MCH Network Configuration PDF</a>; you can read the pdf for more details.</p>
+<p>1 <strong>Connect to the MCH's Linux environment</strong></p>
+<p>Plug an Ethernet cable into the GbE0 port and the frontend host computer. From a terminal, run</p>
+<pre><code>ssh root@192.168.[crate].15
+</code></pre>
+<p><strong>Note</strong>: If you don't know what IP the MCH has, you can try pinging a crate numbers up to 32</p>
+<pre><code>ping 192.168.[crate].15
+</code></pre>
+<p>The password should be <code>root</code>.</p>
+<p>If you still can't find the crate, you should verify your frontend host computer's ethernet port is properly configured. See the <a href="../networking/#networking-basics">networking page</a> for some general networking information. If that still fails, you may need to do a <a href="../networking/#scanning-a-network">network scan</a> to look for the MCH.</p>
+<p>2 <strong>Remount root directory with read/write permission</strong></p>
+<pre><code>mount -o remount,rw /
+</code></pre>
+<p>3 <strong>Edit Network Settings</strong></p>
+<pre><code>vi /etc/rc.d/rc.conf
+</code></pre>
+<p><strong>Note</strong>: In order to insert text properly, I had to type this command into vi first <code>:set nocompatible</code></p>
+<p>Change the following to reflect your network settings</p>
+<pre><code># net interface 1
+export SYSCFG_IFACE1=y
+export INTERFACE1="eth1"
+export IPADDR1="192.168.[crate].15"
+export NETMASK1="255.255.224.0"
+export BROADCAST1="192.168.31.255"
+export GATEWAY1={IP of server (i.e. the IP of the ethernet port on the frontend host computer)}
+export NAMESERVER1="0.0.0.0"
+</code></pre>
+<p>For example</p>
+<pre><code># net interface 1
+export SYSCFG_IFACE1=y
+export INTERFACE1="eth1"
+export IPADDR1="192.168.2.15"
+export NETMASK1="255.255.224.0"
+export BROADCAST1="192.168.31.255"
+export GATEWAY1="192.168.1.100"
+export NAMESERVER1="0.0.0.0"
+</code></pre>
+<p><strong>Note</strong>: For a one crate system, you can change <code>NETMASK1</code> to <code>255.255.255.0</code> if your really want. This just means the MCH can only see IPs that start with <code>192.168.[crate]</code>.</p>
+<p>Then run</p>
+<pre><code>carrier set_ip_connection -s 192.168.[crate].17 -c 192.168.[crate].18
+carrier set_ip_connection -m 192.168.[crate].19 -M 192.168.[crate].20
+</code></pre>
+<p>4 <strong>Edit .xml settings</strong></p>
+<p>Edit the .xml config</p>
+<pre><code>vi /opt/vadatech/IPMI/UTCShelf/etc/fruUTCSH.xml
+</code></pre>
+<p>In <code>vi</code> you can use the command <code>:/192</code> to skip to the relevant section.</p>
+<pre><code>&lt;IP_Connection&gt;
+    &lt;in_band&gt;eth0,eth1&lt;/in_band&gt;
+    &lt;failover&gt;eth1,eth0&lt;/failover&gt;
+    &lt;IP&gt;
+        &lt;ip_address&gt;192.168.[crate].17&lt;/ip_address&gt;
+        &lt;gw_address&gt;192.168.1.1&lt;/gw_address&gt;
+        &lt;net_mask&gt;255.255.255.0&lt;/net_mask&gt;
+    &lt;/IP&gt;
+&lt;/IP_Connection&gt;
+</code></pre>
+<p>Change the <code>&lt;ip_address&gt;</code>, <code>&lt;gw_address&gt;</code>, and <code>&lt;net_mask&gt;</code> to correspond with what you changed above. For example:</p>
+<pre><code>&lt;IP_Connection&gt;
+    &lt;in_band&gt;eth0,eth1&lt;/in_band&gt;
+    &lt;failover&gt;eth1,eth0&lt;/failover&gt;
+    &lt;IP&gt;
+        &lt;ip_address&gt;192.168.2.17&lt;/ip_address&gt;
+        &lt;gw_address&gt;192.168.1.100&lt;/gw_address&gt;
+        &lt;net_mask&gt;255.255.224.0&lt;/net_mask&gt;
+    &lt;/IP&gt;
+&lt;/IP_Connection&gt;
+</code></pre>
+<p>Then run</p>
+<pre><code>vtipmi stop
+createFruRepositories
+</code></pre>
+<p>5 <strong>Power cycle the uTCA crate</strong></p>
+<p>The MicroTCA crate must then be power-cycled, and you must wait until all of the blue hot-swap
+lights have turned off.</p>
+<p>6 <strong>Set Shelf Address</strong></p>
+<p>Repeat steps 1 and 2. Then run the command</p>
+<pre><code>set_shelf_address_info -a 192.168.[crate].17
+</code></pre>
+<p>7 <strong>Verify Settings Changes</strong></p>
+<p>Verify the output of all the following commands looks right.</p>
+<pre><code>carrier get_ip_connection
+</code></pre>
+<pre><code>get_ip_connection
+</code></pre>
+<pre><code>get_shelf_address_info
+</code></pre>
+<pre><code>list_carriers_present
+</code></pre>
+<pre><code>ifconfig
+</code></pre>
+<p>Finally, exit the ssh connection with</p>
+<pre><code>exit
+</code></pre>
+<p>and verify you can ping the MCH on the new assigned address</p>
+<pre><code>ping 192.168.[crate].15
+</code></pre>
+<hr/>
+<h2 id="wfd5-waveform-digitizer">WFD5 (Waveform Digitizer)</h2>
+<h3 id="overview_5">Overview</h3>
+<p>The WFD5 is a AMC developed by Cornell for g-2 data digitization. Our use case it the same: to digitize the data before being processed further by the frontend host computer.</p>
+<h3 id="wired-connections_1">Wired Connections</h3>
+<h4 id="pentabus-cable-input-signal">Pentabus Cable Input Signal</h4>
+<p>The WFD5 has a 5 channel <a href="../miscellaneous_info/#differential-signals">differential signal</a> input. Connect the differential signal to be digitized using a pentabus cable. </p>
+<p>See the <a href="./#labled-picture-one-crate-system">labeled DAQ Picture</a> WFD5 5-channel differential signal in.</p>
+<h3 id="configuration_4">Configuration</h3>
+<p>First you should <a href="./#mch-microtca-carrier-hub">configure the MCH</a> if you haven't already.</p>
+<p>For most of the configuration below to work, you must have <a href="../software_dependencies/#ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/wfdConfig">WFD5 python configuration scripts located on the PIONEER github</a>. After <a href="../software_dependencies/#pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
+<pre><code>git clone git@github.com:PIONEER-Experiment/wfdConfig.git
+</code></pre>
+<p>Below are a few examples of using the configuration scripts.</p>
+<h4 id="reading-ip-address">Reading IP Address</h4>
+<pre><code>cd wfdConfig/software
+python read_addresses.py
+</code></pre>
+<p>This will print usage help.</p>
+<h4 id="changing-ip-address">Changing IP Address</h4>
+<pre><code>cd wfdConfig/software
+python store_ip.py
+</code></pre>
+<p>This will print usage help.</p>
+<p>You should set the IP to be in the format <code>192.168.[crate number].[slot number]</code> for the DAQ to work properly.</p>
+<p>You will need to power cycle (pull the black handle out and push it back in) the WFD5 to get it to take the new address.</p>
+<p>Then verify you can ping the address</p>
+<pre><code>ping 192.168.[crate].[slot]
+</code></pre>
+<h4 id="reading-status">Reading Status</h4>
+<pre><code>cd wfdConfig/software
+python read_status.py
+</code></pre>
+<p>This will print usage help.</p>
+<h4 id="updating-firmware">Updating Firmware</h4>
+<p>There are some instructions in the read me, you can see them on the <a href="https://github.com/PIONEER-Experiment/wfdConfig/tree/master/software/flash">wfdConfig github page</a>.</p>
+<p>You need to <a href="./#changing-ip-address">set the IP</a> before doing this.</p>
+<p>It will be easier if you <a href="../installing_and_building/#manual-installation-guide">install the DAQ software</a> before doing this. In particular, you want the environment variable <code>BOOST_ROOT</code> declared in your shell session. Additionally, you'll want the address table located in the g-2 modified DAQ repository.</p>
+<p>You may be able to simply make the FC7 firmware updating tool with</p>
+<pre><code>cd wfdConfig/software/flash
+make
+</code></pre>
+<p>If so, skip to step 4 below.</p>
+<p>1 <strong>Setup environment (if not already)</strong></p>
+<pre><code>cd /path/to/gm2daq-modified/environment_setup/
+source ./setup_environment.sh
+cd /path/to/wfdConfig/software/flash
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths.</p>
+<pre><code>export LD_LIBRARY_PATH=$(pwd)/lib:$LD_LIBRARY_PATH
+export CPLUS_INCLUDE_PATH="$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH"
+</code></pre>
+<p>2 <strong>Edit makefile</strong></p>
+<p>Using your favorite text editor, open the makefile</p>
+<pre><code>vi Makefile
+</code></pre>
+<p>Add the line</p>
+<pre><code>-L$(BOOST_ROOT)/lib
+</code></pre>
+<p>to the makefile, the relevant section should look like this</p>
+<pre><code>LIBRARY_PATH = -Llib \
+               -L/opt/cactus/lib \
+               -L$(CACTUS_ROOT)/lib \
+               -L$(CACTUS_ROOT)/uhal/uhal/lib \
+               -L$(CACTUS_ROOT)/uhal/grammars/lib \
+               -L$(CACTUS_ROOT)/uhal/log/lib \
+               -L$(CACTUS_ROOT)/extern/pugixml/RPMBUILD/SOURCES/lib \
+               -L$(CACTUS_ROOT)/extern/boost/RPMBUILD/SOURCES/lib \
+               -L$(BOOST_ROOT)/lib
+</code></pre>
+<p>3 <strong>Make <code>programFirmware</code> executable</strong></p>
+<pre><code>make
+cd bin
+</code></pre>
+<p>verify <code>programFirmware</code> has been made.</p>
+<p>4 <strong>Program the WFD5</strong>
+See</p>
+<pre><code>./programFirmware 
+</code></pre>
+<p>for usage. For example:</p>
+<pre><code>./programFirmware 1 1 /path/to/wfdConfig/releases/wfd_master_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_async_0x030101.mcs /path/to/wfdConfig/releases/wfd_channel_cbuf_0x030101.mcs
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths. This will apply firmware version 3.1.1 to the WFD5 in crate 1 slot 1. Supposedly you can use this command to program multiple WFD5s at once, though I've never tried.</p>
+<hr/>
+<h2 id="fc7-flexible-controller">FC7 (Flexible Controller)</h2>
+<h3 id="overview_6">Overview</h3>
+<p>For our use case, the FC7 can be viewed as a hub that sends out Timing, Trigger, and Control (TTC) Signals to the AMC13s. It is a much more general tool developed by CERN, you can read more about it at a surface level in <a href="https://indico.cern.ch/event/299180/contributions/1659595/attachments/563055/775699/FC7.pdf">this presentation</a>. Additionally, there are some <a href="../pdfs/FC7_Schematics.pdf">detailed schematics</a>.</p>
+<p>The FC7 has two slots for FMC modules. Usually, the top slot is for an <a href="./#sfp-interface">SFP interface</a>. The bottom slot is for the FMC that handles <a href="./#trigger-and-clock-input-interface">trigger and clock input</a>.</p>
+<h3 id="fmcs">FMCs</h3>
+<h4 id="sfp-interface">SFP Interface</h4>
+<p>The SFP interface is more or less "plug and play". You should familiarize yourself with the <a href="../miscellaneous_info/#fc7-labeling">FC7 labeling</a>. Also which slot this is in needs to be <a href="../odb_config/#ccc-fmc-location-topbottom">specified in the ODB</a>.</p>
+<h4 id="trigger-and-clock-input-interface">Trigger and Clock Input Interface</h4>
+<p>The trigger and clock input interface uses a <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. The FC7 firmware is configured to use channels 4-7 for input, and 0-3 for output; on the board there are microswitches you must toggle on the <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. For incoming signals that will expect 50 Ohm termination, you should apply a jumper shown in page 4 of the <a href="../pdfs/FC7_FMC.pdf">digital I/O board quick reference</a>.</p>
+<p>In some setups, there is also a 2nd mezzanine card that then mounts on that FMC card to route the I/O through coax ribbon cables. This <a href="./#samtech-ribbon-cable-to-bank-board">connects to the bank board</a>.</p>
+<h3 id="wired-connections_2">Wired Connections</h3>
+<h4 id="optical-link-to-amc13">Optical Link to AMC13</h4>
+<p>The FC7 sends trigger information to the AMC13s over an optical cable. This allows one FC7 to send triggers to up to 8 crates. Fill in the <a href="../miscellaneous_info/#fc7-labeling">FC7 SFP ports</a> with Finisar (or similar) SFP transceiver(s), one for each AMC13. Connect it to the <a href="./#optical-link-to-fc7">appropriate SFP port in the AMC13</a>.</p>
+<p>See the <a href="./#labled-picture-one-crate-system">labeled DAQ Picture</a> trigger out FC7.</p>
+<h4 id="samtech-ribbon-cable-to-bank-board">Samtech Ribbon cable to Bank Board</h4>
+<p>A ribbon cable is used to carry TTC signals from the FC7 to a signal bank board. The ribbon cable used is a Samtec HHSC-108-40.00-SU-SU (the 40.00 specifies the length, which need not be 40 cm). This cable runs between the <a href="./#trigger-and-clock-input-interface">trigger and clock input interface FMC</a> and the bank board; this <a href="../miscellaneous_info/#bank-signals">diagram bank board</a> may be helpful.</p>
+<p>See the <a href="./#labled-picture-one-crate-system">labeled DAQ Picture</a> FC7 trigger in.</p>
+<h3 id="configuration_5">Configuration</h3>
+<p>First you should <a href="./#mch-microtca-carrier-hub">configure the MCH</a> if you haven't already.</p>
+<p>For most of the configuration below to work, you must have <a href="../software_dependencies/#ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/wfdConfig">FC7 python configuration scripts located on the PIONEER github</a>. After <a href="../software_dependencies/#pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
+<pre><code>git clone git@github.com:PIONEER-Experiment/unifiedCCC.git
+</code></pre>
+<p>Below are a few examples of using the configuration scripts.</p>
+<h4 id="reading-ip-address_1">Reading IP Address</h4>
+<pre><code>cd unifiedCCC/software
+python read_addresses.py
+</code></pre>
+<p>This will print usage help.</p>
+<h4 id="changing-ip-address_1">Changing IP Address</h4>
+<pre><code>cd unifiedCCC/software
+python3 store_ip.py
+</code></pre>
+<p>This will print usage help.</p>
+<p>You should set the IP to be in the format <code>192.168.[crate number].[slot number]</code> for the DAQ to work properly.</p>
+<p>You may need to power cycle (pull the black handle out and push it back in) after this, I don't remember. </p>
+<p>Then verify you can ping the address</p>
+<pre><code>ping 192.168.[crate].[slot]
+</code></pre>
+<h4 id="reading-status_1">Reading Status</h4>
+<pre><code>cd unifiedCCC/software
+python read_status.py [crate] [slot] [options]
+</code></pre>
+<p><strong>Note</strong>: You should use the <code>expert</code> option for this, otherwise </p>
+<h4 id="updating-firmware_1">Updating Firmware</h4>
+<p>You need to <a href="./#changing-ip-address_1">set the IP</a> before doing this.</p>
+<p>It will be easier if you <a href="../installing_and_building/#manual-installation-guide">install the DAQ software</a> before doing this. In particular, you want the environment variable <code>BOOST_ROOT</code> declared in your shell session. Additionally, you'll want the address table located in the g-2 modified DAQ repository.</p>
+<p>You may be able to simply make the FC7 firmware updating tool with</p>
+<pre><code>cd unifiedCCC/software/flash
+make
+</code></pre>
+<p>If so, skip to step 4 below.</p>
+<p>1 <strong>Setup environment (if not already)</strong></p>
+<pre><code>cd /path/to/gm2daq-modified/environment_setup/
+source ./setup_environment.sh
+cd /path/to/unifiedCCC/software/flash
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths.</p>
+<pre><code>export LD_LIBRARY_PATH=$(pwd)/lib:$LD_LIBRARY_PATH
+export CPLUS_INCLUDE_PATH="$BOOST_ROOT/include:$CPLUS_INCLUDE_PATH"
+</code></pre>
+<p>2 <strong>Edit makefile</strong></p>
+<p>Using your favorite text editor, open the makefile</p>
+<pre><code>vi Makefile
+</code></pre>
+<p>Add the line</p>
+<pre><code>-L$(BOOST_ROOT)/lib
+</code></pre>
+<p>to the makefile, the relevant section should look like this</p>
+<pre><code>LIBRARY_PATH = -Llib \
+               -L/opt/cactus/lib \
+               -L$(CACTUS_ROOT)/lib \
+               -L$(CACTUS_ROOT)/uhal/uhal/lib \
+               -L$(CACTUS_ROOT)/uhal/grammars/lib \
+               -L$(CACTUS_ROOT)/uhal/log/lib \
+               -L$(CACTUS_ROOT)/extern/pugixml/RPMBUILD/SOURCES/lib \
+               -L$(CACTUS_ROOT)/extern/boost/RPMBUILD/SOURCES/lib \
+               -L$(BOOST_ROOT)/lib
+</code></pre>
+<p>3 <strong>Make <code>programFC7</code> executable</strong></p>
+<pre><code>make
+cd bin
+</code></pre>
+<p>verify <code>programFC7</code> has been made.</p>
+<p>4 <strong>Program the FC7</strong>
+See</p>
+<pre><code>./programFC7
+</code></pre>
+<p>for usage. For example:</p>
+<pre><code>./programFC7 1 11 /path/to/unifiedCCC/releases/fc7_unified_0x080107.mcs /path/to/gm2daq-modified/address_tables/FC7_CCC.xml
+</code></pre>
+<p>where you replace <code>/path/to</code> with the appropriate paths. This will apply firmware version 8.1.7 to the FC7 in crate 1 slot 11.</p>
+<hr/>
+<h2 id="amc13-advanced-mezzanine-card">AMC13 (Advanced Mezzanine Card)</h2>
+<h3 id="overview_7">Overview</h3>
+<p>The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC">Boston Unviversity's TWiki page</a>.</p>
+<h3 id="wired-connections_3">Wired Connections</h3>
+<h4 id="optical-link-to-fc7">Optical Link to FC7</h4>
+<p>The FC7 sends trigger information to the AMC13s over an optical cable. Put a Finisar (or similar) SFP transceiver in the bottom SFP port in the AMC13. Connect it to the <a href="./#optical-link-to-amc13">appropriate SFP port in the FC7</a>.</p>
+<p>See the <a href="./#labled-picture-one-crate-system">labeled DAQ Picture</a> Trigger in AMC13.</p>
+<h4 id="10gbe-link-to-daq-computer">10GbE Link to DAQ computer</h4>
+<p>The AMC13 sends data to DAQ computer over an optical cable. Put an Avago (or similar) SFP transceiver in the top SFP+ port in the AMC13. Connect it to the <a href="./#10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC in the DAQ computer</a>.</p>
+<p>See the <a href="./#labled-picture-one-crate-system">labeled DAQ Picture</a> 10GbE out.</p>
+<h3 id="configuration_6">Configuration</h3>
+<p>First you should <a href="./#mch-microtca-carrier-hub">configure the MCH</a> and <a href="./#10gbe-nic-10-gigabit-ethernet-network-interface-card">configure the 10GbE NIC</a> if you haven't already.</p>
+<p>The AMC13 is largely configured with <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2">AMC13Tool2.exe</a>.The tools to configure the AMC13 are located in the g-2 modified DAQ repository, so you'll want to <a href="../installing_and_building/#manual-installation-guide">install the DAQ software</a> before doing this. For some AMC13s, you need to set the IP addresses and reconfigure using AMC13Tool2.exe every time the module is power cycled.</p>
+<h4 id="reading-ip-address_2">Reading IP Address</h4>
+<p>In your favorite text editor, edit <code>systemVars.py</code></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/dev_tools/amc13Config
+vi systemVars.py
+</code></pre>
+<p>Ensure <code>DEFAULT_HOST_IP</code> corresponds to the MCH IP for this AMC13's crate. Additionally, ensure the <code>NETWORK_BASE</code> is correct. This example file is provided:</p>
+<pre><code>#File to specify what the default varaibles addresses are used in your system
+
+#Default IP address for commercial MCH module
+# our NAT MCH address
+#DEFAULT_HOST_IP="192.168.1.41"
+# our Vadatech MCH address
+DEFAULT_HOST_IP="192.168.2.15"
+
+#Default AMC13 slot number
+DEFAULT_AMC13_SLOT=13
+
+#Location of 'config_tools'. This should never need to be changed
+DEFAULT_CONFIG_DIR="./config_tools"
+
+#Network base for your uTCA crate's AMC modules
+#NETWORK_BASE="192.168.1"
+NETWORK_BASE="192.168.2"
+</code></pre>
+<p>Then you can run</p>
+<pre><code>python read_addresses.py
+</code></pre>
+<h4 id="changing-ip-address_2">Changing IP Address</h4>
+<p>In your favorite text editor, edit <code>systemVars.py</code></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/dev_tools/amc13Config
+vi systemVars.py
+</code></pre>
+<p>Ensure <code>DEFAULT_HOST_IP</code> corresponds to the MCH IP for this AMC13's crate. Additionally, ensure the <code>NETWORK_BASE</code> is correct. This example file is provided:</p>
+<pre><code>#File to specify what the default varaibles addresses are used in your system
+
+#Default IP address for commercial MCH module
+# our NAT MCH address
+#DEFAULT_HOST_IP="192.168.1.41"
+# our Vadatech MCH address
+DEFAULT_HOST_IP="192.168.2.15"
+
+#Default AMC13 slot number
+DEFAULT_AMC13_SLOT=13
+
+#Location of 'config_tools'. This should never need to be changed
+DEFAULT_CONFIG_DIR="./config_tools"
+
+#Network base for your uTCA crate's AMC modules
+#NETWORK_BASE="192.168.1"
+NETWORK_BASE="192.168.2"
+</code></pre>
+<p>Then you can run</p>
+<pre><code>python applyConfig.py -i 192.168.[crate].13
+</code></pre>
+<p>This will set the T1 (virtex FPGA) IP to <code>192.168.[crate].13</code> and the T2 (spartan FPGA) IP to <code>192.168.[crate].14</code>.</p>
+<p>Then verify you can ping the addresses</p>
+<pre><code>ping 192.168.[crate].13
+ping 192.168.[crate].14
+</code></pre>
+<h4 id="building-amc13tool2exe">Building AMC13Tool2.exe</h4>
+<p>You need to <a href="./#changing-ip-address_2">set the IP</a> before doing this.</p>
+<p>1 <strong>Set up environment</strong></p>
+<p>You may need to find where you python includes are</p>
+<pre><code>python-config --includes
+</code></pre>
+<p>make note of the directory (without the <code>-I</code>). And add it to your C++ include path, for example:</p>
+<pre><code>export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/rh/rh-python36/root/usr/include/python3.6m
+</code></pre>
+<p>Then add library paths</p>
+<pre><code>export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/tools/lib:$LD_LIBRARY_PATH
+</code></pre>
+<p>2 <strong>Make AMC13Tool2.exe</strong></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
+make
+</code></pre>
+<p><strong>Note</strong>: I had trouble building AMC13Tool2.exe at first. I had to make some edits to the C++ code to get it to compile; those edits should be included in the multi-crate branch of the DAQ repository.</p>
+<p>3 <strong>Run AMC13Tool2.exe</strong></p>
+<p>Try running AMC13Tool2.exe</p>
+<pre><code>bin/AMC13Tool2.exe -c 192.168.[crate #].13 -p $GM2DAQ_DIR/address_tables/
+</code></pre>
+<p>Enter <code>h</code> for available commands.</p>
+<h4 id="configuring-the-amc13-with-amc13tool2exe">Configuring the AMC13 with AMC13Tool2.exe</h4>
+<p><a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2">AMC13Tool2.exe</a> has a command guide provided by Boston Unversity. For our case we just want to run the following:</p>
+<p>1 <strong>Run AMC13Tool2.exe</strong></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
+bin/AMC13Tool2.exe -c 192.168.[crate #].13 -p $GM2DAQ_DIR/address_tables/
+</code></pre>
+<p>2 <strong>Initialize AMC13 for data taking</strong></p>
+<pre><code>en 1-12
+</code></pre>
+<p>3 <strong>Enable SFPs</strong></p>
+<pre><code>daq 1
+</code></pre>
+<p>4 <strong>Change IP of 10GbE Port</strong>
+First read the value and make note:</p>
+<pre><code>rv 0x1c1c 
+</code></pre>
+<p>Then write the value to an IP on your 10GbE port network, for example:</p>
+<pre><code>wv 0x1c1c 0xc0a83301
+</code></pre>
+<p>where the hex converts to IP as such:</p>
+<pre><code>c0 = 192
+a8 = 168
+33 = 51
+01 = 1
+</code></pre>
+<p>So This sets the IP to 192.168.51.1. You want to <a href="../odb_config/#amc13-sfp-ip-address">set this value in the ODB</a> to correspond to this IP.</p>
+<p>5 <strong>Issue DAQ reset</strong></p>
+<pre><code>rd
+</code></pre>
+<p>6 <strong>Verify you can ping the 10GbE link</strong>
+For example:</p>
+<pre><code>ping 192.168.51.1
+</code></pre>
+<p><strong>Note:</strong> Sometimes this doesn't work for me. You can also try running the commands inside the AMC13Tool2.exe CLI this order instead:</p>
+<pre><code>en 1-12
+daq 1
+rd
+wv 0x1c1c 0xc0a83301
+</code></pre>
+<h4 id="updating-firmware_2">Updating Firmware</h4>
+<p>See <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/AMC13Tool2#Flash_Programming_Commands_for_f">Boston University's firmware guide</a> for more details.+</p>
+<p>1 <strong>Download Firmware</strong>
+See the <a href="http://ohm.bu.edu/~amc13/firmware.cgi">download page for various firmware versions</a>. We want T1 (virtex) version 33087 (0x813f) and T2 (spartan) version 46 (0x2e). You can download them using wget:</p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
+wget http://ohm.bu.edu/~amc13/CMS/AMC13-Firmware/AMC13T2v0x002e_6slx45t.mcs
+wget http://ohm.bu.edu/~amc13/CMS/AMC13-Firmware/AMC13T1v0x813f_7k325t.mcs
+</code></pre>
+<p>2 <strong>Update Firmware</strong></p>
+<pre><code>bin/AMC13Tool2.exe -c 192.168.[crate #].13 -p $GM2DAQ_DIR/address_tables/
+</code></pre>
+<p>In the CLI:</p>
+<pre><code>pv 
+</code></pre>
+<p>Select the correct firmware from the options listed. Then repeat for the spartan</p>
+<pre><code>ps
+</code></pre>
+<p>3 <strong>Verify Firmware Version is Correct</strong></p>
+<p>You can verify the firmware updated correctly with</p>
+<pre><code>list
+</code></pre>
+<p>example output:</p>
+<pre><code>Connected AMC13s
+*0: SN: 268 T1v: 813f T2v: 002e cf: 192.168.1.13
+</code></pre>
+<hr/>
+<h2 id="meinberg-card-tcr180pex-or-similar">Meinberg Card (TCR180PEX or similar)</h2>
+<h3 id="overview_8">Overview</h3>
+<p>The Meinberg card provides GPS timestamps for data triggers. It is an artifact from g-2 that doesn't serve much purpose for the g-2 modified DAQ. However, it is still a supported trigger system for the <a href="../installing_and_building/#mastergm2">Master Frontend</a>.</p>
+<h3 id="wired-connections_4">Wired Connections</h3>
+<h4 id="sma-to-d9-connector">SMA to D9 Connector</h4>
+<p>A custom cable must be created to connect the meinberg to the signal bank. One end needs to end up as SMA (for the bank) while the other needs to be a 9pin D-SUB connector (for the meinberg). There is pinout in section 10 (page 27) of the <a href="../pdfs/tcr180pex.pdf">meinberg manual</a>.</p>
+<h3 id="configuration_7">Configuration</h3>
+<p>See the <a href="../pdfs/tcr180pex.pdf">Meinberg manual</a> for detailed configuration. Furthermore, there are <a href="https://kb.meinbergglobal.com/kb/driver_software/command_line_tools_mbgtools">meinberg command line tools detailed on their website</a>. After the <a href="../software_dependencies/#meinberg">meinberg drivers are installed and loaded</a>, there should be no additional configuration to be done.</p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href=".." title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../software_dependencies/" title="Software Dependencies">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href=".." style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../software_dependencies/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/print-site.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
