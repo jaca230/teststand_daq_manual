@@ -1,6 +1,6 @@
 site_name: g-2 modified DAQ Manual
 theme:
-  name: readthedocs
+  name: 'material' 
 
 nav:
   - Home: index.md
@@ -25,5 +25,5 @@ markdown_extensions:
   - attr_list
 
 extra_css:
-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
 - 'css/extra.css'
+- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css

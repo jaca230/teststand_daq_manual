@@ -1,220 +1,1492 @@
-<!DOCTYPE html>
 
-<html class="writer-html5" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>ODB Configuration - g-2 modified DAQ Manual</title>
-<link href="../css/theme.css" rel="stylesheet"/>
-<link href="../css/theme_extra.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings1.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings2.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings3.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings4.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings5.css" rel="stylesheet"/>
-<link href="../css/print-site-enum-headings6.css" rel="stylesheet"/>
-<link href="../css/print-site.css" rel="stylesheet"/>
-<link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-<link href="../css/extra.css" rel="stylesheet"/>
-<script>
-        // Current page data
-        var mkdocs_page_name = "ODB Configuration";
-        var mkdocs_page_input_path = "odb_config.md";
-        var mkdocs_page_url = null;
-      </script>
-<!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-<link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
-<body class="wy-body-for-nav" role="document">
-<div class="wy-grid-for-nav">
-<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
-<div class="wy-side-scroll">
-<div class="wy-side-nav-search">
-<a class="icon icon-home" href=".."> g-2 modified DAQ Manual
-        </a><div role="search">
-<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
-<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
-</form>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../installing_and_building/">
+      
+      
+        <link rel="next" href="../midas/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>ODB Configuration - g-2 modified DAQ Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#midas-online-data-base-odb-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="g-2 modified DAQ Manual" class="md-header__button md-logo" aria-label="g-2 modified DAQ Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            g-2 modified DAQ Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ODB Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="g-2 modified DAQ Manual" class="md-nav__button md-logo" aria-label="g-2 modified DAQ Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    g-2 modified DAQ Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_dependencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_and_building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install and Run the Midas Frontends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ODB Configuration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ODB Configuration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#odb-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODB basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ODB basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-odb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing the ODB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the ODB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command line interface
+    </span>
+  </a>
+  
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../hardware_overview/">Hardware Overview</a>
+        
+          <li class="md-nav__item">
+  <a href="#via-midas-webpage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Via Midas Webpage
+    </span>
+  </a>
+  
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../software_dependencies/">Software Dependencies</a>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installing_and_building/">Install and Run the Midas Frontends</a>
+        
+          <li class="md-nav__item">
+  <a href="#general-odb-configuration-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      General ODB Configuration Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General ODB Configuration Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toggle-logger-data-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toggle Logger Data Writing
+    </span>
+  </a>
+  
 </li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal current" href="#">ODB Configuration</a>
-<ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#odb-basics">ODB basics</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#accessing-the-odb">Accessing the ODB</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#command-line-interface">Command line interface</a>
+        
+          <li class="md-nav__item">
+  <a href="#change-logger-data-writing-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Logger Data Writing Directory
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#via-midas-webpage">Via Midas Webpage</a>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-logger-to-generate-odb-backups-for-each-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toggle Logger to generate ODB backups for each run
+    </span>
+  </a>
+  
 </li>
-</ul>
+        
+          <li class="md-nav__item">
+  <a href="#change-webpage-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Webpage Port
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#general-odb-configuration-examples">General ODB Configuration Examples</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#toggle-logger-data-writing">Toggle Logger Data Writing</a>
+        
+          <li class="md-nav__item">
+  <a href="#disable-a-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disable a Frontend
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#change-logger-data-writing-directory">Change Logger Data Writing Directory</a>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-data-buffer-for-a-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change the Data Buffer for a Frontend
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#toggle-logger-to-generate-odb-backups-for-each-run">Toggle Logger to generate ODB backups for each run</a>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#change-webpage-port">Change Webpage Port</a>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#disable-a-frontend">Disable a Frontend</a>
+      
+        <li class="md-nav__item">
+  <a href="#g-2-modified-daq-specific-odb-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      g-2 Modified DAQ Specific ODB Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="g-2 Modified DAQ Specific ODB Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master-frontend-odb-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Master Frontend ODB settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Master Frontend ODB settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Source
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#change-the-data-buffer-for-a-frontend">Change the Data Buffer for a Frontend</a>
+        
+          <li class="md-nav__item">
+  <a href="#front-end-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front End Offset
+    </span>
+  </a>
+  
 </li>
-</ul>
+        
+          <li class="md-nav__item">
+  <a href="#encoder-front-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoder Front End
+    </span>
+  </a>
+  
 </li>
-</ul>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#g-2-modified-daq-specific-odb-configuration">g-2 Modified DAQ Specific ODB Configuration</a>
-<ul>
-<li class="toctree-l3"><a class="reference internal" href="#master-frontend-odb-settings">Master Frontend ODB settings</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#trigger-source">Trigger Source</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-readout-frontend-odb-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 Readout Frontend ODB settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMC13 Readout Frontend ODB settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-to-event-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send to Event Builder
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#front-end-offset">Front End Offset</a>
+        
+          <li class="md-nav__item">
+  <a href="#mch-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCH IP Address
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#encoder-front-end">Encoder Front End</a>
+        
+          <li class="md-nav__item">
+  <a href="#ccc-fc7-slot-number-1-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCC: FC7 Slot Number (1-12)
+    </span>
+  </a>
+  
 </li>
-</ul>
+        
+          <li class="md-nav__item">
+  <a href="#ccc-fmc-location-topbottom" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCC: FMC Location (top,bottom)
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#amc13-readout-frontend-odb-settings">AMC13 Readout Frontend ODB settings</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#send-to-event-builder">Send to Event Builder</a>
+        
+          <li class="md-nav__item">
+  <a href="#ccc-fmc-sfp-number-1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCC: FMC SFP Number (1-8)
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#mch-ip-address">MCH IP Address</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-10gbe-link-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 10GbE Link Enable
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#ccc-fc7-slot-number-1-12">CCC: FC7 Slot Number (1-12)</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-sfp-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 SFP IP Address
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#ccc-fmc-location-topbottom">CCC: FMC Location (top,bottom)</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-sfp-port-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 SFP Port Number
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#ccc-fmc-sfp-number-1-8">CCC: FMC SFP Number (1-8)</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t1-firmware-version-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T1 Firmware Version Required
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#amc13-10gbe-link-enable">AMC13 10GbE Link Enable</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t2-firmware-version-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T2 Firmware Version Required
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#amc13-sfp-ip-address">AMC13 SFP IP Address</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t1-address-table-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T1 Address Table Location
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#amc13-sfp-port-number">AMC13 SFP Port Number</a>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t2-address-table-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T2 Address Table Location
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#amc13-t1-firmware-version-required">AMC13 T1 Firmware Version Required</a>
+        
+          <li class="md-nav__item">
+  <a href="#enable-fc7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable FC7
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#amc13-t2-firmware-version-required">AMC13 T2 Firmware Version Required</a>
+        
+          <li class="md-nav__item">
+  <a href="#fc7-address-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 Address Table
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#amc13-t1-address-table-location">AMC13 T1 Address Table Location</a>
+        
+          <li class="md-nav__item">
+  <a href="#fc7-board-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 Board Type
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#amc13-t2-address-table-location">AMC13 T2 Address Table Location</a>
+        
+          <li class="md-nav__item">
+  <a href="#fc7-firmware-version-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 Firmware Version Required
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#enable-fc7">Enable FC7</a>
+        
+          <li class="md-nav__item">
+  <a href="#internal-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Trigger
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#fc7-address-table">FC7 Address Table</a>
+        
+          <li class="md-nav__item">
+  <a href="#internal-trigger-period-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Trigger Period (us)
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#fc7-board-type">FC7 Board Type</a>
+        
+          <li class="md-nav__item">
+  <a href="#internal-trigger-pulse-width-ns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Trigger Pulse Width (ns)
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#fc7-firmware-version-required">FC7 Firmware Version Required</a>
+        
+          <li class="md-nav__item">
+  <a href="#ttc-deadtime-ns" class="md-nav__link">
+    <span class="md-ellipsis">
+      TTC deadtime (ns)
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#internal-trigger">Internal Trigger</a>
+        
+          <li class="md-nav__item">
+  <a href="#enabled-wfd5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabled WFD5
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#internal-trigger-period-us">Internal Trigger Period (us)</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-address-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Address Table
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#internal-trigger-pulse-width-ns">Internal Trigger Pulse Width (ns)</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-master-firmware-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Master Firmware Version
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#ttc-deadtime-ns">TTC deadtime (ns)</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-channel-firmware-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Channel Firmware Version
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#enabled-wfd5">Enabled WFD5</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-digitization-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Digitization Frequency
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-address-table">WFD5 Address Table</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-circular-buffer-mode-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Circular Buffer Mode Enabled
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-master-firmware-version">WFD5 Master Firmware Version</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-waveform-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Waveform Length
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-channel-firmware-version">WFD5 Channel Firmware Version</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-waveform-presamples" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Waveform Presamples
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-digitization-frequency">WFD5 Digitization Frequency</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-channel-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Channel Enabled
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-circular-buffer-mode-enabled">WFD5 Circular Buffer Mode Enabled</a>
+        
+          <li class="md-nav__item">
+  <a href="#tq-methods-gpu-bank-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      TQ methods GPU Bank Processing
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-waveform-length">WFD5 Waveform Length</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-async-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Async Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WFD5 Async Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-async-mode-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Async Mode Enabled
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-waveform-presamples">WFD5 Waveform Presamples</a>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-async-mode-enabled-in-another-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Async Mode Enabled (in another place)
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-channel-enabled">WFD5 Channel Enabled</a>
+        
+          <li class="md-nav__item">
+  <a href="#ttc-async-mode-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      TTC Async Mode Enabled
+    </span>
+  </a>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#tq-methods-gpu-bank-processing">TQ methods GPU Bank Processing</a>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#wfd5-async-mode">WFD5 Async Mode</a>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../midas/">Midas Information</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../software_add_ons/">Additional Software Add-ons</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../networking/">Networking Tutorial</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../debugging/">Debugging Common Errors</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../miscellaneous_info/">Miscellaneous</a>
-</li>
-</ul>
-</div>
-</div>
+      
+    </ul>
+  
 </nav>
-<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
-<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
-<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
-<a href="..">g-2 modified DAQ Manual</a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Midas Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_add_ons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Additional Software Add-ons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networking Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Common Errors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous_info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-<div class="wy-nav-content">
-<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
-<ul class="wy-breadcrumbs">
-<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
-<li class="breadcrumb-item active">ODB Configuration</li>
-<li class="wy-breadcrumbs-aside">
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#odb-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODB basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ODB basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-odb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing the ODB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the ODB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command line interface
+    </span>
+  </a>
+  
 </li>
-</ul>
-<hr/>
-</div>
-<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
-<div class="section" itemprop="articleBody">
+        
+          <li class="md-nav__item">
+  <a href="#via-midas-webpage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Via Midas Webpage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-odb-configuration-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      General ODB Configuration Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General ODB Configuration Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toggle-logger-data-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toggle Logger Data Writing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-logger-data-writing-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Logger Data Writing Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-logger-to-generate-odb-backups-for-each-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toggle Logger to generate ODB backups for each run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-webpage-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Webpage Port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-a-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disable a Frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-data-buffer-for-a-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change the Data Buffer for a Frontend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g-2-modified-daq-specific-odb-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      g-2 Modified DAQ Specific ODB Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="g-2 Modified DAQ Specific ODB Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master-frontend-odb-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Master Frontend ODB settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Master Frontend ODB settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#front-end-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front End Offset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoder-front-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoder Front End
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-readout-frontend-odb-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 Readout Frontend ODB settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMC13 Readout Frontend ODB settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-to-event-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send to Event Builder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mch-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCH IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccc-fc7-slot-number-1-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCC: FC7 Slot Number (1-12)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccc-fmc-location-topbottom" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCC: FMC Location (top,bottom)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccc-fmc-sfp-number-1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCC: FMC SFP Number (1-8)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-10gbe-link-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 10GbE Link Enable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-sfp-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 SFP IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-sfp-port-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 SFP Port Number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t1-firmware-version-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T1 Firmware Version Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t2-firmware-version-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T2 Firmware Version Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t1-address-table-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T1 Address Table Location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amc13-t2-address-table-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMC13 T2 Address Table Location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-fc7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable FC7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fc7-address-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 Address Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fc7-board-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 Board Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fc7-firmware-version-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      FC7 Firmware Version Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Trigger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-trigger-period-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Trigger Period (us)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-trigger-pulse-width-ns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Trigger Pulse Width (ns)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ttc-deadtime-ns" class="md-nav__link">
+    <span class="md-ellipsis">
+      TTC deadtime (ns)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabled-wfd5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabled WFD5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-address-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Address Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-master-firmware-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Master Firmware Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-channel-firmware-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Channel Firmware Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-digitization-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Digitization Frequency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-circular-buffer-mode-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Circular Buffer Mode Enabled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-waveform-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Waveform Length
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-waveform-presamples" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Waveform Presamples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-channel-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Channel Enabled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tq-methods-gpu-bank-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      TQ methods GPU Bank Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-async-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Async Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WFD5 Async Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-async-mode-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Async Mode Enabled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfd5-async-mode-enabled-in-another-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      WFD5 Async Mode Enabled (in another place)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ttc-async-mode-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      TTC Async Mode Enabled
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
 <h1 id="midas-online-data-base-odb-configuration">Midas Online Data Base (ODB) Configuration</h1>
 <h2 id="odb-basics">ODB basics</h2>
 <p>Below are some basic usage examples of midas' ODB</p>
@@ -244,7 +1516,7 @@
 <p>Every Midas frontend generates a <code>Common</code> section it's ODB. For example, <code>Equipment/AMC13001/Common</code> will be generated. To disable a frontend, set <code>/Equipment/Frontend Name/Common/Enabled</code> to <code>no</code>. This is useful for toggling off crates in multicrate setups.</p>
 <h4 id="change-the-data-buffer-for-a-frontend">Change the Data Buffer for a Frontend</h4>
 <p>Change <code>/Equipment/Frontend Name/Common/Buffer</code> to the desired buffer name.</p>
-<hr/>
+<hr />
 <h2 id="g-2-modified-daq-specific-odb-configuration">g-2 Modified DAQ Specific ODB Configuration</h2>
 <p>Below are some important settings in the ODB for the g-2 modified DAQ. This is not a complete description of every setting in the ODB. Many settings are artifacts from g-2 that don't serve any purpose anymore.</p>
 <h3 id="master-frontend-odb-settings">Master Frontend ODB settings</h3>
@@ -1272,39 +2544,80 @@
 </tr>
 </tbody>
 </table>
-</div>
-</div><footer>
-<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../installing_and_building/" title="Install and Run the Midas Frontends"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../midas/" title="Midas Information">Next <span class="icon icon-circle-arrow-right"></span></a>
-</div>
-<hr/>
-<div role="contentinfo">
-<!-- Copyright etc -->
-</div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-</div>
-</section>
-</div>
-<div aria-label="Versions" class="rst-versions" role="note">
-<span class="rst-current-version" data-toggle="rst-current-version">
-<span><a href="../installing_and_building/" style="color: #fcfcfc">« Previous</a></span>
-<span><a href="../midas/" style="color: #fcfcfc">Next »</a></span>
-</span>
-</div>
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script>var base_url = "..";</script>
-<script src="../js/theme_extra.js"></script>
-<script src="../js/theme.js"></script>
-<script src="../js/print-site.js"></script>
-<script src="../search/main.js"></script>
-<script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+    
+  </body>
 </html>

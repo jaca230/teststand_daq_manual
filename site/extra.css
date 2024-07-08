@@ -1,0 +1,18 @@
+.md-container {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+code.hljs {            
+    display: block;      
+    white-space: pre-wrap
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: red !important;
+}
+
+body {
+    background-color: yellow !important;
+    font-size: 20px !important;
+}
