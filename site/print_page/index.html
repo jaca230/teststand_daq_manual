@@ -877,7 +877,7 @@ See</p>
 <p>The FC7 has two slots for FMC modules. Usually, the top slot is for an <a href="#hardware_overview-sfp-interface">SFP interface</a>. The bottom slot is for the FMC that handles <a href="#hardware_overview-trigger-and-clock-input-interface">trigger and clock input</a>.</p>
 <h3 id="hardware_overview-fmcs">FMCs</h3>
 <h4 id="hardware_overview-sfp-interface">SFP Interface</h4>
-<p>The SFP interface is more or less "plug and play". You should familiarize yourself with the <a href="#miscellaneous_info-fc7-labeling">FC7 labeling</a>. Also which slot this is in needs to be <a href="#odb_config-ccc-fmc-location-topbottom">specified in the ODB</a>.</p>
+<p>The SFP interface is more or less "plug and play". You should familiarize yourself with the <a href="#miscellaneous_info-fc7-labeling">FC7 labeling</a>. This needs to be placed in the top slot. Also this slot this is in needs to be <a href="#odb_config-ccc-fmc-location-topbottom">specified in the ODB</a>.</p>
 <h4 id="hardware_overview-trigger-and-clock-input-interface">Trigger and Clock Input Interface</h4>
 <p>The trigger and clock input interface uses a <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. The FC7 firmware is configured to use channels 4-7 for input, and 0-3 for output; on the board there are microswitches you must toggle on the <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. For incoming signals that will expect 50 Ohm termination, you should apply a jumper shown in page 4 of the <a href="../pdfs/FC7_FMC.pdf">digital I/O board quick reference</a>.</p>
 <p>In some setups, there is also a 2nd mezzanine card that then mounts on that FMC card to route the I/O through coax ribbon cables. This <a href="#hardware_overview-samtech-ribbon-cable-to-bank-board">connects to the bank board</a>.</p>
@@ -1873,7 +1873,7 @@ The 3rd is the name for the screen session.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Note</strong>: See <a href="#miscellaneous_info-fc7-labeling">FC7 Labeling</a> to decide whether your FMC SFP interface is on the top or the bottom (usually it's on the top).</p>
+<p><strong>Note</strong>: See <a href="#miscellaneous_info-fc7-labeling">FC7 Labeling</a> to decide whether your FMC SFP interface is on the top or the bottom (the FC7 firmware requires the SFP interface FMC is in the top slot).</p>
 <h4 id="odb_config-ccc-fmc-sfp-number-1-8">CCC: FMC SFP Number (1-8)</h4>
 <table>
 <thead>

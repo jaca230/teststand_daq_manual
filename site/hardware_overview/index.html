@@ -2145,7 +2145,7 @@ See</p>
 <p>The FC7 has two slots for FMC modules. Usually, the top slot is for an <a href="./#sfp-interface">SFP interface</a>. The bottom slot is for the FMC that handles <a href="./#trigger-and-clock-input-interface">trigger and clock input</a>.</p>
 <h3 id="fmcs">FMCs</h3>
 <h4 id="sfp-interface">SFP Interface</h4>
-<p>The SFP interface is more or less "plug and play". You should familiarize yourself with the <a href="../miscellaneous_info/#fc7-labeling">FC7 labeling</a>. Also which slot this is in needs to be <a href="../odb_config/#ccc-fmc-location-topbottom">specified in the ODB</a>.</p>
+<p>The SFP interface is more or less "plug and play". You should familiarize yourself with the <a href="../miscellaneous_info/#fc7-labeling">FC7 labeling</a>. This needs to be placed in the top slot. Also this slot this is in needs to be <a href="../odb_config/#ccc-fmc-location-topbottom">specified in the ODB</a>.</p>
 <h4 id="trigger-and-clock-input-interface">Trigger and Clock Input Interface</h4>
 <p>The trigger and clock input interface uses a <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. The FC7 firmware is configured to use channels 4-7 for input, and 0-3 for output; on the board there are microswitches you must toggle on the <a href="../pdfs/FC7_FMC.pdf">digital I/O board</a>. For incoming signals that will expect 50 Ohm termination, you should apply a jumper shown in page 4 of the <a href="../pdfs/FC7_FMC.pdf">digital I/O board quick reference</a>.</p>
 <p>In some setups, there is also a 2nd mezzanine card that then mounts on that FMC card to route the I/O through coax ribbon cables. This <a href="./#samtech-ribbon-cable-to-bank-board">connects to the bank board</a>.</p>
@@ -2420,7 +2420,7 @@ wget http://ohm.bu.edu/~amc13/CMS/AMC13-Firmware/AMC13T1v0x813f_7k325t.mcs
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2024</span>
   </span>
 
     

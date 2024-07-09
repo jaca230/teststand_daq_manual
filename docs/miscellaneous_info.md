@@ -49,7 +49,13 @@ Differential signals offer several advantages over single-ended signals:
 ---
 
 ## Limitations of Meinberg Card
-The meinberg card seems to be limited to rates of ~2.5KHz. As a result for higher rate applications the card cannot be used.
+The meinberg card seems to be limited to rates of ~2.5KHz. While this is not a critical (run ending) issue, the meinberg will have to "catch up" at the end of runs. It may also need to be removed from the event buider (i.e. [change the buffer it writes on](odb_config.md#change-the-data-buffer-for-a-frontend) to something that doesn't include "BUF" at the beginning).
+
+[In a study performed on the meinberg card](pdfs/Meinberg_Timing.pdf), we found it behaves strangley at high rates. Sometimes it "misses" events and sometimes is has long wait periods. See the plots below.
+
+![meinberg_plot](images/Meinberg_timing_plot.png){: style="max-width:100%; height:auto;"}
+
+![meinberg_hist](images/Meinberg_timing_hist.png){: style="max-width:100%; height:auto;"}
 
 ---
 
