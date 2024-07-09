@@ -137,7 +137,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 | **Valid Values**| `top` or `bottom`                                                  |
 | **Suggested Value**| `top`                                                           |
 
-**Note**: See [FC7 Labeling](miscellaneous_info.md#fc7-labeling) to decide whether your FMC SFP interface is on the top or the bottom (usually it's on the top).
+**Note**: See [FC7 Labeling](miscellaneous_info.md#fc7-labeling) to decide whether your FMC SFP interface is on the top or the bottom (the FC7 firmware requires the SFP interface FMC is in the top slot).
 
 #### CCC: FMC SFP Number (1-8)
 

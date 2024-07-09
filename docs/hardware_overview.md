@@ -469,7 +469,7 @@ The FC7 has two slots for FMC modules. Usually, the top slot is for an [SFP inte
 
 #### SFP Interface
 
-The SFP interface is more or less "plug and play". You should familiarize yourself with the [FC7 labeling](miscellaneous_info.md#fc7-labeling). Also which slot this is in needs to be [specified in the ODB](odb_config.md#ccc-fmc-location-topbottom).
+The SFP interface is more or less "plug and play". You should familiarize yourself with the [FC7 labeling](miscellaneous_info.md#fc7-labeling). This needs to be placed in the top slot. Also this slot this is in needs to be [specified in the ODB](odb_config.md#ccc-fmc-location-topbottom).
 
 #### Trigger and Clock Input Interface
 
