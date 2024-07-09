@@ -3431,7 +3431,10 @@ ping 192.168.[crate].14
 <p><a href="https://en.wikipedia.org/wiki/Differential_signalling">Read more about differential signaling on Wikipedia</a>.</p>
 <hr />
 <h2 id="miscellaneous_info-limitations-of-meinberg-card">Limitations of Meinberg Card</h2>
-<p>The meinberg card seems to be limited to rates of ~2.5KHz. As a result for higher rate applications the card cannot be used.</p>
+<p>The meinberg card seems to be limited to rates of ~2.5KHz. While this is not a critical (run ending) issue, the meinberg will have to "catch up" at the end of runs. It may also need to be removed from the event buider (i.e. <a href="#odb_config-change-the-data-buffer-for-a-frontend">change the buffer it writes on</a> to something that doesn't include "BUF" at the beginning).</p>
+<p><a href="../pdfs/Meinberg_Timing.pdf">In a study performed on the meinberg card</a>, we found it behaves strangley at high rates. Sometimes it "misses" events and sometimes is has long wait periods. See the plots below.</p>
+<p><img alt="meinberg_plot" src="../images/Meinberg_timing_plot.png" style="max-width:100%; height:auto;" /></p>
+<p><img alt="meinberg_hist" src="../images/Meinberg_timing_hist.png" style="max-width:100%; height:auto;" /></p>
 <hr />
 <h2 id="miscellaneous_info-port-forwarding-an-ssh-connection">Port Forwarding an SSH Connection</h2>
 <p>In many cases, you will need to access a web server running on a remote machine that has no Graphical User Interface (GUI). This can be done securely using SSH port forwarding. Below are instructions for setting up port forwarding on a RHEL Linux machine so you can view a webpage served on <code>localhost:8080</code> from your local machine with a GUI (ex. laptop).</p>
