@@ -1133,7 +1133,10 @@
 <p><a href="https://en.wikipedia.org/wiki/Differential_signalling">Read more about differential signaling on Wikipedia</a>.</p>
 <hr />
 <h2 id="limitations-of-meinberg-card">Limitations of Meinberg Card</h2>
-<p>The meinberg card seems to be limited to rates of ~2.5KHz. As a result for higher rate applications the card cannot be used.</p>
+<p>The meinberg card seems to be limited to rates of ~2.5KHz. While this is not a critical (run ending) issue, the meinberg will have to "catch up" at the end of runs. It may also need to be removed from the event buider (i.e. <a href="../odb_config/#change-the-data-buffer-for-a-frontend">change the buffer it writes on</a> to something that doesn't include "BUF" at the beginning).</p>
+<p><a href="../pdfs/Meinberg_Timing.pdf">In a study performed on the meinberg card</a>, we found it behaves strangley at high rates. Sometimes it "misses" events and sometimes is has long wait periods. See the plots below.</p>
+<p><img alt="meinberg_plot" src="../images/Meinberg_timing_plot.png" style="max-width:100%; height:auto;" /></p>
+<p><img alt="meinberg_hist" src="../images/Meinberg_timing_hist.png" style="max-width:100%; height:auto;" /></p>
 <hr />
 <h2 id="port-forwarding-an-ssh-connection">Port Forwarding an SSH Connection</h2>
 <p>In many cases, you will need to access a web server running on a remote machine that has no Graphical User Interface (GUI). This can be done securely using SSH port forwarding. Below are instructions for setting up port forwarding on a RHEL Linux machine so you can view a webpage served on <code>localhost:8080</code> from your local machine with a GUI (ex. laptop).</p>
@@ -1398,7 +1401,7 @@ telnet 192.68.1.41
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2024</span>
   </span>
 
     

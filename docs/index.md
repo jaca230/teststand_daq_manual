@@ -2,9 +2,13 @@
 
 ![DAQ_Image](images/DAQ_image.png){: style="max-width:100%; height:auto;"}
 
-The purpose of this manual is to aid users with setup, usage, and debugging of the g-2 modified DAQ. This DAQ's purpose is to aid with various test stands across the PIONEER collaboration. Most topics are simplified to only include information needed for operating this DAQ. Some external links are provided for additional, generalized information.
+The purpose of this manual is to aid users with setup, usage, and debugging of the g-2 modified data acquisition (DAQ) system. This DAQ's purpose is to aid with various test stands across the PIONEER collaboration. Most topics are simplified to only include information needed for operating this DAQ. Some external links are provided for additional, generalized information.
 
 Many of the guides on this webpage are thorough, as they are aimed to give solutions to problems I've encountered. However, every system is different; there may be some additional debugging to be done on the user's end.
+
+## PDF Version
+
+A [pdf version of this manual](https://github.com/jaca230/teststand_daq_manual/blob/gh-pages/pdf/document.pdf) is automatically generated using [MkDocs with pdf plugin](https://pypi.org/project/mkdocs-with-pdf/).
 
 ## Contact
 Manual Written by Jack Carlton. <br>
