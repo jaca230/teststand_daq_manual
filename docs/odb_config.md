@@ -46,6 +46,9 @@ Every Midas frontend generates a `Common` section it's ODB. For example, `Equipm
 #### Change the Data Buffer for a Frontend
 Change `/Equipment/Frontend Name/Common/Buffer` to the desired buffer name.
 
+#### Changing Run Number
+Change `/Runinfo/Run number` to the desired run number.
+
 ---
 
 ## g-2 Modified DAQ Specific ODB Configuration

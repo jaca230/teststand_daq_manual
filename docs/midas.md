@@ -192,8 +192,20 @@ screen -ls
 ```
 once again.
 
+3 **Delete Shared Memory Files**
 
-3 **Edit file $MIDASSYS/include/midas.h**
+```
+export EXP=$MIDAS_EXPT_NAME
+export EXP_PATH=$(dirname "$MIDAS_EXPTAB")
+rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
+rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
+rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
+rm -rf $EXP_PATH/.*.SHM > /dev/null 2>&1
+rm -rf $EXP_PATH/.*.TXT > /dev/null 2>&1
+```
+
+
+4 **Edit file $MIDASSYS/include/midas.h**
 
 Find:
 ```
@@ -201,12 +213,12 @@ Find:
 ```
 Change this to:
 ```
-#define MAX_OPEN_RECORDS       1024
+#define MAX_OPEN_RECORDS       65536
 ```
 
 **Note:** This can be changed to a larger number (up to some limit I don't know)
 
-4 **Edit file $MIDASSYS/src/odb.cxx**
+5 **Edit file $MIDASSYS/src/odb.cxx**
 
 Find:
 ```
@@ -215,8 +227,8 @@ assert(sizeof(DATABASE_HEADER) == 135232);
 ```
 Change to:
 ```
-assert(sizeof(DATABASE_CLIENT) == 8256);
-assert(sizeof(DATABASE_HEADER) == 528448);
+assert(sizeof(DATABASE_CLIENT) == 524352);
+assert(sizeof(DATABASE_HEADER) == 33558592);
 ```
 
 **Note:** These numbers follow a formula on the wiki, they are related to the variable MAX_OPEN_RECORDS
@@ -225,7 +237,7 @@ DATABASE_CLIENT = 64 + 8*MAX_OPEN_RECORDS
 DATABASE_HEADER = 64 + 64*DATABASE_CLIENT
 ```
 
-5 **Remake MIDAS**
+6 **Remake MIDAS**
 
 Follow the wiki's [quickstart linux guide](https://daq00.triumf.ca/MidasWiki/index.php/Quickstart_Linux#MIDAS_Package_Installation).
 ```
@@ -236,17 +248,21 @@ cmake ..
 make install
 ```
 
-6 **Create new ODB**
+7 **Create new ODB**
 ```
 $MIDASSYS/bin/odbinit -s 1024MB --cleanup
 ```
 
 **Note:** I had trouble unless the number specified by -s was the different than the previous ODB. From there it will prompt you to delete a file. I think this file contains information about the maximum number of hotlinks and must be deleted every time you want to increase the number of hotlinks
 
-7 **Load old settings (if saved)**
+8 **Load old settings (if saved)**
 ```
 $MIDASSYS/bin/odbedit -c "load current_odb.odb"
 ```
+
+9 **Rebuild all programs with midas dependencies**
+
+Because we rebuilt midas, this also means we have to rebuild the frontends. See the "Make Frontends" section of the [frontend manual installation guide](installing_and_building.md#manual-installation-guide). Any other software you have built against this version of midas must also be rebuilt (that includes the [publisher](software_add_ons.md#midas-event-publisher), for example).
 
 ---
 
