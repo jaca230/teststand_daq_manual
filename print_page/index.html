@@ -2967,7 +2967,7 @@ vi config.json
 <hr />
 <h2 id="software_add_ons-basic-dqm">Basic DQM</h2>
 <h3 id="software_add_ons-overview_3">Overview</h3>
-<p>This is a "generalized" DQM that samples a midas experiment running the g-2 modified DAQ and displays some traces from each active channel. It comes packaged with <a href="#software_add_ons-publisher">publisher</a> right now, but may migrate to it's own seperate project.</p>
+<p>This is a "generalized" DQM that samples a midas experiment running the g-2 modified DAQ and displays some traces from each active channel. It comes packaged with <a href="#software_add_ons-publisher">publisher</a> right now, but may migrate to it's own seperate project. </p>
 <h3 id="software_add_ons-installation-guide_4">Installation Guide</h3>
 <p>See installation guide for <a href="#software_add_ons-midas-event-publisher">midas event publisher</a>.</p>
 <p>You also need some python packages:</p>
@@ -2975,7 +2975,8 @@ vi config.json
 </code></pre>
 <p><strong>Note</strong>: You may need to use <code>pip3</code> on some systems.</p>
 <h3 id="software_add_ons-usage_2">Usage</h3>
-<p>First, navigate to the publisher root directory. Then</p>
+<p><strong>The <a href="#software_add_ons-midas-event-publisher">midas event publisher</a> needs to be running for the webpage to get data to display</strong>. The webpage will still appear otherwise, but you will not see data incoming. See <a href="#software_add_ons-usage_1">midas event publisher usage</a>.
+First, navigate to the publisher root directory. Then</p>
 <h4 id="software_add_ons-by-hand_1">"By Hand"</h4>
 <pre><code>cd dashboard_webpage
 python main.py
