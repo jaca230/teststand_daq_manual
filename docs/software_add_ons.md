@@ -177,7 +177,7 @@ You can stop this screen with
 
 ### Overview
 
-This is a "generalized" DQM that samples a midas experiment running the g-2 modified DAQ and displays some traces from each active channel. It comes packaged with [publisher](software_add_ons.md#publisher) right now, but may migrate to it's own seperate project.
+This is a "generalized" DQM that samples a midas experiment running the g-2 modified DAQ and displays some traces from each active channel. It comes packaged with [publisher](software_add_ons.md#publisher) right now, but may migrate to it's own seperate project. 
 
 ### Installation Guide
 
@@ -193,6 +193,7 @@ pip install Flask Flask-SocketIO pyzmq
 
 ### Usage
 
+**The [midas event publisher](software_add_ons.md#midas-event-publisher) needs to be running for the webpage to get data to display**. The webpage will still appear otherwise, but you will not see data incoming. See [midas event publisher usage](software_add_ons.md#usage_1).
 First, navigate to the publisher root directory. Then
 
 #### "By Hand"
