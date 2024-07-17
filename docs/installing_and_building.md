@@ -35,7 +35,7 @@ There is an [installer for the g-2 modified DAQ](miscellaneous_info.md#2023-psi-
 
 1 **Install Software Dependencies**
 
-[ROOT](software_dependencies.md#root), [Midas](software_dependencies.md#midas), [Boost](software_dependencies.md#boost), [ipmitool](software_dependencies.md#ipmitool), and [Cactus](software_dependencies.md#ipbus-cactus) are all required to build and run the DAQ frontends. [Meinberg](software_dependencies.md#meinberg) is needed if using GPS mode for the master triggers. Install them following the instructions on the [Software Dependencies Page](software_dependencies.md).
+[ROOT](software_dependencies.md#root), [Midas](software_dependencies.md#midas), [Boost](software_dependencies.md#boost), [ipmitool](software_dependencies.md#ipmitool), and [Cactus](software_dependencies.md#ipbus-cactus), and the [System Monitor](software_dependencies.md#system-monitor) are all required to build and run the DAQ frontends. [Meinberg](software_dependencies.md#meinberg) is needed if using GPS mode for the master triggers. Install them following the instructions on the [Software Dependencies Page](software_dependencies.md).
 
 2 **Clone the Appropriate Branch**
 
@@ -71,6 +71,7 @@ CACTUS_ROOT=/home/installation_testing/packages/cactus
 BOOST_ROOT=/home/backup_installation_testing/packages/boost-1.53.0
 PUGIXML_ROOT=/home/installation_testing/packages/pugixml-1.8
 ROOT_ROOT=/usr/include/root
+SYSTEM_MONITOR_ROOT=/home/installation_testing/packages/system_diagnostics
 MIDASSYS=/home/installation_testing/packages/midas
 MIDAS_EXPTAB=/home/installation_testing/online/exptab
 MIDAS_EXPT_NAME=DAQ

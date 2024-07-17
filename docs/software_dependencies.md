@@ -412,6 +412,38 @@ sudo make install -j$(nproc)
 
 ---
 
+## System Monitor
+
+### Overview
+
+The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently, but also is disabled in the midas frontends at the moment (work in progress).
+
+### Installation Guide
+
+See the [github page](https://github.com/jaca230/system_diagnostics/tree/main) for more details.
+
+1 **Clone the repository**
+```
+git clone https://github.com/jaca230/system_diagnostics.git
+cd system_diagnostics
+```
+
+2 **Build the library**
+```
+cd scripts
+./build.sh
+```
+
+3 **Verify installation**
+```
+cd ..
+cd bin
+./system_diagnostics --help
+./system_diagnostics
+```
+
+---
+
 ## Meinberg
 
 ### Overview

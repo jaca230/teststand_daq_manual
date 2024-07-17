@@ -757,28 +757,37 @@ screen -X -S mserver quit
 <pre><code>screen -ls
 </code></pre>
 <p>once again.</p>
-<p>3 <strong>Edit file $MIDASSYS/include/midas.h</strong></p>
+<p>3 <strong>Delete Shared Memory Files</strong></p>
+<pre><code>export EXP=$MIDAS_EXPT_NAME
+export EXP_PATH=$(dirname &quot;$MIDAS_EXPTAB&quot;)
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
+rm -rf $EXP_PATH/.*.SHM &gt; /dev/null 2&gt;&amp;1
+rm -rf $EXP_PATH/.*.TXT &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>4 <strong>Edit file $MIDASSYS/include/midas.h</strong></p>
 <p>Find:</p>
 <pre><code>#define MAX_OPEN_RECORDS       256 
 </code></pre>
 <p>Change this to:</p>
-<pre><code>#define MAX_OPEN_RECORDS       1024
+<pre><code>#define MAX_OPEN_RECORDS       65536
 </code></pre>
 <p><strong>Note:</strong> This can be changed to a larger number (up to some limit I don't know)</p>
-<p>4 <strong>Edit file $MIDASSYS/src/odb.cxx</strong></p>
+<p>5 <strong>Edit file $MIDASSYS/src/odb.cxx</strong></p>
 <p>Find:</p>
 <pre><code>assert(sizeof(DATABASE_CLIENT) == 2112);
 assert(sizeof(DATABASE_HEADER) == 135232);
 </code></pre>
 <p>Change to:</p>
-<pre><code>assert(sizeof(DATABASE_CLIENT) == 8256);
-assert(sizeof(DATABASE_HEADER) == 528448);
+<pre><code>assert(sizeof(DATABASE_CLIENT) == 524352);
+assert(sizeof(DATABASE_HEADER) == 33558592);
 </code></pre>
 <p><strong>Note:</strong> These numbers follow a formula on the wiki, they are related to the variable MAX_OPEN_RECORDS</p>
 <pre><code>DATABASE_CLIENT = 64 + 8*MAX_OPEN_RECORDS 
 DATABASE_HEADER = 64 + 64*DATABASE_CLIENT
 </code></pre>
-<p>5 <strong>Remake MIDAS</strong></p>
+<p>6 <strong>Remake MIDAS</strong></p>
 <p>Follow the wiki's <a href="https://daq00.triumf.ca/MidasWiki/index.php/Quickstart_Linux#MIDAS_Package_Installation">quickstart linux guide</a>.</p>
 <pre><code>cd midas
 mkdir build
@@ -786,13 +795,15 @@ cd build
 cmake ..
 make install
 </code></pre>
-<p>6 <strong>Create new ODB</strong></p>
+<p>7 <strong>Create new ODB</strong></p>
 <pre><code>$MIDASSYS/bin/odbinit -s 1024MB --cleanup
 </code></pre>
 <p><strong>Note:</strong> I had trouble unless the number specified by -s was the different than the previous ODB. From there it will prompt you to delete a file. I think this file contains information about the maximum number of hotlinks and must be deleted every time you want to increase the number of hotlinks</p>
-<p>7 <strong>Load old settings (if saved)</strong></p>
+<p>8 <strong>Load old settings (if saved)</strong></p>
 <pre><code>$MIDASSYS/bin/odbedit -c &quot;load current_odb.odb&quot;
 </code></pre>
+<p>9 <strong>Rebuild all programs with midas dependencies</strong></p>
+<p>Because we rebuilt midas, this also means we have to rebuild the frontends. See the "Make Frontends" section of the <a href="../installing_and_building/#manual-installation-guide">frontend manual installation guide</a>. Any other software you have built against this version of midas must also be rebuilt (that includes the <a href="../software_add_ons/#midas-event-publisher">publisher</a>, for example).</p>
 <hr />
 <h2 id="adding-program-startup-scripts">Adding Program Startup Scripts</h2>
 <p>After any frontend is run, it will appear in the ODB under <code>/Programs/{Frontend Name}</code>. Here there are some settings for the program. The I use for starting frontends are</p>
@@ -821,7 +832,7 @@ make install
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2024</span>
   </span>
 
     
