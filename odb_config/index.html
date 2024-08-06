@@ -1559,7 +1559,7 @@
 </tr>
 <tr>
 <td><strong>Valid Values</strong></td>
-<td><code>GPS</code>, <code>PP</code> (currently broken), <code>Fake</code>, <code>Socket</code> (untested), <code>None</code>, <code>ODB</code></td>
+<td><code>GPS</code>, <code>PP</code> (currently broken), <code>Fake</code>, <code>Socket</code> (untested), <code>None</code>, <code>ODB</code>, and <code>FC7</code></td>
 </tr>
 <tr>
 <td><strong>Suggested Value</strong></td>
@@ -1573,7 +1573,8 @@
     - <strong>Fake</strong>: Uses a fake signal for testing purposes. Further configuration in ODB.
     - <strong>Socket</strong>: Uses a socket connection as the trigger source (untested).
     - <strong>None</strong>: No trigger source is used, no master triggers are made.
-    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.</p>
+    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.
+    - <strong>FC7</strong>: Uses FC7's trigger counter over IPMI to trigger events</p>
 <h4 id="front-end-offset">Front End Offset</h4>
 <table>
 <thead>

@@ -548,7 +548,7 @@
 <p>The purpose of this manual is to aid users with setup, usage, and debugging of the g-2 modified data acquisition (DAQ) system. This DAQ's purpose is to aid with various test stands across the PIONEER collaboration. Most topics are simplified to only include information needed for operating this DAQ. Some external links are provided for additional, generalized information.</p>
 <p>Many of the guides on this webpage are thorough, as they are aimed to give solutions to problems I've encountered. However, every system is different; there may be some additional debugging to be done on the user's end.</p>
 <h2 id="index-pdf-version">PDF Version</h2>
-<p>A <a href="https://github.com/jaca230/teststand_daq_manual/blob/gh-pages/pdf/document.pdf">pdf version of this manual</a> is automatically generated using <a href="https://pypi.org/project/mkdocs-with-pdf/">MkDocs with pdf plugin</a>.</p>
+<p>A <a href="../pdfs/manual.pdf">pdf version of this manual</a> is automatically generated using <a href="https://pypi.org/project/mkdocs-with-pdf/">MkDocs with pdf plugin</a>.</p>
 <h2 id="index-contact">Contact</h2>
 <p>Manual Written by Jack Carlton. <br>
 Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
@@ -1403,7 +1403,7 @@ sudo make install -j$(nproc)
 <hr />
 <h2 id="software_dependencies-system-monitor">System Monitor</h2>
 <h3 id="software_dependencies-overview_6">Overview</h3>
-<p>The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently, but also is disabled in the midas frontends at the moment (work in progress).</p>
+<p>The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently. It's contents can be found in the midas databank <code>SI00</code> where <code>00</code> is replaced with the frontend index. </p>
 <h3 id="software_dependencies-installation-guide_6">Installation Guide</h3>
 <p>See the <a href="https://github.com/jaca230/system_diagnostics/tree/main">github page</a> for more details.</p>
 <p>1 <strong>Clone the repository</strong></p>
@@ -1716,7 +1716,7 @@ The 3rd is the name for the screen session.</p>
 </tr>
 <tr>
 <td><strong>Valid Values</strong></td>
-<td><code>GPS</code>, <code>PP</code> (currently broken), <code>Fake</code>, <code>Socket</code> (untested), <code>None</code>, <code>ODB</code></td>
+<td><code>GPS</code>, <code>PP</code> (currently broken), <code>Fake</code>, <code>Socket</code> (untested), <code>None</code>, <code>ODB</code>, and <code>FC7</code></td>
 </tr>
 <tr>
 <td><strong>Suggested Value</strong></td>
@@ -1730,7 +1730,8 @@ The 3rd is the name for the screen session.</p>
     - <strong>Fake</strong>: Uses a fake signal for testing purposes. Further configuration in ODB.
     - <strong>Socket</strong>: Uses a socket connection as the trigger source (untested).
     - <strong>None</strong>: No trigger source is used, no master triggers are made.
-    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.</p>
+    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.
+    - <strong>FC7</strong>: Uses FC7's trigger counter over IPMI to trigger events</p>
 <h4 id="odb_config-front-end-offset">Front End Offset</h4>
 <table>
 <thead>
