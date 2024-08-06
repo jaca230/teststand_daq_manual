@@ -557,7 +557,7 @@ Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
 <br>
 <i class="fab fa-github"></i> GitHub: <a href="https://github.com/jaca230">jaca230</a></p>
 <p>Feel free to reach out with any questions, to correct mistakes, point out missing information, or otherwise. If you're familiar with mkdocs and have repository access, feel free to push your edits and credit yourself.</p>
-<p><strong>Last Updated</strong>: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 10, 2024</span></p></section><section class="print-page" id="hardware_overview"><h1 id="hardware_overview-hardware-documentation">Hardware Documentation</h1>
+<p><strong>Last Updated</strong>: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 6, 2024</span></p></section><section class="print-page" id="hardware_overview"><h1 id="hardware_overview-hardware-documentation">Hardware Documentation</h1>
 <h2 id="hardware_overview-general-hardware-overview">General Hardware Overview</h2>
 <h3 id="hardware_overview-conceptual-diagram-one-crate-system">Conceptual Diagram (One Crate System)</h3>
 <p><img alt="DAQ_Diagram" src="../images/DAQ_Diagram.png" style="max-width:100%; height:auto;" /></p>
@@ -1720,18 +1720,34 @@ The 3rd is the name for the screen session.</p>
 </tr>
 <tr>
 <td><strong>Suggested Value</strong></td>
-<td><code>GPS</code></td>
+<td><code>FC7</code></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note</strong>: The meaning of each value is specified below:
-    - <strong>GPS</strong>: Uses the Meinberg GPS timestamps for Master triggers.
-    - <strong>PP</strong>: Uses parallel port signals as the trigger source (currently broken).
-    - <strong>Fake</strong>: Uses a fake signal for testing purposes. Further configuration in ODB.
-    - <strong>Socket</strong>: Uses a socket connection as the trigger source (untested).
-    - <strong>None</strong>: No trigger source is used, no master triggers are made.
-    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.
-    - <strong>FC7</strong>: Uses FC7's trigger counter over IPMI to trigger events</p>
+<p><strong>Note</strong>: The meaning of each value is specified below:</p>
+<ul>
+<li>
+<p><strong>GPS</strong>: Uses the Meinberg GPS timestamps for Master triggers.</p>
+</li>
+<li>
+<p><strong>PP</strong>: Uses parallel port signals as the trigger source (currently broken).</p>
+</li>
+<li>
+<p><strong>Fake</strong>: Uses a fake signal for testing purposes. Further configuration in ODB.</p>
+</li>
+<li>
+<p><strong>Socket</strong>: Uses a socket connection as the trigger source (untested).</p>
+</li>
+<li>
+<p><strong>None</strong>: No trigger source is used, no master triggers are made.</p>
+</li>
+<li>
+<p><strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.</p>
+</li>
+<li>
+<p><strong>FC7</strong>: Uses FC7's trigger counter over IPMI to trigger events</p>
+</li>
+</ul>
 <h4 id="odb_config-front-end-offset">Front End Offset</h4>
 <table>
 <thead>
