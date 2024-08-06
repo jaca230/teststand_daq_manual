@@ -8,7 +8,7 @@ Many of the guides on this webpage are thorough, as they are aimed to give solut
 
 ## PDF Version
 
-A [pdf version of this manual](https://github.com/jaca230/teststand_daq_manual/blob/gh-pages/pdf/document.pdf) is automatically generated using [MkDocs with pdf plugin](https://pypi.org/project/mkdocs-with-pdf/).
+A [pdf version of this manual](pdfs/manual.pdf) is automatically generated using [MkDocs with pdf plugin](https://pypi.org/project/mkdocs-with-pdf/).
 
 ## Contact
 Manual Written by Jack Carlton. <br>

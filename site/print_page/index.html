@@ -548,7 +548,7 @@
 <p>The purpose of this manual is to aid users with setup, usage, and debugging of the g-2 modified data acquisition (DAQ) system. This DAQ's purpose is to aid with various test stands across the PIONEER collaboration. Most topics are simplified to only include information needed for operating this DAQ. Some external links are provided for additional, generalized information.</p>
 <p>Many of the guides on this webpage are thorough, as they are aimed to give solutions to problems I've encountered. However, every system is different; there may be some additional debugging to be done on the user's end.</p>
 <h2 id="index-pdf-version">PDF Version</h2>
-<p>A <a href="https://github.com/jaca230/teststand_daq_manual/blob/gh-pages/pdf/document.pdf">pdf version of this manual</a> is automatically generated using <a href="https://pypi.org/project/mkdocs-with-pdf/">MkDocs with pdf plugin</a>.</p>
+<p>A <a href="../pdfs/manual.pdf">pdf version of this manual</a> is automatically generated using <a href="https://pypi.org/project/mkdocs-with-pdf/">MkDocs with pdf plugin</a>.</p>
 <h2 id="index-contact">Contact</h2>
 <p>Manual Written by Jack Carlton. <br>
 Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
@@ -1401,11 +1401,31 @@ sudo make install -j$(nproc)
 </code></pre>
 <p><strong>Note</strong>: You may not need to specify <code>EXTERN_BOOST_INCLUDE_PREFIX</code>, <code>EXTERN_BOOST_LIB_PREFIX</code>, <code>EXTERN_PUGIXML_INCLUDE_PREFIX</code>, <code>EXTERN_PUGIXML_LIB_PREFIX</code>. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.</p>
 <hr />
-<h2 id="software_dependencies-meinberg">Meinberg</h2>
+<h2 id="software_dependencies-system-monitor">System Monitor</h2>
 <h3 id="software_dependencies-overview_6">Overview</h3>
+<p>The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently. It's contents can be found in the midas databank <code>SI00</code> where <code>00</code> is replaced with the frontend index. </p>
+<h3 id="software_dependencies-installation-guide_6">Installation Guide</h3>
+<p>See the <a href="https://github.com/jaca230/system_diagnostics/tree/main">github page</a> for more details.</p>
+<p>1 <strong>Clone the repository</strong></p>
+<pre><code>git clone https://github.com/jaca230/system_diagnostics.git
+cd system_diagnostics
+</code></pre>
+<p>2 <strong>Build the library</strong></p>
+<pre><code>cd scripts
+./build.sh
+</code></pre>
+<p>3 <strong>Verify installation</strong></p>
+<pre><code>cd ..
+cd bin
+./system_diagnostics --help
+./system_diagnostics
+</code></pre>
+<hr />
+<h2 id="software_dependencies-meinberg">Meinberg</h2>
+<h3 id="software_dependencies-overview_7">Overview</h3>
 <p><a href="https://www.meinbergglobal.com/">Meinberg</a> provides a range of synchronization solutions, including Network Time Protocol (NTP) servers, precision time protocol (PTP) solutions, and GPS radio clocks. These tools are essential for accurate time synchronization in various high-precision applications.</p>
 <p>In our case, we use it to apply a GPS timestamp to each event. In reality, this is an artifact from g-2 where seperate systems needed to be time correlated. Only the "GPS" master trigger mode needs the meinberg.</p>
-<h3 id="software_dependencies-installation-guide_6">Installation Guide</h3>
+<h3 id="software_dependencies-installation-guide_7">Installation Guide</h3>
 <p>For more general information about Meinberg devices, see Meinberg's <a href="https://kb.meinbergglobal.com/">Installing the Software</a> page.</p>
 <h4 id="software_dependencies-almalinux-9-and-centos-7">AlmaLinux 9 and CentOS 7</h4>
 <p>1 <strong>Clone the repository</strong>:</p>
@@ -1474,7 +1494,7 @@ The command &quot;mbgirigcfg&quot; can be used to change the settings.
 <hr />
 <h2 id="installing_and_building-manual-installation-guide">Manual Installation Guide</h2>
 <p>1 <strong>Install Software Dependencies</strong></p>
-<p><a href="#software_dependencies-root">ROOT</a>, <a href="#software_dependencies-midas">Midas</a>, <a href="#software_dependencies-boost">Boost</a>, <a href="#software_dependencies-ipmitool">ipmitool</a>, and <a href="#software_dependencies-ipbus-cactus">Cactus</a> are all required to build and run the DAQ frontends. <a href="#software_dependencies-meinberg">Meinberg</a> is needed if using GPS mode for the master triggers. Install them following the instructions on the <a href="#software_dependencies">Software Dependencies Page</a>.</p>
+<p><a href="#software_dependencies-root">ROOT</a>, <a href="#software_dependencies-midas">Midas</a>, <a href="#software_dependencies-boost">Boost</a>, <a href="#software_dependencies-ipmitool">ipmitool</a>, and <a href="#software_dependencies-ipbus-cactus">Cactus</a>, and the <a href="#software_dependencies-system-monitor">System Monitor</a> are all required to build and run the DAQ frontends. <a href="#software_dependencies-meinberg">Meinberg</a> is needed if using GPS mode for the master triggers. Install them following the instructions on the <a href="#software_dependencies">Software Dependencies Page</a>.</p>
 <p>2 <strong>Clone the Appropriate Branch</strong></p>
 <p>Make sure you have access to the <a href="https://github.com/PIONEER-Experiment">PIONEER Experiment GitHub</a>. See these <a href="#software_dependencies-pioneer-experiment-repositories">contacts</a> for gaining access. Additionally, make sure your github account is linked to your system via SSH token; you can do this by following <a href="#software_dependencies-setting-up-a-github-ssh-token-on-rhel79-systems">these instructions</a>. After installing the software dependencies, you should have a <code>packages</code> directory, where it's best to put the software. To clone, follow the commands below:</p>
 <pre><code>cd /path/to/packages
@@ -1498,6 +1518,7 @@ CACTUS_ROOT=/home/installation_testing/packages/cactus
 BOOST_ROOT=/home/backup_installation_testing/packages/boost-1.53.0
 PUGIXML_ROOT=/home/installation_testing/packages/pugixml-1.8
 ROOT_ROOT=/usr/include/root
+SYSTEM_MONITOR_ROOT=/home/installation_testing/packages/system_diagnostics
 MIDASSYS=/home/installation_testing/packages/midas
 MIDAS_EXPTAB=/home/installation_testing/online/exptab
 MIDAS_EXPT_NAME=DAQ
@@ -1695,7 +1716,7 @@ The 3rd is the name for the screen session.</p>
 </tr>
 <tr>
 <td><strong>Valid Values</strong></td>
-<td><code>GPS</code>, <code>PP</code> (currently broken), <code>Fake</code>, <code>Socket</code> (untested), <code>None</code>, <code>ODB</code></td>
+<td><code>GPS</code>, <code>PP</code> (currently broken), <code>Fake</code>, <code>Socket</code> (untested), <code>None</code>, <code>ODB</code>, and <code>FC7</code></td>
 </tr>
 <tr>
 <td><strong>Suggested Value</strong></td>
@@ -1709,7 +1730,8 @@ The 3rd is the name for the screen session.</p>
     - <strong>Fake</strong>: Uses a fake signal for testing purposes. Further configuration in ODB.
     - <strong>Socket</strong>: Uses a socket connection as the trigger source (untested).
     - <strong>None</strong>: No trigger source is used, no master triggers are made.
-    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.</p>
+    - <strong>ODB</strong>: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.
+    - <strong>FC7</strong>: Uses FC7's trigger counter over IPMI to trigger events</p>
 <h4 id="odb_config-front-end-offset">Front End Offset</h4>
 <table>
 <thead>

@@ -669,13 +669,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#meinberg" class="md-nav__link">
+  <a href="#system-monitor" class="md-nav__link">
     <span class="md-ellipsis">
-      Meinberg
+      System Monitor
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Meinberg">
+    <nav class="md-nav" aria-label="System Monitor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -689,6 +689,39 @@
         
           <li class="md-nav__item">
   <a href="#installation-guide_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meinberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meinberg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meinberg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-guide_7" class="md-nav__link">
     <span class="md-ellipsis">
       Installation Guide
     </span>
@@ -1263,13 +1296,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#meinberg" class="md-nav__link">
+  <a href="#system-monitor" class="md-nav__link">
     <span class="md-ellipsis">
-      Meinberg
+      System Monitor
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Meinberg">
+    <nav class="md-nav" aria-label="System Monitor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1283,6 +1316,39 @@
         
           <li class="md-nav__item">
   <a href="#installation-guide_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meinberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meinberg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meinberg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-guide_7" class="md-nav__link">
     <span class="md-ellipsis">
       Installation Guide
     </span>
@@ -1593,11 +1659,31 @@ sudo make install -j$(nproc)
 </code></pre>
 <p><strong>Note</strong>: You may not need to specify <code>EXTERN_BOOST_INCLUDE_PREFIX</code>, <code>EXTERN_BOOST_LIB_PREFIX</code>, <code>EXTERN_PUGIXML_INCLUDE_PREFIX</code>, <code>EXTERN_PUGIXML_LIB_PREFIX</code>. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.</p>
 <hr />
-<h2 id="meinberg">Meinberg</h2>
+<h2 id="system-monitor">System Monitor</h2>
 <h3 id="overview_6">Overview</h3>
+<p>The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently. It's contents can be found in the midas databank <code>SI00</code> where <code>00</code> is replaced with the frontend index. </p>
+<h3 id="installation-guide_6">Installation Guide</h3>
+<p>See the <a href="https://github.com/jaca230/system_diagnostics/tree/main">github page</a> for more details.</p>
+<p>1 <strong>Clone the repository</strong></p>
+<pre><code>git clone https://github.com/jaca230/system_diagnostics.git
+cd system_diagnostics
+</code></pre>
+<p>2 <strong>Build the library</strong></p>
+<pre><code>cd scripts
+./build.sh
+</code></pre>
+<p>3 <strong>Verify installation</strong></p>
+<pre><code>cd ..
+cd bin
+./system_diagnostics --help
+./system_diagnostics
+</code></pre>
+<hr />
+<h2 id="meinberg">Meinberg</h2>
+<h3 id="overview_7">Overview</h3>
 <p><a href="https://www.meinbergglobal.com/">Meinberg</a> provides a range of synchronization solutions, including Network Time Protocol (NTP) servers, precision time protocol (PTP) solutions, and GPS radio clocks. These tools are essential for accurate time synchronization in various high-precision applications.</p>
 <p>In our case, we use it to apply a GPS timestamp to each event. In reality, this is an artifact from g-2 where seperate systems needed to be time correlated. Only the "GPS" master trigger mode needs the meinberg.</p>
-<h3 id="installation-guide_6">Installation Guide</h3>
+<h3 id="installation-guide_7">Installation Guide</h3>
 <p>For more general information about Meinberg devices, see Meinberg's <a href="https://kb.meinbergglobal.com/">Installing the Software</a> page.</p>
 <h4 id="almalinux-9-and-centos-7">AlmaLinux 9 and CentOS 7</h4>
 <p>1 <strong>Clone the repository</strong>:</p>
@@ -1660,7 +1746,7 @@ The command &quot;mbgirigcfg&quot; can be used to change the settings.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
   </span>
 
     

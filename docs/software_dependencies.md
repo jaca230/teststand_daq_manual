@@ -416,7 +416,7 @@ sudo make install -j$(nproc)
 
 ### Overview
 
-The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently, but also is disabled in the midas frontends at the moment (work in progress).
+The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently. It's contents can be found in the midas databank `SI00` where `00` is replaced with the frontend index. 
 
 ### Installation Guide
 

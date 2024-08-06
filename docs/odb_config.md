@@ -63,16 +63,24 @@ Below are some important settings in the ODB for the g-2 modified DAQ. This is n
 |-----------------|--------------------------------------------------------------------|
 | **Path**           | `/Equipment/MasterGM2/Settings/Globals/Trigger Source`             |
 | **Description**    | Determines what source the Master will use to trigger events       |
-| **Valid Values**   | `GPS`, `PP` (currently broken), `Fake`, `Socket` (untested), `None`, `ODB` |
-| **Suggested Value**| `GPS`                                                              |
+| **Valid Values**   | `GPS`, `PP` (currently broken), `Fake`, `Socket` (untested), `None`, `ODB`, and `FC7` |
+| **Suggested Value**| `FC7`                                                              |
 
 **Note**: The meaning of each value is specified below:
-    - **GPS**: Uses the Meinberg GPS timestamps for Master triggers.
-    - **PP**: Uses parallel port signals as the trigger source (currently broken).
-    - **Fake**: Uses a fake signal for testing purposes. Further configuration in ODB.
-    - **Socket**: Uses a socket connection as the trigger source (untested).
-    - **None**: No trigger source is used, no master triggers are made.
-    - **ODB**: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.
+
+- **GPS**: Uses the Meinberg GPS timestamps for Master triggers.
+
+- **PP**: Uses parallel port signals as the trigger source (currently broken).
+
+- **Fake**: Uses a fake signal for testing purposes. Further configuration in ODB.
+
+- **Socket**: Uses a socket connection as the trigger source (untested).
+
+- **None**: No trigger source is used, no master triggers are made.
+
+- **ODB**: Reads ODB to send triggers at a rate similar to the rate the AMC13 receives triggers.
+
+- **FC7**: Uses FC7's trigger counter over IPMI to trigger events
 
 #### Front End Offset
 
