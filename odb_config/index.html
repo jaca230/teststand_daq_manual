@@ -408,6 +408,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#change-data-buffer-logger-writes-to-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Data Buffer Logger Writes to File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#toggle-logger-to-generate-odb-backups-for-each-run" class="md-nav__link">
     <span class="md-ellipsis">
       Toggle Logger to generate ODB backups for each run
@@ -1052,6 +1061,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#change-data-buffer-logger-writes-to-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Data Buffer Logger Writes to File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#toggle-logger-to-generate-odb-backups-for-each-run" class="md-nav__link">
     <span class="md-ellipsis">
       Toggle Logger to generate ODB backups for each run
@@ -1522,20 +1540,226 @@
 <h3 id="general-odb-configuration-examples">General ODB Configuration Examples</h3>
 <p>For a general guide on how to use Midas' ODB, see the <a href="https://daq00.triumf.ca/MidasWiki/index.php/ODB_Access_and_Use">ODB Access and Use wiki page</a>. Below are a few of common ODB</p>
 <h4 id="toggle-logger-data-writing">Toggle Logger Data Writing</h4>
-<p>Change <code>Logger/Write Data</code> to <code>yes</code> or <code>no</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Logger/Write Data</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether or not the Logger will write data</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="change-logger-data-writing-directory">Change Logger Data Writing Directory</h4>
-<p>Change <code>Logger/Data dir</code> to the desire path.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Logger/Data dir</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>What directory the logger will write data to</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>any valid path</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>/path/to/your/online/directory</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: Change <code>/path/to/your/online/directory</code> to whatever directory you want to write data to</p>
+<h4 id="change-data-buffer-logger-writes-to-file">Change Data Buffer Logger Writes to File</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Logger/Channels/0/Settings/Buffer</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>What directory the logger will write data to</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td>any valid buffer name (ex. <code>SYSTEM</code>, <code>BUF001</code>, ...)</td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>SYSTEM</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="toggle-logger-to-generate-odb-backups-for-each-run">Toggle Logger to generate ODB backups for each run</h4>
-<p>Change <code>Logger/ODB Dump</code> to <code>yes</code> or <code>no</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Logger/ODB Dump</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether or not backups of the ODB will be generated after each run</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="change-webpage-port">Change Webpage Port</h4>
-<p>First, run <code>mhttpd</code> or <code>mhttpd6</code> at least once. It doesn't need to be successful, it just needs to generate the <code>WebServer</code> ODB directory.</p>
-<p>Then, change <code>WebServer/localhost port</code> from <code>8080</code> to whatever port is desired. The <code>WebServer</code> ODB directory provides much more webserver config as well.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/WebServer/localhost port</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>What port the webserver will run on</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>0000</code> to <code>9999</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>8080</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: To generate this ODB path, run <code>mhttpd</code> or <code>mhttpd6</code> at least once. It doesn't need to be successful, it just needs to generate the <code>WebServer</code> ODB directory.</p>
 <h4 id="disable-a-frontend">Disable a Frontend</h4>
-<p>Every Midas frontend generates a <code>Common</code> section it's ODB. For example, <code>Equipment/AMC13001/Common</code> will be generated. To disable a frontend, set <code>/Equipment/Frontend Name/Common/Enabled</code> to <code>no</code>. This is useful for toggling off crates in multicrate setups.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/{Frontend Name}/Common/Enabled</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Whether a frontend is enabled for use or not</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>yes</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: Every Midas frontend generates a <code>Common</code> section it's ODB. For example, <code>Equipment/AMC13001/Common</code> will be generated. This is useful for toggling off crates in multicrate setups.</p>
 <h4 id="change-the-data-buffer-for-a-frontend">Change the Data Buffer for a Frontend</h4>
-<p>Change <code>/Equipment/Frontend Name/Common/Buffer</code> to the desired buffer name.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Equipment/{Frontend Name}/Common/Buffer</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>What midas buffer the frontend will write to</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>any valid string</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>BUF{3 digit frontend #}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: The event builder assumes every buffer for events starts with <code>BUF</code>. So it's best to name frontends <code>BUF</code> followed by their 3 digit frontend number. For example, for <code>AMC13001</code> frontend, <code>BUF001</code> is a good name.</p>
 <h4 id="changing-run-number">Changing Run Number</h4>
-<p>Change <code>/Runinfo/Run number</code> to the desired run number.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td><code>/Runinfo/Run number</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The run the number for the experiment</td>
+</tr>
+<tr>
+<td><strong>Valid Values</strong></td>
+<td><code>any valid integer</code></td>
+</tr>
+<tr>
+<td><strong>Suggested Value</strong></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: If one decreases the run number, the logger will overwrite that run's data if a run is performed with the old run number again. For this reason, when <a href="../midas/#loading-an-odb-save">loading and old ODB save</a> you will want to increase the run number to a value larger than your last successful run number before taking data.</p>
 <hr />
 <h2 id="g-2-modified-daq-specific-odb-configuration">g-2 Modified DAQ Specific ODB Configuration</h2>
 <p>Below are some important settings in the ODB for the g-2 modified DAQ. This is not a complete description of every setting in the ODB. Many settings are artifacts from g-2 that don't serve any purpose anymore.</p>
