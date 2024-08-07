@@ -27,27 +27,86 @@ Then view the ODB by clicking the **ODB** button on the left sidebar
 For a general guide on how to use Midas' ODB, see the [ODB Access and Use wiki page](https://daq00.triumf.ca/MidasWiki/index.php/ODB_Access_and_Use). Below are a few of common ODB
 
 #### Toggle Logger Data Writing
-Change `Logger/Write Data` to `yes` or `no`.
+
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/Logger/Write Data`                                            |
+| **Description**    | Whether or not the Logger will write data                       |
+| **Valid Values**   | `yes` or `no`                                                   |
+| **Suggested Value**| `yes`                                                           |
 
 #### Change Logger Data Writing Directory
-Change `Logger/Data dir` to the desire path.
+
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/Logger/Data dir`                                              |
+| **Description**    | What directory the logger will write data to                    |
+| **Valid Values**   | any valid path                                                  |
+| **Suggested Value**| `/path/to/your/online/directory`                                |
+
+**Note**: Change `/path/to/your/online/directory` to whatever directory you want to write data to
+
+#### Change Data Buffer Logger Writes to File
+
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/Logger/Channels/0/Settings/Buffer`                            |
+| **Description**    | What directory the logger will write data to                    |
+| **Valid Values**   | any valid buffer name (ex. `SYSTEM`, `BUF001`, ...)             |
+| **Suggested Value**| `SYSTEM`                                                        |
 
 #### Toggle Logger to generate ODB backups for each run
-Change `Logger/ODB Dump` to `yes` or `no`.
+
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/Logger/ODB Dump`                                              |
+| **Description**    | Whether or not backups of the ODB will be generated after each run                    |
+| **Valid Values**   | `yes` or `no`                                                   |
+| **Suggested Value**| `yes`                                                           |
 
 #### Change Webpage Port
-First, run `mhttpd` or `mhttpd6` at least once. It doesn't need to be successful, it just needs to generate the `WebServer` ODB directory.
 
-Then, change `WebServer/localhost port` from `8080` to whatever port is desired. The `WebServer` ODB directory provides much more webserver config as well.
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/WebServer/localhost port`                                     |
+| **Description**    | What port the webserver will run on                             |
+| **Valid Values**   | `0000` to `9999`                                                |
+| **Suggested Value**| `8080`                                                          |
+
+**Note**: To generate this ODB path, run `mhttpd` or `mhttpd6` at least once. It doesn't need to be successful, it just needs to generate the `WebServer` ODB directory.
 
 #### Disable a Frontend
-Every Midas frontend generates a `Common` section it's ODB. For example, `Equipment/AMC13001/Common` will be generated. To disable a frontend, set `/Equipment/Frontend Name/Common/Enabled` to `no`. This is useful for toggling off crates in multicrate setups.
+
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/Equipment/{Frontend Name}/Common/Enabled`                     |
+| **Description**    | Whether a frontend is enabled for use or not                    |
+| **Valid Values**   | `yes` or `no`                                                   |
+| **Suggested Value**| `yes`                                                           |
+
+**Note**: Every Midas frontend generates a `Common` section it's ODB. For example, `Equipment/AMC13001/Common` will be generated. This is useful for toggling off crates in multicrate setups.
 
 #### Change the Data Buffer for a Frontend
-Change `/Equipment/Frontend Name/Common/Buffer` to the desired buffer name.
+
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/Equipment/{Frontend Name}/Common/Buffer`                      |
+| **Description**    | What midas buffer the frontend will write to                    |
+| **Valid Values**   | `any valid string`                                              |
+| **Suggested Value**| `BUF{3 digit frontend #}`                                       |
+
+**Note**: The event builder assumes every buffer for events starts with `BUF`. So it's best to name frontends `BUF` followed by their 3 digit frontend number. For example, for `AMC13001` frontend, `BUF001` is a good name.
 
 #### Changing Run Number
-Change `/Runinfo/Run number` to the desired run number.
+
+| Field           | Description                                                        |
+|-----------------|--------------------------------------------------------------------|
+| **Path**           | `/Runinfo/Run number`                                           |
+| **Description**    | The run the number for the experiment                           |
+| **Valid Values**   | `any valid integer`                                             |
+| **Suggested Value**| `1`                                                             |
+
+**Note**: If one decreases the run number, the logger will overwrite that run's data if a run is performed with the old run number again. For this reason, when [loading and old ODB save](midas.md#loading-an-odb-save) you will want to increase the run number to a value larger than your last successful run number before taking data.
 
 ---
 
