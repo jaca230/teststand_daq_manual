@@ -162,23 +162,6 @@ $MIDASSYS/bin/odbedit -c "load online/run001234.json"'
 
 where `online/run001234.json` should be replaced with a path to a valid ODB save file.
 
-In my experience, this only adds settings (or changes settings back). It will not remove settings. For example if path `/Equipment/Test` exists in the current ODB but not the save, it will still exist after the save is loaded.
-
-You can also load only specific parts of an ODB by navigating to the appropriate path. For example:
-
-```
-$MIDASSYS/bin/odbedit
-```
-
-then in the command line interface
-
-```
-cd Equipment
-load online/run001234.json
-```
-
-Now only the settings under `/Equipment` will be altered in your ODB by loading the save.
-
 ---
 
 ## Changing the ODB size
