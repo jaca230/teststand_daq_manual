@@ -1530,8 +1530,8 @@ MIDAS_EXPT_NAME=DAQ
 <p>Verify that each environment variable above points to the correct path for each piece of software. If not, manually change it with your favorite text editor. Then, run</p>
 <pre><code>source ./setup_environment.sh
 </code></pre>
-<p><strong>Note</strong>: To set up the environment every time you log in automatically, source this script in your <code>.bashrc</code> file. Modify the path in the following command to add <code>setup_environment.sh</code> to the .bashrc file</p>
-<pre><code>echo &quot;source /path/to/gm2daq-modified/environment_setup/setup_environment.sh&quot; &gt;&gt; ~/.bashrc
+<p><strong>Note</strong>: To set up the environment every time you log in automatically, source this script in your <code>.bashrc</code> file. Modify the path in the following command to add <code>setup_environment.sh</code> with the <code>--silent</code> flagto the .bashrc file</p>
+<pre><code>echo &quot;source /path/to/gm2daq-modified/environment_setup/setup_environment.sh --silent&quot; &gt;&gt; ~/.bashrc
 </code></pre>
 <p>4 <strong>Make Frontends</strong></p>
 <p>Make the master frontend:</p>
