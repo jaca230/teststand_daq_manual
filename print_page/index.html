@@ -2950,7 +2950,19 @@ The 3rd is the name for the screen session.</p>
 </table></section><section class="print-page" id="midas"><h1 id="midas-some-midas-information-and-tips">Some Midas Information and Tips</h1>
 <p>TRIUMF has a great <a href="https://daq00.triumf.ca/MidasWiki/index.php/Main_Page">Midas Wiki</a> page. For general midas information, this is a good place to start. Below, there are some specific tips about midas that are helpful when using the g-2 modified DAQ.</p>
 <h2 id="midas-data-storage-location">Data Storage location</h2>
-<p>By default midas files (.mid) and compressed midas files (.mid.lz4) will be stored in the same directory that the file <code>$MIDAS_EXPTAB</code> is located (usually the "online" directory). This can be can be <a href="#odb_config-change-logger-data-writing-directory">changed to a different directory in the Logger's ODB settings</a>.</p>
+<p>By default midas files (.mid) and compressed midas files (.mid.lz4) will be stored in the same directory that the file <code>$MIDAS_EXPTAB</code> points to for the experiment (usually the "online" directory). This can be can be <a href="#odb_config-change-logger-data-writing-directory">changed to a different directory in the Logger's ODB settings</a>.</p>
+<h2 id="midas-multiple-experiments-on-one-midas-installation">Multiple Experiments on One Midas Installation</h2>
+<p>To run multiple experiments (with different ODBs), one needs to modify the <code>$MIDAS_EXPTAB</code> file. See the <a href="https://daq00.triumf.ca/MidasWiki/index.php/Exptab">Exptab wiki page</a>. Edit <code>$MIDAS_EXPTAB</code> in your favorite text editor, for example:</p>
+<pre><code>vi $MIDAS_EXPTAB`
+</code></pre>
+<p>Then add a new line for another experiment, the experiment directory <strong>must</strong> be different:</p>
+<pre><code>DAQ  /experiment_one/home/online system
+test /experiment_two/home/online system
+</code></pre>
+<p>replace the paths above to correspond to a path on your system. These are the directories the ODB information is stored.</p>
+<p>Make sure all desired midas applications use the correct experiment name. For example, to start a midas webpage for experiment <code>test</code>, run</p>
+<pre><code>$MIDASSYS/bin/mhttpd -e test
+</code></pre>
 <hr />
 <h2 id="midas-midas-files-to-root-files-unpacker">Midas Files to ROOT Files (unpacker)</h2>
 <p>See the <a href="#software_add_ons-midas-event-unpacker">unpacker software page</a>.</p>
