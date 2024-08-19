@@ -45,7 +45,7 @@ Make sure you have access to the [PIONEER Experiment GitHub](https://github.com/
 cd /path/to/packages
 mkdir experiment
 cd experiment
-git clone --branch multi-crate https://github.com/PIONEER-Experiment/gm2daq-modified.git
+git clone --branch multi-crate git@github.com:PIONEER-Experiment/gm2daq-modified.git
 cd gm2daq-modified
 git checkout multi-crate
 ```

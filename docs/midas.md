@@ -2,7 +2,24 @@
 TRIUMF has a great [Midas Wiki](https://daq00.triumf.ca/MidasWiki/index.php/Main_Page) page. For general midas information, this is a good place to start. Below, there are some specific tips about midas that are helpful when using the g-2 modified DAQ.
 
 ## Data Storage location
-By default midas files (.mid) and compressed midas files (.mid.lz4) will be stored in the same directory that the file `$MIDAS_EXPTAB` is located (usually the "online" directory). This can be can be [changed to a different directory in the Logger's ODB settings](odb_config.md#change-logger-data-writing-directory).
+By default midas files (.mid) and compressed midas files (.mid.lz4) will be stored in the same directory that the file `$MIDAS_EXPTAB` points to for the experiment (usually the "online" directory). This can be can be [changed to a different directory in the Logger's ODB settings](odb_config.md#change-logger-data-writing-directory).
+
+## Multiple Experiments on One Midas Installation
+To run multiple experiments (with different ODBs), one needs to modify the `$MIDAS_EXPTAB` file. See the [Exptab wiki page](https://daq00.triumf.ca/MidasWiki/index.php/Exptab). Edit `$MIDAS_EXPTAB` in your favorite text editor, for example:
+```
+vi $MIDAS_EXPTAB`
+```
+Then add a new line for another experiment, the experiment directory **must** be different:
+```
+DAQ  /experiment_one/home/online system
+test /experiment_two/home/online system
+```
+replace the paths above to correspond to a path on your system. These are the directories the ODB information is stored.
+
+Make sure all desired midas applications use the correct experiment name. For example, to start a midas webpage for experiment `test`, run
+```
+$MIDASSYS/bin/mhttpd -e test
+```
 
 ---
 

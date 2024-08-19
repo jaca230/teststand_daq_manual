@@ -1574,7 +1574,11 @@ export MIDAS_EXPTAB=$(pwd)/exptab
 mkdir packages
 git clone --recursive git@github.com:PIONEER-Experiment/midas-modified.git midas
 cd midas
+mkdir build
+cd build
+cmake ..
 make -j$(nproc) install
+cd ..
 </code></pre>
 <p><strong>Note</strong>: On CentOS7 you may need to use <code>cmake3</code> as opposed to <code>cmake</code>; install with <code>sudo yum install cmake3</code>. Alternatively, you can install <code>cmake</code> from source to ensure it is up to date.</p>
 <p>4 <strong>Set <code>MIDASSYS</code> environment variable and add to path</strong></p>

@@ -657,7 +657,7 @@ NETWORK_BASE="192.168.2"
 
 Then you can run
 ```
-python read_addresses.py
+python readIPs.py
 ```
 
 #### Changing IP Address

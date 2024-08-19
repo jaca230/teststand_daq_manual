@@ -264,7 +264,11 @@ cd ..
 mkdir packages
 git clone --recursive git@github.com:PIONEER-Experiment/midas-modified.git midas
 cd midas
+mkdir build
+cd build
+cmake ..
 make -j$(nproc) install
+cd ..
 ```
 **Note**: On CentOS7 you may need to use `cmake3` as opposed to `cmake`; install with `sudo yum install cmake3`. Alternatively, you can install `cmake` from source to ensure it is up to date.
 
