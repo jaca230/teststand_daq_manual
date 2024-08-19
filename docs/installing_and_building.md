@@ -82,9 +82,9 @@ Verify that each environment variable above points to the correct path for each 
 source ./setup_environment.sh
 ```
 
-**Note**: To set up the environment every time you log in automatically, source this script in your `.bashrc` file. Modify the path in the following command to add `setup_environment.sh` to the .bashrc file
+**Note**: To set up the environment every time you log in automatically, source this script in your `.bashrc` file. Modify the path in the following command to add `setup_environment.sh` with the `--silent` flagto the .bashrc file
 ```
-echo "source /path/to/gm2daq-modified/environment_setup/setup_environment.sh" >> ~/.bashrc
+echo "source /path/to/gm2daq-modified/environment_setup/setup_environment.sh --silent" >> ~/.bashrc
 ```
 
 4 **Make Frontends**
