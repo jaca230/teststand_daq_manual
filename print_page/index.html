@@ -2979,6 +2979,7 @@ test /experiment_two/home/online system
 <pre><code>./delete_and_restore_odb.sh
 </code></pre>
 <p>Both scripts have the exact same functionality; they effectively stop all running screens (midas related or not), delete all ODB data, and load a backup file. However the first script has some fun surprises for the user's pleasure. If this script doesn't work, you can follow the steps in <a href="#midas-fixing-a-persistently-corrupted-odb-by-hand">"Fixing a persistently corrupted ODB by hand"</a>.</p>
+<p><strong>Note</strong>: </p>
 <hr />
 <h2 id="midas-fixing-a-corrupted-odb-by-hand">Fixing a corrupted ODB by hand</h2>
 <p>These instructions are adapted from the <a href="https://daq00.triumf.ca/MidasWiki/index.php/FAQ#How_to_recover_from_a_corrupted_ODB">midas wiki's page on recovering from a corrupted ODB</a>. For most cases, you can just "nuke" the ODB and then load an ODB save file from a previous run. <strong>Make sure you have an ODB backup file</strong> to load (ex. run001234.json).</p>
@@ -3024,6 +3025,11 @@ rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
 rm -rf $EXP_PATH/.*.SHM &gt; /dev/null 2&gt;&amp;1
 rm -rf $EXP_PATH/.*.TXT &gt; /dev/null 2&gt;&amp;1
 </code></pre>
+<p><strong>Note</strong>: <code>EXP_PATH=$(dirname "$MIDAS_EXPTAB")</code> will be correct if you've followed this guide exclusively. However, in general the path you want is actually in the content of the <code>$MIDAS_EXPTAB</code> file. For example, the output of <code>cat $MIDAS_EXPTAB</code> could look like:</p>
+<pre><code>DAQ     /home/installation_testing/online system
+SIM_DAQ /home/installation_testing/online system
+</code></pre>
+<p>Really you want <code>export EXP_PATH=/home/installation_testing/online</code>, but in our setup we choose to put <code>$MIDAS_EXPTAB</code> in the "online" directory anyways, so this is the same as above. Just be mindful if your <code>$MIDAS_EXPTAB</code> file is located in a place other than your experiment ODB files.</p>
 <p>3 <strong>Create new ODB and load old ODB file</strong></p>
 <pre><code>export JsonPath=online/run001234.json
 export run_number=1000
@@ -3075,6 +3081,11 @@ rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
 rm -rf $EXP_PATH/.*.SHM &gt; /dev/null 2&gt;&amp;1
 rm -rf $EXP_PATH/.*.TXT &gt; /dev/null 2&gt;&amp;1
 </code></pre>
+<p><strong>Note</strong>: <code>EXP_PATH=$(dirname "$MIDAS_EXPTAB")</code> will be correct if you've followed this guide exclusively. However, in general the path you want is actually in the content of the <code>$MIDAS_EXPTAB</code> file. For example, the output of <code>cat $MIDAS_EXPTAB</code> could look like:</p>
+<pre><code>DAQ     /home/installation_testing/online system
+SIM_DAQ /home/installation_testing/online system
+</code></pre>
+<p>Really you want <code>export EXP_PATH=/home/installation_testing/online</code>, but in our setup we choose to put <code>$MIDAS_EXPTAB</code> in the "online" directory anyways, so this is the same as above. Just be mindful if your <code>$MIDAS_EXPTAB</code> file is located in a place other than your experiment ODB files.</p>
 <p>4 <strong>Edit file $MIDASSYS/include/midas.h</strong></p>
 <p>Find:</p>
 <pre><code>#define MAX_OPEN_RECORDS       256 
