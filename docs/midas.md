@@ -50,6 +50,8 @@ Less fun version:
 
 Both scripts have the exact same functionality; they effectively stop all running screens (midas related or not), delete all ODB data, and load a backup file. However the first script has some fun surprises for the user's pleasure. If this script doesn't work, you can follow the steps in ["Fixing a persistently corrupted ODB by hand"](midas.md#fixing-a-persistently-corrupted-odb-by-hand).
 
+**Note**: 
+
 ---
 
 ## Fixing a corrupted ODB by hand
@@ -121,6 +123,13 @@ rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
 rm -rf $EXP_PATH/.*.SHM > /dev/null 2>&1
 rm -rf $EXP_PATH/.*.TXT > /dev/null 2>&1
 ```
+
+**Note**: `EXP_PATH=$(dirname "$MIDAS_EXPTAB")` will be correct if you've followed this guide exclusively. However, in general the path you want is actually in the content of the `$MIDAS_EXPTAB` file. For example, the output of `cat $MIDAS_EXPTAB` could look like:
+```
+DAQ     /home/installation_testing/online system
+SIM_DAQ /home/installation_testing/online system
+```
+Really you want `export EXP_PATH=/home/installation_testing/online`, but in our setup we choose to put `$MIDAS_EXPTAB` in the "online" directory anyways, so this is the same as above. Just be mindful if your `$MIDAS_EXPTAB` file is located in a place other than your experiment ODB files.
 
 3 **Create new ODB and load old ODB file**
 
@@ -203,6 +212,13 @@ rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
 rm -rf $EXP_PATH/.*.SHM > /dev/null 2>&1
 rm -rf $EXP_PATH/.*.TXT > /dev/null 2>&1
 ```
+
+**Note**: `EXP_PATH=$(dirname "$MIDAS_EXPTAB")` will be correct if you've followed this guide exclusively. However, in general the path you want is actually in the content of the `$MIDAS_EXPTAB` file. For example, the output of `cat $MIDAS_EXPTAB` could look like:
+```
+DAQ     /home/installation_testing/online system
+SIM_DAQ /home/installation_testing/online system
+```
+Really you want `export EXP_PATH=/home/installation_testing/online`, but in our setup we choose to put `$MIDAS_EXPTAB` in the "online" directory anyways, so this is the same as above. Just be mindful if your `$MIDAS_EXPTAB` file is located in a place other than your experiment ODB files.
 
 
 4 **Edit file $MIDASSYS/include/midas.h**
