@@ -285,4 +285,113 @@ SFP+s (such as Avago SFP+s) do not work with the FC7 to AMC13 link; an SFP (such
 
 Copies of D0-D3 triggers are sent out of D0-D3, while D4-D7 should be configured to be input signals. The trigger input should go to D6 (It does not have to be 1kHz). A 40MHz clock should go in D7.
 
+## CentOS7 Related Installation Steps
+
+CentOS7 has reached it's EOL. Many of these steps will no longer work because package manager repo links are dead. They are here for legacy referencing purposes only.
+
+### Development Tools
+
+#### Overview
+
+These tools include compilers, libraries, and other utilities that facilitate software development and installation.
+
+#### Installation Guide
+
+1 **Install yum package manager**
+
+```
+sudo dnf install yum
+```
+
+2 **Update the package index**:
+
+```
+sudo yum update
+```
+
+3 **Enable the EPEL repository**:
+
+```
+sudo yum install epel-release
+```
+
+4 **Install Development Tools and Dependencies**:
+
+```
+sudo yum groupinstall "Development Tools"
+sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel
+```
+
+5 **Install Python**
+```
+sudo yum install python3
+```
+
+**Note**: CentOS7 may not have python3 available in base repositories, you can install via `yum install -y rh-python36`.
+
+---
+
+### ROOT
+
+#### Overview
+
+[ROOT](https://root.cern.ch/) is an open-source data analysis framework developed by CERN. It is widely used in high-energy physics for data processing, statistical analysis, visualization, and storage. It is needed for some features of Midas.
+
+#### Installation Guide (Build from source)
+General installaiton guides are provided by ROOT at their [Installing ROOT](https://root.cern/install/) and [Building ROOT from source](https://root.cern/install/build_from_source/) pages.
+
+1 **Example building latest stable branch from source**
+
+```
+git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
+mkdir root_build root_install && cd root_build
+cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # && check cmake configuration output for warnings or errors
+cmake --build . -- install -j4 # if you have 4 cores available for compilation
+source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}
+```
+
+**Note**: Adjust the ROOT version and the download URL as needed. Always check for the latest version on the [official ROOT website](https://root.cern.ch/). Furthermore, if you are not building from source you are installing precompiled binaries, which may not be up to date versions of ROOT. For specific versions, you may need to build root from source.
+
+---
+
+### IPBus (Cactus)
+
+#### Overview
+
+[IPBus](https://ipbus.web.cern.ch/), part of the Cactus framework, is a protocol for remote control and monitoring of hardware devices over Ethernet. It's commonly used in high-energy DAQ systems.
+
+#### Installation Guide
+
+1 **Remove previous version (if applicable)**:
+
+```
+sudo yum groupremove uhal
+```
+
+2 **Download yum repo file**:
+
+```
+sudo curl https://ipbus.web.cern.ch/doc/user/html/_downloads/ipbus-sw.centos7.repo -o /etc/yum.repos.d/ipbus-sw.repo
+```
+
+3 **Install uHAL**:
+
+```
+sudo yum clean all
+sudo yum groupinstall uhal
+```
+
+**Note**: I personally had trouble getting this to work on CentOS7 and had to resort to building from source (see below).
+
+#### Example building from source
+See [Compiling and installing from source](https://ipbus.web.cern.ch/doc/user/html/software/install/compile.html), an example is below:
+```
+sudo yum install pugixml-devel
+git clone --depth=1 -b v2.7.3 --recurse-submodules https://github.com/ipbus/ipbus-software.git
+cd ipbus-software
+make -j$(nproc) EXTERN_BOOST_INCLUDE_PREFIX="/opt/boost/include" EXTERN_BOOST_LIB_PREFIX="/opt/boost/lib" EXTERN_PUGIXML_INCLUDE_PREFIX="/usr/local/include" EXTERN_PUGIXML_LIB_PREFIX="/usr/local/lib64/"
+sudo make install -j$(nproc)
+```
+**Note**: You may not need to specify `EXTERN_BOOST_INCLUDE_PREFIX`, `EXTERN_BOOST_LIB_PREFIX`, `EXTERN_PUGIXML_INCLUDE_PREFIX`, `EXTERN_PUGIXML_LIB_PREFIX`. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.
+
 ---

@@ -103,7 +103,7 @@ ssh -T git@github.com
 These tools include compilers, libraries, and other utilities that facilitate software development and installation.
 
 ### Installation Guide
-This guide should work for RHEL systems (CentOS7 and ALMA9 included), though you may need to install yum on ALMA9.
+This guide should work for ALMA9. You can use dnf alone for ALMA9, but I prefer to work with yum
 
 1 **Install yum package manager**
 
@@ -134,8 +134,6 @@ sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-dev
 ```
 sudo yum install python3
 ```
-
-**Note**: CentOS7 may not have python3 available in base repositories, you can install via `yum install -y rh-python36`.
 
 ---
 
@@ -187,24 +185,7 @@ sudo yum install epel-release
 2 **Download and Install ROOT**:
 
 ```
-wget https://root.cern/download/root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
-tar -xzvf root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
-cd root
-source bin/thisroot.sh
-```
-
-#### CentOS 7
-
-1 **Enable the EPEL repository**:
-
-```
-sudo yum install epel-release
-```
-
-2 **Download and Install ROOT**:
-
-```
-yum install root
+sudo yum install root
 ```
 
 #### Building from source (Linux)
@@ -270,7 +251,6 @@ cmake ..
 make -j$(nproc) install
 cd ..
 ```
-**Note**: On CentOS7 you may need to use `cmake3` as opposed to `cmake`; install with `sudo yum install cmake3`. Alternatively, you can install `cmake` from source to ensure it is up to date.
 
 4 **Set `MIDASSYS` environment variable and add to path**
 
@@ -290,9 +270,9 @@ export PATH=$PATH:$MIDASSYS/bin
 
 ### Installation Guide
 
-Boost can be installed on CentOS 7 and AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:
+Boost can be installed on AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:
 
-#### CentOS 7 and AlmaLinux 9
+#### AlmaLinux 9
 
 
 1 **Install Development Tools and Dependencies**:
@@ -380,29 +360,6 @@ sudo yum clean all
 sudo yum groupinstall uhal
 ```
 
-#### CentOS 7
-
-1 **Remove previous version (if applicable)**:
-
-```
-sudo yum groupremove uhal
-```
-
-2 **Download yum repo file**:
-
-```
-sudo curl https://ipbus.web.cern.ch/doc/user/html/_downloads/ipbus-sw.centos7.repo -o /etc/yum.repos.d/ipbus-sw.repo
-```
-
-3 **Install uHAL**:
-
-```
-sudo yum clean all
-sudo yum groupinstall uhal
-```
-
-**Note**: I personally had trouble getting this to work on CentOS7 and had to resort to building from source (see below).
-
 #### Example building from source
 See [Compiling and installing from source](https://ipbus.web.cern.ch/doc/user/html/software/install/compile.html), an example is below:
 ```
@@ -460,7 +417,7 @@ In our case, we use it to apply a GPS timestamp to each event. In reality, this 
 
 For more general information about Meinberg devices, see Meinberg's [Installing the Software](https://kb.meinbergglobal.com/) page.
 
-#### AlmaLinux 9 and CentOS 7
+#### AlmaLinux 9
 
 1 **Clone the repository**:
 
