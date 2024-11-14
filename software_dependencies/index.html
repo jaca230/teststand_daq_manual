@@ -485,15 +485,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#centos-7" class="md-nav__link">
-    <span class="md-ellipsis">
-      CentOS 7
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#building-from-source-linux" class="md-nav__link">
     <span class="md-ellipsis">
       Building from source (Linux)
@@ -575,9 +566,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#centos-7-and-almalinux-9" class="md-nav__link">
+  <a href="#almalinux-9_1" class="md-nav__link">
     <span class="md-ellipsis">
-      CentOS 7 and AlmaLinux 9
+      AlmaLinux 9
     </span>
   </a>
   
@@ -632,18 +623,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#almalinux-9_1" class="md-nav__link">
+  <a href="#almalinux-9_2" class="md-nav__link">
     <span class="md-ellipsis">
       AlmaLinux 9
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#centos-7_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      CentOS 7
     </span>
   </a>
   
@@ -731,9 +713,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#almalinux-9-and-centos-7" class="md-nav__link">
+  <a href="#almalinux-9_3" class="md-nav__link">
     <span class="md-ellipsis">
-      AlmaLinux 9 and CentOS 7
+      AlmaLinux 9
     </span>
   </a>
   
@@ -1112,15 +1094,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#centos-7" class="md-nav__link">
-    <span class="md-ellipsis">
-      CentOS 7
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#building-from-source-linux" class="md-nav__link">
     <span class="md-ellipsis">
       Building from source (Linux)
@@ -1202,9 +1175,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#centos-7-and-almalinux-9" class="md-nav__link">
+  <a href="#almalinux-9_1" class="md-nav__link">
     <span class="md-ellipsis">
-      CentOS 7 and AlmaLinux 9
+      AlmaLinux 9
     </span>
   </a>
   
@@ -1259,18 +1232,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#almalinux-9_1" class="md-nav__link">
+  <a href="#almalinux-9_2" class="md-nav__link">
     <span class="md-ellipsis">
       AlmaLinux 9
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#centos-7_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      CentOS 7
     </span>
   </a>
   
@@ -1358,9 +1322,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#almalinux-9-and-centos-7" class="md-nav__link">
+  <a href="#almalinux-9_3" class="md-nav__link">
     <span class="md-ellipsis">
-      AlmaLinux 9 and CentOS 7
+      AlmaLinux 9
     </span>
   </a>
   
@@ -1473,7 +1437,7 @@ ssh -T git@github.com
 <h3 id="overview">Overview</h3>
 <p>These tools include compilers, libraries, and other utilities that facilitate software development and installation.</p>
 <h3 id="installation-guide">Installation Guide</h3>
-<p>This guide should work for RHEL systems (CentOS7 and ALMA9 included), though you may need to install yum on ALMA9.</p>
+<p>This guide should work for ALMA9. You can use dnf alone for ALMA9, but I prefer to work with yum</p>
 <p>1 <strong>Install yum package manager</strong></p>
 <pre><code>sudo dnf install yum
 </code></pre>
@@ -1490,7 +1454,6 @@ sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-dev
 <p>5 <strong>Install Python</strong></p>
 <pre><code>sudo yum install python3
 </code></pre>
-<p><strong>Note</strong>: CentOS7 may not have python3 available in base repositories, you can install via <code>yum install -y rh-python36</code>.</p>
 <hr />
 <h2 id="ipmitool">ipmitool</h2>
 <h3 id="overview_1">Overview</h3>
@@ -1521,17 +1484,7 @@ sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-dev
 <pre><code>sudo yum install epel-release
 </code></pre>
 <p>2 <strong>Download and Install ROOT</strong>:</p>
-<pre><code>wget https://root.cern/download/root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
-tar -xzvf root_v6.32.02.Linux-almalinux9.4-x86_64-gcc11.4.tar.gz
-cd root
-source bin/thisroot.sh
-</code></pre>
-<h4 id="centos-7">CentOS 7</h4>
-<p>1 <strong>Enable the EPEL repository</strong>:</p>
-<pre><code>sudo yum install epel-release
-</code></pre>
-<p>2 <strong>Download and Install ROOT</strong>:</p>
-<pre><code>yum install root
+<pre><code>sudo yum install root
 </code></pre>
 <h4 id="building-from-source-linux">Building from source (Linux)</h4>
 <p>1 <strong>Example building latest stable branch from source</strong></p>
@@ -1580,7 +1533,6 @@ cmake ..
 make -j$(nproc) install
 cd ..
 </code></pre>
-<p><strong>Note</strong>: On CentOS7 you may need to use <code>cmake3</code> as opposed to <code>cmake</code>; install with <code>sudo yum install cmake3</code>. Alternatively, you can install <code>cmake</code> from source to ensure it is up to date.</p>
 <p>4 <strong>Set <code>MIDASSYS</code> environment variable and add to path</strong></p>
 <pre><code>export MIDASSYS=$(pwd)
 export PATH=$PATH:$MIDASSYS/bin
@@ -1591,8 +1543,8 @@ export PATH=$PATH:$MIDASSYS/bin
 <h3 id="overview_4">Overview</h3>
 <p><a href="https://www.boost.org/">Boost</a> is a comprehensive collection of C++ libraries that provide support for various tasks and structures including linear algebra, multithreading, image processing, regex (regular expressions), and more.</p>
 <h3 id="installation-guide_4">Installation Guide</h3>
-<p>Boost can be installed on CentOS 7 and AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:</p>
-<h4 id="centos-7-and-almalinux-9">CentOS 7 and AlmaLinux 9</h4>
+<p>Boost can be installed on AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:</p>
+<h4 id="almalinux-9_1">AlmaLinux 9</h4>
 <p>1 <strong>Install Development Tools and Dependencies</strong>:</p>
 <pre><code>sudo yum groupinstall &quot;Development Tools&quot;
 sudo yum install cmake
@@ -1630,7 +1582,7 @@ cd boost_1_76_0
 <p><a href="https://ipbus.web.cern.ch/">IPBus</a>, part of the Cactus framework, is a protocol for remote control and monitoring of hardware devices over Ethernet. It's commonly used in high-energy DAQ systems.</p>
 <h3 id="installation-guide_5">Installation Guide</h3>
 <p>For a general installation guide, see ipbus' <a href="https://ipbus.web.cern.ch/doc/user/html/software/installation.html">Installing the Software</a> page.</p>
-<h4 id="almalinux-9_1">AlmaLinux 9</h4>
+<h4 id="almalinux-9_2">AlmaLinux 9</h4>
 <p>1 <strong>Remove previous version (if applicable)</strong>:</p>
 <pre><code>sudo yum groupremove uhal
 </code></pre>
@@ -1641,18 +1593,6 @@ cd boost_1_76_0
 <pre><code>sudo yum clean all
 sudo yum groupinstall uhal
 </code></pre>
-<h4 id="centos-7_1">CentOS 7</h4>
-<p>1 <strong>Remove previous version (if applicable)</strong>:</p>
-<pre><code>sudo yum groupremove uhal
-</code></pre>
-<p>2 <strong>Download yum repo file</strong>:</p>
-<pre><code>sudo curl https://ipbus.web.cern.ch/doc/user/html/_downloads/ipbus-sw.centos7.repo -o /etc/yum.repos.d/ipbus-sw.repo
-</code></pre>
-<p>3 <strong>Install uHAL</strong>:</p>
-<pre><code>sudo yum clean all
-sudo yum groupinstall uhal
-</code></pre>
-<p><strong>Note</strong>: I personally had trouble getting this to work on CentOS7 and had to resort to building from source (see below).</p>
 <h4 id="example-building-from-source">Example building from source</h4>
 <p>See <a href="https://ipbus.web.cern.ch/doc/user/html/software/install/compile.html">Compiling and installing from source</a>, an example is below:</p>
 <pre><code>sudo yum install pugixml-devel
@@ -1689,7 +1629,7 @@ cd bin
 <p>In our case, we use it to apply a GPS timestamp to each event. In reality, this is an artifact from g-2 where seperate systems needed to be time correlated. Only the "GPS" master trigger mode needs the meinberg.</p>
 <h3 id="installation-guide_7">Installation Guide</h3>
 <p>For more general information about Meinberg devices, see Meinberg's <a href="https://kb.meinbergglobal.com/">Installing the Software</a> page.</p>
-<h4 id="almalinux-9-and-centos-7">AlmaLinux 9 and CentOS 7</h4>
+<h4 id="almalinux-9_3">AlmaLinux 9</h4>
 <p>1 <strong>Clone the repository</strong>:</p>
 <pre><code>git clone https://git.meinbergglobal.com/drivers/mbgtools-lx.git
 cd mbgtools-lx
