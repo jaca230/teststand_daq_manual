@@ -127,7 +127,7 @@ sudo yum install epel-release
 
 ```
 sudo yum groupinstall "Development Tools"
-sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel readline-devel pugixml-devel
+sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel readline-devel pugixml-devel libnsl2-devel
 ```
 
 5 **Install Python**
