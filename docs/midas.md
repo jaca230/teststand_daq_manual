@@ -207,8 +207,6 @@ once again.
 export EXP=$MIDAS_EXPT_NAME
 export EXP_PATH=$(dirname "$MIDAS_EXPTAB")
 rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
-rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
-rm -rf /dev/shm/*_${EXP}_ODB_* > /dev/null 2>&1
 rm -rf $EXP_PATH/.*.SHM > /dev/null 2>&1
 rm -rf $EXP_PATH/.*.TXT > /dev/null 2>&1
 ```
