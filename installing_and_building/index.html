@@ -884,27 +884,27 @@
 <pre><code>cd /path/to/packages
 mkdir experiment
 cd experiment
-git clone --branch multi-crate git@github.com:PIONEER-Experiment/gm2daq-modified.git
+git clone --branch alma9 git@github.com:PIONEER-Experiment/gm2daq-modified.git
 cd gm2daq-modified
-git checkout multi-crate
+git checkout alma9
 </code></pre>
 <p><strong>Note</strong>: To clone a different branch, simply change the <code>--branch</code> parameter from <code>multi-crate</code> to the appropriate branch. You can also checkout a different branch after this is done.</p>
 <p>3 <strong>Setup Environment</strong></p>
 <pre><code>cd environment_setup
 ./detect_environment.sh
 </code></pre>
+<p><strong>Note:</strong> The environment detection does not work well for packages installed with <code>yum</code> or other package managers. The correct directory for these packges is usually <code>/usr</code>, (though cactus installs into <code>/opt</code>).</p>
 <p>This will populate a local file <code>environment_variables.txt</code>, check it with:</p>
 <pre><code>cat environment_variables.txt
 </code></pre>
 <p>Here's an example of what <code>environment_variables.txt</code> will look like</p>
-<pre><code>GM2DAQ_DIR=/home/installation_testing/packages/experiment/lxedaq
-CACTUS_ROOT=/home/installation_testing/packages/cactus
-BOOST_ROOT=/home/backup_installation_testing/packages/boost-1.53.0
-PUGIXML_ROOT=/home/installation_testing/packages/pugixml-1.8
-ROOT_ROOT=/usr/include/root
-SYSTEM_MONITOR_ROOT=/home/installation_testing/packages/system_diagnostics
-MIDASSYS=/home/installation_testing/packages/midas
-MIDAS_EXPTAB=/home/installation_testing/online/exptab
+<pre><code>GM2DAQ_DIR=/home/pioneer/packages/experiments/gm2daq-modified
+CACTUS_ROOT=/opt/cactus
+BOOST_ROOT=/usr
+PUGIXML_ROOT=/usr
+ROOT_ROOT=/usr
+MIDASSYS=/home/pioneer/packages/midas
+MIDAS_EXPTAB=/home/pioneer/online/exptab
 MIDAS_EXPT_NAME=DAQ
 </code></pre>
 <p>Verify that each environment variable above points to the correct path for each piece of software. If not, manually change it with your favorite text editor. Then, run</p>
@@ -972,9 +972,15 @@ make
 </code></pre>
 <p><strong>Note</strong>: The frontend id should correspond to the subnet you placed (or will place) the crate components on when configuring the hardware.</p>
 <p>This file is used to build the ODB. <strong>Any hardware not specified in this file will be ignored.</strong> You can still disable any hardware listed in this file in the ODB after it has been generated. However if you want to move the FC7 to a different slot, this file and the ODB need to be editted accordingly.</p>
+<p>You then need to copy this file to your experiment directory. You can find that directory with</p>
+<pre><code>cat $MIDAS_EXPTAB
+</code></pre>
+<p>navigate to the appropriate directory then run the command</p>
+<pre><code>cp $GM2DAQ_DIR/frontends/AMC13xx_config.xml .
+</code></pre>
 <p>6 <strong>Start Midas Webpage</strong></p>
 <pre><code>cd $GM2DAQ_DIR/webpage_scripts
-./start_midas_webpage
+./start_midas_webpage.sh
 </code></pre>
 <p>Then open <code>localhost:8080</code> in your favorite web browser.</p>
 <p><strong>Note</strong>: If this doesn't work, verify that <code>mlogger</code>, <code>mhttpd</code> (or <code>mhttpd6</code>), and <code>mserver</code> and all running as screens, i.e. check:</p>
@@ -1067,7 +1073,7 @@ The 3rd is the name for the screen session.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2024</span>
   </span>
 
     
