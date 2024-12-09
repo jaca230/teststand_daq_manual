@@ -45,9 +45,9 @@ Make sure you have access to the [PIONEER Experiment GitHub](https://github.com/
 cd /path/to/packages
 mkdir experiment
 cd experiment
-git clone --branch multi-crate git@github.com:PIONEER-Experiment/gm2daq-modified.git
+git clone --branch alma9 git@github.com:PIONEER-Experiment/gm2daq-modified.git
 cd gm2daq-modified
-git checkout multi-crate
+git checkout alma9
 ```
 
 **Note**: To clone a different branch, simply change the `--branch` parameter from `multi-crate` to the appropriate branch. You can also checkout a different branch after this is done.
@@ -58,6 +58,7 @@ git checkout multi-crate
 cd environment_setup
 ./detect_environment.sh
 ```
+**Note:** The environment detection does not work well for packages installed with `yum` or other package managers. The correct directory for these packges is usually `/usr`, (though cactus installs into `/opt`).
 
 This will populate a local file `environment_variables.txt`, check it with:
 ```
@@ -66,14 +67,13 @@ cat environment_variables.txt
 
 Here's an example of what `environment_variables.txt` will look like
 ```
-GM2DAQ_DIR=/home/installation_testing/packages/experiment/lxedaq
-CACTUS_ROOT=/home/installation_testing/packages/cactus
-BOOST_ROOT=/home/backup_installation_testing/packages/boost-1.53.0
-PUGIXML_ROOT=/home/installation_testing/packages/pugixml-1.8
-ROOT_ROOT=/usr/include/root
-SYSTEM_MONITOR_ROOT=/home/installation_testing/packages/system_diagnostics
-MIDASSYS=/home/installation_testing/packages/midas
-MIDAS_EXPTAB=/home/installation_testing/online/exptab
+GM2DAQ_DIR=/home/pioneer/packages/experiments/gm2daq-modified
+CACTUS_ROOT=/opt/cactus
+BOOST_ROOT=/usr
+PUGIXML_ROOT=/usr
+ROOT_ROOT=/usr
+MIDASSYS=/home/pioneer/packages/midas
+MIDAS_EXPTAB=/home/pioneer/online/exptab
 MIDAS_EXPT_NAME=DAQ
 ```
 
@@ -161,10 +161,19 @@ An example file for a two crate system looks this like:
 
 This file is used to build the ODB. **Any hardware not specified in this file will be ignored.** You can still disable any hardware listed in this file in the ODB after it has been generated. However if you want to move the FC7 to a different slot, this file and the ODB need to be editted accordingly.
 
+You then need to copy this file to your experiment directory. You can find that directory with
+```
+cat $MIDAS_EXPTAB
+```
+navigate to the appropriate directory then run the command
+```
+cp $GM2DAQ_DIR/frontends/AMC13xx_config.xml .
+```
+
 6 **Start Midas Webpage**
 ```
 cd $GM2DAQ_DIR/webpage_scripts
-./start_midas_webpage
+./start_midas_webpage.sh
 ```
 Then open `localhost:8080` in your favorite web browser.
 

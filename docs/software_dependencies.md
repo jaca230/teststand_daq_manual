@@ -103,7 +103,7 @@ ssh -T git@github.com
 These tools include compilers, libraries, and other utilities that facilitate software development and installation.
 
 ### Installation Guide
-This guide should work for ALMA9. You can use dnf alone for ALMA9, but I prefer to work with yum
+This guide should work for ALMA9. You can use `dnf` for ALMA9, but I prefer to work with `yum`
 
 1 **Install yum package manager**
 
@@ -127,12 +127,24 @@ sudo yum install epel-release
 
 ```
 sudo yum groupinstall "Development Tools"
-sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel readline-devel pugixml-devel libnsl2-devel
+sudo yum install cmake gcc-c++ gcc screen subversion binutils libX11-devel libXpm-devel libXft-devel libXext-devel readline-devel libnsl2-devel pugixml-devel
+```
+**Note:**
+Some packages may not be available with `yum`, but are available with `dnf`. For example, here's how to install `pugixml-devel` with `dnf`:
+```
+sudo dnf install epel-release
+sudo dnf install pugixml-devel
+```
+Some packages are even more burdensome to install. For example, here's how to install `libsnl2-devel` with `dnf`:
+```
+sudo dnf config-manager --set-enabled crb
+sudo dnf makecache
+sudo dnf install libnsl2-devel
 ```
 
-5 **Install Python**
+5 **Install Python3**
 ```
-sudo yum install python3
+sudo yum install python3-devel
 ```
 
 ---
@@ -174,7 +186,7 @@ ipmitool -V
 ### Installation Guide
 General installaiton guides are provided by ROOT at their [Installing ROOT](https://root.cern/install/) and [Building ROOT from source](https://root.cern/install/build_from_source/) pages.
 
-#### AlmaLinux 9
+#### Using `yum` Package Manager
 
 1 **Enable the EPEL repository**:
 
@@ -188,7 +200,7 @@ sudo yum install epel-release
 sudo yum install root
 ```
 
-#### Building from source (Linux)
+#### Building from source
 
 1 **Example building latest stable branch from source**
 
@@ -262,6 +274,74 @@ export PATH=$PATH:$MIDASSYS/bin
 
 ---
 
+Here’s a similar guide for installing Python 2.7 on a Linux system. This guide provides a clean, step-by-step process and includes the option to automate environment variable settings for persistent usage.
+
+---
+
+## Python2
+
+### Overview
+
+Some scripts are written for configuring the DAQ are written in python 2. To install python2 on ALMA9, you must install from source. Afterwards, you can run python2 scripts with `python2.7 {script name}`.
+
+### Installation Guide
+
+1 **Install required dependencies**  
+
+First, ensure that the system has the necessary development tools and libraries for compiling Python from source:
+
+```
+sudo dnf groupinstall -y "Development Tools"
+sudo dnf install -y gcc openssl-devel bzip2-devel libffi-devel zlib-devel
+```
+
+2 **Download Python 2.7.18 source code**  
+
+Next, download the Python 2.7.18 tarball, which is the last stable version of Python 2
+
+```
+cd /path/to/packages
+wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+```
+
+3 **Extract and compile Python**  
+
+Extract the downloaded tarball, configure the build environment, and compile Python
+
+```
+tar xzf Python-2.7.18.tgz
+cd Python-2.7.18
+./configure --enable-optimizations
+make
+```
+
+**Note**: During the tests, I experienced some errors. I was able to `Ctrl-C` to cancel these and continue without errors
+
+4 **Install Python 2.7**  
+
+Install the compiled version of Python 2.7 on your system:
+
+```
+sudo make altinstall
+```
+
+Using `altinstall` ensures that the new version does not overwrite the default `python` command on your system.
+
+5 **Verify installation**  
+```
+python2.7 --version
+```
+
+6 **Cleanup**: 
+```
+rm -rf Python-2.7.18.tgz
+rm -rf Python-2.7.18
+```
+
+
+
+---
+
 ## Boost
 
 ### Overview
@@ -272,7 +352,7 @@ export PATH=$PATH:$MIDASSYS/bin
 
 Boost can be installed on AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:
 
-#### AlmaLinux 9
+#### Using `yum` Package Manager
 
 
 1 **Install Development Tools and Dependencies**:
@@ -339,7 +419,7 @@ sudo ldconfig
 
 For a general installation guide, see ipbus' [Installing the Software](https://ipbus.web.cern.ch/doc/user/html/software/installation.html) page.
 
-#### AlmaLinux 9
+#### Using `yum` Package Manager
 
 1 **Remove previous version (if applicable)**:
 
@@ -416,8 +496,6 @@ In our case, we use it to apply a GPS timestamp to each event. In reality, this 
 ### Installation Guide
 
 For more general information about Meinberg devices, see Meinberg's [Installing the Software](https://kb.meinbergglobal.com/) page.
-
-#### AlmaLinux 9
 
 1 **Clone the repository**:
 

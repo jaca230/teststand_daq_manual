@@ -60,9 +60,73 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 - Total bytes received and transmitted.
 
+## Using `nmcli` Command Line Tools
+
+In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), you can use the `nmcli` command line tool to configure network interfaces. `nmcli` interacts with NetworkManager and allows you to configure network settings directly from the terminal without editing configuration files manually.
+
+### Example `nmcli` Configuration: `enp5s0` Interface
+
+```bash
+nmcli connection add type ethernet con-name enp5s0 ifname enp5s0 \
+    ipv4.addresses 192.168.1.100/24 \
+    ipv4.method manual \
+    ipv4.gateway 192.168.1.1 \
+    802-3-ethernet.mtu 1500 \
+    connection.autoconnect yes
+```
+
+#### Explanation:
+
+- **`type ethernet`**: Specifies that the connection type is Ethernet. This parameter indicates that you are configuring a wired network interface.
+
+- **`con-name enp5s0`**: Defines the connection name (`enp5s0`). This is the name used to refer to the connection in `nmcli`. It's often the name of the network interface (e.g., `enp5s0`).
+
+- **`ifname enp5s0`**: Specifies the name of the network interface (`enp5s0`) that the connection applies to. This should match the actual name of the interface as listed by `nmcli device`.
+
+- **`ipv4.addresses 192.168.1.100/24`**: Sets the static IPv4 address (`192.168.1.100`) with the subnet mask (`/24`). This defines the IP address for the network interface and its subnet.
+
+- **`ipv4.method manual`**: Specifies that the IP address configuration is static. This will prevent NetworkManager from using DHCP to obtain an IP address.
+
+- **`ipv4.gateway 192.168.1.1`**: Defines the default gateway (`192.168.1.1`) for the interface. This is the IP address of the router or gateway used to route traffic to external networks.
+
+- **`802-3-ethernet.mtu 1500`**: Sets the Maximum Transmission Unit (MTU) to `1500` bytes. This defines the largest packet size that can be transmitted without fragmentation.
+
+- **`connection.autoconnect yes`**: Ensures that the network connection is automatically activated during system boot or when the interface is brought up.
+
+### Additional Commands for Managing the Connection
+
+**Show the active connections:**
+```
+nmcli connection show
+```
+
+**Modify an existing connection:**
+```
+nmcli connection modify enp5s0 ipv4.addresses 192.168.1.101/24
+```
+This changes the IP address of the `enp5s0` connection to `192.168.1.101`.
+
+**Delete a connection:**
+```
+nmcli connection delete enp5s0
+```
+
+**Bring the connection up or down:**
+```
+nmcli connection up enp5s0
+nmcli connection down enp5s0
+```
+
+**Check the status of the connection:**
+```
+nmcli device status
+```
+
+---
+
 ## Using Network Scripts
 
-In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using `ifcfg` files located in `/etc/sysconfig/network-scripts/`. These files contain key configuration parameters that define how network interfaces behave and interact with the network.
+In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using `ifcfg` files located in `/etc/sysconfig/network-scripts/`. These files contain key configuration parameters that define how network interfaces behave and interact with the network. **This is a deprecated feature. Modern RHEL systems use nmcli.** Nonetheless, some of our older electronics still use networks scripts.
 
 ### Example `ifcfg` File: `/etc/sysconfig/network-scripts/ifcfg-eth0`
 

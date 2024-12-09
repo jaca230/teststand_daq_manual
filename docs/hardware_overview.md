@@ -75,34 +75,21 @@ You can read a bit more about these commands in the manuals linked in the [MCH s
 These NICs are generally PCIe Cards that are "plug and play". They provide a 1 gigabit per second ethernet connection for the host computer.
 
 ### Configuration
-
-If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:
+If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example for UKY's teststand we use:
 ```
-vi /etc/sysconfig/network-scripts/ifcfg-{port name}
-```
-For example, this is how the UKY teststand 1GbE NIC is configured to communicate with multiple crate using an ethernet splitter.
-```
-#
-# Connect to MCH
-#
-TYPE=Ethernet
-BOOTPROTO=static
-IPADDR=192.168.1.100
-NETMASK=255.255.0.0
-IPV4_FAILURE_FATAL=no
-IPV6INIT=no
-IPV6_AUTOCONF=yes
-IPV6_DEFROUTE=yes
-IPV6_PEERDNS=yes
-IPV6_PEERROUTES=yes
-IPV6_FAILURE_FATAL=no
-NAME=enp5s0
-DEVICE=enp5s0
-ONBOOT=yes
+nmcli connection modify enp5s0 \
+    ipv4.addresses 192.168.1.100/16 \
+    ipv4.method manual \
+    connection.autoconnect yes \
+    ipv6.method ignore
 ```
 
-In particular, the `IP_ADDR` and `NETMASK` sections are important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
+You may need to create a connection configuration file first if it doesn't exist. For example for UKY's teststand we use:
+```
+nmcli connection add type ethernet con-name enp5s0 ifname enp5s0
+```
 
+In particular, the `ipv4.addresses` is important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
 
 ---
 
@@ -114,34 +101,24 @@ These NICs are generally PCIe Cards that are "plug and play". They provide a 10 
 
 ### Configuration
 
-If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:
+If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example, for UKY's teststand we use these settings: 
+
 ```
-vi /etc/sysconfig/network-scripts/ifcfg-{port name}
-```
-For example, this is how one of the UKY teststand 10GbE NIC is configured to communicate with the AMC13.
-```
-#
-# Connect to AMC13
-#
-TYPE=Ethernet
-BOOTPROTO=static
-IPADDR=192.168.51.100
-NETMASK=255.255.255.0
-IPV4_FAILURE_FATAL=no
-IPV6INIT=no
-IPV6_AUTOCONF=yes
-IPV6_DEFROUTE=yes
-IPV6_PEERDNS=yes
-IPV6_PEERROUTES=yes
-IPV6_FAILURE_FATAL=no
-NAME=enp1s0f0
-DEVICE=enp1s0f0
-ONBOOT=yes
-AUTOCONNECT_PRIORITY=-999
-MTU=9000
+nmcli connection modify enp1s0f0 \
+    ipv4.addresses 192.168.51.100/24 \
+    ipv4.method manual \
+    connection.autoconnect yes \
+    connection.autoconnect-priority -999 \
+    802-3-ethernet.mtu 9000 \
+    ipv6.method ignore
 ```
 
-In particular, the `IP_ADDR`, `NETMASK`, and `MTU` sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
+You may need to create a connection configuration file first if it doesn't exist. For example for UKY's teststand we use:
+```
+nmcli connection add type ethernet con-name enp1s0f0 ifname enp1s0f0
+```
+
+In particular, the `ipv4.addresses` and `802-3-ethernet.mtu` sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
 
 ---
 
@@ -719,15 +696,23 @@ export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13/lib/:$LD_LIBRARY_PA
 export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/tools/lib:$LD_LIBRARY_PATH
 ```
 
-2 **Make AMC13Tool2.exe**
+2 **Make AMC13 Library**
+```
+cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13
+make
+```
+
+**Note**: The `make` command may complain about the version being invalid. As long as `$GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13/libcactus_amc13_amc13.so` gets generated this won't matter.
+
+3 **Make AMC13Tool2.exe**
 ```
 cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
 make
 ```
 
-**Note**: I had trouble building AMC13Tool2.exe at first. I had to make some edits to the C++ code to get it to compile; those edits should be included in the multi-crate branch of the DAQ repository.
+**Note**: I had trouble building AMC13Tool2.exe at first. I had to make some edits to the C++ code to get it to compile; those edits should be included in the multi-crate (or newer) branch of the DAQ repository.
 
-3 **Run AMC13Tool2.exe**
+4 **Run AMC13Tool2.exe**
 
 Try running AMC13Tool2.exe
 ```
@@ -779,7 +764,12 @@ So This sets the IP to 192.168.51.1. You want to [set this value in the ODB](odb
 rd
 ```
 
-6 **Verify you can ping the 10GbE link**
+6 **Quit AMC13Tool2**
+```
+q
+```
+
+7 **Verify you can ping the 10GbE link**
 For example:
 ```
 ping 192.168.51.1

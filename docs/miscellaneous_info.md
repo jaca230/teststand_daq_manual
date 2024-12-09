@@ -395,3 +395,65 @@ sudo make install -j$(nproc)
 **Note**: You may not need to specify `EXTERN_BOOST_INCLUDE_PREFIX`, `EXTERN_BOOST_LIB_PREFIX`, `EXTERN_PUGIXML_INCLUDE_PREFIX`, `EXTERN_PUGIXML_LIB_PREFIX`. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.
 
 ---
+
+## Old Network Scripts
+Network scripts are a deprecated feature of red hat linux systems. Now, a connection manager is used via `nmcli` commands. For reference, the old network scripts are here.
+
+### MCH Network script example
+```
+vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+```
+For example, this is how the UKY teststand 1GbE NIC is configured to communicate with multiple crate using an ethernet splitter.
+```
+#
+# Connect to MCH
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.1.100
+NETMASK=255.255.0.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp5s0
+DEVICE=enp5s0
+ONBOOT=yes
+```
+
+In particular, the `IP_ADDR` and `NETMASK` sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
+
+### AMC13 Network script example
+
+```
+vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+```
+For example, this is how one of the UKY teststand 10GbE NIC is configured to communicate with the AMC13.
+```
+#
+# Connect to AMC13
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.51.100
+NETMASK=255.255.255.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp1s0f0
+DEVICE=enp1s0f0
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-999
+MTU=9000
+```
+
+In particular, the `IP_ADDR`, `NETMASK`, and `MTU` sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
+
+---
