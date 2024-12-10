@@ -616,59 +616,35 @@ Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
 <h3 id="hardware_overview-overview_1">Overview</h3>
 <p>These NICs are generally PCIe Cards that are "plug and play". They provide a 1 gigabit per second ethernet connection for the host computer.</p>
 <h3 id="hardware_overview-configuration">Configuration</h3>
-<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:</p>
-<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example for UKY's teststand we use:</p>
+<pre><code>nmcli connection modify enp5s0 \
+    ipv4.addresses 192.168.1.100/16 \
+    ipv4.method manual \
+    connection.autoconnect yes \
+    ipv6.method ignore
 </code></pre>
-<p>For example, this is how the UKY teststand 1GbE NIC is configured to communicate with multiple crate using an ethernet splitter.</p>
-<pre><code>#
-# Connect to MCH
-#
-TYPE=Ethernet
-BOOTPROTO=static
-IPADDR=192.168.1.100
-NETMASK=255.255.0.0
-IPV4_FAILURE_FATAL=no
-IPV6INIT=no
-IPV6_AUTOCONF=yes
-IPV6_DEFROUTE=yes
-IPV6_PEERDNS=yes
-IPV6_PEERROUTES=yes
-IPV6_FAILURE_FATAL=no
-NAME=enp5s0
-DEVICE=enp5s0
-ONBOOT=yes
+<p>You may need to create a connection configuration file first if it doesn't exist. For example for UKY's teststand we use:</p>
+<pre><code>nmcli connection add type ethernet con-name enp5s0 ifname enp5s0
 </code></pre>
-<p>In particular, the <code>IP_ADDR</code> and <code>NETMASK</code> sections are important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
+<p>In particular, the <code>ipv4.addresses</code> is important. Here the port is specified to accept any traffic on the 192.168.xxx.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
 <hr />
 <h2 id="hardware_overview-10gbe-nic-10-gigabit-ethernet-network-interface-card">10GbE NIC (10 Gigabit Ethernet Network Interface Card)</h2>
 <h3 id="hardware_overview-overview_2">Overview</h3>
 <p>These NICs are generally PCIe Cards that are "plug and play". They provide a 10 gigabit per second ethernet connection for the host computer. In our case, we use optical cables that plug into SFPs. <strong>The MTU (Maximum Transmission Unit) of the card should be 9000 or greater</strong>.</p>
 <h3 id="hardware_overview-configuration_1">Configuration</h3>
-<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example on CentOS7:</p>
-<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+<p>If you machine has a GUI, you may find it easier to edit network settings that way. Otherwise, you can edit settings from command line. For example, for UKY's teststand we use these settings: </p>
+<pre><code>nmcli connection modify enp1s0f0 \
+    ipv4.addresses 192.168.51.100/24 \
+    ipv4.method manual \
+    connection.autoconnect yes \
+    connection.autoconnect-priority -999 \
+    802-3-ethernet.mtu 9000 \
+    ipv6.method ignore
 </code></pre>
-<p>For example, this is how one of the UKY teststand 10GbE NIC is configured to communicate with the AMC13.</p>
-<pre><code>#
-# Connect to AMC13
-#
-TYPE=Ethernet
-BOOTPROTO=static
-IPADDR=192.168.51.100
-NETMASK=255.255.255.0
-IPV4_FAILURE_FATAL=no
-IPV6INIT=no
-IPV6_AUTOCONF=yes
-IPV6_DEFROUTE=yes
-IPV6_PEERDNS=yes
-IPV6_PEERROUTES=yes
-IPV6_FAILURE_FATAL=no
-NAME=enp1s0f0
-DEVICE=enp1s0f0
-ONBOOT=yes
-AUTOCONNECT_PRIORITY=-999
-MTU=9000
+<p>You may need to create a connection configuration file first if it doesn't exist. For example for UKY's teststand we use:</p>
+<pre><code>nmcli connection add type ethernet con-name enp1s0f0 ifname enp1s0f0
 </code></pre>
-<p>In particular, the <code>IP_ADDR</code>, <code>NETMASK</code>, and <code>MTU</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
+<p>In particular, the <code>ipv4.addresses</code> and <code>802-3-ethernet.mtu</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
 <hr />
 <h2 id="hardware_overview-tca-crate-micro-telecommunications-computing-architecture-crate">µTCA Crate (Micro Telecommunications Computing Architecture Crate)</h2>
 <h3 id="hardware_overview-overview_3">Overview</h3>
@@ -1050,12 +1026,17 @@ ping 192.168.[crate].14
 <pre><code>export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13/lib/:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$GM2DAQ_DIR/amc13/amc13_v1_2_18/tools/lib:$LD_LIBRARY_PATH
 </code></pre>
-<p>2 <strong>Make AMC13Tool2.exe</strong></p>
+<p>2 <strong>Make AMC13 Library</strong></p>
+<pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13
+make
+</code></pre>
+<p><strong>Note</strong>: The <code>make</code> command may complain about the version being invalid. As long as <code>$GM2DAQ_DIR/amc13/amc13_v1_2_18/amc13/libcactus_amc13_amc13.so</code> gets generated this won't matter.</p>
+<p>3 <strong>Make AMC13Tool2.exe</strong></p>
 <pre><code>cd $GM2DAQ_DIR/amc13/amc13_v1_2_18/tools
 make
 </code></pre>
-<p><strong>Note</strong>: I had trouble building AMC13Tool2.exe at first. I had to make some edits to the C++ code to get it to compile; those edits should be included in the multi-crate branch of the DAQ repository.</p>
-<p>3 <strong>Run AMC13Tool2.exe</strong></p>
+<p><strong>Note</strong>: I had trouble building AMC13Tool2.exe at first. I had to make some edits to the C++ code to get it to compile; those edits should be included in the multi-crate (or newer) branch of the DAQ repository.</p>
+<p>4 <strong>Run AMC13Tool2.exe</strong></p>
 <p>Try running AMC13Tool2.exe</p>
 <pre><code>bin/AMC13Tool2.exe -c 192.168.[crate #].13 -p $GM2DAQ_DIR/address_tables/
 </code></pre>
@@ -1089,7 +1070,10 @@ a8 = 168
 <p>5 <strong>Issue DAQ reset</strong></p>
 <pre><code>rd
 </code></pre>
-<p>6 <strong>Verify you can ping the 10GbE link</strong>
+<p>6 <strong>Quit AMC13Tool2</strong></p>
+<pre><code>q
+</code></pre>
+<p>7 <strong>Verify you can ping the 10GbE link</strong>
 For example:</p>
 <pre><code>ping 192.168.51.1
 </code></pre>
@@ -1215,7 +1199,7 @@ ssh -T git@github.com
 <h3 id="software_dependencies-overview">Overview</h3>
 <p>These tools include compilers, libraries, and other utilities that facilitate software development and installation.</p>
 <h3 id="software_dependencies-installation-guide">Installation Guide</h3>
-<p>This guide should work for ALMA9. You can use dnf alone for ALMA9, but I prefer to work with yum</p>
+<p>This guide should work for ALMA9. You can use <code>dnf</code> for ALMA9, but I prefer to work with <code>yum</code></p>
 <p>1 <strong>Install yum package manager</strong></p>
 <pre><code>sudo dnf install yum
 </code></pre>
@@ -1227,10 +1211,20 @@ ssh -T git@github.com
 </code></pre>
 <p>4 <strong>Install Development Tools and Dependencies</strong>:</p>
 <pre><code>sudo yum groupinstall &quot;Development Tools&quot;
-sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel readline-devel pugixml-devel libnsl2-devel
+sudo yum install cmake gcc-c++ gcc screen subversion binutils libX11-devel libXpm-devel libXft-devel libXext-devel readline-devel libnsl2-devel pugixml-devel
 </code></pre>
-<p>5 <strong>Install Python</strong></p>
-<pre><code>sudo yum install python3
+<p><strong>Note:</strong>
+Some packages may not be available with <code>yum</code>, but are available with <code>dnf</code>. For example, here's how to install <code>pugixml-devel</code> with <code>dnf</code>:</p>
+<pre><code>sudo dnf install epel-release
+sudo dnf install pugixml-devel
+</code></pre>
+<p>Some packages are even more burdensome to install. For example, here's how to install <code>libsnl2-devel</code> with <code>dnf</code>:</p>
+<pre><code>sudo dnf config-manager --set-enabled crb
+sudo dnf makecache
+sudo dnf install libnsl2-devel
+</code></pre>
+<p>5 <strong>Install Python3</strong></p>
+<pre><code>sudo yum install python3-devel
 </code></pre>
 <hr />
 <h2 id="software_dependencies-ipmitool">ipmitool</h2>
@@ -1257,14 +1251,14 @@ sudo yum install cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-dev
 <p><a href="https://root.cern.ch/">ROOT</a> is an open-source data analysis framework developed by CERN. It is widely used in high-energy physics for data processing, statistical analysis, visualization, and storage. It is needed for some features of Midas.</p>
 <h3 id="software_dependencies-installation-guide_2">Installation Guide</h3>
 <p>General installaiton guides are provided by ROOT at their <a href="https://root.cern/install/">Installing ROOT</a> and <a href="https://root.cern/install/build_from_source/">Building ROOT from source</a> pages.</p>
-<h4 id="software_dependencies-almalinux-9">AlmaLinux 9</h4>
+<h4 id="software_dependencies-using-yum-package-manager">Using <code>yum</code> Package Manager</h4>
 <p>1 <strong>Enable the EPEL repository</strong>:</p>
 <pre><code>sudo yum install epel-release
 </code></pre>
 <p>2 <strong>Download and Install ROOT</strong>:</p>
 <pre><code>sudo yum install root
 </code></pre>
-<h4 id="software_dependencies-building-from-source-linux">Building from source (Linux)</h4>
+<h4 id="software_dependencies-building-from-source">Building from source</h4>
 <p>1 <strong>Example building latest stable branch from source</strong></p>
 <pre><code>git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
 mkdir root_build root_install &amp;&amp; cd root_build
@@ -1317,12 +1311,49 @@ export PATH=$PATH:$MIDASSYS/bin
 </code></pre>
 <p><strong>Note</strong>: you can hardcode the environment variables <code>MIDASSYS</code> (and add to path), <code>MIDAS_EXPTAB</code>, and <code>MIDAS_EXPT_NAME</code> by adding the appropriate commands to your .bashrc file. This way, the environment variables are set with each new terminal session for that user.</p>
 <hr />
-<h2 id="software_dependencies-boost">Boost</h2>
+<p>Here’s a similar guide for installing Python 2.7 on a Linux system. This guide provides a clean, step-by-step process and includes the option to automate environment variable settings for persistent usage.</p>
+<hr />
+<h2 id="software_dependencies-python2">Python2</h2>
 <h3 id="software_dependencies-overview_4">Overview</h3>
-<p><a href="https://www.boost.org/">Boost</a> is a comprehensive collection of C++ libraries that provide support for various tasks and structures including linear algebra, multithreading, image processing, regex (regular expressions), and more.</p>
+<p>Some scripts are written for configuring the DAQ are written in python 2. To install python2 on ALMA9, you must install from source. Afterwards, you can run python2 scripts with <code>python2.7 {script name}</code>.</p>
 <h3 id="software_dependencies-installation-guide_4">Installation Guide</h3>
+<p>1 <strong>Install required dependencies</strong>  </p>
+<p>First, ensure that the system has the necessary development tools and libraries for compiling Python from source:</p>
+<pre><code>sudo dnf groupinstall -y &quot;Development Tools&quot;
+sudo dnf install -y gcc openssl-devel bzip2-devel libffi-devel zlib-devel
+</code></pre>
+<p>2 <strong>Download Python 2.7.18 source code</strong>  </p>
+<p>Next, download the Python 2.7.18 tarball, which is the last stable version of Python 2</p>
+<pre><code>cd /path/to/packages
+wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+</code></pre>
+<p>3 <strong>Extract and compile Python</strong>  </p>
+<p>Extract the downloaded tarball, configure the build environment, and compile Python</p>
+<pre><code>tar xzf Python-2.7.18.tgz
+cd Python-2.7.18
+./configure --enable-optimizations
+make
+</code></pre>
+<p><strong>Note</strong>: During the tests, I experienced some errors. I was able to <code>Ctrl-C</code> to cancel these and continue without errors</p>
+<p>4 <strong>Install Python 2.7</strong>  </p>
+<p>Install the compiled version of Python 2.7 on your system:</p>
+<pre><code>sudo make altinstall
+</code></pre>
+<p>Using <code>altinstall</code> ensures that the new version does not overwrite the default <code>python</code> command on your system.</p>
+<p>5 <strong>Verify installation</strong>  </p>
+<pre><code>python2.7 --version
+</code></pre>
+<p>6 <strong>Cleanup</strong>: </p>
+<pre><code>rm -rf Python-2.7.18.tgz
+rm -rf Python-2.7.18
+</code></pre>
+<hr />
+<h2 id="software_dependencies-boost">Boost</h2>
+<h3 id="software_dependencies-overview_5">Overview</h3>
+<p><a href="https://www.boost.org/">Boost</a> is a comprehensive collection of C++ libraries that provide support for various tasks and structures including linear algebra, multithreading, image processing, regex (regular expressions), and more.</p>
+<h3 id="software_dependencies-installation-guide_5">Installation Guide</h3>
 <p>Boost can be installed on AlmaLinux 9 using package managers or from source. Here are detailed instructions for each method:</p>
-<h4 id="software_dependencies-almalinux-9_1">AlmaLinux 9</h4>
+<h4 id="software_dependencies-using-yum-package-manager_1">Using <code>yum</code> Package Manager</h4>
 <p>1 <strong>Install Development Tools and Dependencies</strong>:</p>
 <pre><code>sudo yum groupinstall &quot;Development Tools&quot;
 sudo yum install cmake
@@ -1356,11 +1387,11 @@ cd boost_1_76_0
 </code></pre>
 <hr />
 <h2 id="software_dependencies-ipbus-cactus">IPBus (Cactus)</h2>
-<h3 id="software_dependencies-overview_5">Overview</h3>
+<h3 id="software_dependencies-overview_6">Overview</h3>
 <p><a href="https://ipbus.web.cern.ch/">IPBus</a>, part of the Cactus framework, is a protocol for remote control and monitoring of hardware devices over Ethernet. It's commonly used in high-energy DAQ systems.</p>
-<h3 id="software_dependencies-installation-guide_5">Installation Guide</h3>
+<h3 id="software_dependencies-installation-guide_6">Installation Guide</h3>
 <p>For a general installation guide, see ipbus' <a href="https://ipbus.web.cern.ch/doc/user/html/software/installation.html">Installing the Software</a> page.</p>
-<h4 id="software_dependencies-almalinux-9_2">AlmaLinux 9</h4>
+<h4 id="software_dependencies-using-yum-package-manager_2">Using <code>yum</code> Package Manager</h4>
 <p>1 <strong>Remove previous version (if applicable)</strong>:</p>
 <pre><code>sudo yum groupremove uhal
 </code></pre>
@@ -1382,9 +1413,9 @@ sudo make install -j$(nproc)
 <p><strong>Note</strong>: You may not need to specify <code>EXTERN_BOOST_INCLUDE_PREFIX</code>, <code>EXTERN_BOOST_LIB_PREFIX</code>, <code>EXTERN_PUGIXML_INCLUDE_PREFIX</code>, <code>EXTERN_PUGIXML_LIB_PREFIX</code>. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.</p>
 <hr />
 <h2 id="software_dependencies-system-monitor">System Monitor</h2>
-<h3 id="software_dependencies-overview_6">Overview</h3>
+<h3 id="software_dependencies-overview_7">Overview</h3>
 <p>The system monitor software is a custom software package used to attach system resource usage to midas data banks to aid in debugging rate slowdowns. It is a required dependency currently. It's contents can be found in the midas databank <code>SI00</code> where <code>00</code> is replaced with the frontend index. </p>
-<h3 id="software_dependencies-installation-guide_6">Installation Guide</h3>
+<h3 id="software_dependencies-installation-guide_7">Installation Guide</h3>
 <p>See the <a href="https://github.com/jaca230/system_diagnostics/tree/main">github page</a> for more details.</p>
 <p>1 <strong>Clone the repository</strong></p>
 <pre><code>git clone https://github.com/jaca230/system_diagnostics.git
@@ -1402,12 +1433,11 @@ cd bin
 </code></pre>
 <hr />
 <h2 id="software_dependencies-meinberg">Meinberg</h2>
-<h3 id="software_dependencies-overview_7">Overview</h3>
+<h3 id="software_dependencies-overview_8">Overview</h3>
 <p><a href="https://www.meinbergglobal.com/">Meinberg</a> provides a range of synchronization solutions, including Network Time Protocol (NTP) servers, precision time protocol (PTP) solutions, and GPS radio clocks. These tools are essential for accurate time synchronization in various high-precision applications.</p>
 <p>In our case, we use it to apply a GPS timestamp to each event. In reality, this is an artifact from g-2 where seperate systems needed to be time correlated. Only the "GPS" master trigger mode needs the meinberg.</p>
-<h3 id="software_dependencies-installation-guide_7">Installation Guide</h3>
+<h3 id="software_dependencies-installation-guide_8">Installation Guide</h3>
 <p>For more general information about Meinberg devices, see Meinberg's <a href="https://kb.meinbergglobal.com/">Installing the Software</a> page.</p>
-<h4 id="software_dependencies-almalinux-9_3">AlmaLinux 9</h4>
 <p>1 <strong>Clone the repository</strong>:</p>
 <pre><code>git clone https://git.meinbergglobal.com/drivers/mbgtools-lx.git
 cd mbgtools-lx
@@ -1480,27 +1510,27 @@ The command &quot;mbgirigcfg&quot; can be used to change the settings.
 <pre><code>cd /path/to/packages
 mkdir experiment
 cd experiment
-git clone --branch multi-crate git@github.com:PIONEER-Experiment/gm2daq-modified.git
+git clone --branch alma9 git@github.com:PIONEER-Experiment/gm2daq-modified.git
 cd gm2daq-modified
-git checkout multi-crate
+git checkout alma9
 </code></pre>
 <p><strong>Note</strong>: To clone a different branch, simply change the <code>--branch</code> parameter from <code>multi-crate</code> to the appropriate branch. You can also checkout a different branch after this is done.</p>
 <p>3 <strong>Setup Environment</strong></p>
 <pre><code>cd environment_setup
 ./detect_environment.sh
 </code></pre>
+<p><strong>Note:</strong> The environment detection does not work well for packages installed with <code>yum</code> or other package managers. The correct directory for these packges is usually <code>/usr</code>, (though cactus installs into <code>/opt</code>).</p>
 <p>This will populate a local file <code>environment_variables.txt</code>, check it with:</p>
 <pre><code>cat environment_variables.txt
 </code></pre>
 <p>Here's an example of what <code>environment_variables.txt</code> will look like</p>
-<pre><code>GM2DAQ_DIR=/home/installation_testing/packages/experiment/lxedaq
-CACTUS_ROOT=/home/installation_testing/packages/cactus
-BOOST_ROOT=/home/backup_installation_testing/packages/boost-1.53.0
-PUGIXML_ROOT=/home/installation_testing/packages/pugixml-1.8
-ROOT_ROOT=/usr/include/root
-SYSTEM_MONITOR_ROOT=/home/installation_testing/packages/system_diagnostics
-MIDASSYS=/home/installation_testing/packages/midas
-MIDAS_EXPTAB=/home/installation_testing/online/exptab
+<pre><code>GM2DAQ_DIR=/home/pioneer/packages/experiments/gm2daq-modified
+CACTUS_ROOT=/opt/cactus
+BOOST_ROOT=/usr
+PUGIXML_ROOT=/usr
+ROOT_ROOT=/usr
+MIDASSYS=/home/pioneer/packages/midas
+MIDAS_EXPTAB=/home/pioneer/online/exptab
 MIDAS_EXPT_NAME=DAQ
 </code></pre>
 <p>Verify that each environment variable above points to the correct path for each piece of software. If not, manually change it with your favorite text editor. Then, run</p>
@@ -1568,9 +1598,15 @@ make
 </code></pre>
 <p><strong>Note</strong>: The frontend id should correspond to the subnet you placed (or will place) the crate components on when configuring the hardware.</p>
 <p>This file is used to build the ODB. <strong>Any hardware not specified in this file will be ignored.</strong> You can still disable any hardware listed in this file in the ODB after it has been generated. However if you want to move the FC7 to a different slot, this file and the ODB need to be editted accordingly.</p>
+<p>You then need to copy this file to your experiment directory. You can find that directory with</p>
+<pre><code>cat $MIDAS_EXPTAB
+</code></pre>
+<p>navigate to the appropriate directory then run the command</p>
+<pre><code>cp $GM2DAQ_DIR/frontends/AMC13xx_config.xml .
+</code></pre>
 <p>6 <strong>Start Midas Webpage</strong></p>
 <pre><code>cd $GM2DAQ_DIR/webpage_scripts
-./start_midas_webpage
+./start_midas_webpage.sh
 </code></pre>
 <p>Then open <code>localhost:8080</code> in your favorite web browser.</p>
 <p><strong>Note</strong>: If this doesn't work, verify that <code>mlogger</code>, <code>mhttpd</code> (or <code>mhttpd6</code>), and <code>mserver</code> and all running as screens, i.e. check:</p>
@@ -2996,8 +3032,6 @@ screen -wipe &gt; /dev/null 2&gt;&amp;1
 <pre><code>export EXP=$MIDAS_EXPT_NAME
 export EXP_PATH=$(dirname &quot;$MIDAS_EXPTAB&quot;)
 rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
-rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
-rm -rf /dev/shm/*_${EXP}_ODB_* &gt; /dev/null 2&gt;&amp;1
 rm -rf $EXP_PATH/.*.SHM &gt; /dev/null 2&gt;&amp;1
 rm -rf $EXP_PATH/.*.TXT &gt; /dev/null 2&gt;&amp;1
 </code></pre>
@@ -3355,8 +3389,64 @@ host = 'localhost'
 <ul>
 <li>Total bytes received and transmitted.</li>
 </ul>
+<h2 id="networking-using-nmcli-command-line-tools">Using <code>nmcli</code> Command Line Tools</h2>
+<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), you can use the <code>nmcli</code> command line tool to configure network interfaces. <code>nmcli</code> interacts with NetworkManager and allows you to configure network settings directly from the terminal without editing configuration files manually.</p>
+<h3 id="networking-example-nmcli-configuration-enp5s0-interface">Example <code>nmcli</code> Configuration: <code>enp5s0</code> Interface</h3>
+<pre><code class="language-bash">nmcli connection add type ethernet con-name enp5s0 ifname enp5s0 \
+    ipv4.addresses 192.168.1.100/24 \
+    ipv4.method manual \
+    ipv4.gateway 192.168.1.1 \
+    802-3-ethernet.mtu 1500 \
+    connection.autoconnect yes
+</code></pre>
+<h4 id="networking-explanation_1">Explanation:</h4>
+<ul>
+<li>
+<p><strong><code>type ethernet</code></strong>: Specifies that the connection type is Ethernet. This parameter indicates that you are configuring a wired network interface.</p>
+</li>
+<li>
+<p><strong><code>con-name enp5s0</code></strong>: Defines the connection name (<code>enp5s0</code>). This is the name used to refer to the connection in <code>nmcli</code>. It's often the name of the network interface (e.g., <code>enp5s0</code>).</p>
+</li>
+<li>
+<p><strong><code>ifname enp5s0</code></strong>: Specifies the name of the network interface (<code>enp5s0</code>) that the connection applies to. This should match the actual name of the interface as listed by <code>nmcli device</code>.</p>
+</li>
+<li>
+<p><strong><code>ipv4.addresses 192.168.1.100/24</code></strong>: Sets the static IPv4 address (<code>192.168.1.100</code>) with the subnet mask (<code>/24</code>). This defines the IP address for the network interface and its subnet.</p>
+</li>
+<li>
+<p><strong><code>ipv4.method manual</code></strong>: Specifies that the IP address configuration is static. This will prevent NetworkManager from using DHCP to obtain an IP address.</p>
+</li>
+<li>
+<p><strong><code>ipv4.gateway 192.168.1.1</code></strong>: Defines the default gateway (<code>192.168.1.1</code>) for the interface. This is the IP address of the router or gateway used to route traffic to external networks.</p>
+</li>
+<li>
+<p><strong><code>802-3-ethernet.mtu 1500</code></strong>: Sets the Maximum Transmission Unit (MTU) to <code>1500</code> bytes. This defines the largest packet size that can be transmitted without fragmentation.</p>
+</li>
+<li>
+<p><strong><code>connection.autoconnect yes</code></strong>: Ensures that the network connection is automatically activated during system boot or when the interface is brought up.</p>
+</li>
+</ul>
+<h3 id="networking-additional-commands-for-managing-the-connection">Additional Commands for Managing the Connection</h3>
+<p><strong>Show the active connections:</strong></p>
+<pre><code>nmcli connection show
+</code></pre>
+<p><strong>Modify an existing connection:</strong></p>
+<pre><code>nmcli connection modify enp5s0 ipv4.addresses 192.168.1.101/24
+</code></pre>
+<p>This changes the IP address of the <code>enp5s0</code> connection to <code>192.168.1.101</code>.</p>
+<p><strong>Delete a connection:</strong></p>
+<pre><code>nmcli connection delete enp5s0
+</code></pre>
+<p><strong>Bring the connection up or down:</strong></p>
+<pre><code>nmcli connection up enp5s0
+nmcli connection down enp5s0
+</code></pre>
+<p><strong>Check the status of the connection:</strong></p>
+<pre><code>nmcli device status
+</code></pre>
+<hr />
 <h2 id="networking-using-network-scripts">Using Network Scripts</h2>
-<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using <code>ifcfg</code> files located in <code>/etc/sysconfig/network-scripts/</code>. These files contain key configuration parameters that define how network interfaces behave and interact with the network.</p>
+<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using <code>ifcfg</code> files located in <code>/etc/sysconfig/network-scripts/</code>. These files contain key configuration parameters that define how network interfaces behave and interact with the network. <strong>This is a deprecated feature. Modern RHEL systems use nmcli.</strong> Nonetheless, some of our older electronics still use networks scripts.</p>
 <h3 id="networking-example-ifcfg-file-etcsysconfignetwork-scriptsifcfg-eth0">Example <code>ifcfg</code> File: <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code></h3>
 <pre><code>DEVICE=eth0
 BOOTPROTO=static
@@ -3366,7 +3456,7 @@ NETMASK=255.255.255.0
 GATEWAY=192.168.1.1
 MTU=1500
 </code></pre>
-<h4 id="networking-explanation_1">Explanation:</h4>
+<h4 id="networking-explanation_2">Explanation:</h4>
 <ul>
 <li>
 <p><strong><code>DEVICE=eth0</code></strong>: Specifies the network interface name (<code>eth0</code>). This parameter identifies which network interface the configuration applies to.</p>
@@ -3992,6 +4082,57 @@ make -j$(nproc) EXTERN_BOOST_INCLUDE_PREFIX=&quot;/opt/boost/include&quot; EXTER
 sudo make install -j$(nproc)
 </code></pre>
 <p><strong>Note</strong>: You may not need to specify <code>EXTERN_BOOST_INCLUDE_PREFIX</code>, <code>EXTERN_BOOST_LIB_PREFIX</code>, <code>EXTERN_PUGIXML_INCLUDE_PREFIX</code>, <code>EXTERN_PUGIXML_LIB_PREFIX</code>. Otherwise, you may need to find where pugixml and boost were installed and replace the paths above respectively.</p>
+<hr />
+<h2 id="miscellaneous_info-old-network-scripts">Old Network Scripts</h2>
+<p>Network scripts are a deprecated feature of red hat linux systems. Now, a connection manager is used via <code>nmcli</code> commands. For reference, the old network scripts are here.</p>
+<h3 id="miscellaneous_info-mch-network-script-example">MCH Network script example</h3>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+</code></pre>
+<p>For example, this is how the UKY teststand 1GbE NIC is configured to communicate with multiple crate using an ethernet splitter.</p>
+<pre><code>#
+# Connect to MCH
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.1.100
+NETMASK=255.255.0.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp5s0
+DEVICE=enp5s0
+ONBOOT=yes
+</code></pre>
+<p>In particular, the <code>IP_ADDR</code> and <code>NETMASK</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
+<h3 id="miscellaneous_info-amc13-network-script-example">AMC13 Network script example</h3>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-{port name}
+</code></pre>
+<p>For example, this is how one of the UKY teststand 10GbE NIC is configured to communicate with the AMC13.</p>
+<pre><code>#
+# Connect to AMC13
+#
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.51.100
+NETMASK=255.255.255.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp1s0f0
+DEVICE=enp1s0f0
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-999
+MTU=9000
+</code></pre>
+<p>In particular, the <code>IP_ADDR</code>, <code>NETMASK</code>, and <code>MTU</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="#networking-networking-basics">networking page</a> for more details.</p>
 <hr /></section></div>
 
 

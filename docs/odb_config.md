@@ -112,7 +112,7 @@ For a general guide on how to use Midas' ODB, see the [ODB Access and Use wiki p
 
 ## g-2 Modified DAQ Specific ODB Configuration
 
-Below are some important settings in the ODB for the g-2 modified DAQ. This is not a complete description of every setting in the ODB. Many settings are artifacts from g-2 that don't serve any purpose anymore.
+Below are some important settings in the ODB for the g-2 modified DAQ. This is not a complete description of every setting in the ODB. Many settings are artifacts from g-2 that don't serve any purpose anymore. **You can find a script that will automatically set all these parameters to their suggested values in `scripts/apply_recommended_ODB_settings.py`**.
 
 ### Master Frontend ODB settings
 
@@ -202,7 +202,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 | Field           | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| **Path**        | `/Equipment/AMC13{frontend #}/Settings/Globals/CCC: FMC Location (top,bottom)`          |
+| **Path**        | `/Equipment/AMC13{frontend #}/Settings/Globals/CCC: FMC Location (top, bottom)`          |
 | **Description** |  The location of the SFP interface FMC card on the FC7 board       |
 | **Valid Values**| `top` or `bottom`                                                  |
 | **Suggested Value**| `top`                                                           |
@@ -255,7 +255,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 | Field           | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Firmware Version Required`         |
+| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/T1 Firmware Version Required`         |
 | **Description** |  The minimum required firmware version for the virtex (T1) FPGA in the AMC13        |
 | **Valid Values**| Any positive integer                                 |
 | **Suggested Value**| `33087`                                                    |
@@ -264,7 +264,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 | Field           | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Firmware Version Required`         |
+| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/T2 Firmware Version Required`         |
 | **Description** | The minimum required firmware version for the spartan (T2) FPGA in the AMC13       |
 | **Valid Values**| Any positive integer                                               |
 | **Suggested Value**| `46`                                                            |
@@ -274,7 +274,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 | Field           | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Address Table Location`         |
+| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/T1 Address Table Location`         |
 | **Description** | The path to the AMC13 virtex (T1) adress table xml file            |
 | **Valid Values**| Any valid path                                                     |
 | **Suggested Value**| `$GM2DAQ_DIR/address_tables/AMC13XG_T1.xml`                     |
@@ -284,7 +284,7 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 | Field           | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T2 Address Table Location`         |
+| **Path**        | `/Equipment/AMC13{frontend #}/Settings/AMC13/T2 Address Table Location`         |
 | **Description** | The path to the AMC13 spartan (T2) adress table xml file           |
 | **Valid Values**| Any valid path                                                     |
 | **Suggested Value**| `$GM2DAQ_DIR/address_tables/AMC13XG_T2.xml`                     |
@@ -460,14 +460,14 @@ Any setting not mentioned is either an artifact of g-2 (doesn't do anything) or 
 
 | Field           | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| **Path**        | `/Equipment/AMC13{frontend #}/Settings/TQ{#}/GPU T,Q,P bank processing`  |
+| **Path**        | `/Equipment/AMC13{frontend #}/Settings/TQ{#}/GlobalParameters/GPU T,Q,P bank processing`  |
 | **Description** | Whether the GPU is used to process this midas bank or not      |
 | **Valid Values**| `yes` or `no`                                               |
 | **Suggested Value**| `no`                  |
 
 | Field           | Description                                                        |
 |-----------------|--------------------------------------------------------------------|
-| **Path**        | `/Equipment/AMC13{frontend #}/Settings/TQ{#}/GPU H bank processing`  |
+| **Path**        | `/Equipment/AMC13{frontend #}/Settings/TQ{#}/GlobalParameters/GPU H bank processing`  |
 | **Description** | Whether the GPU is used to process this midas bank or not      |
 | **Valid Values**| `yes` or `no`                                               |
 | **Suggested Value**| `no`                  |

@@ -436,6 +436,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-nmcli-command-line-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using nmcli Command Line Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using nmcli Command Line Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-nmcli-configuration-enp5s0-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example nmcli Configuration: enp5s0 Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example nmcli Configuration: enp5s0 Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-commands-for-managing-the-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Commands for Managing the Connection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-network-scripts" class="md-nav__link">
     <span class="md-ellipsis">
       Using Network Scripts
@@ -456,7 +504,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
+  <a href="#explanation_2" class="md-nav__link">
     <span class="md-ellipsis">
       Explanation:
     </span>
@@ -717,6 +765,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-nmcli-command-line-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using nmcli Command Line Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using nmcli Command Line Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-nmcli-configuration-enp5s0-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example nmcli Configuration: enp5s0 Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example nmcli Configuration: enp5s0 Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-commands-for-managing-the-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Commands for Managing the Connection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-network-scripts" class="md-nav__link">
     <span class="md-ellipsis">
       Using Network Scripts
@@ -737,7 +833,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
+  <a href="#explanation_2" class="md-nav__link">
     <span class="md-ellipsis">
       Explanation:
     </span>
@@ -959,8 +1055,64 @@
 <ul>
 <li>Total bytes received and transmitted.</li>
 </ul>
+<h2 id="using-nmcli-command-line-tools">Using <code>nmcli</code> Command Line Tools</h2>
+<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), you can use the <code>nmcli</code> command line tool to configure network interfaces. <code>nmcli</code> interacts with NetworkManager and allows you to configure network settings directly from the terminal without editing configuration files manually.</p>
+<h3 id="example-nmcli-configuration-enp5s0-interface">Example <code>nmcli</code> Configuration: <code>enp5s0</code> Interface</h3>
+<pre><code class="language-bash">nmcli connection add type ethernet con-name enp5s0 ifname enp5s0 \
+    ipv4.addresses 192.168.1.100/24 \
+    ipv4.method manual \
+    ipv4.gateway 192.168.1.1 \
+    802-3-ethernet.mtu 1500 \
+    connection.autoconnect yes
+</code></pre>
+<h4 id="explanation_1">Explanation:</h4>
+<ul>
+<li>
+<p><strong><code>type ethernet</code></strong>: Specifies that the connection type is Ethernet. This parameter indicates that you are configuring a wired network interface.</p>
+</li>
+<li>
+<p><strong><code>con-name enp5s0</code></strong>: Defines the connection name (<code>enp5s0</code>). This is the name used to refer to the connection in <code>nmcli</code>. It's often the name of the network interface (e.g., <code>enp5s0</code>).</p>
+</li>
+<li>
+<p><strong><code>ifname enp5s0</code></strong>: Specifies the name of the network interface (<code>enp5s0</code>) that the connection applies to. This should match the actual name of the interface as listed by <code>nmcli device</code>.</p>
+</li>
+<li>
+<p><strong><code>ipv4.addresses 192.168.1.100/24</code></strong>: Sets the static IPv4 address (<code>192.168.1.100</code>) with the subnet mask (<code>/24</code>). This defines the IP address for the network interface and its subnet.</p>
+</li>
+<li>
+<p><strong><code>ipv4.method manual</code></strong>: Specifies that the IP address configuration is static. This will prevent NetworkManager from using DHCP to obtain an IP address.</p>
+</li>
+<li>
+<p><strong><code>ipv4.gateway 192.168.1.1</code></strong>: Defines the default gateway (<code>192.168.1.1</code>) for the interface. This is the IP address of the router or gateway used to route traffic to external networks.</p>
+</li>
+<li>
+<p><strong><code>802-3-ethernet.mtu 1500</code></strong>: Sets the Maximum Transmission Unit (MTU) to <code>1500</code> bytes. This defines the largest packet size that can be transmitted without fragmentation.</p>
+</li>
+<li>
+<p><strong><code>connection.autoconnect yes</code></strong>: Ensures that the network connection is automatically activated during system boot or when the interface is brought up.</p>
+</li>
+</ul>
+<h3 id="additional-commands-for-managing-the-connection">Additional Commands for Managing the Connection</h3>
+<p><strong>Show the active connections:</strong></p>
+<pre><code>nmcli connection show
+</code></pre>
+<p><strong>Modify an existing connection:</strong></p>
+<pre><code>nmcli connection modify enp5s0 ipv4.addresses 192.168.1.101/24
+</code></pre>
+<p>This changes the IP address of the <code>enp5s0</code> connection to <code>192.168.1.101</code>.</p>
+<p><strong>Delete a connection:</strong></p>
+<pre><code>nmcli connection delete enp5s0
+</code></pre>
+<p><strong>Bring the connection up or down:</strong></p>
+<pre><code>nmcli connection up enp5s0
+nmcli connection down enp5s0
+</code></pre>
+<p><strong>Check the status of the connection:</strong></p>
+<pre><code>nmcli device status
+</code></pre>
+<hr />
 <h2 id="using-network-scripts">Using Network Scripts</h2>
-<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using <code>ifcfg</code> files located in <code>/etc/sysconfig/network-scripts/</code>. These files contain key configuration parameters that define how network interfaces behave and interact with the network.</p>
+<p>In Red Hat-based Linux systems (like Alma, CentOS, Fedora, or RHEL), network interfaces are often configured using <code>ifcfg</code> files located in <code>/etc/sysconfig/network-scripts/</code>. These files contain key configuration parameters that define how network interfaces behave and interact with the network. <strong>This is a deprecated feature. Modern RHEL systems use nmcli.</strong> Nonetheless, some of our older electronics still use networks scripts.</p>
 <h3 id="example-ifcfg-file-etcsysconfignetwork-scriptsifcfg-eth0">Example <code>ifcfg</code> File: <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code></h3>
 <pre><code>DEVICE=eth0
 BOOTPROTO=static
@@ -970,7 +1122,7 @@ NETMASK=255.255.255.0
 GATEWAY=192.168.1.1
 MTU=1500
 </code></pre>
-<h4 id="explanation_1">Explanation:</h4>
+<h4 id="explanation_2">Explanation:</h4>
 <ul>
 <li>
 <p><strong><code>DEVICE=eth0</code></strong>: Specifies the network interface name (<code>eth0</code>). This parameter identifies which network interface the configuration applies to.</p>
@@ -1126,7 +1278,7 @@ To scan your local network and list all active devices, use the following comman
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2024</span>
   </span>
 
     
