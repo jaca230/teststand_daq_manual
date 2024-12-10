@@ -1917,7 +1917,7 @@ The 3rd is the name for the screen session.</p>
 <p><strong>Note</strong>: If one decreases the run number, the logger will overwrite that run's data if a run is performed with the old run number again. For this reason, when <a href="#midas-loading-an-odb-save">loading and old ODB save</a> you will want to increase the run number to a value larger than your last successful run number before taking data.</p>
 <hr />
 <h2 id="odb_config-g-2-modified-daq-specific-odb-configuration">g-2 Modified DAQ Specific ODB Configuration</h2>
-<p>Below are some important settings in the ODB for the g-2 modified DAQ. This is not a complete description of every setting in the ODB. Many settings are artifacts from g-2 that don't serve any purpose anymore.</p>
+<p>Below are some important settings in the ODB for the g-2 modified DAQ. This is not a complete description of every setting in the ODB. Many settings are artifacts from g-2 that don't serve any purpose anymore. <strong>You can find a script that will automatically set all these parameters to their suggested values in <code>scripts/apply_recommended_ODB_settings.py</code></strong>.</p>
 <h3 id="odb_config-master-frontend-odb-settings">Master Frontend ODB settings</h3>
 <h4 id="odb_config-trigger-source">Trigger Source</h4>
 <table>
@@ -2121,7 +2121,7 @@ The 3rd is the name for the screen session.</p>
 <tbody>
 <tr>
 <td><strong>Path</strong></td>
-<td><code>/Equipment/AMC13{frontend #}/Settings/Globals/CCC: FMC Location (top,bottom)</code></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/Globals/CCC: FMC Location (top, bottom)</code></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -2260,7 +2260,7 @@ The 3rd is the name for the screen session.</p>
 <tbody>
 <tr>
 <td><strong>Path</strong></td>
-<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Firmware Version Required</code></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/T1 Firmware Version Required</code></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -2287,7 +2287,7 @@ The 3rd is the name for the screen session.</p>
 <tbody>
 <tr>
 <td><strong>Path</strong></td>
-<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Firmware Version Required</code></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/T2 Firmware Version Required</code></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -2314,7 +2314,7 @@ The 3rd is the name for the screen session.</p>
 <tbody>
 <tr>
 <td><strong>Path</strong></td>
-<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T1 Address Table Location</code></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/T1 Address Table Location</code></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -2341,7 +2341,7 @@ The 3rd is the name for the screen session.</p>
 <tbody>
 <tr>
 <td><strong>Path</strong></td>
-<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/AMC13 T2 Address Table Location</code></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/AMC13/T2 Address Table Location</code></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -2833,7 +2833,7 @@ The 3rd is the name for the screen session.</p>
 <tbody>
 <tr>
 <td><strong>Path</strong></td>
-<td><code>/Equipment/AMC13{frontend #}/Settings/TQ{#}/GPU T,Q,P bank processing</code></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/TQ{#}/GlobalParameters/GPU T,Q,P bank processing</code></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -2859,7 +2859,7 @@ The 3rd is the name for the screen session.</p>
 <tbody>
 <tr>
 <td><strong>Path</strong></td>
-<td><code>/Equipment/AMC13{frontend #}/Settings/TQ{#}/GPU H bank processing</code></td>
+<td><code>/Equipment/AMC13{frontend #}/Settings/TQ{#}/GlobalParameters/GPU H bank processing</code></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
