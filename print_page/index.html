@@ -673,12 +673,12 @@ Ph.D. Candidate, Department of Physics and Astronomy, University of Kentucky.
 <p>Plug an Ethernet cable into the GbE0 port and the frontend host computer. From a terminal, run</p>
 <pre><code>ssh root@192.168.[crate].15
 </code></pre>
+<p>The password should be <code>root</code>.</p>
 <p><strong>Note</strong>: If you don't know what IP the MCH has, you can try pinging a crate numbers up to 32</p>
 <pre><code>ping 192.168.[crate].15
 </code></pre>
-<p>The password should be <code>root</code>.</p>
 <p>If you still can't find the crate, you should verify your frontend host computer's ethernet port is properly configured. See the <a href="#networking-networking-basics">networking page</a> for some general networking information. If that still fails, you may need to do a <a href="#networking-scanning-a-network">network scan</a> to look for the MCH.</p>
-<p><strong>Note:</strong>: The error <code>Bad server host key: Invalid key length</code> may be due to OpenSSH versions &gt;7.8 (August 2018) requiring rsa keys to be at least 2048 bits. The MCH may be configured to have a key shorter than this. Dropbear (a lightweight ssh client) has no such requirement and should already be installed on the MCH. To connect via dropbear instead:</p>
+<p><strong>Note</strong>: The error <code>Bad server host key: Invalid key length</code> may be due to OpenSSH versions &gt;7.8 (August 2018) requiring rsa keys to be at least 2048 bits. The MCH may be configured to have a key shorter than this. Dropbear (a lightweight ssh client) has no such requirement and should already be installed on the MCH. To connect via dropbear instead:</p>
 <pre><code>yum install dropbear
 dbclient root@192.168.2.15
 </code></pre>
