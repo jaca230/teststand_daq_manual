@@ -780,7 +780,7 @@ lights have turned off.</p>
 <p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> WFD5 5-channel differential signal in.</p>
 <h3 id="hardware_overview-configuration_4">Configuration</h3>
 <p>First you should <a href="#hardware_overview-mch-microtca-carrier-hub">configure the MCH</a> if you haven't already.</p>
-<p>For most of the configuration below to work, you must have <a href="#software_dependencies-ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/wfdConfig">WFD5 python configuration scripts located on the PIONEER github</a>. After <a href="#software_dependencies-pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
+<p>For most of the configuration below to work, you must have <a href="#software_dependencies-ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/wfdConfig">WFD5 python configuration scripts located on the PIONEER github</a>. Some of these scripts are written in python 2, it's easiest to manually update the syntax to be compatible with python 3. After <a href="#software_dependencies-pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
 <pre><code>git clone git@github.com:PIONEER-Experiment/wfdConfig.git
 </code></pre>
 <p>Below are a few examples of using the configuration scripts.</p>
@@ -873,7 +873,7 @@ See</p>
 <p>See the <a href="#hardware_overview-labled-picture-one-crate-system">labeled DAQ Picture</a> FC7 trigger in.</p>
 <h3 id="hardware_overview-configuration_5">Configuration</h3>
 <p>First you should <a href="#hardware_overview-mch-microtca-carrier-hub">configure the MCH</a> if you haven't already.</p>
-<p>For most of the configuration below to work, you must have <a href="#software_dependencies-ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/wfdConfig">FC7 python configuration scripts located on the PIONEER github</a>. After <a href="#software_dependencies-pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
+<p>For most of the configuration below to work, you must have <a href="#software_dependencies-ipbus-cactus">cactus</a> installed and linked with python. There are <a href="https://github.com/PIONEER-Experiment/unifiedCCC">FC7 python configuration scripts located on the PIONEER github</a>. Some of these scripts are written in python 2, it's easiest to manually update the syntax to be compatible with python 3. After <a href="#software_dependencies-pioneer-experiment-repositories">setting up your github account</a>, You can clone the repository with:</p>
 <pre><code>git clone git@github.com:PIONEER-Experiment/unifiedCCC.git
 </code></pre>
 <p>Below are a few examples of using the configuration scripts.</p>
@@ -884,7 +884,7 @@ python read_addresses.py
 <p>This will print usage help.</p>
 <h4 id="hardware_overview-changing-ip-address_1">Changing IP Address</h4>
 <pre><code>cd unifiedCCC/software
-python3 store_ip.py
+python store_ip.py
 </code></pre>
 <p>This will print usage help.</p>
 <p>You should set the IP to be in the format <code>192.168.[crate number].[slot number]</code> for the DAQ to work properly.</p>
@@ -948,7 +948,7 @@ See</p>
 <hr />
 <h2 id="hardware_overview-amc13-advanced-mezzanine-card">AMC13 (Advanced Mezzanine Card)</h2>
 <h3 id="hardware_overview-overview_7">Overview</h3>
-<p>The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC">Boston Unviversity's TWiki page</a>.</p>
+<p>The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on <a href="https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC">Boston Unviversity's TWiki page</a>. Some of the python scripts below are written in python 2, it's easiest to manually update the syntax to be compatible with python 3.</p>
 <h3 id="hardware_overview-wired-connections_3">Wired Connections</h3>
 <h4 id="hardware_overview-optical-link-to-fc7">Optical Link to FC7</h4>
 <p>The FC7 sends trigger information to the AMC13s over an optical cable. Put a Finisar (or similar) SFP transceiver in the bottom SFP port in the AMC13. Connect it to the <a href="#hardware_overview-optical-link-to-amc13">appropriate SFP port in the FC7</a>.</p>
