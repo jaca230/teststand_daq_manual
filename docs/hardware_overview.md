@@ -331,7 +331,7 @@ See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-syst
 
 First you should [configure the MCH](hardware_overview.md#mch-microtca-carrier-hub) if you haven't already.
 
-For most of the configuration below to work, you must have [cactus](software_dependencies.md#ipbus-cactus) installed and linked with python. There are [WFD5 python configuration scripts located on the PIONEER github](https://github.com/PIONEER-Experiment/wfdConfig). After [setting up your github account](software_dependencies.md#pioneer-experiment-repositories), You can clone the repository with:
+For most of the configuration below to work, you must have [cactus](software_dependencies.md#ipbus-cactus) installed and linked with python. There are [WFD5 python configuration scripts located on the PIONEER github](https://github.com/PIONEER-Experiment/wfdConfig). Some of these scripts are written in python 2, it's easiest to manually update the syntax to be compatible with python 3. After [setting up your github account](software_dependencies.md#pioneer-experiment-repositories), You can clone the repository with:
 ```
 git clone git@github.com:PIONEER-Experiment/wfdConfig.git
 ```
@@ -478,7 +478,7 @@ See the [labeled DAQ Picture](hardware_overview.md#labled-picture-one-crate-syst
 
 First you should [configure the MCH](hardware_overview.md#mch-microtca-carrier-hub) if you haven't already.
 
-For most of the configuration below to work, you must have [cactus](software_dependencies.md#ipbus-cactus) installed and linked with python. There are [FC7 python configuration scripts located on the PIONEER github](https://github.com/PIONEER-Experiment/wfdConfig). After [setting up your github account](software_dependencies.md#pioneer-experiment-repositories), You can clone the repository with:
+For most of the configuration below to work, you must have [cactus](software_dependencies.md#ipbus-cactus) installed and linked with python. There are [FC7 python configuration scripts located on the PIONEER github](https://github.com/PIONEER-Experiment/unifiedCCC). Some of these scripts are written in python 2, it's easiest to manually update the syntax to be compatible with python 3. After [setting up your github account](software_dependencies.md#pioneer-experiment-repositories), You can clone the repository with:
 ```
 git clone git@github.com:PIONEER-Experiment/unifiedCCC.git
 ```
@@ -496,7 +496,7 @@ This will print usage help.
 #### Changing IP Address
 ```
 cd unifiedCCC/software
-python3 store_ip.py
+python store_ip.py
 ```
 This will print usage help.
 
@@ -588,7 +588,7 @@ where you replace `/path/to` with the appropriate paths. This will apply firmwar
 
 ### Overview
 
-The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on [Boston Unviversity's TWiki page](https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC).
+The AMC13 is an AMC developed by Boston University for g-2 as well as experiments at CERN. For our use case, it gathers data from digitizers whenever it recieves a trigger. It then packages them and sends them to the frontend hosting computer over 10GbE. There is some general information on [Boston Unviversity's TWiki page](https://bucms.bu.edu/twiki/bin/view/BUCMSPublic/HcalDTC). Some of the python scripts below are written in python 2, it's easiest to manually update the syntax to be compatible with python 3.
 
 ### Wired Connections
 

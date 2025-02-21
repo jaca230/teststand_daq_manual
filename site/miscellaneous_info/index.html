@@ -848,6 +848,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#python2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-guide_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1286,6 +1319,39 @@
   <a href="#amc13-network-script-example" class="md-nav__link">
     <span class="md-ellipsis">
       AMC13 Network script example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-guide_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Guide
     </span>
   </a>
   
@@ -1805,6 +1871,41 @@ AUTOCONNECT_PRIORITY=-999
 MTU=9000
 </code></pre>
 <p>In particular, the <code>IP_ADDR</code>, <code>NETMASK</code>, and <code>MTU</code> sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the <a href="../networking/#networking-basics">networking page</a> for more details.</p>
+<hr />
+<h2 id="python2">Python2</h2>
+<h3 id="overview_4">Overview</h3>
+<p>Some scripts are written for configuring the DAQ are written in python2. To install python2 on ALMA9, you must install from source. Afterwards, you can run python2 scripts with <code>python2.7 {script name}</code>. <strong>Using python2 is not recommended due to it reaching it's EOL some time ago. It's better to manually edit this scripts run using python3</strong></p>
+<h3 id="installation-guide_2">Installation Guide</h3>
+<p>1 <strong>Install required dependencies</strong>  </p>
+<p>First, ensure that the system has the necessary development tools and libraries for compiling Python from source:</p>
+<pre><code>sudo dnf groupinstall -y &quot;Development Tools&quot;
+sudo dnf install -y gcc openssl-devel bzip2-devel libffi-devel zlib-devel
+</code></pre>
+<p>2 <strong>Download Python 2.7.18 source code</strong>  </p>
+<p>Next, download the Python 2.7.18 tarball, which is the last stable version of Python 2</p>
+<pre><code>cd /path/to/packages
+wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+</code></pre>
+<p>3 <strong>Extract and compile Python</strong>  </p>
+<p>Extract the downloaded tarball, configure the build environment, and compile Python</p>
+<pre><code>tar xzf Python-2.7.18.tgz
+cd Python-2.7.18
+./configure --enable-optimizations
+make
+</code></pre>
+<p><strong>Note</strong>: During the tests, I experienced some errors. I was able to <code>Ctrl-C</code> to cancel these and continue without errors</p>
+<p>4 <strong>Install Python 2.7</strong>  </p>
+<p>Install the compiled version of Python 2.7 on your system:</p>
+<pre><code>sudo make altinstall
+</code></pre>
+<p>Using <code>altinstall</code> ensures that the new version does not overwrite the default <code>python</code> command on your system.</p>
+<p>5 <strong>Verify installation</strong>  </p>
+<pre><code>python2.7 --version
+</code></pre>
+<p>6 <strong>Cleanup</strong>: </p>
+<pre><code>rm -rf Python-2.7.18.tgz
+rm -rf Python-2.7.18
+</code></pre>
 <hr />
 
 

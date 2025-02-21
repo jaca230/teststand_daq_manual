@@ -457,3 +457,65 @@ MTU=9000
 In particular, the `IP_ADDR`, `NETMASK`, and `MTU` sections are important. Here the port is specified to accept any traffic on the 192.168.51.xxx subnet. See the [networking page](networking.md#networking-basics) for more details.
 
 ---
+
+## Python2
+
+### Overview
+
+Some scripts are written for configuring the DAQ are written in python2. To install python2 on ALMA9, you must install from source. Afterwards, you can run python2 scripts with `python2.7 {script name}`. **Using python2 is not recommended due to it reaching it's EOL some time ago. It's better to manually edit this scripts run using python3**
+
+### Installation Guide
+
+1 **Install required dependencies**  
+
+First, ensure that the system has the necessary development tools and libraries for compiling Python from source:
+
+```
+sudo dnf groupinstall -y "Development Tools"
+sudo dnf install -y gcc openssl-devel bzip2-devel libffi-devel zlib-devel
+```
+
+2 **Download Python 2.7.18 source code**  
+
+Next, download the Python 2.7.18 tarball, which is the last stable version of Python 2
+
+```
+cd /path/to/packages
+wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+```
+
+3 **Extract and compile Python**  
+
+Extract the downloaded tarball, configure the build environment, and compile Python
+
+```
+tar xzf Python-2.7.18.tgz
+cd Python-2.7.18
+./configure --enable-optimizations
+make
+```
+
+**Note**: During the tests, I experienced some errors. I was able to `Ctrl-C` to cancel these and continue without errors
+
+4 **Install Python 2.7**  
+
+Install the compiled version of Python 2.7 on your system:
+
+```
+sudo make altinstall
+```
+
+Using `altinstall` ensures that the new version does not overwrite the default `python` command on your system.
+
+5 **Verify installation**  
+```
+python2.7 --version
+```
+
+6 **Cleanup**: 
+```
+rm -rf Python-2.7.18.tgz
+rm -rf Python-2.7.18
+```
+
+---
